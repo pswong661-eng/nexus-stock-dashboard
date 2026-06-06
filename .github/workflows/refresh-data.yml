@@ -25,6 +25,7 @@ jobs:
         run: npm run refresh:data
         env:
           STOCK_SYMBOLS: ${{ vars.STOCK_SYMBOLS || 'VST,RGTI,IONQ,LAC,UAMY,SNPS,QCOM,RRX' }}
+          MASSIVE_API_KEY: ${{ secrets.MASSIVE_API_KEY }}
       - run: npm run validate:data
       - name: Commit refreshed data
         uses: stefanzweifel/git-auto-commit-action@v5
