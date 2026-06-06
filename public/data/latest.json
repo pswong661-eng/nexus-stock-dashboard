@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-06T15:45:30.773Z",
+  "generatedAt": "2026-06-06T15:49:14.512Z",
   "staleAfterMinutes": 1440,
   "source": "Massive.com OHLC aggregates + SEC companyfacts/submissions via scheduled Node refresh",
   "tickers": [
@@ -23803,25 +23803,25 @@
       "symbol": "VST",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-06-06T15:45:30.772Z"
+      "createdAt": "2026-06-06T15:49:14.512Z"
     },
     {
       "symbol": "UAMY",
       "severity": "success",
       "message": "Strong YTD performer: +30.02%",
-      "createdAt": "2026-06-06T14:45:30.773Z"
+      "createdAt": "2026-06-06T14:49:14.512Z"
     },
     {
       "symbol": "RRX",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-06-06T13:45:30.773Z"
+      "createdAt": "2026-06-06T13:49:14.512Z"
     },
     {
       "symbol": "RRX",
       "severity": "success",
       "message": "Strong YTD performer: +39.9%",
-      "createdAt": "2026-06-06T12:45:30.773Z"
+      "createdAt": "2026-06-06T12:49:14.512Z"
     }
   ],
   "errors": []
