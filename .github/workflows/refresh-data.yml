@@ -1,0 +1,33 @@
+name: Refresh Market Data
+
+on:
+  schedule:
+    # Every 30 minutes during approximate US market hours, weekdays.
+    - cron: '*/30 14-21 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Refresh data snapshot
+        run: npm run refresh:data
+        env:
+          STOCK_SYMBOLS: ${{ vars.STOCK_SYMBOLS || 'VST,RGTI,IONQ,LAC,UAMY,SNPS,QCOM,RRX' }}
+      - run: npm run validate:data
+      - name: Commit refreshed data
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(data): refresh market dashboard data'
+          file_pattern: public/data/*.json
