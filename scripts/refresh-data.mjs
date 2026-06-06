@@ -5,6 +5,7 @@ const SYMBOLS = (process.env.STOCK_SYMBOLS || 'VST,RGTI,IONQ,LAC,UAMY,SNPS,QCOM,
 const OUT = new URL('../public/data/latest.json', import.meta.url);
 const FALLBACK = new URL('../public/data/fallback.json', import.meta.url);
 const SEC_UA = process.env.SEC_USER_AGENT || 'nexus-stock-dashboard/1.0 contact@example.com';
+const MASSIVE_API_KEY = process.env.MASSIVE_API_KEY || process.env.POLYGON_API_KEY || '';
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 function finite(n) { return Number.isFinite(n) ? n : null; }
@@ -61,6 +62,59 @@ async function fetchJson(url, headers = {}) {
 }
 async function fetchChart(symbol) {
   return (await fetchJson(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?range=1y&interval=1d&includePrePost=false&events=div%2Csplits`)).chart?.result?.[0];
+}
+function isoDateDaysAgo(days) {
+  const d = new Date(Date.now() - days * 86400_000);
+  return d.toISOString().slice(0, 10);
+}
+async function fetchMassiveJson(url) {
+  return fetchJson(url, { Authorization: `Bearer ${MASSIVE_API_KEY}` });
+}
+async function fetchMassiveBase(symbol) {
+  const from = isoDateDaysAgo(370);
+  const to = new Date().toISOString().slice(0, 10);
+  const aggUrl = `https://api.massive.com/v2/aggs/ticker/${encodeURIComponent(symbol)}/range/1/day/${from}/${to}?adjusted=true&sort=asc&limit=5000`;
+  const bars = await fetchMassiveJson(aggUrl);
+  if (!Array.isArray(bars.results) || !bars.results.length) throw new Error('Massive returned no aggregate bars');
+  return normalizeMassiveChart(symbol, bars.results);
+}
+function normalizeMassiveChart(symbol, bars, details = {}) {
+  const points = bars
+    .filter(b => Number.isFinite(b.c) && Number.isFinite(b.t))
+    .map(b => ({ date: new Date(b.t).toISOString().slice(0, 10), close: round(b.c, 4), high: finite(b.h), low: finite(b.l), volume: finite(b.v) }));
+  if (!points.length) throw new Error('Massive aggregate bars contained no close prices');
+  const closeValues = points.map(p => p.close);
+  const firstTradingDay = points.find(p => p.date >= `${new Date().getUTCFullYear()}-01-01`) || points[0];
+  const last = points.at(-1)?.close;
+  const ytdPct = pct(last, firstTradingDay?.close);
+  const lows = points.map(p => p.low).filter(Number.isFinite);
+  const highs = points.map(p => p.high).filter(Number.isFinite);
+  const volumes = points.map(p => p.volume).filter(Number.isFinite);
+  const week52Low = lows.length ? Math.min(...lows) : null;
+  const week52High = highs.length ? Math.max(...highs) : null;
+  const rsiArr = rsiSeries(closeValues, 14);
+  const ema50Arr = ema(closeValues, 50);
+  const macdObj = macd(closeValues);
+  const rsi14 = rsiArr.at(-1);
+  const avgVolume = sma(volumes.slice(-30));
+  const rec = recommendation({ rsi14, ytdPct, price: last, week52Low, week52High });
+  const normalized = points.map(p => ({ date: p.date, value: round((p.close / points[0].close) * 100, 2) }));
+  const technical = points.map((p, i) => ({
+    date: p.date,
+    close: p.close,
+    ema50: ema50Arr[i],
+    rsi14: rsiArr[i],
+    macd: macdObj.line[i],
+    macdSignal: macdObj.signal[i],
+    macdHist: macdObj.hist[i]
+  })).slice(-160);
+  return {
+    symbol, name: details.name || symbol, exchange: details.primary_exchange || '', currency: (details.currency_name || 'USD').toUpperCase(),
+    price: round(last, 2), previousClose: round(points.at(-2)?.close, 2), ytdPct: round(ytdPct, 2),
+    marketCap: finite(details.market_cap), peRatio: null, rsi14: round(rsi14, 1), week52Low: round(week52Low, 2), week52High: round(week52High, 2), avgVolume: round(avgVolume, 0),
+    recommendation: rec, opportunityScore: rec === 'BUY' ? 78 : rec === 'HOLD' ? 55 : 32,
+    series: normalized, technical, rawPoints: points.slice(-20).map(({ date, close }) => ({ date, close }))
+  };
 }
 function normalizeChart(symbol, result) {
   const meta = result.meta || {}, quote = result.indicators?.quote?.[0] || {};
@@ -269,13 +323,23 @@ let ciks = {};
 try { ciks = await cikMap(); } catch (e) { errors.push({ symbol: 'SEC', error: String(e.message || e) }); }
 for (const symbol of SYMBOLS) {
   try {
-    const chart = await fetchChart(symbol);
-    if (!chart) throw new Error('empty chart result');
-    const base = normalizeChart(symbol, chart);
+    let base;
+    if (MASSIVE_API_KEY) {
+      try {
+        base = await fetchMassiveBase(symbol);
+      } catch (massiveErr) {
+        errors.push({ symbol, error: `Massive fallback to Yahoo: ${String(massiveErr.message || massiveErr)}` });
+      }
+    }
+    if (!base) {
+      const chart = await fetchChart(symbol);
+      if (!chart) throw new Error('empty chart result');
+      base = normalizeChart(symbol, chart);
+    }
     const extra = await fetchFinancialAndInsider(symbol, ciks[symbol]);
     results.push({ ...base, cik: ciks[symbol] || null, ...extra });
   } catch (err) { errors.push({ symbol, error: String(err.message || err) }); }
-  await sleep(350);
+  await sleep(MASSIVE_API_KEY ? 13_000 : 350);
 }
 const bull = results.filter(s => s.recommendation === 'BUY').length;
 const bear = results.filter(s => s.recommendation === 'SELL').length;
@@ -295,7 +359,7 @@ const alerts = results.flatMap(s => {
 }).slice(0, 14).map((a, i) => ({ ...a, createdAt: new Date(Date.now() - i * 3600_000).toISOString() }));
 const payload = {
   generatedAt: new Date().toISOString(), staleAfterMinutes: 1440,
-  source: 'Yahoo Finance chart endpoint + SEC companyfacts/submissions via scheduled Node refresh',
+  source: `${MASSIVE_API_KEY ? 'Massive.com OHLC aggregates' : 'Yahoo Finance chart endpoint'} + SEC companyfacts/submissions via scheduled Node refresh`,
   tickers: SYMBOLS, dataStatus: results.length ? (errors.length ? 'partial' : 'fresh') : 'fallback',
   marketStatus: new Date().getUTCDay() >= 1 && new Date().getUTCDay() <= 5 ? 'weekday' : 'closed_or_weekend',
   summary: { totalMarketCap: null, avgPeRatio: null, avgRsi14: round(avgRsi, 1), sentimentScore, bullPct: round((bull / Math.max(1, results.length)) * 100, 0), neutralPct: round((neutral / Math.max(1, results.length)) * 100, 0), bearPct: round((bear / Math.max(1, results.length)) * 100, 0), bestPerformer: best ? { symbol: best.symbol, ytdPct: best.ytdPct } : null, worstPerformer: worst ? { symbol: worst.symbol, ytdPct: worst.ytdPct } : null },
