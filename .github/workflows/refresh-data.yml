@@ -2,8 +2,8 @@ name: Refresh Market Data
 
 on:
   schedule:
-    # Every 30 minutes during approximate US market hours, weekdays.
-    - cron: '*/30 14-21 * * 1-5'
+    # Daily at 9:00 AM ICT (02:00 UTC).
+    - cron: '0 2 * * *'
   workflow_dispatch:
 
 permissions:

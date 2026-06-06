@@ -78,6 +78,12 @@ h1 { font-size: 24px; letter-spacing: .02em; }
 .range-line i { display:block; height:100%; background: linear-gradient(90deg, var(--blue), var(--green)); }
 .range-labels { display:flex; justify-content:space-between; color:var(--muted); font-size:12px; margin-top: 5px; }
 .two-col { grid-template-columns: 2fr 1fr; margin-bottom:18px; }
+.page-section { scroll-margin-top: 16px; margin: 28px 0; }
+.section-head { display:flex; justify-content:space-between; gap:18px; align-items:end; margin-bottom: 16px; }
+.section-head h2 { font-size: clamp(26px, 4vw, 42px); margin-bottom: 8px; }
+.section-head p:not(.eyebrow) { color: var(--muted); max-width: 760px; }
+select { min-width: 240px; padding: 12px 14px; border-radius: 14px; border: 1px solid var(--line); background: rgba(15,23,42,.9); color: var(--text); }
+.technical-grid { grid-template-columns: 1fr; }
 .panel { border-radius: 24px; padding: 20px; min-width: 0; }
 .panel-head { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom: 16px; }
 .panel h3 { font-size: 20px; margin-bottom: 4px; }
@@ -96,5 +102,11 @@ h1 { font-size: 24px; letter-spacing: .02em; }
 .alert { border:1px solid var(--line); border-left: 4px solid var(--blue); padding:12px; border-radius:14px; background: rgba(2,6,23,.28); }
 .alert.danger { border-left-color: var(--red); } .alert.warning { border-left-color: var(--yellow); } .alert.success { border-left-color: var(--green); }
 .alert b { margin-right: 8px; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-size: 12px; }
+tr.forecast td { color: var(--yellow); }
+.table-link { color: var(--blue); font-weight: 800; }
 @media (max-width: 1100px) { .cards { grid-template-columns: repeat(2, minmax(0,1fr)); } .two-col { grid-template-columns: 1fr; } }
-@media (max-width: 760px) { .sidebar { display:none; } .shell { margin:0; padding:14px; } .topbar, .hero { flex-direction: column; align-items: stretch; } .cards { grid-template-columns: 1fr; } .metrics { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .sidebar { display:none; } .shell { margin:0; padding:14px; } .topbar, .hero, .section-head { flex-direction: column; align-items: stretch; } .cards { grid-template-columns: 1fr; } .metrics { grid-template-columns: 1fr; } select { width:100%; min-width:0; } }
