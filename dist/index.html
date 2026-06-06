@@ -65,8 +65,21 @@
       </section>
 
       <section class="page-section" id="insider">
-        <div class="section-head"><div><p class="eyebrow">Insider page</p><h2>Insider Trading Filings</h2><p>Recent SEC Form 4 filings per ticker. Links open the original SEC filing.</p></div><select id="insider-symbol"></select></div>
-        <article class="panel"><div class="table-wrap"><table id="insider-table"></table></div></article>
+        <div class="section-head"><div><p class="eyebrow">Insider page</p><h2>Insider Intelligence</h2><p>Better-than-reference SEC Form 4 analysis: sentiment, buy/sell pressure, key insiders, largest transactions, pattern detection, alert flags, and direct filing links.</p></div><select id="insider-symbol"></select></div>
+        <div class="insider-hero panel">
+          <div><span class="insider-label">Sentiment</span><strong id="insider-sentiment">Loading</strong><small id="insider-score">--/100</small></div>
+          <div class="insider-metric"><span>Total tx</span><b id="insider-total-tx">--</b></div>
+          <div class="insider-metric"><span>Buy / Sell</span><b id="insider-buy-sell">--</b></div>
+          <div class="insider-metric"><span>Net shares</span><b id="insider-net-shares">--</b></div>
+          <div class="insider-metric"><span>Bought / Sold</span><b id="insider-value-flow">--</b></div>
+        </div>
+        <div class="grid insider-grid">
+          <article class="panel"><h3>Key Insiders</h3><div id="key-insiders" class="insider-list"></div></article>
+          <article class="panel"><h3>Largest Transactions</h3><div id="largest-transactions" class="insider-list"></div></article>
+          <article class="panel"><h3>Notable Patterns</h3><ul id="insider-patterns" class="signal-list"></ul></article>
+          <article class="panel"><h3>Alert Flags</h3><ul id="insider-alerts" class="signal-list"></ul></article>
+        </div>
+        <article class="panel"><h3>Recent Form 4 Filings</h3><div class="table-wrap"><table id="insider-table"></table></div></article>
       </section>
 
       <section class="grid two-col" id="portfolio">

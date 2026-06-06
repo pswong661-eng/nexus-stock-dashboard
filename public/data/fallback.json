@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-06T15:14:21.125Z",
+  "generatedAt": "2026-06-06T15:22:33.221Z",
   "staleAfterMinutes": 1440,
   "source": "Yahoo Finance chart endpoint + SEC companyfacts/submissions via scheduled Node refresh",
   "tickers": [
@@ -2654,75 +2654,261 @@
           "form": "4",
           "reportDate": "2026-06-02",
           "filingDate": "2026-06-04",
+          "owner": "Montemayor Margaret",
+          "title": "SVP, Chief Accounting Officer",
           "accessionNumber": "0001602114-26-000006",
-          "document": "xslF345X06/wk-form4_1780604124.xml",
           "description": "FORM 4",
-          "url": "https://www.sec.gov/Archives/edgar/data/1692819/000160211426000006/xslF345X06/wk-form4_1780604124.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1692819/000160211426000006/wk-form4_1780604124.xml",
+          "transactions": [
+            {
+              "date": "2026-06-02",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 4600,
+              "price": 160,
+              "value": 736000,
+              "sign": -1
+            }
+          ],
+          "netShares": -4600,
+          "boughtValue": 0,
+          "soldValue": 736000,
+          "dominantType": "SELL"
         },
         {
           "form": "4",
           "reportDate": "2026-05-27",
           "filingDate": "2026-05-29",
+          "owner": "Montemayor Margaret",
+          "title": "SVP, Chief Accounting Officer",
           "accessionNumber": "0001602114-26-000004",
-          "document": "xslF345X06/wk-form4_1780098912.xml",
           "description": "FORM 4",
-          "url": "https://www.sec.gov/Archives/edgar/data/1692819/000160211426000004/xslF345X06/wk-form4_1780098912.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1692819/000160211426000004/wk-form4_1780098912.xml",
+          "transactions": [
+            {
+              "date": "2026-05-27",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 5000,
+              "price": 164.96,
+              "value": 824800,
+              "sign": -1
+            }
+          ],
+          "netShares": -5000,
+          "boughtValue": 0,
+          "soldValue": 824800,
+          "dominantType": "SELL"
         },
         {
           "form": "4",
           "reportDate": "2026-05-15",
           "filingDate": "2026-05-19",
+          "owner": "SULT JOHN R",
+          "title": "Director",
           "accessionNumber": "0001342932-26-000002",
-          "document": "xslF345X06/wk-form4_1779225456.xml",
           "description": "FORM 4",
-          "url": "https://www.sec.gov/Archives/edgar/data/1692819/000134293226000002/xslF345X06/wk-form4_1779225456.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1692819/000134293226000002/wk-form4_1779225456.xml",
+          "transactions": [
+            {
+              "date": "2026-05-15",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 1268,
+              "price": 0,
+              "value": 0,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "AWARD"
         },
         {
           "form": "4",
           "reportDate": "2026-05-15",
           "filingDate": "2026-05-19",
+          "owner": "Pitesa John William",
+          "title": "Director",
           "accessionNumber": "0002015795-26-000002",
-          "document": "xslF345X06/wk-form4_1779225404.xml",
           "description": "FORM 4",
-          "url": "https://www.sec.gov/Archives/edgar/data/1692819/000201579526000002/xslF345X06/wk-form4_1779225404.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1692819/000201579526000002/wk-form4_1779225404.xml",
+          "transactions": [
+            {
+              "date": "2026-05-15",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 1268,
+              "price": 0,
+              "value": 0,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "AWARD"
         },
         {
           "form": "4",
           "reportDate": "2026-05-15",
           "filingDate": "2026-05-19",
+          "owner": "HELM SCOTT B",
+          "title": "Director",
           "accessionNumber": "0001711936-26-000002",
-          "document": "xslF345X06/wk-form4_1779225354.xml",
           "description": "FORM 4",
-          "url": "https://www.sec.gov/Archives/edgar/data/1692819/000171193626000002/xslF345X06/wk-form4_1779225354.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1692819/000171193626000002/wk-form4_1779225354.xml",
+          "transactions": [
+            {
+              "date": "2026-05-15",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 2008,
+              "price": 0,
+              "value": 0,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "AWARD"
         },
         {
           "form": "4",
           "reportDate": "2026-05-15",
           "filingDate": "2026-05-19",
+          "owner": "BARBAS PAUL M",
+          "title": "Director",
           "accessionNumber": "0001176453-26-000002",
-          "document": "xslF345X06/wk-form4_1779225299.xml",
           "description": "FORM 4",
-          "url": "https://www.sec.gov/Archives/edgar/data/1692819/000117645326000002/xslF345X06/wk-form4_1779225299.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1692819/000117645326000002/wk-form4_1779225299.xml",
+          "transactions": [
+            {
+              "date": "2026-05-15",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 1268,
+              "price": 0,
+              "value": 0,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "AWARD"
         },
         {
           "form": "4",
           "reportDate": "2026-05-15",
           "filingDate": "2026-05-19",
+          "owner": "Crutchfield Lisa",
+          "title": "Director",
           "accessionNumber": "0001564675-26-000002",
-          "document": "xslF345X06/wk-form4_1779225098.xml",
           "description": "FORM 4",
-          "url": "https://www.sec.gov/Archives/edgar/data/1692819/000156467526000002/xslF345X06/wk-form4_1779225098.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1692819/000156467526000002/wk-form4_1779225098.xml",
+          "transactions": [
+            {
+              "date": "2026-05-15",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 1268,
+              "price": 0,
+              "value": 0,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "AWARD"
         },
         {
           "form": "4",
           "reportDate": "2026-05-15",
           "filingDate": "2026-05-19",
+          "owner": "Baiera Gavin R.",
+          "title": "Director",
           "accessionNumber": "0001605616-26-000002",
-          "document": "xslF345X06/wk-form4_1779224711.xml",
           "description": "FORM 4",
-          "url": "https://www.sec.gov/Archives/edgar/data/1692819/000160561626000002/xslF345X06/wk-form4_1779224711.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1692819/000160561626000002/wk-form4_1779224711.xml",
+          "transactions": [
+            {
+              "date": "2026-05-15",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 1268,
+              "price": 0,
+              "value": 0,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "AWARD"
         }
-      ]
+      ],
+      "insiderSummary": {
+        "sentiment": "VERY_BEARISH",
+        "score": 5,
+        "totalTransactions": 8,
+        "openMarketTransactions": 2,
+        "buyCount": 0,
+        "sellCount": 2,
+        "buySellRatio": 0,
+        "netShares": -9600,
+        "totalBought": 0,
+        "totalSold": 1560800,
+        "keyInsiders": [
+          {
+            "owner": "Montemayor Margaret",
+            "title": "SVP, Chief Accounting Officer",
+            "boughtValue": 0,
+            "soldValue": 1560800,
+            "netShares": -9600,
+            "txCount": 2
+          }
+        ],
+        "largestTransactions": [
+          {
+            "owner": "Montemayor Margaret",
+            "title": "SVP, Chief Accounting Officer",
+            "date": "2026-05-27",
+            "type": "SELL",
+            "shares": 5000,
+            "price": 164.96,
+            "value": 824800,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/1692819/000160211426000004/wk-form4_1780098912.xml"
+          },
+          {
+            "owner": "Montemayor Margaret",
+            "title": "SVP, Chief Accounting Officer",
+            "date": "2026-06-02",
+            "type": "SELL",
+            "shares": 4600,
+            "price": 160,
+            "value": 736000,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/1692819/000160211426000006/wk-form4_1780604124.xml"
+          }
+        ],
+        "patterns": [
+          "No strong open-market pattern detected"
+        ],
+        "alerts": [
+          "Selling value dominates buying: $1,560,800 sold"
+        ]
+      }
     },
     {
       "symbol": "RGTI",
@@ -5346,75 +5532,407 @@
           "form": "4",
           "reportDate": "2026-06-02",
           "filingDate": "2026-06-03",
+          "owner": "Clifton Michael S.",
+          "title": "Director",
           "accessionNumber": "0001123292-26-000801",
-          "document": "xslF345X06/form4.xml",
           "description": "STATEMENT OF CHANGES IN BENEFICIAL OWNERSHIP OF SECURITIES",
-          "url": "https://www.sec.gov/Archives/edgar/data/1838359/000112329226000801/xslF345X06/form4.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1838359/000112329226000801/form4.xml",
+          "transactions": [],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER"
         },
         {
           "form": "4",
           "reportDate": "2026-05-29",
           "filingDate": "2026-06-01",
+          "owner": "Rivas David",
+          "title": "CHIEF TECHNOLOGY OFFICER",
           "accessionNumber": "0001123292-26-000777",
-          "document": "xslF345X06/form4.xml",
           "description": "STATEMENT OF CHANGES IN BENEFICIAL OWNERSHIP OF SECURITIES",
-          "url": "https://www.sec.gov/Archives/edgar/data/1838359/000112329226000777/xslF345X06/form4.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1838359/000112329226000777/form4.xml",
+          "transactions": [
+            {
+              "date": "2026-05-29",
+              "code": "M",
+              "type": "OPTION",
+              "label": "Option exercise / conversion",
+              "shares": 75131,
+              "price": 0.27,
+              "value": 20436,
+              "sign": 0
+            },
+            {
+              "date": "2026-05-29",
+              "code": "M",
+              "type": "OPTION",
+              "label": "Option exercise / conversion",
+              "shares": 33053,
+              "price": 0.27,
+              "value": 8990,
+              "sign": 0
+            },
+            {
+              "date": "2026-05-29",
+              "code": "M",
+              "type": "OPTION",
+              "label": "Option exercise / conversion",
+              "shares": 3541,
+              "price": 0.27,
+              "value": 963,
+              "sign": 0
+            },
+            {
+              "date": "2026-05-29",
+              "code": "M",
+              "type": "OPTION",
+              "label": "Option exercise / conversion",
+              "shares": 393,
+              "price": 0.27,
+              "value": 107,
+              "sign": 0
+            },
+            {
+              "date": "2026-05-29",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 499328,
+              "price": 25.4,
+              "value": 12680934,
+              "sign": -1
+            }
+          ],
+          "netShares": -499328,
+          "boughtValue": 0,
+          "soldValue": 12680934,
+          "dominantType": "SELL"
         },
         {
           "form": "4",
           "reportDate": "2026-05-28",
           "filingDate": "2026-06-01",
+          "owner": "Kulkarni Subodh K",
+          "title": "President and CEO",
           "accessionNumber": "0001123292-26-000776",
-          "document": "xslF345X06/form4.xml",
           "description": "STATEMENT OF CHANGES IN BENEFICIAL OWNERSHIP OF SECURITIES",
-          "url": "https://www.sec.gov/Archives/edgar/data/1838359/000112329226000776/xslF345X06/form4.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1838359/000112329226000776/form4.xml",
+          "transactions": [
+            {
+              "date": "2026-05-28",
+              "code": "M",
+              "type": "OPTION",
+              "label": "Option exercise / conversion",
+              "shares": 70000,
+              "price": 0.96,
+              "value": 67466,
+              "sign": 0
+            },
+            {
+              "date": "2026-05-28",
+              "code": "M",
+              "type": "OPTION",
+              "label": "Option exercise / conversion",
+              "shares": 111111,
+              "price": 1.05,
+              "value": 116667,
+              "sign": 0
+            },
+            {
+              "date": "2026-05-28",
+              "code": "M",
+              "type": "OPTION",
+              "label": "Option exercise / conversion",
+              "shares": 33490,
+              "price": 1.41,
+              "value": 47221,
+              "sign": 0
+            },
+            {
+              "date": "2026-05-28",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 43190,
+              "price": 26.23,
+              "value": 1132839,
+              "sign": -1
+            },
+            {
+              "date": "2026-06-01",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 61000,
+              "price": 24.38,
+              "value": 1487064,
+              "sign": -1
+            }
+          ],
+          "netShares": -104190,
+          "boughtValue": 0,
+          "soldValue": 2619903,
+          "dominantType": "SELL"
         },
         {
           "form": "4",
           "reportDate": "2026-05-22",
           "filingDate": "2026-05-26",
+          "owner": "Bertelsen Jeffrey A.",
+          "title": "CHIEF FINANCIAL OFFICER",
           "accessionNumber": "0001123292-26-000745",
-          "document": "xslF345X06/form4.xml",
           "description": "STATEMENT OF CHANGES IN BENEFICIAL OWNERSHIP OF SECURITIES",
-          "url": "https://www.sec.gov/Archives/edgar/data/1838359/000112329226000745/xslF345X06/form4.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1838359/000112329226000745/form4.xml",
+          "transactions": [
+            {
+              "date": "2026-05-22",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 3669,
+              "price": 22.94,
+              "value": 84156,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-22",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 13,
+              "price": 25.63,
+              "value": 333,
+              "sign": -1
+            }
+          ],
+          "netShares": -3682,
+          "boughtValue": 0,
+          "soldValue": 84489,
+          "dominantType": "SELL"
         },
         {
           "form": "4",
           "reportDate": "2026-05-22",
           "filingDate": "2026-05-26",
+          "owner": "Rivas David",
+          "title": "CHIEF TECHNOLOGY OFFICER",
           "accessionNumber": "0001123292-26-000744",
-          "document": "xslF345X06/form4.xml",
           "description": "STATEMENT OF CHANGES IN BENEFICIAL OWNERSHIP OF SECURITIES",
-          "url": "https://www.sec.gov/Archives/edgar/data/1838359/000112329226000744/xslF345X06/form4.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1838359/000112329226000744/form4.xml",
+          "transactions": [
+            {
+              "date": "2026-05-22",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 18729,
+              "price": 22.95,
+              "value": 429874,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-22",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 30,
+              "price": 25.63,
+              "value": 769,
+              "sign": -1
+            }
+          ],
+          "netShares": -18759,
+          "boughtValue": 0,
+          "soldValue": 430643,
+          "dominantType": "SELL"
         },
         {
           "form": "4",
           "reportDate": "2026-05-21",
           "filingDate": "2026-05-22",
+          "owner": "Clifton Michael S.",
+          "title": "Director",
           "accessionNumber": "0001123292-26-000720",
-          "document": "xslF345X06/form4.xml",
           "description": "STATEMENT OF CHANGES IN BENEFICIAL OWNERSHIP OF SECURITIES",
-          "url": "https://www.sec.gov/Archives/edgar/data/1838359/000112329226000720/xslF345X06/form4.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1838359/000112329226000720/form4.xml",
+          "transactions": [],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER"
         },
         {
           "form": "4",
           "reportDate": "2026-03-10",
           "filingDate": "2026-03-11",
+          "owner": "Kulkarni Subodh K",
+          "title": "President and CEO",
           "accessionNumber": "0001123292-26-000403",
-          "document": "xslF345X05/form4.xml",
           "description": "STATEMENT OF CHANGES IN BENEFICIAL OWNERSHIP OF SECURITIES",
-          "url": "https://www.sec.gov/Archives/edgar/data/1838359/000112329226000403/xslF345X05/form4.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1838359/000112329226000403/form4.xml",
+          "transactions": [],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER"
         },
         {
           "form": "4",
           "reportDate": "2026-03-10",
           "filingDate": "2026-03-11",
+          "owner": "Bertelsen Jeffrey A.",
+          "title": "CHIEF FINANCIAL OFFICER",
           "accessionNumber": "0001123292-26-000402",
-          "document": "xslF345X05/form4.xml",
           "description": "STATEMENT OF CHANGES IN BENEFICIAL OWNERSHIP OF SECURITIES",
-          "url": "https://www.sec.gov/Archives/edgar/data/1838359/000112329226000402/xslF345X05/form4.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1838359/000112329226000402/form4.xml",
+          "transactions": [
+            {
+              "date": "2026-03-10",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 4270,
+              "price": 17.52,
+              "value": 74804,
+              "sign": -1
+            }
+          ],
+          "netShares": -4270,
+          "boughtValue": 0,
+          "soldValue": 74804,
+          "dominantType": "SELL"
         }
-      ]
+      ],
+      "insiderSummary": {
+        "sentiment": "VERY_BEARISH",
+        "score": 0,
+        "totalTransactions": 15,
+        "openMarketTransactions": 8,
+        "buyCount": 0,
+        "sellCount": 8,
+        "buySellRatio": 0,
+        "netShares": -630229,
+        "totalBought": 0,
+        "totalSold": 15890773,
+        "keyInsiders": [
+          {
+            "owner": "Rivas David",
+            "title": "CHIEF TECHNOLOGY OFFICER",
+            "boughtValue": 0,
+            "soldValue": 13111577,
+            "netShares": -518087,
+            "txCount": 3
+          },
+          {
+            "owner": "Kulkarni Subodh K",
+            "title": "President and CEO",
+            "boughtValue": 0,
+            "soldValue": 2619903,
+            "netShares": -104190,
+            "txCount": 2
+          },
+          {
+            "owner": "Bertelsen Jeffrey A.",
+            "title": "CHIEF FINANCIAL OFFICER",
+            "boughtValue": 0,
+            "soldValue": 159293,
+            "netShares": -7952,
+            "txCount": 3
+          }
+        ],
+        "largestTransactions": [
+          {
+            "owner": "Rivas David",
+            "title": "CHIEF TECHNOLOGY OFFICER",
+            "date": "2026-05-29",
+            "type": "SELL",
+            "shares": 499328,
+            "price": 25.4,
+            "value": 12680934,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/1838359/000112329226000777/form4.xml"
+          },
+          {
+            "owner": "Kulkarni Subodh K",
+            "title": "President and CEO",
+            "date": "2026-06-01",
+            "type": "SELL",
+            "shares": 61000,
+            "price": 24.38,
+            "value": 1487064,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/1838359/000112329226000776/form4.xml"
+          },
+          {
+            "owner": "Kulkarni Subodh K",
+            "title": "President and CEO",
+            "date": "2026-05-28",
+            "type": "SELL",
+            "shares": 43190,
+            "price": 26.23,
+            "value": 1132839,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/1838359/000112329226000776/form4.xml"
+          },
+          {
+            "owner": "Rivas David",
+            "title": "CHIEF TECHNOLOGY OFFICER",
+            "date": "2026-05-22",
+            "type": "SELL",
+            "shares": 18729,
+            "price": 22.95,
+            "value": 429874,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/1838359/000112329226000744/form4.xml"
+          },
+          {
+            "owner": "Bertelsen Jeffrey A.",
+            "title": "CHIEF FINANCIAL OFFICER",
+            "date": "2026-05-22",
+            "type": "SELL",
+            "shares": 3669,
+            "price": 22.94,
+            "value": 84156,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/1838359/000112329226000745/form4.xml"
+          },
+          {
+            "owner": "Bertelsen Jeffrey A.",
+            "title": "CHIEF FINANCIAL OFFICER",
+            "date": "2026-03-10",
+            "type": "SELL",
+            "shares": 4270,
+            "price": 17.52,
+            "value": 74804,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/1838359/000112329226000402/form4.xml"
+          },
+          {
+            "owner": "Rivas David",
+            "title": "CHIEF TECHNOLOGY OFFICER",
+            "date": "2026-05-22",
+            "type": "SELL",
+            "shares": 30,
+            "price": 25.63,
+            "value": 769,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/1838359/000112329226000744/form4.xml"
+          },
+          {
+            "owner": "Bertelsen Jeffrey A.",
+            "title": "CHIEF FINANCIAL OFFICER",
+            "date": "2026-05-22",
+            "type": "SELL",
+            "shares": 13,
+            "price": 25.63,
+            "value": 333,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/1838359/000112329226000745/form4.xml"
+          }
+        ],
+        "patterns": [
+          "Cluster selling detected",
+          "CEO selling activity",
+          "CFO selling activity"
+        ],
+        "alerts": [
+          "Selling value dominates buying: $15,890,773 sold",
+          "8 sale transactions in recent filings"
+        ]
+      }
     },
     {
       "symbol": "IONQ",
@@ -8038,75 +8556,299 @@
           "form": "4",
           "reportDate": "2026-05-06",
           "filingDate": "2026-05-08",
+          "owner": "Cardillo Robert T.",
+          "title": "Director",
           "accessionNumber": "0001193125-26-215307",
-          "document": "xslF345X06/ownership.xml",
           "description": "4",
-          "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526215307/xslF345X06/ownership.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526215307/ownership.xml",
+          "transactions": [
+            {
+              "date": "2026-05-06",
+              "code": "M",
+              "type": "OPTION",
+              "label": "Option exercise / conversion",
+              "shares": 3773,
+              "price": 11.24,
+              "value": 42409,
+              "sign": 0
+            },
+            {
+              "date": "2026-05-06",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 3773,
+              "price": 49.9,
+              "value": 188273,
+              "sign": -1
+            }
+          ],
+          "netShares": -3773,
+          "boughtValue": 0,
+          "soldValue": 188273,
+          "dominantType": "SELL"
         },
         {
           "form": "4",
           "reportDate": "2026-04-16",
           "filingDate": "2026-04-17",
+          "owner": "Cardillo Robert T.",
+          "title": "Director",
           "accessionNumber": "0001193125-26-162187",
-          "document": "xslF345X06/ownership.xml",
           "description": "4",
-          "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526162187/xslF345X06/ownership.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526162187/ownership.xml",
+          "transactions": [
+            {
+              "date": "2026-04-16",
+              "code": "M",
+              "type": "OPTION",
+              "label": "Option exercise / conversion",
+              "shares": 2500,
+              "price": 11.24,
+              "value": 28100,
+              "sign": 0
+            },
+            {
+              "date": "2026-04-16",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 2500,
+              "price": 44.9,
+              "value": 112250,
+              "sign": -1
+            }
+          ],
+          "netShares": -2500,
+          "boughtValue": 0,
+          "soldValue": 112250,
+          "dominantType": "SELL"
         },
         {
           "form": "4",
           "reportDate": "2026-03-11",
           "filingDate": "2026-03-13",
+          "owner": "Singh Inder M",
+          "title": "CFO &amp; COO",
           "accessionNumber": "0001193125-26-106856",
-          "document": "xslF345X05/ownership.xml",
           "description": "4",
-          "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526106856/xslF345X05/ownership.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526106856/ownership.xml",
+          "transactions": [
+            {
+              "date": "2026-03-11",
+              "code": "F",
+              "type": "TAX",
+              "label": "Tax withholding",
+              "shares": 8134,
+              "price": 34.8,
+              "value": 283079,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "TAX"
         },
         {
           "form": "4",
           "reportDate": "2026-03-11",
           "filingDate": "2026-03-13",
+          "owner": "DACIER PAUL T",
+          "title": "CAO, CLO and Secretary",
           "accessionNumber": "0001193125-26-106855",
-          "document": "xslF345X05/ownership.xml",
           "description": "4",
-          "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526106855/xslF345X05/ownership.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526106855/ownership.xml",
+          "transactions": [
+            {
+              "date": "2026-03-11",
+              "code": "F",
+              "type": "TAX",
+              "label": "Tax withholding",
+              "shares": 6181,
+              "price": 34.8,
+              "value": 215111,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "TAX"
         },
         {
           "form": "4",
           "reportDate": "2026-03-12",
           "filingDate": "2026-03-13",
+          "owner": "Raymond John w",
+          "title": "Director",
           "accessionNumber": "0001193125-26-106854",
-          "document": "xslF345X05/ownership.xml",
           "description": "4",
-          "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526106854/xslF345X05/ownership.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526106854/ownership.xml",
+          "transactions": [
+            {
+              "date": "2026-03-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 2800,
+              "price": 33.34,
+              "value": 93352,
+              "sign": -1
+            }
+          ],
+          "netShares": -2800,
+          "boughtValue": 0,
+          "soldValue": 93352,
+          "dominantType": "SELL"
         },
         {
           "form": "4",
           "reportDate": "2026-03-11",
           "filingDate": "2026-03-13",
+          "owner": "Cardillo Robert T.",
+          "title": "Director",
           "accessionNumber": "0001193125-26-106853",
-          "document": "xslF345X05/ownership.xml",
           "description": "4",
-          "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526106853/xslF345X05/ownership.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526106853/ownership.xml",
+          "transactions": [
+            {
+              "date": "2026-03-11",
+              "code": "F",
+              "type": "TAX",
+              "label": "Tax withholding",
+              "shares": 904,
+              "price": 34.8,
+              "value": 31461,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "TAX"
         },
         {
           "form": "4",
           "reportDate": "2026-03-11",
           "filingDate": "2026-03-13",
+          "owner": "de Masi Niccolo",
+          "title": "President and CEO",
           "accessionNumber": "0001193125-26-106852",
-          "document": "xslF345X05/ownership.xml",
           "description": "4",
-          "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526106852/xslF345X05/ownership.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526106852/ownership.xml",
+          "transactions": [
+            {
+              "date": "2026-03-11",
+              "code": "F",
+              "type": "TAX",
+              "label": "Tax withholding",
+              "shares": 20785,
+              "price": 34.8,
+              "value": 723360,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "TAX"
         },
         {
           "form": "4",
           "reportDate": "2026-03-02",
           "filingDate": "2026-03-04",
+          "owner": "Cardillo Robert T.",
+          "title": "Director",
           "accessionNumber": "0001193125-26-092257",
-          "document": "xslF345X05/ownership.xml",
           "description": "4",
-          "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526092257/xslF345X05/ownership.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526092257/ownership.xml",
+          "transactions": [
+            {
+              "date": "2026-03-02",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 31651,
+              "price": 0,
+              "value": 0,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "AWARD"
         }
-      ]
+      ],
+      "insiderSummary": {
+        "sentiment": "VERY_BEARISH",
+        "score": 0,
+        "totalTransactions": 10,
+        "openMarketTransactions": 3,
+        "buyCount": 0,
+        "sellCount": 3,
+        "buySellRatio": 0,
+        "netShares": -9073,
+        "totalBought": 0,
+        "totalSold": 393875,
+        "keyInsiders": [
+          {
+            "owner": "Cardillo Robert T.",
+            "title": "Director",
+            "boughtValue": 0,
+            "soldValue": 300523,
+            "netShares": -6273,
+            "txCount": 2
+          },
+          {
+            "owner": "Raymond John w",
+            "title": "Director",
+            "boughtValue": 0,
+            "soldValue": 93352,
+            "netShares": -2800,
+            "txCount": 1
+          }
+        ],
+        "largestTransactions": [
+          {
+            "owner": "Cardillo Robert T.",
+            "title": "Director",
+            "date": "2026-05-06",
+            "type": "SELL",
+            "shares": 3773,
+            "price": 49.9,
+            "value": 188273,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526215307/ownership.xml"
+          },
+          {
+            "owner": "Cardillo Robert T.",
+            "title": "Director",
+            "date": "2026-04-16",
+            "type": "SELL",
+            "shares": 2500,
+            "price": 44.9,
+            "value": 112250,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526162187/ownership.xml"
+          },
+          {
+            "owner": "Raymond John w",
+            "title": "Director",
+            "date": "2026-03-12",
+            "type": "SELL",
+            "shares": 2800,
+            "price": 33.34,
+            "value": 93352,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526106854/ownership.xml"
+          }
+        ],
+        "patterns": [
+          "Cluster selling detected"
+        ],
+        "alerts": [
+          "Selling value dominates buying: $393,875 sold"
+        ]
+      }
     },
     {
       "symbol": "LAC",
@@ -10664,75 +11406,184 @@
           "form": "4",
           "reportDate": "2026-04-13",
           "filingDate": "2026-04-15",
+          "owner": "MAGIE JINHEE",
+          "title": "Director",
           "accessionNumber": "0000912282-26-000619",
-          "document": "xslF345X06/form4.xml",
           "description": "FORM 4",
-          "url": "https://www.sec.gov/Archives/edgar/data/1966983/000091228226000619/xslF345X06/form4.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1966983/000091228226000619/form4.xml",
+          "transactions": [],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER"
         },
         {
           "form": "4",
           "reportDate": "2026-04-13",
           "filingDate": "2026-04-15",
+          "owner": "MONTGOMERY PHILIP",
+          "title": "Director",
           "accessionNumber": "0000912282-26-000618",
-          "document": "xslF345X06/form4.xml",
           "description": "FORM 4",
-          "url": "https://www.sec.gov/Archives/edgar/data/1966983/000091228226000618/xslF345X06/form4.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1966983/000091228226000618/form4.xml",
+          "transactions": [],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER"
         },
         {
           "form": "4",
           "reportDate": "2026-04-13",
           "filingDate": "2026-04-15",
+          "owner": "GAO YUAN",
+          "title": "Director",
           "accessionNumber": "0000912282-26-000617",
-          "document": "xslF345X06/form4.xml",
           "description": "FORM 4",
-          "url": "https://www.sec.gov/Archives/edgar/data/1966983/000091228226000617/xslF345X06/form4.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1966983/000091228226000617/form4.xml",
+          "transactions": [],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER"
         },
         {
           "form": "4",
           "reportDate": "2026-04-13",
           "filingDate": "2026-04-15",
+          "owner": "Chubbs Fabiana",
+          "title": "Director",
           "accessionNumber": "0000912282-26-000616",
-          "document": "xslF345X06/form4.xml",
           "description": "FORM 4",
-          "url": "https://www.sec.gov/Archives/edgar/data/1966983/000091228226000616/xslF345X06/form4.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1966983/000091228226000616/form4.xml",
+          "transactions": [],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER"
         },
         {
           "form": "4",
           "reportDate": "2026-04-13",
           "filingDate": "2026-04-15",
+          "owner": "BROWN MICHAEL JOHN",
+          "title": "Director",
           "accessionNumber": "0000912282-26-000615",
-          "document": "xslF345X06/form4.xml",
           "description": "FORM 4",
-          "url": "https://www.sec.gov/Archives/edgar/data/1966983/000091228226000615/xslF345X06/form4.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1966983/000091228226000615/form4.xml",
+          "transactions": [],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER"
         },
         {
           "form": "4",
           "reportDate": "2026-04-10",
           "filingDate": "2026-04-14",
+          "owner": "DUSHNISKY KELVIN PAUL MICHAEL",
+          "title": "EVP, Capital Projects",
           "accessionNumber": "0000912282-26-000606",
-          "document": "xslF345X06/form4.xml",
           "description": "FORM 4",
-          "url": "https://www.sec.gov/Archives/edgar/data/1966983/000091228226000606/xslF345X06/form4.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1966983/000091228226000606/form4.xml",
+          "transactions": [
+            {
+              "date": "2026-04-10",
+              "code": "F",
+              "type": "TAX",
+              "label": "Tax withholding",
+              "shares": 42040,
+              "price": 4.17,
+              "value": 175307,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "TAX"
         },
         {
           "form": "4",
           "reportDate": "2026-04-10",
           "filingDate": "2026-04-14",
+          "owner": "ZAWADZKI ALEXI ILLYA",
+          "title": "VP, Resource Development",
           "accessionNumber": "0000912282-26-000604",
-          "document": "xslF345X06/form4.xml",
           "description": "FORM 4",
-          "url": "https://www.sec.gov/Archives/edgar/data/1966983/000091228226000604/xslF345X06/form4.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1966983/000091228226000604/form4.xml",
+          "transactions": [
+            {
+              "date": "2026-04-10",
+              "code": "M",
+              "type": "OPTION",
+              "label": "Option exercise / conversion",
+              "shares": 17712,
+              "price": null,
+              "value": null,
+              "sign": 0
+            },
+            {
+              "date": "2026-04-10",
+              "code": "F",
+              "type": "TAX",
+              "label": "Tax withholding",
+              "shares": 27806,
+              "price": 4.13,
+              "value": 114839,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OPTION"
         },
         {
           "form": "4",
           "reportDate": "2026-04-10",
           "filingDate": "2026-04-14",
+          "owner": "RUSSELL-SMITH ROBERT",
+          "title": "SVP, Finance",
           "accessionNumber": "0000912282-26-000603",
-          "document": "xslF345X06/form4.xml",
           "description": "FORM 4",
-          "url": "https://www.sec.gov/Archives/edgar/data/1966983/000091228226000603/xslF345X06/form4.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/1966983/000091228226000603/form4.xml",
+          "transactions": [
+            {
+              "date": "2026-04-10",
+              "code": "F",
+              "type": "TAX",
+              "label": "Tax withholding",
+              "shares": 2379,
+              "price": 4.13,
+              "value": 9825,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "TAX"
         }
-      ]
+      ],
+      "insiderSummary": {
+        "sentiment": "NEUTRAL",
+        "score": 50,
+        "totalTransactions": 4,
+        "openMarketTransactions": 0,
+        "buyCount": 0,
+        "sellCount": 0,
+        "buySellRatio": 0,
+        "netShares": 0,
+        "totalBought": 0,
+        "totalSold": 0,
+        "keyInsiders": [],
+        "largestTransactions": [],
+        "patterns": [
+          "No strong open-market pattern detected"
+        ],
+        "alerts": []
+      }
     },
     {
       "symbol": "UAMY",
@@ -13338,75 +14189,277 @@
           "form": "4",
           "reportDate": "2026-06-02",
           "filingDate": "2026-06-03",
+          "owner": "ISAAK RICHARD R",
+          "title": "SVP, Chief Financial Officer",
           "accessionNumber": "0001104659-26-070202",
-          "document": "xslF345X06/tm2616858-1_4seq1.xml",
           "description": "OWNERSHIP DOCUMENT",
-          "url": "https://www.sec.gov/Archives/edgar/data/101538/000110465926070202/xslF345X06/tm2616858-1_4seq1.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/101538/000110465926070202/tm2616858-1_4seq1.xml",
+          "transactions": [
+            {
+              "date": "2026-06-02",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 100000,
+              "price": 9.75,
+              "value": 975000,
+              "sign": -1
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER"
         },
         {
           "form": "4",
           "reportDate": "2026-03-23",
           "filingDate": "2026-04-02",
+          "owner": "Pagen Melissa",
+          "title": "President &amp; COO of BRZ",
           "accessionNumber": "0001104659-26-039356",
-          "document": "xslF345X06/tm2611091-2_4seq1.xml",
           "description": "OWNERSHIP DOCUMENT",
-          "url": "https://www.sec.gov/Archives/edgar/data/101538/000110465926039356/xslF345X06/tm2611091-2_4seq1.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/101538/000110465926039356/tm2611091-2_4seq1.xml",
+          "transactions": [
+            {
+              "date": "2026-03-23",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 89004,
+              "price": 9.14,
+              "value": 813497,
+              "sign": -1
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER"
         },
         {
           "form": "4",
           "reportDate": "2026-04-02",
           "filingDate": "2026-04-02",
+          "owner": "Bardswich Lloyd",
+          "title": "Dir, EVP &amp; Chief Mining Eng",
           "accessionNumber": "0001104659-26-039332",
-          "document": "xslF345X06/tm2611091-1_4seq1.xml",
           "description": "OWNERSHIP DOCUMENT",
-          "url": "https://www.sec.gov/Archives/edgar/data/101538/000110465926039332/xslF345X06/tm2611091-1_4seq1.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/101538/000110465926039332/tm2611091-1_4seq1.xml",
+          "transactions": [
+            {
+              "date": "2026-04-02",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 59872,
+              "price": 8.98,
+              "value": 537651,
+              "sign": -1
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER"
         },
         {
           "form": "4",
           "reportDate": "2026-03-31",
           "filingDate": "2026-04-01",
+          "owner": "Aguirre Blaise A.",
+          "title": "Director",
           "accessionNumber": "0001104659-26-038373",
-          "document": "xslF345X06/tm2610888-1_4seq1.xml",
           "description": "OWNERSHIP DOCUMENT",
-          "url": "https://www.sec.gov/Archives/edgar/data/101538/000110465926038373/xslF345X06/tm2610888-1_4seq1.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/101538/000110465926038373/tm2610888-1_4seq1.xml",
+          "transactions": [
+            {
+              "date": "2026-03-31",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 5000,
+              "price": 8.2,
+              "value": 41000,
+              "sign": -1
+            },
+            {
+              "date": "2026-03-31",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 1000,
+              "price": 8.22,
+              "value": 8220,
+              "sign": -1
+            },
+            {
+              "date": "2026-03-31",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 8400,
+              "price": 8.23,
+              "value": 69132,
+              "sign": -1
+            },
+            {
+              "date": "2026-03-31",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 9600,
+              "price": 8.24,
+              "value": 79104,
+              "sign": -1
+            },
+            {
+              "date": "2026-03-31",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 3000,
+              "price": 8.26,
+              "value": 24780,
+              "sign": -1
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER"
         },
         {
           "form": "4",
           "reportDate": "2026-03-26",
           "filingDate": "2026-03-31",
+          "owner": "Bardswich Lloyd",
+          "title": "Dir, EVP &amp; Chief Mining Eng",
           "accessionNumber": "0001104659-26-037595",
-          "document": "xslF345X06/tm2610749-1_4seq1.xml",
           "description": "OWNERSHIP DOCUMENT",
-          "url": "https://www.sec.gov/Archives/edgar/data/101538/000110465926037595/xslF345X06/tm2610749-1_4seq1.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/101538/000110465926037595/tm2610749-1_4seq1.xml",
+          "transactions": [
+            {
+              "date": "2026-03-26",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 46674,
+              "price": 9.34,
+              "value": 435935,
+              "sign": -1
+            },
+            {
+              "date": "2026-03-27",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 36181,
+              "price": 9.05,
+              "value": 327438,
+              "sign": -1
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER"
         },
         {
           "form": "4",
           "reportDate": "2026-03-24",
           "filingDate": "2026-03-30",
+          "owner": "Aguirre Blaise A.",
+          "title": "Director",
           "accessionNumber": "0001104659-26-036830",
-          "document": "xslF345X06/tm2610645-1_4seq1.xml",
           "description": "OWNERSHIP DOCUMENT",
-          "url": "https://www.sec.gov/Archives/edgar/data/101538/000110465926036830/xslF345X06/tm2610645-1_4seq1.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/101538/000110465926036830/tm2610645-1_4seq1.xml",
+          "transactions": [
+            {
+              "date": "2026-03-24",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 20000,
+              "price": 9.16,
+              "value": 183200,
+              "sign": -1
+            },
+            {
+              "date": "2026-03-27",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 6339,
+              "price": 8.78,
+              "value": 55656,
+              "sign": -1
+            },
+            {
+              "date": "2026-03-27",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 5373,
+              "price": 8.77,
+              "value": 47121,
+              "sign": -1
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER"
         },
         {
           "form": "4",
           "reportDate": "2026-01-15",
           "filingDate": "2026-03-30",
+          "owner": "EVANS GARY C",
+          "title": "Chairman &amp; CEO",
           "accessionNumber": "0001104659-26-036636",
-          "document": "xslF345X06/tm2610602-1_4seq1.xml",
           "description": "OWNERSHIP DOCUMENT",
-          "url": "https://www.sec.gov/Archives/edgar/data/101538/000110465926036636/xslF345X06/tm2610602-1_4seq1.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/101538/000110465926036636/tm2610602-1_4seq1.xml",
+          "transactions": [],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER"
         },
         {
           "form": "4",
           "reportDate": "2026-01-15",
           "filingDate": "2026-03-27",
+          "owner": "Gustavsen John C.",
+          "title": "President, Antimony Division",
           "accessionNumber": "0001104659-26-036312",
-          "document": "xslF345X06/tm2610152-1_4seq1.xml",
           "description": "OWNERSHIP DOCUMENT",
-          "url": "https://www.sec.gov/Archives/edgar/data/101538/000110465926036312/xslF345X06/tm2610152-1_4seq1.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/101538/000110465926036312/tm2610152-1_4seq1.xml",
+          "transactions": [],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER"
         }
-      ]
+      ],
+      "insiderSummary": {
+        "sentiment": "NEUTRAL",
+        "score": 50,
+        "totalTransactions": 13,
+        "openMarketTransactions": 0,
+        "buyCount": 0,
+        "sellCount": 0,
+        "buySellRatio": 0,
+        "netShares": 0,
+        "totalBought": 0,
+        "totalSold": 0,
+        "keyInsiders": [],
+        "largestTransactions": [],
+        "patterns": [
+          "No strong open-market pattern detected"
+        ],
+        "alerts": []
+      }
     },
     {
       "symbol": "SNPS",
@@ -16030,75 +17083,259 @@
           "form": "4",
           "reportDate": "2026-06-01",
           "filingDate": "2026-06-02",
+          "owner": "LEE JANET",
+          "title": "GC &amp; Corporate Secretary",
           "accessionNumber": "0001711671-26-000016",
-          "document": "xslF345X06/edgardoc.xml",
           "description": "PRIMARY DOCUMENT",
-          "url": "https://www.sec.gov/Archives/edgar/data/883241/000171167126000016/xslF345X06/edgardoc.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/883241/000171167126000016/edgardoc.xml",
+          "transactions": [
+            {
+              "date": "2026-06-01",
+              "code": "M",
+              "type": "OPTION",
+              "label": "Option exercise / conversion",
+              "shares": 699,
+              "price": 0,
+              "value": 0,
+              "sign": 0
+            },
+            {
+              "date": "2026-06-01",
+              "code": "F",
+              "type": "TAX",
+              "label": "Tax withholding",
+              "shares": 304,
+              "price": 492.29,
+              "value": 149656,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OPTION"
         },
         {
           "form": "4",
           "reportDate": "2026-06-01",
           "filingDate": "2026-06-02",
+          "owner": "Cohn Jesse",
+          "title": "Director",
           "accessionNumber": "0000883241-26-000022",
-          "document": "xslF345X06/edgardoc.xml",
           "description": "PRIMARY DOCUMENT",
-          "url": "https://www.sec.gov/Archives/edgar/data/883241/000088324126000022/xslF345X06/edgardoc.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/883241/000088324126000022/edgardoc.xml",
+          "transactions": [
+            {
+              "date": "2026-06-01",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 710,
+              "price": 0,
+              "value": 0,
+              "sign": 0
+            },
+            {
+              "date": "2026-06-01",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 372,
+              "price": 0,
+              "value": 0,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "AWARD"
         },
         {
           "form": "4",
           "reportDate": "2026-05-16",
           "filingDate": "2026-05-18",
+          "owner": "LEE JANET",
+          "title": "GC &amp; Corporate Secretary",
           "accessionNumber": "0001711671-26-000014",
-          "document": "xslF345X06/edgardoc.xml",
           "description": "PRIMARY DOCUMENT",
-          "url": "https://www.sec.gov/Archives/edgar/data/883241/000171167126000014/xslF345X06/edgardoc.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/883241/000171167126000014/edgardoc.xml",
+          "transactions": [
+            {
+              "date": "2026-05-16",
+              "code": "M",
+              "type": "OPTION",
+              "label": "Option exercise / conversion",
+              "shares": 729,
+              "price": 0,
+              "value": 0,
+              "sign": 0
+            },
+            {
+              "date": "2026-05-16",
+              "code": "F",
+              "type": "TAX",
+              "label": "Tax withholding",
+              "shares": 318,
+              "price": 502.42,
+              "value": 159770,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OPTION"
         },
         {
           "form": "4",
           "reportDate": "2026-04-16",
           "filingDate": "2026-04-17",
+          "owner": "Vijayaraghavan Ravi K",
+          "title": "Director",
           "accessionNumber": "0001804954-26-000002",
-          "document": "xslF345X06/edgardoc.xml",
           "description": "PRIMARY DOCUMENT",
-          "url": "https://www.sec.gov/Archives/edgar/data/883241/000180495426000002/xslF345X06/edgardoc.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/883241/000180495426000002/edgardoc.xml",
+          "transactions": [
+            {
+              "date": "2026-04-16",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 453,
+              "price": 0,
+              "value": 0,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "AWARD"
         },
         {
           "form": "4",
           "reportDate": "2026-04-16",
           "filingDate": "2026-04-17",
+          "owner": "Shimer Peter A",
+          "title": "Director",
           "accessionNumber": "0002067677-26-000007",
-          "document": "xslF345X06/edgardoc.xml",
           "description": "PRIMARY DOCUMENT",
-          "url": "https://www.sec.gov/Archives/edgar/data/883241/000206767726000007/xslF345X06/edgardoc.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/883241/000206767726000007/edgardoc.xml",
+          "transactions": [
+            {
+              "date": "2026-04-16",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 453,
+              "price": 0,
+              "value": 0,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "AWARD"
         },
         {
           "form": "4",
           "reportDate": "2026-04-16",
           "filingDate": "2026-04-17",
+          "owner": "SCHWARZ JOHN",
+          "title": "Director",
           "accessionNumber": "0001184223-26-000002",
-          "document": "xslF345X06/edgardoc.xml",
           "description": "PRIMARY DOCUMENT",
-          "url": "https://www.sec.gov/Archives/edgar/data/883241/000118422326000002/xslF345X06/edgardoc.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/883241/000118422326000002/edgardoc.xml",
+          "transactions": [
+            {
+              "date": "2026-04-16",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 453,
+              "price": 0,
+              "value": 0,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "AWARD"
         },
         {
           "form": "4",
           "reportDate": "2026-04-16",
           "filingDate": "2026-04-17",
+          "owner": "Sargent Jeannine P",
+          "title": "Director",
           "accessionNumber": "0001331845-26-000003",
-          "document": "xslF345X06/edgardoc.xml",
           "description": "PRIMARY DOCUMENT",
-          "url": "https://www.sec.gov/Archives/edgar/data/883241/000133184526000003/xslF345X06/edgardoc.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/883241/000133184526000003/edgardoc.xml",
+          "transactions": [
+            {
+              "date": "2026-04-16",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 453,
+              "price": 0,
+              "value": 0,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "AWARD"
         },
         {
           "form": "4",
           "reportDate": "2026-04-16",
           "filingDate": "2026-04-17",
+          "owner": "PAINTER ROBERT G",
+          "title": "Director",
           "accessionNumber": "0001665364-26-000005",
-          "document": "xslF345X06/edgardoc.xml",
           "description": "PRIMARY DOCUMENT",
-          "url": "https://www.sec.gov/Archives/edgar/data/883241/000166536426000005/xslF345X06/edgardoc.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/883241/000166536426000005/edgardoc.xml",
+          "transactions": [
+            {
+              "date": "2026-04-16",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 453,
+              "price": 0,
+              "value": 0,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "AWARD"
         }
-      ]
+      ],
+      "insiderSummary": {
+        "sentiment": "NEUTRAL",
+        "score": 50,
+        "totalTransactions": 11,
+        "openMarketTransactions": 0,
+        "buyCount": 0,
+        "sellCount": 0,
+        "buySellRatio": 0,
+        "netShares": 0,
+        "totalBought": 0,
+        "totalSold": 0,
+        "keyInsiders": [],
+        "largestTransactions": [],
+        "patterns": [
+          "No strong open-market pattern detected"
+        ],
+        "alerts": []
+      }
     },
     {
       "symbol": "QCOM",
@@ -18722,75 +19959,668 @@
           "form": "4",
           "reportDate": "2026-05-20",
           "filingDate": "2026-05-21",
+          "owner": "Grech Patricia Y",
+          "title": "SVP, Chief Accounting Officer",
           "accessionNumber": "0000804328-26-000070",
-          "document": "xslF345X06/edgardoc.xml",
           "description": "PRIMARY DOCUMENT",
-          "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000070/xslF345X06/edgardoc.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000070/edgardoc.xml",
+          "transactions": [
+            {
+              "date": "2026-05-20",
+              "code": "M",
+              "type": "OPTION",
+              "label": "Option exercise / conversion",
+              "shares": 424,
+              "price": 0,
+              "value": 0,
+              "sign": 0
+            },
+            {
+              "date": "2026-05-20",
+              "code": "M",
+              "type": "OPTION",
+              "label": "Option exercise / conversion",
+              "shares": 316,
+              "price": 0,
+              "value": 0,
+              "sign": 0
+            },
+            {
+              "date": "2026-05-20",
+              "code": "M",
+              "type": "OPTION",
+              "label": "Option exercise / conversion",
+              "shares": 44,
+              "price": 0,
+              "value": 0,
+              "sign": 0
+            },
+            {
+              "date": "2026-05-20",
+              "code": "M",
+              "type": "OPTION",
+              "label": "Option exercise / conversion",
+              "shares": 171,
+              "price": 0,
+              "value": 0,
+              "sign": 0
+            },
+            {
+              "date": "2026-05-20",
+              "code": "M",
+              "type": "OPTION",
+              "label": "Option exercise / conversion",
+              "shares": 314,
+              "price": 0,
+              "value": 0,
+              "sign": 0
+            },
+            {
+              "date": "2026-05-20",
+              "code": "F",
+              "type": "TAX",
+              "label": "Tax withholding",
+              "shares": 440,
+              "price": 202.51,
+              "value": 89104,
+              "sign": 0
+            },
+            {
+              "date": "2026-05-21",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 829,
+              "price": 201.77,
+              "value": 167267,
+              "sign": -1
+            }
+          ],
+          "netShares": -829,
+          "boughtValue": 0,
+          "soldValue": 167267,
+          "dominantType": "SELL"
         },
         {
           "form": "4",
           "reportDate": "2026-05-12",
           "filingDate": "2026-05-13",
+          "owner": "Palkhiwala Akash J.",
+          "title": "EVP, CFO &amp; COO",
           "accessionNumber": "0000804328-26-000066",
-          "document": "xslF345X06/edgardoc.xml",
           "description": "PRIMARY DOCUMENT",
-          "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000066/xslF345X06/edgardoc.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000066/edgardoc.xml",
+          "transactions": [
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 60,
+              "price": 202.47,
+              "value": 12148,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 72,
+              "price": 203.68,
+              "value": 14665,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 98,
+              "price": 204.53,
+              "value": 20044,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 188,
+              "price": 205.4,
+              "value": 38615,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 132,
+              "price": 206.51,
+              "value": 27260,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 336,
+              "price": 207.52,
+              "value": 69727,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 180,
+              "price": 208.63,
+              "value": 37554,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 366,
+              "price": 209.69,
+              "value": 76747,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 156,
+              "price": 210.44,
+              "value": 32829,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 66,
+              "price": 211.52,
+              "value": 13961,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 74,
+              "price": 212.64,
+              "value": 15735,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 24,
+              "price": 213.3,
+              "value": 5119,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 48,
+              "price": 214.26,
+              "value": 10284,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 82,
+              "price": 215.52,
+              "value": 17673,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 38,
+              "price": 216.31,
+              "value": 8220,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 12,
+              "price": 217.22,
+              "value": 2607,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 12,
+              "price": 218.46,
+              "value": 2622,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 86,
+              "price": 219.58,
+              "value": 18884,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 74,
+              "price": 220.73,
+              "value": 16334,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 48,
+              "price": 221.55,
+              "value": 10635,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 86,
+              "price": 222.61,
+              "value": 19144,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 84,
+              "price": 223.27,
+              "value": 18755,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 56,
+              "price": 224.48,
+              "value": 12571,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 32,
+              "price": 225.49,
+              "value": 7216,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 78,
+              "price": 226.49,
+              "value": 17667,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-12",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 12,
+              "price": 227.26,
+              "value": 2727,
+              "sign": -1
+            }
+          ],
+          "netShares": -2500,
+          "boughtValue": 0,
+          "soldValue": 529743,
+          "dominantType": "SELL"
         },
         {
           "form": "4",
           "reportDate": "2026-05-05",
           "filingDate": "2026-05-06",
+          "owner": "AMON CRISTIANO R",
+          "title": "President &amp; CEO",
           "accessionNumber": "0000804328-26-000065",
-          "document": "xslF345X06/edgardoc.xml",
           "description": "PRIMARY DOCUMENT",
-          "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000065/xslF345X06/edgardoc.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000065/edgardoc.xml",
+          "transactions": [
+            {
+              "date": "2026-05-05",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 10000,
+              "price": 185,
+              "value": 1850000,
+              "sign": -1
+            }
+          ],
+          "netShares": -10000,
+          "boughtValue": 0,
+          "soldValue": 1850000,
+          "dominantType": "SELL"
         },
         {
           "form": "4",
           "reportDate": "2026-05-04",
           "filingDate": "2026-05-04",
+          "owner": "AMON CRISTIANO R",
+          "title": "President &amp; CEO",
           "accessionNumber": "0000804328-26-000064",
-          "document": "xslF345X06/edgardoc.xml",
           "description": "PRIMARY DOCUMENT",
-          "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000064/xslF345X06/edgardoc.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000064/edgardoc.xml",
+          "transactions": [
+            {
+              "date": "2026-05-04",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 10000,
+              "price": 180,
+              "value": 1800000,
+              "sign": -1
+            }
+          ],
+          "netShares": -10000,
+          "boughtValue": 0,
+          "soldValue": 1800000,
+          "dominantType": "SELL"
         },
         {
           "form": "4",
           "reportDate": "2026-05-04",
           "filingDate": "2026-05-04",
+          "owner": "ACE HEATHER S",
+          "title": "EVP, Chief HR Officer",
           "accessionNumber": "0000804328-26-000063",
-          "document": "xslF345X06/edgardoc.xml",
           "description": "PRIMARY DOCUMENT",
-          "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000063/xslF345X06/edgardoc.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000063/edgardoc.xml",
+          "transactions": [
+            {
+              "date": "2026-05-04",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 3200,
+              "price": 177.82,
+              "value": 569024,
+              "sign": -1
+            }
+          ],
+          "netShares": -3200,
+          "boughtValue": 0,
+          "soldValue": 569024,
+          "dominantType": "SELL"
         },
         {
           "form": "4",
           "reportDate": "2026-04-30",
           "filingDate": "2026-04-30",
+          "owner": "Grech Patricia Y",
+          "title": "SVP, Chief Accounting Officer",
           "accessionNumber": "0000804328-26-000062",
-          "document": "xslF345X06/edgardoc.xml",
           "description": "PRIMARY DOCUMENT",
-          "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000062/xslF345X06/edgardoc.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000062/edgardoc.xml",
+          "transactions": [
+            {
+              "date": "2026-04-30",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 192,
+              "price": 172,
+              "value": 33024,
+              "sign": -1
+            }
+          ],
+          "netShares": -192,
+          "boughtValue": 0,
+          "soldValue": 33024,
+          "dominantType": "SELL"
         },
         {
           "form": "4",
           "reportDate": "2026-04-13",
           "filingDate": "2026-04-13",
+          "owner": "Palkhiwala Akash J.",
+          "title": "EVP, CFO &amp; COO",
           "accessionNumber": "0000804328-26-000053",
-          "document": "xslF345X06/edgardoc.xml",
           "description": "PRIMARY DOCUMENT",
-          "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000053/xslF345X06/edgardoc.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000053/edgardoc.xml",
+          "transactions": [
+            {
+              "date": "2026-04-13",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 1971,
+              "price": 130.12,
+              "value": 256468,
+              "sign": -1
+            },
+            {
+              "date": "2026-04-13",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 529,
+              "price": 131.17,
+              "value": 69386,
+              "sign": -1
+            }
+          ],
+          "netShares": -2500,
+          "boughtValue": 0,
+          "soldValue": 325854,
+          "dominantType": "SELL"
         },
         {
           "form": "4",
           "reportDate": "2026-04-02",
           "filingDate": "2026-04-02",
+          "owner": "Grech Patricia Y",
+          "title": "SVP, Chief Accounting Officer",
           "accessionNumber": "0000804328-26-000051",
-          "document": "xslF345X06/edgardoc.xml",
           "description": "PRIMARY DOCUMENT",
-          "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000051/xslF345X06/edgardoc.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000051/edgardoc.xml",
+          "transactions": [
+            {
+              "date": "2026-04-02",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 85,
+              "price": 125.5,
+              "value": 10668,
+              "sign": -1
+            }
+          ],
+          "netShares": -85,
+          "boughtValue": 0,
+          "soldValue": 10668,
+          "dominantType": "SELL"
         }
-      ]
+      ],
+      "insiderSummary": {
+        "sentiment": "VERY_BEARISH",
+        "score": 0,
+        "totalTransactions": 40,
+        "openMarketTransactions": 34,
+        "buyCount": 0,
+        "sellCount": 34,
+        "buySellRatio": 0,
+        "netShares": -29306,
+        "totalBought": 0,
+        "totalSold": 5285580,
+        "keyInsiders": [
+          {
+            "owner": "AMON CRISTIANO R",
+            "title": "President &amp; CEO",
+            "boughtValue": 0,
+            "soldValue": 3650000,
+            "netShares": -20000,
+            "txCount": 2
+          },
+          {
+            "owner": "Palkhiwala Akash J.",
+            "title": "EVP, CFO &amp; COO",
+            "boughtValue": 0,
+            "soldValue": 855597,
+            "netShares": -5000,
+            "txCount": 28
+          },
+          {
+            "owner": "ACE HEATHER S",
+            "title": "EVP, Chief HR Officer",
+            "boughtValue": 0,
+            "soldValue": 569024,
+            "netShares": -3200,
+            "txCount": 1
+          },
+          {
+            "owner": "Grech Patricia Y",
+            "title": "SVP, Chief Accounting Officer",
+            "boughtValue": 0,
+            "soldValue": 210959,
+            "netShares": -1106,
+            "txCount": 3
+          }
+        ],
+        "largestTransactions": [
+          {
+            "owner": "AMON CRISTIANO R",
+            "title": "President &amp; CEO",
+            "date": "2026-05-05",
+            "type": "SELL",
+            "shares": 10000,
+            "price": 185,
+            "value": 1850000,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000065/edgardoc.xml"
+          },
+          {
+            "owner": "AMON CRISTIANO R",
+            "title": "President &amp; CEO",
+            "date": "2026-05-04",
+            "type": "SELL",
+            "shares": 10000,
+            "price": 180,
+            "value": 1800000,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000064/edgardoc.xml"
+          },
+          {
+            "owner": "ACE HEATHER S",
+            "title": "EVP, Chief HR Officer",
+            "date": "2026-05-04",
+            "type": "SELL",
+            "shares": 3200,
+            "price": 177.82,
+            "value": 569024,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000063/edgardoc.xml"
+          },
+          {
+            "owner": "Palkhiwala Akash J.",
+            "title": "EVP, CFO &amp; COO",
+            "date": "2026-04-13",
+            "type": "SELL",
+            "shares": 1971,
+            "price": 130.12,
+            "value": 256468,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000053/edgardoc.xml"
+          },
+          {
+            "owner": "Grech Patricia Y",
+            "title": "SVP, Chief Accounting Officer",
+            "date": "2026-05-21",
+            "type": "SELL",
+            "shares": 829,
+            "price": 201.77,
+            "value": 167267,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000070/edgardoc.xml"
+          },
+          {
+            "owner": "Palkhiwala Akash J.",
+            "title": "EVP, CFO &amp; COO",
+            "date": "2026-05-12",
+            "type": "SELL",
+            "shares": 366,
+            "price": 209.69,
+            "value": 76747,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000066/edgardoc.xml"
+          },
+          {
+            "owner": "Palkhiwala Akash J.",
+            "title": "EVP, CFO &amp; COO",
+            "date": "2026-05-12",
+            "type": "SELL",
+            "shares": 336,
+            "price": 207.52,
+            "value": 69727,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000066/edgardoc.xml"
+          },
+          {
+            "owner": "Palkhiwala Akash J.",
+            "title": "EVP, CFO &amp; COO",
+            "date": "2026-04-13",
+            "type": "SELL",
+            "shares": 529,
+            "price": 131.17,
+            "value": 69386,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000053/edgardoc.xml"
+          }
+        ],
+        "patterns": [
+          "Cluster selling detected",
+          "CEO selling activity",
+          "CFO selling activity"
+        ],
+        "alerts": [
+          "Selling value dominates buying: $5,285,580 sold",
+          "34 sale transactions in recent filings"
+        ]
+      }
     },
     {
       "symbol": "RRX",
@@ -21414,75 +23244,430 @@
           "form": "4",
           "reportDate": "2026-06-01",
           "filingDate": "2026-06-03",
+          "owner": "Klossner Mark",
+          "title": "EVP and Pres. IPS*",
           "accessionNumber": "0002135722-26-000004",
-          "document": "xslF345X06/wk-form4_1780521525.xml",
           "description": "FORM 4",
-          "url": "https://www.sec.gov/Archives/edgar/data/82811/000213572226000004/xslF345X06/wk-form4_1780521525.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/82811/000213572226000004/wk-form4_1780521525.xml",
+          "transactions": [
+            {
+              "date": "2026-06-01",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 1484,
+              "price": 202.09,
+              "value": 299902,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "AWARD"
         },
         {
           "form": "4",
           "reportDate": "2026-06-01",
           "filingDate": "2026-06-03",
+          "owner": "Scarpelli Alexander P",
+          "title": "SVP, Corp. Controller and CAO*",
           "accessionNumber": "0001952898-26-000002",
-          "document": "xslF345X06/wk-form4_1780521408.xml",
           "description": "FORM 4",
-          "url": "https://www.sec.gov/Archives/edgar/data/82811/000195289826000002/xslF345X06/wk-form4_1780521408.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/82811/000195289826000002/wk-form4_1780521408.xml",
+          "transactions": [
+            {
+              "date": "2026-06-01",
+              "code": "F",
+              "type": "TAX",
+              "label": "Tax withholding",
+              "shares": 31,
+              "price": 202.09,
+              "value": 6265,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "TAX"
         },
         {
           "form": "4",
           "reportDate": "2026-05-22",
           "filingDate": "2026-05-26",
+          "owner": "Rehard Robert",
+          "title": "EVP and CFO*",
           "accessionNumber": "0001632039-26-000002",
-          "document": "xslF345X06/wk-form4_1779829636.xml",
           "description": "FORM 4",
-          "url": "https://www.sec.gov/Archives/edgar/data/82811/000163203926000002/xslF345X06/wk-form4_1779829636.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/82811/000163203926000002/wk-form4_1779829636.xml",
+          "transactions": [
+            {
+              "date": "2026-05-22",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 6499,
+              "price": 200,
+              "value": 1299800,
+              "sign": -1
+            }
+          ],
+          "netShares": -6499,
+          "boughtValue": 0,
+          "soldValue": 1299800,
+          "dominantType": "SELL"
         },
         {
           "form": "4",
           "reportDate": "2026-05-14",
           "filingDate": "2026-05-19",
+          "owner": "STOELTING CURTIS W",
+          "title": "Director",
           "accessionNumber": "0001193424-26-000005",
-          "document": "xslF345X06/wk-form4_1779230551.xml",
           "description": "FORM 4",
-          "url": "https://www.sec.gov/Archives/edgar/data/82811/000119342426000005/xslF345X06/wk-form4_1779230551.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/82811/000119342426000005/wk-form4_1779230551.xml",
+          "transactions": [
+            {
+              "date": "2026-05-14",
+              "code": "G",
+              "type": "GIFT",
+              "label": "Gift",
+              "shares": 360,
+              "price": 0,
+              "value": 0,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "GIFT"
         },
         {
           "form": "4",
           "reportDate": "2026-05-14",
           "filingDate": "2026-05-15",
+          "owner": "Morton Jerrald R",
+          "title": "EVP and Pres. IPS*",
           "accessionNumber": "0000082811-26-000168",
-          "document": "xslF345X06/wk-form4_1778878056.xml",
           "description": "FORM 4",
-          "url": "https://www.sec.gov/Archives/edgar/data/82811/000008281126000168/xslF345X06/wk-form4_1778878056.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/82811/000008281126000168/wk-form4_1778878056.xml",
+          "transactions": [
+            {
+              "date": "2026-05-14",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 9390,
+              "price": 209.13,
+              "value": 1963731,
+              "sign": -1
+            }
+          ],
+          "netShares": -9390,
+          "boughtValue": 0,
+          "soldValue": 1963731,
+          "dominantType": "SELL"
         },
         {
           "form": "4",
           "reportDate": "2026-05-11",
           "filingDate": "2026-05-13",
+          "owner": "BAKKER GERBEN",
+          "title": "Director",
           "accessionNumber": "0000082811-26-000166",
-          "document": "xslF345X06/wk-form4_1778705801.xml",
           "description": "FORM 4",
-          "url": "https://www.sec.gov/Archives/edgar/data/82811/000008281126000166/xslF345X06/wk-form4_1778705801.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/82811/000008281126000166/wk-form4_1778705801.xml",
+          "transactions": [
+            {
+              "date": "2026-05-11",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 923,
+              "price": 0,
+              "value": 0,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "AWARD"
         },
         {
           "form": "4",
           "reportDate": "2026-05-11",
           "filingDate": "2026-05-13",
+          "owner": "Pinkham Louis V.",
+          "title": "Chief Executive Officer",
           "accessionNumber": "0000082811-26-000165",
-          "document": "xslF345X06/wk-form4_1778705793.xml",
           "description": "FORM 4",
-          "url": "https://www.sec.gov/Archives/edgar/data/82811/000008281126000165/xslF345X06/wk-form4_1778705793.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/82811/000008281126000165/wk-form4_1778705793.xml",
+          "transactions": [
+            {
+              "date": "2026-05-11",
+              "code": "M",
+              "type": "OPTION",
+              "label": "Option exercise / conversion",
+              "shares": 10009,
+              "price": 154.2,
+              "value": 1543388,
+              "sign": 0
+            },
+            {
+              "date": "2026-05-11",
+              "code": "M",
+              "type": "OPTION",
+              "label": "Option exercise / conversion",
+              "shares": 9424,
+              "price": 168.47,
+              "value": 1587661,
+              "sign": 0
+            },
+            {
+              "date": "2026-05-11",
+              "code": "F",
+              "type": "TAX",
+              "label": "Tax withholding",
+              "shares": 16924,
+              "price": 211.33,
+              "value": 3576549,
+              "sign": 0
+            },
+            {
+              "date": "2026-05-11",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 6197,
+              "price": 209.88,
+              "value": 1300626,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-11",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 5525,
+              "price": 210.9,
+              "value": 1165223,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-11",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 5564,
+              "price": 212.01,
+              "value": 1179624,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-11",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 1624,
+              "price": 212.89,
+              "value": 345733,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-11",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 1400,
+              "price": 213.98,
+              "value": 299572,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-11",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 1900,
+              "price": 215.43,
+              "value": 409317,
+              "sign": -1
+            },
+            {
+              "date": "2026-05-11",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 299,
+              "price": 216.24,
+              "value": 64656,
+              "sign": -1
+            }
+          ],
+          "netShares": -22509,
+          "boughtValue": 0,
+          "soldValue": 4764751,
+          "dominantType": "SELL"
         },
         {
           "form": "4",
           "reportDate": "2026-05-11",
           "filingDate": "2026-05-13",
+          "owner": "CRANDALL  THEODORE D",
+          "title": "Director",
           "accessionNumber": "0000082811-26-000164",
-          "document": "xslF345X06/wk-form4_1778705785.xml",
           "description": "FORM 4",
-          "url": "https://www.sec.gov/Archives/edgar/data/82811/000008281126000164/xslF345X06/wk-form4_1778705785.xml"
+          "url": "https://www.sec.gov/Archives/edgar/data/82811/000008281126000164/wk-form4_1778705785.xml",
+          "transactions": [
+            {
+              "date": "2026-05-11",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 923,
+              "price": 0,
+              "value": 0,
+              "sign": 0
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "AWARD"
         }
-      ]
+      ],
+      "insiderSummary": {
+        "sentiment": "VERY_BEARISH",
+        "score": 0,
+        "totalTransactions": 17,
+        "openMarketTransactions": 9,
+        "buyCount": 0,
+        "sellCount": 9,
+        "buySellRatio": 0,
+        "netShares": -38398,
+        "totalBought": 0,
+        "totalSold": 8028282,
+        "keyInsiders": [
+          {
+            "owner": "Pinkham Louis V.",
+            "title": "Chief Executive Officer",
+            "boughtValue": 0,
+            "soldValue": 4764751,
+            "netShares": -22509,
+            "txCount": 7
+          },
+          {
+            "owner": "Morton Jerrald R",
+            "title": "EVP and Pres. IPS*",
+            "boughtValue": 0,
+            "soldValue": 1963731,
+            "netShares": -9390,
+            "txCount": 1
+          },
+          {
+            "owner": "Rehard Robert",
+            "title": "EVP and CFO*",
+            "boughtValue": 0,
+            "soldValue": 1299800,
+            "netShares": -6499,
+            "txCount": 1
+          }
+        ],
+        "largestTransactions": [
+          {
+            "owner": "Morton Jerrald R",
+            "title": "EVP and Pres. IPS*",
+            "date": "2026-05-14",
+            "type": "SELL",
+            "shares": 9390,
+            "price": 209.13,
+            "value": 1963731,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/82811/000008281126000168/wk-form4_1778878056.xml"
+          },
+          {
+            "owner": "Pinkham Louis V.",
+            "title": "Chief Executive Officer",
+            "date": "2026-05-11",
+            "type": "SELL",
+            "shares": 6197,
+            "price": 209.88,
+            "value": 1300626,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/82811/000008281126000165/wk-form4_1778705793.xml"
+          },
+          {
+            "owner": "Rehard Robert",
+            "title": "EVP and CFO*",
+            "date": "2026-05-22",
+            "type": "SELL",
+            "shares": 6499,
+            "price": 200,
+            "value": 1299800,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/82811/000163203926000002/wk-form4_1779829636.xml"
+          },
+          {
+            "owner": "Pinkham Louis V.",
+            "title": "Chief Executive Officer",
+            "date": "2026-05-11",
+            "type": "SELL",
+            "shares": 5564,
+            "price": 212.01,
+            "value": 1179624,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/82811/000008281126000165/wk-form4_1778705793.xml"
+          },
+          {
+            "owner": "Pinkham Louis V.",
+            "title": "Chief Executive Officer",
+            "date": "2026-05-11",
+            "type": "SELL",
+            "shares": 5525,
+            "price": 210.9,
+            "value": 1165223,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/82811/000008281126000165/wk-form4_1778705793.xml"
+          },
+          {
+            "owner": "Pinkham Louis V.",
+            "title": "Chief Executive Officer",
+            "date": "2026-05-11",
+            "type": "SELL",
+            "shares": 1900,
+            "price": 215.43,
+            "value": 409317,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/82811/000008281126000165/wk-form4_1778705793.xml"
+          },
+          {
+            "owner": "Pinkham Louis V.",
+            "title": "Chief Executive Officer",
+            "date": "2026-05-11",
+            "type": "SELL",
+            "shares": 1624,
+            "price": 212.89,
+            "value": 345733,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/82811/000008281126000165/wk-form4_1778705793.xml"
+          },
+          {
+            "owner": "Pinkham Louis V.",
+            "title": "Chief Executive Officer",
+            "date": "2026-05-11",
+            "type": "SELL",
+            "shares": 1400,
+            "price": 213.98,
+            "value": 299572,
+            "filingUrl": "https://www.sec.gov/Archives/edgar/data/82811/000008281126000165/wk-form4_1778705793.xml"
+          }
+        ],
+        "patterns": [
+          "Cluster selling detected",
+          "CEO selling activity",
+          "CFO selling activity"
+        ],
+        "alerts": [
+          "Selling value dominates buying: $8,028,282 sold",
+          "9 sale transactions in recent filings"
+        ]
+      }
     }
   ],
   "alerts": [
@@ -21490,25 +23675,25 @@
       "symbol": "VST",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-06-06T15:14:21.125Z"
+      "createdAt": "2026-06-06T15:22:33.221Z"
     },
     {
       "symbol": "UAMY",
       "severity": "success",
       "message": "Strong YTD performer: +30.02%",
-      "createdAt": "2026-06-06T14:14:21.125Z"
+      "createdAt": "2026-06-06T14:22:33.221Z"
     },
     {
       "symbol": "RRX",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-06-06T13:14:21.125Z"
+      "createdAt": "2026-06-06T13:22:33.221Z"
     },
     {
       "symbol": "RRX",
       "severity": "success",
       "message": "Strong YTD performer: +39.9%",
-      "createdAt": "2026-06-06T12:14:21.125Z"
+      "createdAt": "2026-06-06T12:22:33.221Z"
     }
   ],
   "errors": []

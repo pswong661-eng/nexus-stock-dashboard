@@ -19,7 +19,41 @@ function fillSelect(id,symbols){ const sel=$(id); const cur=sel.value || symbols
 function selected(id){ return latestData.symbols.find(s=>s.symbol===$(id).value) || latestData.symbols[0]; }
 function renderTechnical(){ const s=selected('technical-symbol'); if(!s) return; const t=s.technical||[]; const labels=t.map(p=>p.date); if(emaChart) emaChart.destroy(); if(macdChart) macdChart.destroy(); if(rsiChart) rsiChart.destroy(); emaChart=makeLineChart($('ema-chart'),[{label:`${s.symbol} Close`,data:t.map(p=>p.close),borderColor:'#59b4ff',pointRadius:0,tension:.2},{label:'EMA50',data:t.map(p=>p.ema50),borderColor:'#28e6a3',pointRadius:0,tension:.2}],labels); macdChart=makeLineChart($('macd-chart'),[{label:'MACD',data:t.map(p=>p.macd),borderColor:'#a78bfa',pointRadius:0,tension:.2},{label:'Signal',data:t.map(p=>p.macdSignal),borderColor:'#ffd166',pointRadius:0,tension:.2},{label:'Histogram',data:t.map(p=>p.macdHist),borderColor:'#ff647c',backgroundColor:'rgba(255,100,124,.18)',pointRadius:0,tension:.2}],labels); rsiChart=makeLineChart($('rsi-chart'),[{label:'RSI(14)',data:t.map(p=>p.rsi14),borderColor:'#28e6a3',pointRadius:0,tension:.2},{label:'Overbought 70',data:t.map(()=>70),borderColor:'#ff647c',borderDash:[6,6],pointRadius:0},{label:'Oversold 30',data:t.map(()=>30),borderColor:'#59b4ff',borderDash:[6,6],pointRadius:0}],labels,{y:{min:0,max:100}}); }
 function renderFinancial(){ const s=selected('financial-symbol'); if(!s) return; const quarters=s.financials?.quarters||[], forecasts=s.financials?.forecast||[]; $('financial-table').innerHTML=`<thead><tr><th>Period</th><th>Revenue</th><th>Net Income</th><th>Source</th></tr></thead><tbody>${quarters.map(q=>`<tr><td>${q.period}<br><small>${q.end||''}</small></td><td>${usd0(q.revenue)}</td><td>${usd0(q.netIncome)}</td><td>${q.form||'SEC'}</td></tr>`).join('')}${forecasts.map(f=>`<tr class="forecast"><td>${f.period}</td><td>${usd0(f.value)}</td><td>N/A</td><td>${f.basis}</td></tr>`).join('') || ''}</tbody>`; const labels=[...quarters.map(q=>q.period),...forecasts.map(f=>f.period)]; const reported=quarters.map(q=>q.revenue).concat(forecasts.map(()=>null)); const forecast=quarters.map(()=>null).concat(forecasts.map(f=>f.value)); if(financialChart) financialChart.destroy(); financialChart=makeLineChart($('financial-chart'),[{label:'Reported revenue',data:reported,borderColor:'#59b4ff',backgroundColor:'#59b4ff',pointRadius:3},{label:'Forecast revenue',data:forecast,borderColor:'#ffd166',backgroundColor:'#ffd166',borderDash:[6,6],pointRadius:3}],labels); }
-function renderInsider(){ const s=selected('insider-symbol'); if(!s) return; const rows=s.insider||[]; $('insider-table').innerHTML=`<thead><tr><th>Date</th><th>Form</th><th>Description</th><th>SEC Filing</th></tr></thead><tbody>${rows.length?rows.map(r=>`<tr><td>${r.reportDate||r.filingDate||'N/A'}</td><td>${r.form}</td><td>${r.description||'Insider transaction filing'}</td><td>${r.url?`<a class="table-link" href="${r.url}" target="_blank" rel="noopener">Open SEC</a>`:'N/A'}</td></tr>`).join(''):`<tr><td colspan="4">No recent Form 4 filings found in SEC recent submissions.</td></tr>`}</tbody>`; }
+function sentimentClass(x){ return /BULL/i.test(x||'') ? 'up' : /BEAR/i.test(x||'') ? 'down' : 'flat'; }
+function renderList(el, rows, empty, fn){ el.innerHTML = rows?.length ? rows.map(fn).join('') : `<p class="flat">${empty}</p>`; }
+function renderInsider(){
+  const s=selected('insider-symbol'); if(!s) return;
+  const summary=s.insiderSummary || {};
+  $('insider-sentiment').textContent=(summary.sentiment||'NEUTRAL').replaceAll('_',' ');
+  $('insider-sentiment').className=sentimentClass(summary.sentiment);
+  $('insider-score').textContent=`${summary.score ?? '--'}/100`;
+  $('insider-total-tx').textContent=fmtNum(summary.totalTransactions);
+  $('insider-buy-sell').innerHTML=`<span class="up">${summary.buyCount||0}</span> / <span class="down">${summary.sellCount||0}</span>`;
+  $('insider-net-shares').className=cls(summary.netShares);
+  $('insider-net-shares').textContent=fmtNum(summary.netShares);
+  $('insider-value-flow').innerHTML=`<span class="up">${fmtCap(summary.totalBought)}</span> / <span class="down">${fmtCap(summary.totalSold)}</span>`;
+
+  renderList($('key-insiders'), summary.keyInsiders, 'No open-market insider transactions detected.', i => `
+    <div class="insider-row">
+      <div><b>${i.owner}</b><small>${i.title || 'Insider'} · ${i.txCount} tx</small></div>
+      <div class="right"><span class="${cls(i.netShares)}">${fmtNum(i.netShares)} sh</span><small>Sold ${fmtCap(i.soldValue)} · Bought ${fmtCap(i.boughtValue)}</small></div>
+    </div>`);
+
+  renderList($('largest-transactions'), summary.largestTransactions, 'No priced open-market transactions found.', t => `
+    <div class="insider-row">
+      <div><b>${t.owner}</b><small>${t.date} · ${t.title || 'Insider'}</small></div>
+      <div class="right"><span class="${t.type==='BUY'?'up':'down'}">${t.type} ${fmtNum(t.shares)} sh</span><small>${fmtMoney(t.price)} · ${fmtCap(t.value)} · <a class="table-link" href="${t.filingUrl}" target="_blank" rel="noopener">SEC</a></small></div>
+    </div>`);
+
+  $('insider-patterns').innerHTML=(summary.patterns?.length?summary.patterns:['No strong open-market pattern detected']).map(p=>`<li><span>＋</span>${p}</li>`).join('');
+  $('insider-alerts').innerHTML=(summary.alerts?.length?summary.alerts:['No major insider alert flags.']).map(p=>`<li><span>!</span>${p}</li>`).join('');
+
+  const rows=s.insider||[];
+  $('insider-table').innerHTML=`<thead><tr><th>Date</th><th>Insider</th><th>Type</th><th>Shares</th><th>Value</th><th>SEC Filing</th></tr></thead><tbody>${rows.length?rows.map(f=>{
+    const tx=(f.transactions||[]).find(t=>['BUY','SELL'].includes(t.type)) || (f.transactions||[])[0] || {};
+    return `<tr><td>${tx.date||f.reportDate||f.filingDate||'N/A'}</td><td>${f.owner||'Unknown'}<br><small>${f.title||''}</small></td><td><span class="${tx.type==='BUY'?'up':tx.type==='SELL'?'down':'flat'}">${tx.type||f.dominantType||'FORM 4'}</span></td><td>${fmtNum(tx.shares)}</td><td>${fmtCap(tx.value)}</td><td>${f.url?`<a class="table-link" href="${f.url}" target="_blank" rel="noopener">Open SEC</a>`:'N/A'}</td></tr>`;
+  }).join(''):`<tr><td colspan="6">No recent Form 4 filings found in SEC recent submissions.</td></tr>`}</tbody>`;
+}
 function renderSentiment(summary){ const score=summary.sentimentScore||0; const ring=$('sentiment-score'); ring.textContent=''; ring.style.setProperty('--score',score); ring.dataset.score=score; $('sentiment-label').textContent=score>=65?'BULLISH':score>=45?'NEUTRAL / MIXED':'BEARISH'; for(const [id,pct] of [['bull',summary.bullPct],['neutral',summary.neutralPct],['bear',summary.bearPct]]){ $(`${id}-bar`).style.width=`${pct||0}%`; $(`${id}-pct`).textContent=`${pct||0}%`; } }
 function renderPortfolio(summary){ const best=summary.bestPerformer?`${summary.bestPerformer.symbol} ${sign(summary.bestPerformer.ytdPct)}${summary.bestPerformer.ytdPct}%`:'N/A'; const worst=summary.worstPerformer?`${summary.worstPerformer.symbol} ${summary.worstPerformer.ytdPct}%`:'N/A'; $('portfolio-metrics').innerHTML=`<div><dt>Avg RSI (14)</dt><dd>${fmtNum(summary.avgRsi14)}</dd></div><div><dt>Sentiment Score</dt><dd>${summary.sentimentScore}/100</dd></div><div><dt>Best Performer</dt><dd class="up">${best}</dd></div><div><dt>Worst Performer</dt><dd class="down">${worst}</dd></div><div><dt>Financial Source</dt><dd>SEC</dd></div><div><dt>Refresh Time</dt><dd>9AM ICT</dd></div>`; }
 function renderAlerts(alerts){ $('alert-count').textContent=`${alerts.length} new`; $('alerts-list').innerHTML=alerts.length?alerts.map(a=>`<div class="alert ${a.severity}"><b>${a.symbol}</b>${a.message}<br><small>${new Date(a.createdAt).toLocaleString()}</small></div>`).join(''):'<p class="flat">No active alerts.</p>'; }

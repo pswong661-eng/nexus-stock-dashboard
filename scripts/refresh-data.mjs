@@ -137,21 +137,131 @@ function forecastTwo(quarters) {
   const growth = last && prev ? Math.max(-0.25, Math.min(0.25, (last - prev) / Math.abs(prev))) : 0;
   return [1,2].map(i => ({ period: `Forecast Q+${i}`, value: round(last * Math.pow(1 + growth, i), 0), basis: 'simple trend forecast' }));
 }
+function tagText(xml, tag) {
+  const m = xml.match(new RegExp(`<${tag}>([\\s\\S]*?)</${tag}>`, 'i'));
+  if (!m) return '';
+  let text = m[1].replace(/<!\\[CDATA\\[(.*?)\\]\\]>/gs, '$1').trim();
+  const valueMatch = text.match(/<value>([\s\S]*?)<\/value>/i);
+  if (valueMatch) text = valueMatch[1].trim();
+  return text;
+}
+function blocks(xml, tag) {
+  return [...xml.matchAll(new RegExp(`<${tag}>([\\s\\S]*?)</${tag}>`, 'gi'))].map(m => m[1]);
+}
+function rawSecUrl(cik, accession, document) {
+  if (!accession || !document) return null;
+  const rawDoc = document.replace(/^xslF345X\d+\//, '');
+  return `https://www.sec.gov/Archives/edgar/data/${Number(cik)}/${accession.replaceAll('-', '')}/${rawDoc}`;
+}
+function classifyCode(code, ad) {
+  if (code === 'P') return { type: 'BUY', sign: 1, label: 'Open-market purchase' };
+  if (code === 'S') return { type: 'SELL', sign: -1, label: 'Open-market sale' };
+  if (code === 'A') return { type: 'AWARD', sign: ad === 'D' ? -1 : 0, label: 'Grant / award' };
+  if (code === 'M') return { type: 'OPTION', sign: 0, label: 'Option exercise / conversion' };
+  if (code === 'G') return { type: 'GIFT', sign: 0, label: 'Gift' };
+  if (code === 'F') return { type: 'TAX', sign: 0, label: 'Tax withholding' };
+  return { type: 'OTHER', sign: ad === 'D' ? -1 : ad === 'A' ? 1 : 0, label: `Code ${code || 'N/A'}` };
+}
+async function parseForm4(cik, filing) {
+  const url = rawSecUrl(cik, filing.accessionNumber, filing.document);
+  if (!url) return null;
+  const res = await fetch(url, { headers: { 'User-Agent': SEC_UA } });
+  if (!res.ok) throw new Error(`Form4 ${res.status}`);
+  const xml = await res.text();
+  const owner = tagText(xml, 'rptOwnerName') || 'Unknown insider';
+  const title = tagText(xml, 'officerTitle') || (tagText(xml, 'isDirector') === '1' || tagText(xml, 'isDirector') === 'true' ? 'Director' : 'Insider');
+  const transactions = blocks(xml, 'nonDerivativeTransaction').map(block => {
+    const code = tagText(block, 'transactionCode');
+    const ad = tagText(block, 'transactionAcquiredDisposedCode') || tagText(block, 'transactionAcquiredDisposedCode/value');
+    const cls = classifyCode(code, ad);
+    const shares = Number(tagText(block, 'transactionShares').replace(/,/g, ''));
+    const price = Number(tagText(block, 'transactionPricePerShare').replace(/,/g, ''));
+    const date = tagText(block, 'transactionDate') || tagText(xml, 'periodOfReport');
+    const value = Number.isFinite(shares) && Number.isFinite(price) ? shares * price : null;
+    return { date, code, type: cls.type, label: cls.label, shares: round(shares, 0), price: round(price, 2), value: round(value, 0), sign: cls.sign };
+  }).filter(t => t.date || Number.isFinite(t.shares));
+  const openMarket = transactions.filter(t => ['BUY','SELL'].includes(t.type));
+  const netShares = openMarket.reduce((sum, t) => sum + (t.sign * (t.shares || 0)), 0);
+  const boughtValue = openMarket.filter(t => t.type === 'BUY').reduce((sum,t)=>sum+(t.value||0),0);
+  const soldValue = openMarket.filter(t => t.type === 'SELL').reduce((sum,t)=>sum+(t.value||0),0);
+  return {
+    form: filing.form,
+    reportDate: filing.reportDate,
+    filingDate: filing.filingDate,
+    owner,
+    title,
+    accessionNumber: filing.accessionNumber,
+    description: filing.description,
+    url,
+    transactions,
+    netShares: round(netShares, 0),
+    boughtValue: round(boughtValue, 0),
+    soldValue: round(soldValue, 0),
+    dominantType: soldValue > boughtValue ? 'SELL' : boughtValue > soldValue ? 'BUY' : (transactions[0]?.type || 'OTHER')
+  };
+}
+function summarizeInsider(filings) {
+  const allTx = filings.flatMap(f => (f.transactions || []).map(t => ({ ...t, owner: f.owner, title: f.title, filingUrl: f.url })));
+  const open = allTx.filter(t => ['BUY','SELL'].includes(t.type));
+  const totalBought = open.filter(t=>t.type==='BUY').reduce((s,t)=>s+(t.value||0),0);
+  const totalSold = open.filter(t=>t.type==='SELL').reduce((s,t)=>s+(t.value||0),0);
+  const buyCount = open.filter(t=>t.type==='BUY').length;
+  const sellCount = open.filter(t=>t.type==='SELL').length;
+  const netShares = open.reduce((s,t)=>s+(t.sign*(t.shares||0)),0);
+  const byOwner = new Map();
+  for (const t of open) {
+    const key = t.owner || 'Unknown insider';
+    const row = byOwner.get(key) || { owner: key, title: t.title, boughtValue: 0, soldValue: 0, netShares: 0, txCount: 0 };
+    row.boughtValue += t.type === 'BUY' ? (t.value || 0) : 0;
+    row.soldValue += t.type === 'SELL' ? (t.value || 0) : 0;
+    row.netShares += t.sign * (t.shares || 0);
+    row.txCount += 1;
+    byOwner.set(key, row);
+  }
+  const keyInsiders = [...byOwner.values()].map(r => ({ ...r, boughtValue: round(r.boughtValue,0), soldValue: round(r.soldValue,0), netShares: round(r.netShares,0) })).sort((a,b)=>(b.soldValue+b.boughtValue)-(a.soldValue+a.boughtValue)).slice(0,6);
+  const largestTransactions = open.sort((a,b)=>(b.value||0)-(a.value||0)).slice(0,8).map(t => ({ owner: t.owner, title: t.title, date: t.date, type: t.type, shares: t.shares, price: t.price, value: t.value, filingUrl: t.filingUrl }));
+  let score = 50;
+  if (totalBought + totalSold > 0) score += ((totalBought - totalSold) / (totalBought + totalSold)) * 45;
+  if (sellCount >= 3 && buyCount === 0) score -= 10;
+  if (buyCount >= 2 && sellCount === 0) score += 10;
+  score = Math.max(0, Math.min(100, Math.round(score)));
+  const sentiment = score >= 70 ? 'BULLISH' : score >= 55 ? 'SLIGHTLY_BULLISH' : score >= 45 ? 'NEUTRAL' : score >= 30 ? 'BEARISH' : 'VERY_BEARISH';
+  const patterns = [];
+  if (sellCount >= 3) patterns.push('Cluster selling detected');
+  if (buyCount >= 2) patterns.push('Multiple open-market purchases');
+  if (keyInsiders.some(i => /CEO|Chief Executive/i.test(i.title || '') && i.soldValue > 0)) patterns.push('CEO selling activity');
+  if (keyInsiders.some(i => /CFO|Chief Financial/i.test(i.title || '') && i.soldValue > 0)) patterns.push('CFO selling activity');
+  if (!patterns.length) patterns.push('No strong open-market pattern detected');
+  const alerts = [];
+  if (totalSold > totalBought * 3 && totalSold > 0) alerts.push(`Selling value dominates buying: $${Math.round(totalSold).toLocaleString()} sold`);
+  if (totalBought > totalSold * 3 && totalBought > 0) alerts.push(`Accumulation signal: $${Math.round(totalBought).toLocaleString()} bought`);
+  if (sellCount >= 5) alerts.push(`${sellCount} sale transactions in recent filings`);
+  return { sentiment, score, totalTransactions: allTx.length, openMarketTransactions: open.length, buyCount, sellCount, buySellRatio: sellCount ? round(buyCount / sellCount, 2) : buyCount ? 99 : 0, netShares: round(netShares,0), totalBought: round(totalBought,0), totalSold: round(totalSold,0), keyInsiders, largestTransactions, patterns, alerts };
+}
 async function fetchFinancialAndInsider(symbol, cik) {
-  if (!cik) return { financials: { quarters: [], forecast: [] }, insider: [] };
+  if (!cik) return { financials: { quarters: [], forecast: [] }, insider: [], insiderSummary: summarizeInsider([]) };
   const [facts, sub] = await Promise.all([
     fetchJson(`https://data.sec.gov/api/xbrl/companyfacts/CIK${cik}.json`).catch(() => null),
     fetchJson(`https://data.sec.gov/submissions/CIK${cik}.json`).catch(() => null)
   ]);
   const revenues = lastQuarters(pickFact(facts?.facts, ['RevenueFromContractWithCustomerExcludingAssessedTax', 'Revenues', 'SalesRevenueNet']));
   const netIncome = lastQuarters(pickFact(facts?.facts, ['NetIncomeLoss']));
-  const quarters = revenues.map((r, i) => ({ ...r, revenue: r.value, netIncome: netIncome.find(n => n.end === r.end)?.value ?? null }));
+  const quarters = revenues.map((r) => ({ ...r, revenue: r.value, netIncome: netIncome.find(n => n.end === r.end)?.value ?? null }));
   const recent = sub?.filings?.recent || {};
-  const insider = (recent.form || []).map((form, i) => ({ form, reportDate: recent.reportDate?.[i], filingDate: recent.filingDate?.[i], accessionNumber: recent.accessionNumber?.[i], document: recent.primaryDocument?.[i], description: recent.primaryDocDescription?.[i] }))
+  const basicFilings = (recent.form || []).map((form, i) => ({ form, reportDate: recent.reportDate?.[i], filingDate: recent.filingDate?.[i], accessionNumber: recent.accessionNumber?.[i], document: recent.primaryDocument?.[i], description: recent.primaryDocDescription?.[i] }))
     .filter(f => f.form === '4')
-    .slice(0, 8)
-    .map(f => ({ ...f, url: f.accessionNumber && f.document ? `https://www.sec.gov/Archives/edgar/data/${Number(cik)}/${f.accessionNumber.replaceAll('-', '')}/${f.document}` : null }));
-  return { financials: { quarters, forecast: forecastTwo(quarters.map(q => ({...q, value: q.revenue}))) }, insider };
+    .slice(0, 8);
+  const insider = [];
+  for (const filing of basicFilings) {
+    try {
+      const parsed = await parseForm4(cik, filing);
+      if (parsed) insider.push(parsed);
+    } catch {
+      insider.push({ ...filing, url: rawSecUrl(cik, filing.accessionNumber, filing.document), transactions: [], netShares: 0, boughtValue: 0, soldValue: 0, dominantType: 'OTHER' });
+    }
+    await sleep(120);
+  }
+  return { financials: { quarters, forecast: forecastTwo(quarters.map(q => ({...q, value: q.revenue}))) }, insider, insiderSummary: summarizeInsider(insider) };
 }
 
 const results = [], errors = [];
