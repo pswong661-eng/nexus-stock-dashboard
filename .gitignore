@@ -1,0 +1,13 @@
+node_modules/
+.env
+*.env
+.env.*
+.DS_Store
+Thumbs.db
+.wrangler/
+*.pem
+*.key
+*.p12
+dist/
+.next/
+*.tsbuildinfo
