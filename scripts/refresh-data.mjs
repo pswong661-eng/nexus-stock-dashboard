@@ -7,10 +7,17 @@ const FALLBACK = new URL('../public/data/fallback.json', import.meta.url);
 const SEC_UA = process.env.SEC_USER_AGENT || 'nexus-stock-dashboard/1.0 contact@example.com';
 const MASSIVE_API_KEY = process.env.MASSIVE_API_KEY || process.env.POLYGON_API_KEY || '';
 const sleep = ms => new Promise(r => setTimeout(r, ms));
+const SENSITIVE_KEYS = ['MASSIVE_API_KEY', 'POLYGON_API_KEY', MASSIVE_API_KEY].filter(Boolean);
 
 function finite(n) { return Number.isFinite(n) ? n : null; }
 function round(n, d = 2) { return Number.isFinite(n) ? Number(n.toFixed(d)) : null; }
 function pct(a, b) { return Number.isFinite(a) && Number.isFinite(b) && b !== 0 ? ((a - b) / b) * 100 : null; }
+function redact(value) {
+  let text = String(value ?? '');
+  for (const secret of SENSITIVE_KEYS) text = text.split(secret).join('[REDACTED]');
+  return text.replace(/([?&](?:apiKey|apikey|api_key)=)[^&\s]+/gi, '$1[REDACTED]')
+    .replace(/(Authorization:\s*Bearer\s+)[^\s]+/gi, '$1[REDACTED]');
+}
 function sma(arr) { const xs = arr.filter(Number.isFinite); return xs.length ? xs.reduce((a,b)=>a+b,0)/xs.length : null; }
 function ema(values, period) {
   const out = []; const k = 2 / (period + 1); let prev = null;
@@ -57,7 +64,7 @@ function recommendation({ rsi14, ytdPct, price, week52Low, week52High }) {
 }
 async function fetchJson(url, headers = {}) {
   const res = await fetch(url, { headers: { 'User-Agent': SEC_UA, ...headers } });
-  if (!res.ok) throw new Error(`${url} HTTP ${res.status}`);
+  if (!res.ok) throw new Error(`${redact(url)} HTTP ${res.status}`);
   return res.json();
 }
 async function fetchChart(symbol) {
@@ -328,7 +335,7 @@ for (const symbol of SYMBOLS) {
       try {
         base = await fetchMassiveBase(symbol);
       } catch (massiveErr) {
-        errors.push({ symbol, error: `Massive fallback to Yahoo: ${String(massiveErr.message || massiveErr)}` });
+        errors.push({ symbol, error: `Massive fallback to Yahoo: ${redact(massiveErr.message || massiveErr)}` });
       }
     }
     if (!base) {
@@ -338,7 +345,7 @@ for (const symbol of SYMBOLS) {
     }
     const extra = await fetchFinancialAndInsider(symbol, ciks[symbol]);
     results.push({ ...base, cik: ciks[symbol] || null, ...extra });
-  } catch (err) { errors.push({ symbol, error: String(err.message || err) }); }
+  } catch (err) { errors.push({ symbol, error: redact(err.message || err) }); }
   await sleep(MASSIVE_API_KEY ? 13_000 : 350);
 }
 const bull = results.filter(s => s.recommendation === 'BUY').length;
