@@ -26,7 +26,7 @@
     <header class="topbar">
       <div><h1>Nano Terminal</h1><p>Real-time equity intelligence terminal</p></div>
       <div class="status-pill" id="status-pill">Loading…</div>
-      <button id="refresh-btn" class="ghost">Refresh now</button>
+      <button id="refresh-btn" class="ghost" type="button">Refresh now</button>
     </header>
 
     <main id="dashboard">
@@ -34,7 +34,7 @@
         <div>
           <p class="eyebrow">Market intelligence</p>
           <h2>Live-refresh watchlist dashboard</h2>
-          <p>Published on GitHub Pages. Data snapshot refreshes every morning at 9:00 AM ICT via GitHub Actions; browser reloads JSON every 60 seconds.</p>
+          <p>Published on GitHub Pages. Market data refreshes every trading morning at 5:00 AM ICT after the US close; this terminal reloads same-origin JSON every 60 seconds.</p>
         </div>
         <div class="clock-card"><span id="clock">--:--:--</span><small>Local time · same-origin JSON data · no browser API keys exposed.</small></div>
       </section>

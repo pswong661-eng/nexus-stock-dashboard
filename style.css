@@ -45,6 +45,7 @@ h1 { font-size: 24px; letter-spacing: .02em; }
 .status-pill.stale { color: var(--yellow); border-color: rgba(255,209,102,.35); }
 .ghost { cursor: pointer; font-weight: 700; }
 .ghost:hover { border-color: rgba(89,180,255,.5); }
+.ghost:disabled { cursor: progress; opacity: .72; }
 .hero, .panel, .stock-card, .ticker-strip { border: 1px solid var(--line); background: var(--panel); box-shadow: var(--shadow); backdrop-filter: blur(18px); }
 .hero { display: flex; justify-content: space-between; gap: 20px; border-radius: 28px; padding: 28px; margin-bottom: 18px; }
 .eyebrow { color: var(--green)!important; text-transform: uppercase; letter-spacing: .2em; font-size: 12px; font-weight: 900; margin-bottom: 8px; }
