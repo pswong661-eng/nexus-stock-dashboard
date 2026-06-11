@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T10:02:00.185Z",
+  "generatedAt": "2026-06-11T23:19:25.809Z",
   "staleAfterMinutes": 1440,
   "source": "Massive.com OHLC aggregates + SEC companyfacts/submissions via scheduled Node refresh",
   "tickers": [
@@ -17,18 +17,18 @@
   "summary": {
     "totalMarketCap": null,
     "avgPeRatio": null,
-    "avgRsi14": 46.5,
+    "avgRsi14": 46.4,
     "sentimentScore": 64,
     "bullPct": 38,
     "neutralPct": 63,
     "bearPct": 0,
     "bestPerformer": {
       "symbol": "RRX",
-      "ytdPct": 37.2
+      "ytdPct": 44.59
     },
     "worstPerformer": {
       "symbol": "RGTI",
-      "ytdPct": -17.61
+      "ytdPct": -12.58
     }
   },
   "symbols": [
@@ -37,15 +37,15 @@
       "name": "Vistra Corp.",
       "exchange": "XNYS",
       "currency": "USD",
-      "price": 138.54,
-      "previousClose": 146.22,
-      "ytdPct": -16.15,
+      "price": 146.38,
+      "previousClose": 138.54,
+      "ytdPct": -11.41,
       "marketCap": 46713259116.71999,
       "peRatio": null,
-      "rsi14": 44.9,
+      "rsi14": 47.6,
       "week52Low": 132.66,
       "week52High": 219.82,
-      "avgVolume": 5284307,
+      "avgVolume": 5288685,
       "recommendation": "HOLD",
       "opportunityScore": 55,
       "company": {
@@ -1073,18 +1073,13 @@
         {
           "date": "2026-06-10",
           "value": 79.79
+        },
+        {
+          "date": "2026-06-11",
+          "value": 84.31
         }
       ],
       "technical": [
-        {
-          "date": "2025-10-21",
-          "close": 186.52,
-          "ema50": 200.2899,
-          "rsi14": 39.88,
-          "macd": -0.9631,
-          "macdSignal": 0.7316,
-          "macdHist": -1.6947
-        },
         {
           "date": "2025-10-22",
           "close": 185.83,
@@ -2515,13 +2510,18 @@
           "macd": -1.8789,
           "macdSignal": -0.6667,
           "macdHist": -1.2122
+        },
+        {
+          "date": "2026-06-11",
+          "close": 146.38,
+          "ema50": 153.3954,
+          "rsi14": 47.59,
+          "macd": -1.9946,
+          "macdSignal": -0.9323,
+          "macdHist": -1.0623
         }
       ],
       "rawPoints": [
-        {
-          "date": "2026-05-13",
-          "close": 142.61
-        },
         {
           "date": "2026-05-14",
           "close": 141.9
@@ -2597,6 +2597,10 @@
         {
           "date": "2026-06-10",
           "close": 138.54
+        },
+        {
+          "date": "2026-06-11",
+          "close": 146.38
         }
       ],
       "cik": "0001692819",
@@ -3012,15 +3016,15 @@
       "name": "Rigetti Computing, Inc. Common Stock",
       "exchange": "XNAS",
       "currency": "USD",
-      "price": 19.45,
-      "previousClose": 19.69,
-      "ytdPct": -17.61,
+      "price": 20.63,
+      "previousClose": 19.45,
+      "ytdPct": -12.58,
       "marketCap": 6463494802.115,
       "peRatio": null,
-      "rsi14": 54.9,
+      "rsi14": 46.8,
       "week52Low": 10.3,
       "week52High": 58.15,
-      "avgVolume": 51313703,
+      "avgVolume": 52151747,
       "recommendation": "HOLD",
       "opportunityScore": 55,
       "company": {
@@ -4048,18 +4052,13 @@
         {
           "date": "2026-06-10",
           "value": 172.38
+        },
+        {
+          "date": "2026-06-11",
+          "value": 182.89
         }
       ],
       "technical": [
-        {
-          "date": "2025-10-21",
-          "close": 40,
-          "ema50": 31.3978,
-          "rsi14": 60.04,
-          "macd": 5.9305,
-          "macdSignal": 6.8851,
-          "macdHist": -0.9546
-        },
         {
           "date": "2025-10-22",
           "close": 36.06,
@@ -5490,13 +5489,18 @@
           "macd": 0.7466,
           "macdSignal": 1.4377,
           "macdHist": -0.6911
+        },
+        {
+          "date": "2026-06-11",
+          "close": 20.63,
+          "ema50": 20.1447,
+          "rsi14": 46.84,
+          "macd": 0.5771,
+          "macdSignal": 1.2656,
+          "macdHist": -0.6885
         }
       ],
       "rawPoints": [
-        {
-          "date": "2026-05-13",
-          "close": 18.415
-        },
         {
           "date": "2026-05-14",
           "close": 19.27
@@ -5572,6 +5576,10 @@
         {
           "date": "2026-06-10",
           "close": 19.445
+        },
+        {
+          "date": "2026-06-11",
+          "close": 20.63
         }
       ],
       "cik": "0001838359",
@@ -5696,6 +5704,142 @@
         "source": "SEC"
       },
       "insider": [
+        {
+          "form": "4",
+          "reportDate": "2026-06-08",
+          "filingDate": "2026-06-10",
+          "owner": "Johnson Ray O",
+          "title": "Director",
+          "accessionNumber": "0001123292-26-000852",
+          "description": "Common Stock",
+          "source": "Massive",
+          "transactions": [
+            {
+              "date": "2026-06-08",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 5971,
+              "price": 21.76,
+              "value": 129953,
+              "sign": -1,
+              "tenB5One": true,
+              "securityTitle": "Common Stock"
+            },
+            {
+              "date": "2026-06-08",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 116217,
+              "price": 21.28,
+              "value": 2472889,
+              "sign": -1,
+              "tenB5One": true,
+              "securityTitle": "Common Stock"
+            },
+            {
+              "date": "2026-06-09",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 9208,
+              "price": 0,
+              "value": 0,
+              "sign": 0,
+              "tenB5One": true,
+              "securityTitle": "Common Stock"
+            }
+          ],
+          "netShares": -122188,
+          "boughtValue": 0,
+          "soldValue": 2602842,
+          "dominantType": "SELL"
+        },
+        {
+          "form": "4",
+          "reportDate": "2026-06-09",
+          "filingDate": "2026-06-10",
+          "owner": "Iannotti Thomas J",
+          "title": "Director",
+          "accessionNumber": "0001123292-26-000854",
+          "description": "Common Stock",
+          "source": "Massive",
+          "transactions": [
+            {
+              "date": "2026-06-09",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 9208,
+              "price": 0,
+              "value": 0,
+              "sign": 0,
+              "tenB5One": false,
+              "securityTitle": "Common Stock"
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "AWARD"
+        },
+        {
+          "form": "4",
+          "reportDate": "2026-06-09",
+          "filingDate": "2026-06-10",
+          "owner": "Clifton Michael S.",
+          "title": "Director",
+          "accessionNumber": "0001123292-26-000853",
+          "description": "Common Stock",
+          "source": "Massive",
+          "transactions": [
+            {
+              "date": "2026-06-09",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 9208,
+              "price": 0,
+              "value": 0,
+              "sign": 0,
+              "tenB5One": false,
+              "securityTitle": "Common Stock"
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "AWARD"
+        },
+        {
+          "form": "4",
+          "reportDate": "2026-06-09",
+          "filingDate": "2026-06-10",
+          "owner": "Fitzgerald Alissa",
+          "title": "Director",
+          "accessionNumber": "0001123292-26-000855",
+          "description": "Common Stock",
+          "source": "Massive",
+          "transactions": [
+            {
+              "date": "2026-06-09",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 9208,
+              "price": 0,
+              "value": 0,
+              "sign": 0,
+              "tenB5One": false,
+              "securityTitle": "Common Stock"
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "AWARD"
+        },
         {
           "form": "4",
           "reportDate": "2026-06-02",
@@ -6011,176 +6155,28 @@
           "boughtValue": 0,
           "soldValue": 430643,
           "dominantType": "SELL"
-        },
-        {
-          "form": "4",
-          "reportDate": "2026-05-22",
-          "filingDate": "2026-05-26",
-          "owner": "Bertelsen Jeffrey A.",
-          "title": "CHIEF FINANCIAL OFFICER",
-          "accessionNumber": "0001123292-26-000745",
-          "description": "Common Stock",
-          "source": "Massive",
-          "transactions": [
-            {
-              "date": "2026-05-22",
-              "code": "S",
-              "type": "SELL",
-              "label": "Open-market sale",
-              "shares": 13,
-              "price": 25.63,
-              "value": 333,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Common Stock"
-            },
-            {
-              "date": "2026-05-22",
-              "code": "S",
-              "type": "SELL",
-              "label": "Open-market sale",
-              "shares": 3669,
-              "price": 22.94,
-              "value": 84156,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Common Stock"
-            }
-          ],
-          "netShares": -3682,
-          "boughtValue": 0,
-          "soldValue": 84489,
-          "dominantType": "SELL"
-        },
-        {
-          "form": "4",
-          "reportDate": "2026-05-21",
-          "filingDate": "2026-05-22",
-          "owner": "Clifton Michael S.",
-          "title": "Director",
-          "accessionNumber": "0001123292-26-000720",
-          "description": "Warrants (right to buy)",
-          "source": "Massive",
-          "transactions": [
-            {
-              "date": "2026-05-21",
-              "code": "S",
-              "type": "SELL",
-              "label": "Open-market sale",
-              "shares": 50000,
-              "price": 10,
-              "value": 500000,
-              "sign": -1,
-              "tenB5One": true,
-              "securityTitle": "Warrants (right to buy)"
-            }
-          ],
-          "netShares": -50000,
-          "boughtValue": 0,
-          "soldValue": 500000,
-          "dominantType": "SELL"
-        },
-        {
-          "form": "4",
-          "reportDate": "2026-03-10",
-          "filingDate": "2026-03-11",
-          "owner": "Rivas David",
-          "title": "CHIEF TECHNOLOGY OFFICER",
-          "accessionNumber": "0001123292-26-000401",
-          "description": "Common Stock",
-          "source": "Massive",
-          "transactions": [
-            {
-              "date": "2026-03-10",
-              "code": "S",
-              "type": "SELL",
-              "label": "Open-market sale",
-              "shares": 36719,
-              "price": 17.52,
-              "value": 643321,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Common Stock"
-            },
-            {
-              "date": "2026-03-10",
-              "code": "A",
-              "type": "AWARD",
-              "label": "Grant / award",
-              "shares": 80000,
-              "price": 0,
-              "value": 0,
-              "sign": 0,
-              "tenB5One": false,
-              "securityTitle": "Common Stock"
-            }
-          ],
-          "netShares": -36719,
-          "boughtValue": 0,
-          "soldValue": 643321,
-          "dominantType": "SELL"
-        },
-        {
-          "form": "4",
-          "reportDate": "2026-03-10",
-          "filingDate": "2026-03-11",
-          "owner": "Bertelsen Jeffrey A.",
-          "title": "CHIEF FINANCIAL OFFICER",
-          "accessionNumber": "0001123292-26-000402",
-          "description": "Common Stock",
-          "source": "Massive",
-          "transactions": [
-            {
-              "date": "2026-03-10",
-              "code": "S",
-              "type": "SELL",
-              "label": "Open-market sale",
-              "shares": 4270,
-              "price": 17.52,
-              "value": 74804,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Common Stock"
-            },
-            {
-              "date": "2026-03-10",
-              "code": "A",
-              "type": "AWARD",
-              "label": "Grant / award",
-              "shares": 180000,
-              "price": 0,
-              "value": 0,
-              "sign": 0,
-              "tenB5One": false,
-              "securityTitle": "Employee Stock Option (Right to Buy)"
-            }
-          ],
-          "netShares": -4270,
-          "boughtValue": 0,
-          "soldValue": 74804,
-          "dominantType": "SELL"
         }
       ],
       "insiderSummary": {
         "source": "Massive",
         "sentiment": "VERY_BEARISH",
         "score": 0,
-        "totalTransactions": 28,
-        "openMarketTransactions": 12,
+        "totalTransactions": 27,
+        "openMarketTransactions": 9,
         "buyCount": 0,
-        "sellCount": 12,
+        "sellCount": 9,
         "buySellRatio": 0,
-        "netShares": -774104,
+        "netShares": -801621,
         "totalBought": 0,
-        "totalSold": 17948590,
+        "totalSold": 19248818,
         "keyInsiders": [
           {
             "owner": "Rivas David",
             "title": "CHIEF TECHNOLOGY OFFICER",
             "boughtValue": 0,
-            "soldValue": 13754898,
-            "netShares": -554806,
-            "txCount": 4
+            "soldValue": 13111577,
+            "netShares": -518087,
+            "txCount": 3
           },
           {
             "owner": "Kulkarni Subodh K",
@@ -6191,20 +6187,20 @@
             "txCount": 2
           },
           {
+            "owner": "Johnson Ray O",
+            "title": "Director",
+            "boughtValue": 0,
+            "soldValue": 2602842,
+            "netShares": -122188,
+            "txCount": 2
+          },
+          {
             "owner": "Clifton Michael S.",
             "title": "Director",
             "boughtValue": 0,
-            "soldValue": 1414496,
-            "netShares": -107156,
-            "txCount": 3
-          },
-          {
-            "owner": "Bertelsen Jeffrey A.",
-            "title": "CHIEF FINANCIAL OFFICER",
-            "boughtValue": 0,
-            "soldValue": 159293,
-            "netShares": -7952,
-            "txCount": 3
+            "soldValue": 914496,
+            "netShares": -57156,
+            "txCount": 2
           }
         ],
         "largestTransactions": [
@@ -6216,6 +6212,15 @@
             "shares": 499328,
             "price": 25.4,
             "value": 12680934
+          },
+          {
+            "owner": "Johnson Ray O",
+            "title": "Director",
+            "date": "2026-06-08",
+            "type": "SELL",
+            "shares": 116217,
+            "price": 21.28,
+            "value": 2472889
           },
           {
             "owner": "Kulkarni Subodh K",
@@ -6247,24 +6252,6 @@
           {
             "owner": "Rivas David",
             "title": "CHIEF TECHNOLOGY OFFICER",
-            "date": "2026-03-10",
-            "type": "SELL",
-            "shares": 36719,
-            "price": 17.52,
-            "value": 643321
-          },
-          {
-            "owner": "Clifton Michael S.",
-            "title": "Director",
-            "date": "2026-05-21",
-            "type": "SELL",
-            "shares": 50000,
-            "price": 10,
-            "value": 500000
-          },
-          {
-            "owner": "Rivas David",
-            "title": "CHIEF TECHNOLOGY OFFICER",
             "date": "2026-05-22",
             "type": "SELL",
             "shares": 18729,
@@ -6272,23 +6259,31 @@
             "value": 429874
           },
           {
-            "owner": "Bertelsen Jeffrey A.",
-            "title": "CHIEF FINANCIAL OFFICER",
-            "date": "2026-05-22",
+            "owner": "Johnson Ray O",
+            "title": "Director",
+            "date": "2026-06-08",
             "type": "SELL",
-            "shares": 3669,
-            "price": 22.94,
-            "value": 84156
+            "shares": 5971,
+            "price": 21.76,
+            "value": 129953
+          },
+          {
+            "owner": "Clifton Michael S.",
+            "title": "Director",
+            "date": "2026-06-02",
+            "type": "SELL",
+            "shares": 3144,
+            "price": 16,
+            "value": 50304
           }
         ],
         "patterns": [
           "Cluster selling detected",
-          "CEO selling activity",
-          "CFO selling activity"
+          "CEO selling activity"
         ],
         "alerts": [
-          "Selling value dominates buying: $17,948,590 sold",
-          "12 sale transactions in recent filings"
+          "Selling value dominates buying: $19,248,818 sold",
+          "9 sale transactions in recent filings"
         ]
       }
     },
@@ -6297,15 +6292,15 @@
       "name": "IonQ, Inc.",
       "exchange": "XNYS",
       "currency": "USD",
-      "price": 56.63,
-      "previousClose": 56.69,
-      "ytdPct": 21.08,
+      "price": 57.99,
+      "previousClose": 56.63,
+      "ytdPct": 23.99,
       "marketCap": 21138277155.24,
       "peRatio": null,
-      "rsi14": 54,
+      "rsi14": 49,
       "week52Low": 25.89,
       "week52High": 84.64,
-      "avgVolume": 33510625,
+      "avgVolume": 33529745,
       "recommendation": "HOLD",
       "opportunityScore": 55,
       "company": {
@@ -7333,18 +7328,13 @@
         {
           "date": "2026-06-10",
           "value": 145.13
+        },
+        {
+          "date": "2026-06-11",
+          "value": 148.62
         }
       ],
       "technical": [
-        {
-          "date": "2025-10-21",
-          "close": 59.5,
-          "ema50": 60.2106,
-          "rsi14": 47.24,
-          "macd": 1.6901,
-          "macdSignal": 4.4327,
-          "macdHist": -2.7426
-        },
         {
           "date": "2025-10-22",
           "close": 55.45,
@@ -8775,13 +8765,18 @@
           "macd": 3.28,
           "macdSignal": 4.9747,
           "macdHist": -1.6947
+        },
+        {
+          "date": "2026-06-11",
+          "close": 57.99,
+          "ema50": 52.7217,
+          "rsi14": 49.03,
+          "macd": 2.765,
+          "macdSignal": 4.5328,
+          "macdHist": -1.7678
         }
       ],
       "rawPoints": [
-        {
-          "date": "2026-05-13",
-          "close": 55.26
-        },
         {
           "date": "2026-05-14",
           "close": 57.47
@@ -8857,6 +8852,10 @@
         {
           "date": "2026-06-10",
           "close": 56.63
+        },
+        {
+          "date": "2026-06-11",
+          "close": 57.99
         }
       ],
       "cik": "0001824920",
@@ -9326,15 +9325,15 @@
       "name": "Lithium Americas Corp.",
       "exchange": "XNYS",
       "currency": "USD",
-      "price": 4.15,
-      "previousClose": 4.34,
-      "ytdPct": -13,
+      "price": 4.41,
+      "previousClose": 4.15,
+      "ytdPct": -7.55,
       "marketCap": 1456909283.7,
       "peRatio": null,
-      "rsi14": 39.5,
+      "rsi14": 40.1,
       "week52Low": 2.47,
       "week52High": 10.52,
-      "avgVolume": 13254445,
+      "avgVolume": 13180706,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -10362,18 +10361,13 @@
         {
           "date": "2026-06-10",
           "value": 153.7
+        },
+        {
+          "date": "2026-06-11",
+          "value": 163.33
         }
       ],
       "technical": [
-        {
-          "date": "2025-10-21",
-          "close": 6.94,
-          "ema50": 5.5041,
-          "rsi14": 49.51,
-          "macd": 0.8479,
-          "macdSignal": 1.1232,
-          "macdHist": -0.2753
-        },
         {
           "date": "2025-10-22",
           "close": 6.69,
@@ -11804,13 +11798,18 @@
           "macd": -0.1397,
           "macdSignal": -0.0147,
           "macdHist": -0.125
+        },
+        {
+          "date": "2026-06-11",
+          "close": 4.41,
+          "ema50": 4.9048,
+          "rsi14": 40.07,
+          "macd": -0.1605,
+          "macdSignal": -0.0438,
+          "macdHist": -0.1167
         }
       ],
       "rawPoints": [
-        {
-          "date": "2026-05-13",
-          "close": 5.48
-        },
         {
           "date": "2026-05-14",
           "close": 5.14
@@ -11886,6 +11885,10 @@
         {
           "date": "2026-06-10",
           "close": 4.15
+        },
+        {
+          "date": "2026-06-11",
+          "close": 4.41
         }
       ],
       "cik": "0001966983",
@@ -12230,15 +12233,15 @@
       "name": "United States Antimony Corporation",
       "exchange": "XNYS",
       "currency": "USD",
-      "price": 6.86,
-      "previousClose": 7.28,
-      "ytdPct": 15.68,
+      "price": 7.33,
+      "previousClose": 6.86,
+      "ytdPct": 23.61,
       "marketCap": 1016553366.9200001,
       "peRatio": null,
-      "rsi14": 38.1,
+      "rsi14": 43.3,
       "week52Low": 1.94,
       "week52High": 19.71,
-      "avgVolume": 12588351,
+      "avgVolume": 12403841,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -13266,18 +13269,13 @@
         {
           "date": "2026-06-10",
           "value": 203.56
+        },
+        {
+          "date": "2026-06-11",
+          "value": 217.51
         }
       ],
       "technical": [
-        {
-          "date": "2025-10-21",
-          "close": 12.39,
-          "ema50": 7.9202,
-          "rsi14": 62.37,
-          "macd": 2.0297,
-          "macdSignal": 1.9417,
-          "macdHist": 0.088
-        },
         {
           "date": "2025-10-22",
           "close": 13.11,
@@ -14708,13 +14706,18 @@
           "macd": -0.5935,
           "macdSignal": -0.4013,
           "macdHist": -0.1922
+        },
+        {
+          "date": "2026-06-11",
+          "close": 7.33,
+          "ema50": 9.0776,
+          "rsi14": 43.32,
+          "macd": -0.6247,
+          "macdSignal": -0.446,
+          "macdHist": -0.1787
         }
       ],
       "rawPoints": [
-        {
-          "date": "2026-05-13",
-          "close": 9.97
-        },
         {
           "date": "2026-05-14",
           "close": 9.57
@@ -14790,6 +14793,10 @@
         {
           "date": "2026-06-10",
           "close": 6.86
+        },
+        {
+          "date": "2026-06-11",
+          "close": 7.33
         }
       ],
       "cik": "0000101538",
@@ -15264,15 +15271,15 @@
       "name": "Synopsys Inc",
       "exchange": "XNAS",
       "currency": "USD",
-      "price": 460.54,
-      "previousClose": 465.27,
-      "ytdPct": -4.14,
+      "price": 456.29,
+      "previousClose": 460.54,
+      "ytdPct": -5.02,
       "marketCap": 88183888335.5,
       "peRatio": null,
-      "rsi14": 40,
+      "rsi14": 37.5,
       "week52Low": 376.18,
       "week52High": 651.73,
-      "avgVolume": 1851147,
+      "avgVolume": 1877837,
       "recommendation": "HOLD",
       "opportunityScore": 55,
       "company": {
@@ -16300,18 +16307,13 @@
         {
           "date": "2026-06-10",
           "value": 94.76
+        },
+        {
+          "date": "2026-06-11",
+          "value": 93.89
         }
       ],
       "technical": [
-        {
-          "date": "2025-10-21",
-          "close": 459.04,
-          "ema50": 499.6572,
-          "rsi14": 39.01,
-          "macd": -17.6527,
-          "macdSignal": -19.6102,
-          "macdHist": 1.9575
-        },
         {
           "date": "2025-10-22",
           "close": 454.3,
@@ -17742,13 +17744,18 @@
           "macd": -3.5027,
           "macdSignal": 3.4438,
           "macdHist": -6.9465
+        },
+        {
+          "date": "2026-06-11",
+          "close": 456.29,
+          "ema50": 477.1758,
+          "rsi14": 37.55,
+          "macd": -5.3942,
+          "macdSignal": 1.6762,
+          "macdHist": -7.0704
         }
       ],
       "rawPoints": [
-        {
-          "date": "2026-05-13",
-          "close": 509.28
-        },
         {
           "date": "2026-05-14",
           "close": 510.02
@@ -17824,6 +17831,10 @@
         {
           "date": "2026-06-10",
           "close": 460.54
+        },
+        {
+          "date": "2026-06-11",
+          "close": 456.29
         }
       ],
       "cik": "0000883241",
@@ -18280,15 +18291,15 @@
       "name": "Qualcomm Inc",
       "exchange": "XNAS",
       "currency": "USD",
-      "price": 191.2,
-      "previousClose": 205.42,
-      "ytdPct": 10.53,
+      "price": 202.96,
+      "previousClose": 191.2,
+      "ytdPct": 17.33,
       "marketCap": 201524800000,
       "peRatio": null,
-      "rsi14": 46.9,
+      "rsi14": 47.2,
       "week52Low": 121.99,
       "week52High": 259.92,
-      "avgVolume": 28160472,
+      "avgVolume": 27538492,
       "recommendation": "HOLD",
       "opportunityScore": 55,
       "company": {
@@ -19316,18 +19327,13 @@
         {
           "date": "2026-06-10",
           "value": 128.12
+        },
+        {
+          "date": "2026-06-11",
+          "value": 136
         }
       ],
       "technical": [
-        {
-          "date": "2025-10-21",
-          "close": 168.83,
-          "ema50": 162.65,
-          "rsi14": 52.96,
-          "macd": 0.5149,
-          "macdSignal": 0.5394,
-          "macdHist": -0.0245
-        },
         {
           "date": "2025-10-22",
           "close": 169.27,
@@ -20758,13 +20764,18 @@
           "macd": 8.4014,
           "macdSignal": 15.4922,
           "macdHist": -7.0908
+        },
+        {
+          "date": "2026-06-11",
+          "close": 202.96,
+          "ema50": 193.5336,
+          "rsi14": 47.19,
+          "macd": 6.4431,
+          "macdSignal": 13.6824,
+          "macdHist": -7.2393
         }
       ],
       "rawPoints": [
-        {
-          "date": "2026-05-13",
-          "close": 213.17
-        },
         {
           "date": "2026-05-14",
           "close": 200.08
@@ -20840,6 +20851,10 @@
         {
           "date": "2026-06-10",
           "close": 191.2
+        },
+        {
+          "date": "2026-06-11",
+          "close": 202.96
         }
       ],
       "cik": "0000804328",
@@ -21645,15 +21660,15 @@
       "name": "Regal Rexnord Corporation",
       "exchange": "XNYS",
       "currency": "USD",
-      "price": 200.45,
-      "previousClose": 213.3,
-      "ytdPct": 37.2,
+      "price": 211.24,
+      "previousClose": 200.45,
+      "ytdPct": 44.59,
       "marketCap": 13343870907.849998,
       "peRatio": null,
-      "rsi14": 53.8,
+      "rsi14": 59.5,
       "week52Low": 127.96,
       "week52High": 236.34,
-      "avgVolume": 1117681,
+      "avgVolume": 1119137,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -22681,18 +22696,13 @@
         {
           "date": "2026-06-10",
           "value": 143.34
+        },
+        {
+          "date": "2026-06-11",
+          "value": 151.06
         }
       ],
       "technical": [
-        {
-          "date": "2025-10-21",
-          "close": 146.92,
-          "ema50": 144.5902,
-          "rsi14": 53.63,
-          "macd": -0.1571,
-          "macdSignal": -0.4637,
-          "macdHist": 0.3066
-        },
         {
           "date": "2025-10-22",
           "close": 141.2,
@@ -24123,13 +24133,18 @@
           "macd": 0.941,
           "macdSignal": 0.7338,
           "macdHist": 0.2072
+        },
+        {
+          "date": "2026-06-11",
+          "close": 211.24,
+          "ema50": 203.8751,
+          "rsi14": 59.46,
+          "macd": 1.2074,
+          "macdSignal": 0.8285,
+          "macdHist": 0.3789
         }
       ],
       "rawPoints": [
-        {
-          "date": "2026-05-13",
-          "close": 205.72
-        },
         {
           "date": "2026-05-14",
           "close": 207.38
@@ -24205,6 +24220,10 @@
         {
           "date": "2026-06-10",
           "close": 200.45
+        },
+        {
+          "date": "2026-06-11",
+          "close": 211.24
         }
       ],
       "cik": "0000082811",
@@ -24990,13 +25009,13 @@
       "symbol": "RRX",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-06-11T10:02:00.185Z"
+      "createdAt": "2026-06-11T23:19:25.809Z"
     },
     {
       "symbol": "RRX",
       "severity": "success",
-      "message": "Strong YTD performer: +37.2%",
-      "createdAt": "2026-06-11T09:02:00.185Z"
+      "message": "Strong YTD performer: +44.59%",
+      "createdAt": "2026-06-11T22:19:25.809Z"
     }
   ],
   "errors": [],
@@ -25007,7 +25026,7 @@
     },
     {
       "symbol": "VST",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=VST&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=VST&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "RGTI",
@@ -25031,7 +25050,7 @@
     },
     {
       "symbol": "LAC",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=LAC&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/cash-flow-statements?tickers=LAC&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "UAMY",
@@ -25055,7 +25074,7 @@
     },
     {
       "symbol": "QCOM",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=QCOM&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/cash-flow-statements?tickers=QCOM&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "RRX",
