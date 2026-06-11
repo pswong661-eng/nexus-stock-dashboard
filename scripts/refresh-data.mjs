@@ -77,13 +77,150 @@ function isoDateDaysAgo(days) {
 async function fetchMassiveJson(url) {
   return fetchJson(url, { Authorization: `Bearer ${MASSIVE_API_KEY}` });
 }
-async function fetchMassiveBase(symbol) {
+function massiveUrl(path, params = {}) {
+  const url = new URL(path, 'https://api.massive.com');
+  for (const [key, value] of Object.entries(params)) {
+    if (value !== undefined && value !== null && value !== '') url.searchParams.set(key, value);
+  }
+  return url.toString();
+}
+async function fetchMassiveTickerDetails(symbol) {
+  const data = await fetchMassiveJson(massiveUrl(`/v3/reference/tickers/${encodeURIComponent(symbol)}`));
+  return data.results || null;
+}
+async function fetchMassiveBase(symbol, details = {}) {
   const from = isoDateDaysAgo(370);
   const to = new Date().toISOString().slice(0, 10);
-  const aggUrl = `https://api.massive.com/v2/aggs/ticker/${encodeURIComponent(symbol)}/range/1/day/${from}/${to}?adjusted=true&sort=asc&limit=5000`;
+  const aggUrl = massiveUrl(`/v2/aggs/ticker/${encodeURIComponent(symbol)}/range/1/day/${from}/${to}`, { adjusted: 'true', sort: 'asc', limit: 5000 });
   const bars = await fetchMassiveJson(aggUrl);
   if (!Array.isArray(bars.results) || !bars.results.length) throw new Error('Massive returned no aggregate bars');
-  return normalizeMassiveChart(symbol, bars.results);
+  return normalizeMassiveChart(symbol, bars.results, details);
+}
+async function fetchMassiveRatios(symbol) {
+  const data = await fetchMassiveJson(massiveUrl('/stocks/financials/v1/ratios', { ticker: symbol, limit: 1, sort: 'date.desc' }));
+  const row = Array.isArray(data.results) ? data.results[0] : null;
+  if (!row) return null;
+  return {
+    date: row.date || null,
+    pe: round(finite(row.price_to_earnings), 2),
+    pb: round(finite(row.price_to_book), 2),
+    ps: round(finite(row.price_to_sales), 2),
+    evToEbitda: round(finite(row.ev_to_ebitda), 2),
+    roe: round(finite(row.return_on_equity), 3),
+    roa: round(finite(row.return_on_assets), 3),
+    debtToEquity: round(finite(row.debt_to_equity), 2),
+    currentRatio: round(finite(row.current), 2),
+    dividendYield: round(finite(row.dividend_yield), 4),
+    eps: round(finite(row.earnings_per_share), 2),
+    freeCashFlow: round(finite(row.free_cash_flow), 0),
+    enterpriseValue: round(finite(row.enterprise_value), 0),
+    marketCap: round(finite(row.market_cap), 0)
+  };
+}
+async function fetchMassiveStatement(path, symbol, limit = 8) {
+  const data = await fetchMassiveJson(massiveUrl(path, { tickers: symbol, timeframe: 'quarterly', limit, sort: 'period_end.desc' }));
+  return Array.isArray(data.results) ? data.results : [];
+}
+async function fetchMassiveFinancials(symbol) {
+  const [income, balance, cashFlow] = await Promise.all([
+    fetchMassiveStatement('/stocks/financials/v1/income-statements', symbol),
+    fetchMassiveStatement('/stocks/financials/v1/balance-sheets', symbol),
+    fetchMassiveStatement('/stocks/financials/v1/cash-flow-statements', symbol)
+  ]);
+  const byEnd = new Map();
+  const rowFor = (row) => {
+    const end = row.period_end;
+    if (!end) return null;
+    const existing = byEnd.get(end) || {
+      period: row.fiscal_year && row.fiscal_quarter ? `${row.fiscal_year} Q${row.fiscal_quarter}` : end,
+      end,
+      form: 'Massive',
+      source: 'Massive'
+    };
+    byEnd.set(end, existing);
+    return existing;
+  };
+  for (const row of income) {
+    const q = rowFor(row);
+    if (!q) continue;
+    q.revenue = round(finite(row.revenue), 0);
+    q.netIncome = round(finite(row.net_income_loss_attributable_common_shareholders ?? row.consolidated_net_income_loss), 0);
+    q.grossProfit = round(finite(row.gross_profit), 0);
+    q.operatingIncome = round(finite(row.operating_income), 0);
+    q.eps = round(finite(row.diluted_earnings_per_share ?? row.basic_earnings_per_share), 2);
+    q.filingDate = row.filing_date || q.filingDate || null;
+  }
+  for (const row of cashFlow) {
+    const q = rowFor(row);
+    if (!q) continue;
+    q.operatingCashFlow = round(finite(row.net_cash_flow_from_operating_activities ?? row.operating_cash_flow), 0);
+    q.capex = round(finite(row.capital_expenditure ?? row.payments_to_acquire_property_plant_and_equipment), 0);
+    q.freeCashFlow = round(finite(row.free_cash_flow), 0);
+    if (!Number.isFinite(q.freeCashFlow) && Number.isFinite(q.operatingCashFlow) && Number.isFinite(q.capex)) q.freeCashFlow = round(q.operatingCashFlow - Math.abs(q.capex), 0);
+  }
+  for (const row of balance) {
+    const q = rowFor(row);
+    if (!q) continue;
+    q.assets = round(finite(row.total_assets), 0);
+    q.liabilities = round(finite(row.total_liabilities), 0);
+    q.equity = round(finite(row.total_equity ?? row.stockholders_equity), 0);
+    q.cash = round(finite(row.cash_and_cash_equivalents ?? row.cash), 0);
+    q.debt = round(finite(row.total_debt ?? row.long_term_debt_and_finance_lease_obligations_current_and_noncurrent), 0);
+  }
+  const quarters = [...byEnd.values()]
+    .sort((a, b) => new Date(a.end) - new Date(b.end))
+    .slice(-6);
+  return quarters.length ? { quarters, forecast: forecastTwo(quarters.map(q => ({ ...q, value: q.revenue }))), source: 'Massive' } : null;
+}
+async function fetchMassiveInsider(symbol) {
+  const data = await fetchMassiveJson(massiveUrl('/stocks/filings/vX/form-4', { tickers: symbol, limit: 40, sort: 'filing_date.desc' }));
+  const rows = Array.isArray(data.results) ? data.results : [];
+  const byFiling = new Map();
+  for (const row of rows) {
+    const cls = classifyCode(row.transaction_code, row.transaction_acquired_disposed);
+    const shares = finite(row.transaction_shares);
+    const price = finite(row.transaction_price_per_share);
+    const value = finite(row.transaction_value) ?? (Number.isFinite(shares) && Number.isFinite(price) ? shares * price : null);
+    const owner = row.owner_name || 'Unknown insider';
+    const key = `${row.accession_number || row.filing_url || row.filing_date || row.period_of_report}-${owner}`;
+    const filing = byFiling.get(key) || {
+      form: row.form_type || '4',
+      reportDate: row.period_of_report || row.transaction_date || row.filing_date,
+      filingDate: row.filing_date,
+      owner,
+      title: row.officer_title || (row.is_director ? 'Director' : row.is_ten_percent_owner ? '10% Owner' : 'Insider'),
+      accessionNumber: row.accession_number,
+      description: row.security_title || 'SEC Form 4',
+      url: row.filing_url,
+      source: 'Massive',
+      transactions: [],
+      netShares: 0,
+      boughtValue: 0,
+      soldValue: 0,
+      dominantType: 'OTHER'
+    };
+    filing.transactions.push({
+      date: row.transaction_date || row.period_of_report || row.filing_date,
+      code: row.transaction_code,
+      type: cls.type,
+      label: cls.label,
+      shares: round(shares, 0),
+      price: round(price, 2),
+      value: round(value, 0),
+      sign: cls.sign,
+      tenB5One: row.aff_10b5_one === true,
+      securityTitle: row.security_title || null
+    });
+    byFiling.set(key, filing);
+  }
+  for (const filing of byFiling.values()) {
+    const openMarket = filing.transactions.filter(t => ['BUY','SELL'].includes(t.type));
+    filing.netShares = round(openMarket.reduce((sum, t) => sum + (t.sign * (t.shares || 0)), 0), 0);
+    filing.boughtValue = round(openMarket.filter(t => t.type === 'BUY').reduce((sum, t) => sum + (t.value || 0), 0), 0);
+    filing.soldValue = round(openMarket.filter(t => t.type === 'SELL').reduce((sum, t) => sum + (t.value || 0), 0), 0);
+    filing.dominantType = filing.soldValue > filing.boughtValue ? 'SELL' : filing.boughtValue > filing.soldValue ? 'BUY' : (filing.transactions[0]?.type || 'OTHER');
+  }
+  return [...byFiling.values()].slice(0, 8);
 }
 function normalizeMassiveChart(symbol, bars, details = {}) {
   const points = bars
@@ -120,6 +257,15 @@ function normalizeMassiveChart(symbol, bars, details = {}) {
     price: round(last, 2), previousClose: round(points.at(-2)?.close, 2), ytdPct: round(ytdPct, 2),
     marketCap: finite(details.market_cap), peRatio: null, rsi14: round(rsi14, 1), week52Low: round(week52Low, 2), week52High: round(week52High, 2), avgVolume: round(avgVolume, 0),
     recommendation: rec, opportunityScore: rec === 'BUY' ? 78 : rec === 'HOLD' ? 55 : 32,
+    company: {
+      description: details.description || '',
+      homepage: details.homepage_url || '',
+      employees: finite(details.total_employees),
+      sic: details.sic_code || '',
+      industry: details.sic_description || '',
+      icon: details.branding?.icon_url || '',
+      logo: details.branding?.logo_url || ''
+    },
     series: normalized, technical, rawPoints: points.slice(-20).map(({ date, close }) => ({ date, close }))
   };
 }
@@ -261,7 +407,7 @@ async function parseForm4(cik, filing) {
     dominantType: soldValue > boughtValue ? 'SELL' : boughtValue > soldValue ? 'BUY' : (transactions[0]?.type || 'OTHER')
   };
 }
-function summarizeInsider(filings) {
+function summarizeInsider(filings, source = 'SEC') {
   const allTx = filings.flatMap(f => (f.transactions || []).map(t => ({ ...t, owner: f.owner, title: f.title, filingUrl: f.url })));
   const open = allTx.filter(t => ['BUY','SELL'].includes(t.type));
   const totalBought = open.filter(t=>t.type==='BUY').reduce((s,t)=>s+(t.value||0),0);
@@ -297,32 +443,38 @@ function summarizeInsider(filings) {
   if (totalSold > totalBought * 3 && totalSold > 0) alerts.push(`Selling value dominates buying: $${Math.round(totalSold).toLocaleString()} sold`);
   if (totalBought > totalSold * 3 && totalBought > 0) alerts.push(`Accumulation signal: $${Math.round(totalBought).toLocaleString()} bought`);
   if (sellCount >= 5) alerts.push(`${sellCount} sale transactions in recent filings`);
-  return { sentiment, score, totalTransactions: allTx.length, openMarketTransactions: open.length, buyCount, sellCount, buySellRatio: sellCount ? round(buyCount / sellCount, 2) : buyCount ? 99 : 0, netShares: round(netShares,0), totalBought: round(totalBought,0), totalSold: round(totalSold,0), keyInsiders, largestTransactions, patterns, alerts };
+  return { source, sentiment, score, totalTransactions: allTx.length, openMarketTransactions: open.length, buyCount, sellCount, buySellRatio: sellCount ? round(buyCount / sellCount, 2) : buyCount ? 99 : 0, netShares: round(netShares,0), totalBought: round(totalBought,0), totalSold: round(totalSold,0), keyInsiders, largestTransactions, patterns, alerts };
 }
-async function fetchFinancialAndInsider(symbol, cik) {
-  if (!cik) return { financials: { quarters: [], forecast: [] }, insider: [], insiderSummary: summarizeInsider([]) };
+async function fetchFinancialAndInsider(symbol, cik, massive = {}) {
+  const hasMassiveInsider = Array.isArray(massive.insider) && massive.insider.length > 0;
+  if (massive.financials && hasMassiveInsider) return { financials: massive.financials, insider: massive.insider, insiderSummary: summarizeInsider(massive.insider, 'Massive') };
+  if (!cik) return { financials: massive.financials || { quarters: [], forecast: [], source: 'none' }, insider: massive.insider || [], insiderSummary: summarizeInsider(massive.insider || [], hasMassiveInsider ? 'Massive' : 'none') };
   const [facts, sub] = await Promise.all([
     fetchJson(`https://data.sec.gov/api/xbrl/companyfacts/CIK${cik}.json`).catch(() => null),
     fetchJson(`https://data.sec.gov/submissions/CIK${cik}.json`).catch(() => null)
   ]);
   const revenues = lastQuarters(pickFact(facts?.facts, ['RevenueFromContractWithCustomerExcludingAssessedTax', 'Revenues', 'SalesRevenueNet']));
   const netIncome = lastQuarters(pickFact(facts?.facts, ['NetIncomeLoss']));
-  const quarters = revenues.map((r) => ({ ...r, revenue: r.value, netIncome: netIncome.find(n => n.end === r.end)?.value ?? null }));
+  const quarters = revenues.map((r) => ({ ...r, source: 'SEC', revenue: r.value, netIncome: netIncome.find(n => n.end === r.end)?.value ?? null }));
   const recent = sub?.filings?.recent || {};
   const basicFilings = (recent.form || []).map((form, i) => ({ form, reportDate: recent.reportDate?.[i], filingDate: recent.filingDate?.[i], accessionNumber: recent.accessionNumber?.[i], document: recent.primaryDocument?.[i], description: recent.primaryDocDescription?.[i] }))
     .filter(f => f.form === '4')
     .slice(0, 8);
-  const insider = [];
-  for (const filing of basicFilings) {
-    try {
-      const parsed = await parseForm4(cik, filing);
-      if (parsed) insider.push(parsed);
-    } catch {
-      insider.push({ ...filing, url: rawSecUrl(cik, filing.accessionNumber, filing.document), transactions: [], netShares: 0, boughtValue: 0, soldValue: 0, dominantType: 'OTHER' });
+  let insider = hasMassiveInsider ? massive.insider : [];
+  if (!insider.length) {
+    insider = [];
+    for (const filing of basicFilings) {
+      try {
+        const parsed = await parseForm4(cik, filing);
+        if (parsed) insider.push({ ...parsed, source: 'SEC' });
+      } catch {
+        insider.push({ ...filing, source: 'SEC', url: rawSecUrl(cik, filing.accessionNumber, filing.document), transactions: [], netShares: 0, boughtValue: 0, soldValue: 0, dominantType: 'OTHER' });
+      }
+      await sleep(120);
     }
-    await sleep(120);
   }
-  return { financials: { quarters, forecast: forecastTwo(quarters.map(q => ({...q, value: q.revenue}))) }, insider, insiderSummary: summarizeInsider(insider) };
+  const financials = massive.financials || { quarters, forecast: forecastTwo(quarters.map(q => ({...q, value: q.revenue}))), source: 'SEC' };
+  return { financials, insider, insiderSummary: summarizeInsider(insider, massive.insider?.length ? 'Massive' : 'SEC') };
 }
 
 const results = [], errors = [];
@@ -330,10 +482,27 @@ let ciks = {};
 try { ciks = await cikMap(); } catch (e) { errors.push({ symbol: 'SEC', error: String(e.message || e) }); }
 for (const symbol of SYMBOLS) {
   try {
-    let base;
+    let base, profile = null, ratios = null, massiveFinancials = null, massiveInsider = null, priceSource = 'Yahoo';
     if (MASSIVE_API_KEY) {
       try {
-        base = await fetchMassiveBase(symbol);
+        profile = await fetchMassiveTickerDetails(symbol).catch(err => {
+          errors.push({ symbol, error: `Massive ticker overview unavailable: ${redact(err.message || err)}` });
+          return null;
+        });
+        base = await fetchMassiveBase(symbol, profile || {});
+        priceSource = 'Massive';
+        ratios = await fetchMassiveRatios(symbol).catch(err => {
+          errors.push({ symbol, error: `Massive ratios unavailable: ${redact(err.message || err)}` });
+          return null;
+        });
+        massiveFinancials = await fetchMassiveFinancials(symbol).catch(err => {
+          errors.push({ symbol, error: `Massive financial statements fallback to SEC: ${redact(err.message || err)}` });
+          return null;
+        });
+        massiveInsider = await fetchMassiveInsider(symbol).catch(err => {
+          errors.push({ symbol, error: `Massive Form 4 fallback to SEC: ${redact(err.message || err)}` });
+          return null;
+        });
       } catch (massiveErr) {
         errors.push({ symbol, error: `Massive fallback to Yahoo: ${redact(massiveErr.message || massiveErr)}` });
       }
@@ -343,8 +512,13 @@ for (const symbol of SYMBOLS) {
       if (!chart) throw new Error('empty chart result');
       base = normalizeChart(symbol, chart);
     }
-    const extra = await fetchFinancialAndInsider(symbol, ciks[symbol]);
-    results.push({ ...base, cik: ciks[symbol] || null, ...extra });
+    if (ratios) {
+      base.ratios = ratios;
+      base.peRatio = ratios.pe ?? base.peRatio;
+      base.marketCap = ratios.marketCap ?? base.marketCap;
+    }
+    const extra = await fetchFinancialAndInsider(symbol, ciks[symbol] || profile?.cik, { financials: massiveFinancials, insider: massiveInsider });
+    results.push({ ...base, cik: ciks[symbol] || profile?.cik || null, dataSources: { price: priceSource, financials: extra.financials?.source || 'SEC', insider: extra.insiderSummary?.source || 'SEC', ratios: ratios ? 'Massive' : 'none', profile: profile ? 'Massive' : 'none' }, ...extra });
   } catch (err) { errors.push({ symbol, error: redact(err.message || err) }); }
   await sleep(MASSIVE_API_KEY ? 13_000 : 350);
 }

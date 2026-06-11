@@ -57,9 +57,11 @@
       </section>
 
       <section class="page-section" id="financial">
-        <div class="section-head"><div><p class="eyebrow">Financial page</p><h2>Last 6 quarters + next 2 forecasts</h2><p>SEC companyfacts quarterly revenue/net income plus simple trend forecast for the next two quarters.</p></div><select id="financial-symbol"></select></div>
+        <div class="section-head"><div><p class="eyebrow">Financial page</p><h2>Fundamentals · ratios · statements</h2><p>Massive.com financial statements and valuation ratios with SEC fallback. Pick a ticker to inspect company profile, financial health, quarterly statements, and trend forecast.</p></div><select id="financial-symbol"></select></div>
+        <article class="panel profile-panel" id="company-profile"></article>
+        <div class="ratio-grid" id="ratio-grid"></div>
         <div class="grid two-col">
-          <article class="panel"><h3>Quarterly Financials</h3><div class="table-wrap"><table id="financial-table"></table></div></article>
+          <article class="panel"><h3>Quarterly Statements</h3><div class="table-wrap"><table id="financial-table"></table></div></article>
           <article class="panel"><h3>Revenue Trend / Forecast</h3><canvas id="financial-chart" height="230"></canvas></article>
         </div>
       </section>
