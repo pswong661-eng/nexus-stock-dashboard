@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T09:48:41.568Z",
+  "generatedAt": "2026-06-11T09:54:16.932Z",
   "staleAfterMinutes": 1440,
   "source": "Massive.com OHLC aggregates + SEC companyfacts/submissions via scheduled Node refresh",
   "tickers": [
@@ -12,7 +12,7 @@
     "QCOM",
     "RRX"
   ],
-  "dataStatus": "partial",
+  "dataStatus": "fresh",
   "marketStatus": "weekday",
   "summary": {
     "totalMarketCap": null,
@@ -2617,7 +2617,13 @@
             "filed": "2025-08-08",
             "source": "SEC",
             "revenue": 8003000000,
-            "netIncome": 59000000
+            "netIncome": 327000000,
+            "operatingCashFlow": 1171000000,
+            "capex": 1458000000,
+            "freeCashFlow": -287000000,
+            "assets": 38146000000,
+            "liabilities": 33310000000,
+            "equity": 4823000000
           },
           {
             "period": "2025 Q2",
@@ -2627,7 +2633,13 @@
             "filed": "2025-08-08",
             "source": "SEC",
             "revenue": 3753000000,
-            "netIncome": 59000000
+            "netIncome": 327000000,
+            "operatingCashFlow": 1171000000,
+            "capex": 1458000000,
+            "freeCashFlow": -287000000,
+            "assets": 38146000000,
+            "liabilities": 33310000000,
+            "equity": 4823000000
           },
           {
             "period": "2025 Q3",
@@ -2637,7 +2649,13 @@
             "filed": "2025-11-07",
             "source": "SEC",
             "revenue": 12781000000,
-            "netIncome": 711000000
+            "netIncome": 652000000,
+            "operatingCashFlow": 2638000000,
+            "capex": 1916000000,
+            "freeCashFlow": 722000000,
+            "assets": 38020000000,
+            "liabilities": 32797000000,
+            "equity": 5210000000
           },
           {
             "period": "2025 Q3",
@@ -2647,7 +2665,13 @@
             "filed": "2025-11-07",
             "source": "SEC",
             "revenue": 4778000000,
-            "netIncome": 711000000
+            "netIncome": 652000000,
+            "operatingCashFlow": 2638000000,
+            "capex": 1916000000,
+            "freeCashFlow": 722000000,
+            "assets": 38020000000,
+            "liabilities": 32797000000,
+            "equity": 5210000000
           },
           {
             "period": "2025 FY",
@@ -2657,7 +2681,13 @@
             "filed": "2026-02-27",
             "source": "SEC",
             "revenue": 17586000000,
-            "netIncome": 944000000
+            "netIncome": 944000000,
+            "operatingCashFlow": 4070000000,
+            "capex": 2752000000,
+            "freeCashFlow": 1318000000,
+            "assets": 41550000000,
+            "liabilities": 36440000000,
+            "equity": 5097000000
           },
           {
             "period": "2026 Q1",
@@ -2667,7 +2697,13 @@
             "filed": "2026-05-08",
             "source": "SEC",
             "revenue": 5001000000,
-            "netIncome": 1029000000
+            "netIncome": 1029000000,
+            "operatingCashFlow": 1199000000,
+            "capex": 883000000,
+            "freeCashFlow": 316000000,
+            "assets": 41308000000,
+            "liabilities": 35698000000,
+            "equity": 5597000000
           }
         ],
         "forecast": [
@@ -5556,7 +5592,13 @@
             "filed": "2023-05-11",
             "source": "SEC",
             "revenue": 2104000,
-            "netIncome": null
+            "netIncome": null,
+            "operatingCashFlow": null,
+            "capex": null,
+            "freeCashFlow": null,
+            "assets": null,
+            "liabilities": null,
+            "equity": null
           },
           {
             "period": "2022 Q2",
@@ -5566,7 +5608,13 @@
             "filed": "2022-08-12",
             "source": "SEC",
             "revenue": 4238000,
-            "netIncome": null
+            "netIncome": null,
+            "operatingCashFlow": null,
+            "capex": null,
+            "freeCashFlow": null,
+            "assets": null,
+            "liabilities": null,
+            "equity": null
           },
           {
             "period": "2022 Q3",
@@ -5576,7 +5624,13 @@
             "filed": "2022-11-22",
             "source": "SEC",
             "revenue": 7042000,
-            "netIncome": null
+            "netIncome": null,
+            "operatingCashFlow": null,
+            "capex": null,
+            "freeCashFlow": null,
+            "assets": null,
+            "liabilities": null,
+            "equity": null
           },
           {
             "period": "2022 Q3",
@@ -5586,7 +5640,13 @@
             "filed": "2022-11-22",
             "source": "SEC",
             "revenue": 2804000,
-            "netIncome": null
+            "netIncome": null,
+            "operatingCashFlow": null,
+            "capex": null,
+            "freeCashFlow": null,
+            "assets": null,
+            "liabilities": null,
+            "equity": null
           },
           {
             "period": "2022 FY",
@@ -5596,7 +5656,13 @@
             "filed": "2023-03-27",
             "source": "SEC",
             "revenue": 13102000,
-            "netIncome": null
+            "netIncome": null,
+            "operatingCashFlow": null,
+            "capex": null,
+            "freeCashFlow": null,
+            "assets": null,
+            "liabilities": null,
+            "equity": null
           },
           {
             "period": "2023 Q1",
@@ -5606,7 +5672,13 @@
             "filed": "2023-05-11",
             "source": "SEC",
             "revenue": 2201000,
-            "netIncome": null
+            "netIncome": null,
+            "operatingCashFlow": null,
+            "capex": null,
+            "freeCashFlow": null,
+            "assets": null,
+            "liabilities": null,
+            "equity": null
           }
         ],
         "forecast": [
@@ -8805,7 +8877,13 @@
             "filed": "2025-08-06",
             "source": "SEC",
             "revenue": 28260000,
-            "netIncome": -209090000
+            "netIncome": -176838000,
+            "operatingCashFlow": -85599000,
+            "capex": 3501000,
+            "freeCashFlow": -89100000,
+            "assets": 1346608000,
+            "liabilities": 168162000,
+            "equity": 1161633000
           },
           {
             "period": "2025 Q2",
@@ -8815,7 +8893,13 @@
             "filed": "2025-08-06",
             "source": "SEC",
             "revenue": 20694000,
-            "netIncome": -209090000
+            "netIncome": -176838000,
+            "operatingCashFlow": -85599000,
+            "capex": 3501000,
+            "freeCashFlow": -89100000,
+            "assets": 1346608000,
+            "liabilities": 168162000,
+            "equity": 1161633000
           },
           {
             "period": "2025 Q3",
@@ -8825,7 +8909,13 @@
             "filed": "2025-11-05",
             "source": "SEC",
             "revenue": 68126000,
-            "netIncome": -1264045000
+            "netIncome": -1054955000,
+            "operatingCashFlow": -208677000,
+            "capex": 7628000,
+            "freeCashFlow": -216305000,
+            "assets": 4319348000,
+            "liabilities": 2031549000,
+            "equity": 2273361000
           },
           {
             "period": "2025 Q3",
@@ -8835,7 +8925,13 @@
             "filed": "2025-11-05",
             "source": "SEC",
             "revenue": 39866000,
-            "netIncome": -1264045000
+            "netIncome": -1054955000,
+            "operatingCashFlow": -208677000,
+            "capex": 7628000,
+            "freeCashFlow": -216305000,
+            "assets": 4319348000,
+            "liabilities": 2031549000,
+            "equity": 2273361000
           },
           {
             "period": "2025 FY",
@@ -8845,7 +8941,13 @@
             "filed": "2026-02-25",
             "source": "SEC",
             "revenue": 130016000,
-            "netIncome": -510378000
+            "netIncome": -510378000,
+            "operatingCashFlow": -283187000,
+            "capex": 16417000,
+            "freeCashFlow": -299604000,
+            "assets": 6570358000,
+            "liabilities": 2756666000,
+            "equity": 3799517000
           },
           {
             "period": "2026 Q1",
@@ -8855,7 +8957,13 @@
             "filed": "2026-05-07",
             "source": "SEC",
             "revenue": 64668000,
-            "netIncome": 805360000
+            "netIncome": 805360000,
+            "operatingCashFlow": -151024000,
+            "capex": 8369000,
+            "freeCashFlow": -159393000,
+            "assets": 6693713000,
+            "liabilities": 1704011000,
+            "equity": 4975969000
           }
         ],
         "forecast": [
@@ -14702,7 +14810,13 @@
             "filed": "2026-03-19",
             "source": "SEC",
             "revenue": 14937962,
-            "netIncome": null
+            "netIncome": null,
+            "operatingCashFlow": null,
+            "capex": null,
+            "freeCashFlow": null,
+            "assets": null,
+            "liabilities": null,
+            "equity": null
           },
           {
             "period": "2026 Q1",
@@ -14712,7 +14826,13 @@
             "filed": "2026-05-14",
             "source": "SEC",
             "revenue": 7000005,
-            "netIncome": null
+            "netIncome": null,
+            "operatingCashFlow": -1729291,
+            "capex": 862511,
+            "freeCashFlow": -2591802,
+            "assets": 39496778,
+            "liabilities": 6905442,
+            "equity": null
           },
           {
             "period": "2025 FY",
@@ -14722,7 +14842,13 @@
             "filed": "2026-03-19",
             "source": "SEC",
             "revenue": 39257708,
-            "netIncome": -4339526
+            "netIncome": -4339526,
+            "operatingCashFlow": -9690993,
+            "capex": 27808485,
+            "freeCashFlow": -37499478,
+            "assets": 153925669,
+            "liabilities": 12970480,
+            "equity": 140955189
           },
           {
             "period": "2026 Q1",
@@ -14732,7 +14858,13 @@
             "filed": "2026-05-14",
             "source": "SEC",
             "revenue": 6784069,
-            "netIncome": -11294490
+            "netIncome": -11294490,
+            "operatingCashFlow": -12059669,
+            "capex": 12581587,
+            "freeCashFlow": -24641256,
+            "assets": 148049485,
+            "liabilities": 16154573,
+            "equity": 131894912
           }
         ],
         "forecast": [
@@ -17712,7 +17844,13 @@
             "filed": "2025-09-09",
             "source": "SEC",
             "revenue": 4799318000,
-            "netIncome": 883524000
+            "netIncome": 242509000,
+            "operatingCashFlow": 878870000,
+            "capex": 134908000,
+            "freeCashFlow": 743962000,
+            "assets": 48230256000,
+            "liabilities": 20616070000,
+            "equity": 27614531000
           },
           {
             "period": "2025 Q3",
@@ -17722,7 +17860,13 @@
             "filed": "2025-09-09",
             "source": "SEC",
             "revenue": 1739737000,
-            "netIncome": 883524000
+            "netIncome": 242509000,
+            "operatingCashFlow": 878870000,
+            "capex": 134908000,
+            "freeCashFlow": 743962000,
+            "assets": 48230256000,
+            "liabilities": 20616070000,
+            "equity": 27614531000
           },
           {
             "period": "2025 FY",
@@ -17732,7 +17876,13 @@
             "filed": "2025-12-22",
             "source": "SEC",
             "revenue": 7054178000,
-            "netIncome": 1332220000
+            "netIncome": 1332220000,
+            "operatingCashFlow": 1518608000,
+            "capex": 169454000,
+            "freeCashFlow": 1349154000,
+            "assets": 48224461000,
+            "liabilities": 19897446000,
+            "equity": 28327602000
           },
           {
             "period": "2026 Q1",
@@ -17742,7 +17892,13 @@
             "filed": "2026-02-25",
             "source": "SEC",
             "revenue": 2408798000,
-            "netIncome": 64958000
+            "netIncome": 64958000,
+            "operatingCashFlow": 856832000,
+            "capex": 35320000,
+            "freeCashFlow": 821512000,
+            "assets": 47237928000,
+            "liabilities": 16689930000,
+            "equity": 30548827000
           },
           {
             "period": "2026 Q2",
@@ -17752,7 +17908,13 @@
             "filed": "2026-05-27",
             "source": "SEC",
             "revenue": 4684783000,
-            "netIncome": 82063000
+            "netIncome": 17105000,
+            "operatingCashFlow": 1485766000,
+            "capex": 89518000,
+            "freeCashFlow": 1396248000,
+            "assets": 46889027000,
+            "liabilities": 16411962000,
+            "equity": 30478131000
           },
           {
             "period": "2026 Q2",
@@ -17762,7 +17924,13 @@
             "filed": "2026-05-27",
             "source": "SEC",
             "revenue": 2275985000,
-            "netIncome": 82063000
+            "netIncome": 17105000,
+            "operatingCashFlow": 1485766000,
+            "capex": 89518000,
+            "freeCashFlow": 1396248000,
+            "assets": 46889027000,
+            "liabilities": 16411962000,
+            "equity": 30478131000
           }
         ],
         "forecast": [
@@ -20692,7 +20860,13 @@
             "filed": "2025-07-30",
             "source": "SEC",
             "revenue": 33013000000,
-            "netIncome": 8658000000
+            "netIncome": 2666000000,
+            "operatingCashFlow": 10016000000,
+            "capex": 785000000,
+            "freeCashFlow": 9231000000,
+            "assets": 54862000000,
+            "liabilities": 27653000000,
+            "equity": null
           },
           {
             "period": "2025 Q3",
@@ -20702,7 +20876,13 @@
             "filed": "2025-07-30",
             "source": "SEC",
             "revenue": 10365000000,
-            "netIncome": 8658000000
+            "netIncome": 2666000000,
+            "operatingCashFlow": 10016000000,
+            "capex": 785000000,
+            "freeCashFlow": 9231000000,
+            "assets": 54862000000,
+            "liabilities": 27653000000,
+            "equity": null
           },
           {
             "period": "2025 FY",
@@ -20712,7 +20892,13 @@
             "filed": "2025-11-05",
             "source": "SEC",
             "revenue": 44284000000,
-            "netIncome": 5541000000
+            "netIncome": 5541000000,
+            "operatingCashFlow": 14012000000,
+            "capex": 1192000000,
+            "freeCashFlow": 12820000000,
+            "assets": 50143000000,
+            "liabilities": 28937000000,
+            "equity": null
           },
           {
             "period": "2026 Q1",
@@ -20722,7 +20908,13 @@
             "filed": "2026-02-04",
             "source": "SEC",
             "revenue": 12252000000,
-            "netIncome": 3004000000
+            "netIncome": 3004000000,
+            "operatingCashFlow": 4965000000,
+            "capex": 549000000,
+            "freeCashFlow": 4416000000,
+            "assets": 53034000000,
+            "liabilities": 29961000000,
+            "equity": null
           },
           {
             "period": "2026 Q2",
@@ -20732,7 +20924,13 @@
             "filed": "2026-04-29",
             "source": "SEC",
             "revenue": 22851000000,
-            "netIncome": 10375000000
+            "netIncome": 7370000000,
+            "operatingCashFlow": 7414000000,
+            "capex": 1082000000,
+            "freeCashFlow": 6332000000,
+            "assets": 57136000000,
+            "liabilities": 29858000000,
+            "equity": null
           },
           {
             "period": "2026 Q2",
@@ -20742,7 +20940,13 @@
             "filed": "2026-04-29",
             "source": "SEC",
             "revenue": 10599000000,
-            "netIncome": 10375000000
+            "netIncome": 7370000000,
+            "operatingCashFlow": 7414000000,
+            "capex": 1082000000,
+            "freeCashFlow": 6332000000,
+            "assets": 57136000000,
+            "liabilities": 29858000000,
+            "equity": null
           }
         ],
         "forecast": [
@@ -24021,7 +24225,13 @@
             "filed": "2023-11-03",
             "source": "SEC",
             "revenue": 4642500000,
-            "netIncome": null
+            "netIncome": null,
+            "operatingCashFlow": null,
+            "capex": null,
+            "freeCashFlow": null,
+            "assets": null,
+            "liabilities": null,
+            "equity": null
           },
           {
             "period": "2023 Q3",
@@ -24031,7 +24241,13 @@
             "filed": "2023-11-03",
             "source": "SEC",
             "revenue": 1649800000,
-            "netIncome": null
+            "netIncome": null,
+            "operatingCashFlow": null,
+            "capex": null,
+            "freeCashFlow": null,
+            "assets": null,
+            "liabilities": null,
+            "equity": null
           },
           {
             "period": "2023 FY",
@@ -24041,7 +24257,13 @@
             "filed": "2024-02-26",
             "source": "SEC",
             "revenue": 6250700000,
-            "netIncome": null
+            "netIncome": null,
+            "operatingCashFlow": null,
+            "capex": null,
+            "freeCashFlow": null,
+            "assets": null,
+            "liabilities": null,
+            "equity": null
           },
           {
             "period": "2024 Q1",
@@ -24051,7 +24273,13 @@
             "filed": "2024-05-07",
             "source": "SEC",
             "revenue": 1547700000,
-            "netIncome": null
+            "netIncome": null,
+            "operatingCashFlow": null,
+            "capex": null,
+            "freeCashFlow": null,
+            "assets": null,
+            "liabilities": null,
+            "equity": null
           },
           {
             "period": "2024 Q2",
@@ -24061,7 +24289,13 @@
             "filed": "2024-08-01",
             "source": "SEC",
             "revenue": 3095300000,
-            "netIncome": null
+            "netIncome": null,
+            "operatingCashFlow": null,
+            "capex": null,
+            "freeCashFlow": null,
+            "assets": null,
+            "liabilities": null,
+            "equity": null
           },
           {
             "period": "2024 Q2",
@@ -24071,7 +24305,13 @@
             "filed": "2024-08-01",
             "source": "SEC",
             "revenue": 1547600000,
-            "netIncome": null
+            "netIncome": null,
+            "operatingCashFlow": null,
+            "capex": null,
+            "freeCashFlow": null,
+            "assets": null,
+            "liabilities": null,
+            "equity": null
           }
         ],
         "forecast": [
@@ -24750,79 +24990,80 @@
       "symbol": "RRX",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-06-11T09:48:41.568Z"
+      "createdAt": "2026-06-11T09:54:16.932Z"
     },
     {
       "symbol": "RRX",
       "severity": "success",
       "message": "Strong YTD performer: +37.2%",
-      "createdAt": "2026-06-11T08:48:41.568Z"
+      "createdAt": "2026-06-11T08:54:16.932Z"
     }
   ],
-  "errors": [
+  "errors": [],
+  "warnings": [
     {
       "symbol": "VST",
-      "error": "Massive ratios unavailable: https://api.massive.com/stocks/financials/v1/ratios?ticker=VST&limit=1&sort=date.desc HTTP 403"
+      "warning": "Massive ratios unavailable: https://api.massive.com/stocks/financials/v1/ratios?ticker=VST&limit=1&sort=date.desc HTTP 403"
     },
     {
       "symbol": "VST",
-      "error": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/cash-flow-statements?tickers=VST&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=VST&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "RGTI",
-      "error": "Massive ratios unavailable: https://api.massive.com/stocks/financials/v1/ratios?ticker=RGTI&limit=1&sort=date.desc HTTP 403"
+      "warning": "Massive ratios unavailable: https://api.massive.com/stocks/financials/v1/ratios?ticker=RGTI&limit=1&sort=date.desc HTTP 403"
     },
     {
       "symbol": "RGTI",
-      "error": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=RGTI&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=RGTI&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "IONQ",
-      "error": "Massive ratios unavailable: https://api.massive.com/stocks/financials/v1/ratios?ticker=IONQ&limit=1&sort=date.desc HTTP 403"
+      "warning": "Massive ratios unavailable: https://api.massive.com/stocks/financials/v1/ratios?ticker=IONQ&limit=1&sort=date.desc HTTP 403"
     },
     {
       "symbol": "IONQ",
-      "error": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=IONQ&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=IONQ&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "LAC",
-      "error": "Massive ratios unavailable: https://api.massive.com/stocks/financials/v1/ratios?ticker=LAC&limit=1&sort=date.desc HTTP 403"
+      "warning": "Massive ratios unavailable: https://api.massive.com/stocks/financials/v1/ratios?ticker=LAC&limit=1&sort=date.desc HTTP 403"
     },
     {
       "symbol": "LAC",
-      "error": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=LAC&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=LAC&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "UAMY",
-      "error": "Massive ratios unavailable: https://api.massive.com/stocks/financials/v1/ratios?ticker=UAMY&limit=1&sort=date.desc HTTP 403"
+      "warning": "Massive ratios unavailable: https://api.massive.com/stocks/financials/v1/ratios?ticker=UAMY&limit=1&sort=date.desc HTTP 403"
     },
     {
       "symbol": "UAMY",
-      "error": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=UAMY&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=UAMY&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "SNPS",
-      "error": "Massive ratios unavailable: https://api.massive.com/stocks/financials/v1/ratios?ticker=SNPS&limit=1&sort=date.desc HTTP 403"
+      "warning": "Massive ratios unavailable: https://api.massive.com/stocks/financials/v1/ratios?ticker=SNPS&limit=1&sort=date.desc HTTP 403"
     },
     {
       "symbol": "SNPS",
-      "error": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=SNPS&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=SNPS&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "QCOM",
-      "error": "Massive ratios unavailable: https://api.massive.com/stocks/financials/v1/ratios?ticker=QCOM&limit=1&sort=date.desc HTTP 403"
+      "warning": "Massive ratios unavailable: https://api.massive.com/stocks/financials/v1/ratios?ticker=QCOM&limit=1&sort=date.desc HTTP 403"
     },
     {
       "symbol": "QCOM",
-      "error": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=QCOM&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=QCOM&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "RRX",
-      "error": "Massive ratios unavailable: https://api.massive.com/stocks/financials/v1/ratios?ticker=RRX&limit=1&sort=date.desc HTTP 403"
+      "warning": "Massive ratios unavailable: https://api.massive.com/stocks/financials/v1/ratios?ticker=RRX&limit=1&sort=date.desc HTTP 403"
     },
     {
       "symbol": "RRX",
-      "error": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=RRX&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=RRX&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     }
   ]
 }
