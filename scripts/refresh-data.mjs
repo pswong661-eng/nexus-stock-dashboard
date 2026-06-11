@@ -337,6 +337,11 @@ function lastQuarters(items) {
     filed: f.filed || null
   }));
 }
+function byEnd(items) {
+  const map = new Map();
+  for (const row of lastQuarters(items)) map.set(row.end, row.value);
+  return map;
+}
 function forecastTwo(quarters) {
   if (!quarters.length) return [];
   const vals = quarters.map(q => q.value).filter(Number.isFinite);
@@ -454,8 +459,28 @@ async function fetchFinancialAndInsider(symbol, cik, massive = {}) {
     fetchJson(`https://data.sec.gov/submissions/CIK${cik}.json`).catch(() => null)
   ]);
   const revenues = lastQuarters(pickFact(facts?.facts, ['RevenueFromContractWithCustomerExcludingAssessedTax', 'Revenues', 'SalesRevenueNet']));
-  const netIncome = lastQuarters(pickFact(facts?.facts, ['NetIncomeLoss']));
-  const quarters = revenues.map((r) => ({ ...r, source: 'SEC', revenue: r.value, netIncome: netIncome.find(n => n.end === r.end)?.value ?? null }));
+  const netIncome = byEnd(pickFact(facts?.facts, ['NetIncomeLoss']));
+  const operatingCashFlow = byEnd(pickFact(facts?.facts, ['NetCashProvidedByUsedInOperatingActivities', 'NetCashProvidedByUsedInOperatingActivitiesContinuingOperations']));
+  const capex = byEnd(pickFact(facts?.facts, ['PaymentsToAcquirePropertyPlantAndEquipment', 'PaymentsToAcquireProductiveAssets']));
+  const assets = byEnd(pickFact(facts?.facts, ['Assets']));
+  const liabilities = byEnd(pickFact(facts?.facts, ['Liabilities']));
+  const equity = byEnd(pickFact(facts?.facts, ['StockholdersEquity', 'StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest']));
+  const quarters = revenues.map((r) => {
+    const ocf = operatingCashFlow.get(r.end) ?? null;
+    const capexValue = capex.get(r.end) ?? null;
+    return {
+      ...r,
+      source: 'SEC',
+      revenue: r.value,
+      netIncome: netIncome.get(r.end) ?? null,
+      operatingCashFlow: ocf,
+      capex: capexValue,
+      freeCashFlow: Number.isFinite(ocf) && Number.isFinite(capexValue) ? round(ocf - Math.abs(capexValue), 0) : null,
+      assets: assets.get(r.end) ?? null,
+      liabilities: liabilities.get(r.end) ?? null,
+      equity: equity.get(r.end) ?? null
+    };
+  });
   const recent = sub?.filings?.recent || {};
   const basicFilings = (recent.form || []).map((form, i) => ({ form, reportDate: recent.reportDate?.[i], filingDate: recent.filingDate?.[i], accessionNumber: recent.accessionNumber?.[i], document: recent.primaryDocument?.[i], description: recent.primaryDocDescription?.[i] }))
     .filter(f => f.form === '4')
@@ -477,7 +502,7 @@ async function fetchFinancialAndInsider(symbol, cik, massive = {}) {
   return { financials, insider, insiderSummary: summarizeInsider(insider, massive.insider?.length ? 'Massive' : 'SEC') };
 }
 
-const results = [], errors = [];
+const results = [], errors = [], warnings = [];
 let ciks = {};
 try { ciks = await cikMap(); } catch (e) { errors.push({ symbol: 'SEC', error: String(e.message || e) }); }
 for (const symbol of SYMBOLS) {
@@ -486,21 +511,21 @@ for (const symbol of SYMBOLS) {
     if (MASSIVE_API_KEY) {
       try {
         profile = await fetchMassiveTickerDetails(symbol).catch(err => {
-          errors.push({ symbol, error: `Massive ticker overview unavailable: ${redact(err.message || err)}` });
+          warnings.push({ symbol, warning: `Massive ticker overview unavailable: ${redact(err.message || err)}` });
           return null;
         });
         base = await fetchMassiveBase(symbol, profile || {});
         priceSource = 'Massive';
         ratios = await fetchMassiveRatios(symbol).catch(err => {
-          errors.push({ symbol, error: `Massive ratios unavailable: ${redact(err.message || err)}` });
+          warnings.push({ symbol, warning: `Massive ratios unavailable: ${redact(err.message || err)}` });
           return null;
         });
         massiveFinancials = await fetchMassiveFinancials(symbol).catch(err => {
-          errors.push({ symbol, error: `Massive financial statements fallback to SEC: ${redact(err.message || err)}` });
+          warnings.push({ symbol, warning: `Massive financial statements fallback to SEC: ${redact(err.message || err)}` });
           return null;
         });
         massiveInsider = await fetchMassiveInsider(symbol).catch(err => {
-          errors.push({ symbol, error: `Massive Form 4 fallback to SEC: ${redact(err.message || err)}` });
+          warnings.push({ symbol, warning: `Massive Form 4 fallback to SEC: ${redact(err.message || err)}` });
           return null;
         });
       } catch (massiveErr) {
@@ -544,7 +569,7 @@ const payload = {
   tickers: SYMBOLS, dataStatus: results.length ? (errors.length ? 'partial' : 'fresh') : 'fallback',
   marketStatus: new Date().getUTCDay() >= 1 && new Date().getUTCDay() <= 5 ? 'weekday' : 'closed_or_weekend',
   summary: { totalMarketCap: null, avgPeRatio: null, avgRsi14: round(avgRsi, 1), sentimentScore, bullPct: round((bull / Math.max(1, results.length)) * 100, 0), neutralPct: round((neutral / Math.max(1, results.length)) * 100, 0), bearPct: round((bear / Math.max(1, results.length)) * 100, 0), bestPerformer: best ? { symbol: best.symbol, ytdPct: best.ytdPct } : null, worstPerformer: worst ? { symbol: worst.symbol, ytdPct: worst.ytdPct } : null },
-  symbols: results, alerts, errors
+  symbols: results, alerts, errors, warnings
 };
 if (!results.length) {
   const old = await import('node:fs/promises').then(fs => fs.readFile(FALLBACK, 'utf8').catch(() => null));
