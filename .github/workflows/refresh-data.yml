@@ -2,8 +2,9 @@ name: Refresh Market Data
 
 on:
   schedule:
-    # Daily at 9:00 AM ICT (02:00 UTC).
-    - cron: '0 2 * * *'
+    # 5:00 AM ICT Tuesday-Saturday (22:00 UTC Monday-Friday),
+    # after the US regular market close for the trading day.
+    - cron: '0 22 * * 1-5'
   workflow_dispatch:
 
 permissions:

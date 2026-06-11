@@ -28,7 +28,7 @@ STOCK_SYMBOLS="SNDK,COHR,TLN,VST,AXTI,TSM,TSLA,UAMY,LLY" npm run refresh:data
 - `scripts/refresh-data.mjs` uses Massive.com OHLC aggregates when `MASSIVE_API_KEY` is available, then falls back to Yahoo Finance's chart endpoint if Massive is unavailable.
 - It writes normalized dashboard data to `public/data/latest.json` and `public/data/fallback.json`.
 - The browser fetches the same-origin JSON every 60 seconds.
-- GitHub Actions refreshes JSON daily at 9:00 AM ICT and deploys Pages on pushes.
+- GitHub Actions refreshes JSON at 5:00 AM ICT Tuesday-Saturday, after the prior US trading day closes, and deploys Pages on pushes.
 
 For scheduled refreshes, add `MASSIVE_API_KEY` as a GitHub Actions repository secret. `POLYGON_API_KEY` is accepted locally as a deprecated alias, but new setup should use `MASSIVE_API_KEY`.
 
