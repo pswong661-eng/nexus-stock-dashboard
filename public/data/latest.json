@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-12T23:13:56.753Z",
+  "generatedAt": "2026-06-13T10:58:35.727Z",
   "staleAfterMinutes": 1440,
   "source": "Massive.com OHLC aggregates + SEC companyfacts/submissions via scheduled Node refresh",
   "tickers": [
@@ -13,7 +13,7 @@
     "RRX"
   ],
   "dataStatus": "fresh",
-  "marketStatus": "weekday",
+  "marketStatus": "closed_or_weekend",
   "summary": {
     "totalMarketCap": null,
     "avgPeRatio": null,
@@ -40,12 +40,12 @@
       "price": 148.02,
       "previousClose": 146.38,
       "ytdPct": -10.42,
-      "marketCap": 49356769665.84,
+      "marketCap": 49909748913.36,
       "peRatio": null,
       "rsi14": 41.8,
       "week52Low": 132.66,
       "week52High": 219.82,
-      "avgVolume": 5309378,
+      "avgVolume": 5309409,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -2523,93 +2523,584 @@
       ],
       "rawPoints": [
         {
+          "date": "2026-04-17",
+          "open": 166.26,
+          "close": 163.46,
+          "high": 168.49,
+          "low": 162.2601,
+          "volume": 4104295.385448,
+          "vwap": 164.2982
+        },
+        {
+          "date": "2026-04-20",
+          "open": 163.05,
+          "close": 159.6,
+          "high": 164.05,
+          "low": 158.32,
+          "volume": 2923624.845512,
+          "vwap": 160.7066
+        },
+        {
+          "date": "2026-04-21",
+          "open": 160.76,
+          "close": 154.91,
+          "high": 161.1,
+          "low": 154.13,
+          "volume": 3747976.912996,
+          "vwap": 155.9295
+        },
+        {
+          "date": "2026-04-22",
+          "open": 157.8,
+          "close": 155.79,
+          "high": 159.08,
+          "low": 154.92,
+          "volume": 2642180.754885,
+          "vwap": 156.0295
+        },
+        {
+          "date": "2026-04-23",
+          "open": 155.96,
+          "close": 156.85,
+          "high": 158.87,
+          "low": 154.5,
+          "volume": 3272560.623437,
+          "vwap": 156.8073
+        },
+        {
+          "date": "2026-04-24",
+          "open": 156.33,
+          "close": 164.35,
+          "high": 165.48,
+          "low": 155.1501,
+          "volume": 3481389.261427,
+          "vwap": 162.9027
+        },
+        {
+          "date": "2026-04-27",
+          "open": 165,
+          "close": 166.58,
+          "high": 168.42,
+          "low": 158.735,
+          "volume": 4577548.474682,
+          "vwap": 165.3785
+        },
+        {
+          "date": "2026-04-28",
+          "open": 162.5,
+          "close": 161.12,
+          "high": 163.325,
+          "low": 158.72,
+          "volume": 5205587.236733,
+          "vwap": 160.8242
+        },
+        {
+          "date": "2026-04-29",
+          "open": 160.86,
+          "close": 153.79,
+          "high": 161.139,
+          "low": 153.08,
+          "volume": 4992799.332595,
+          "vwap": 155.9082
+        },
+        {
+          "date": "2026-04-30",
+          "open": 156.29,
+          "close": 157.84,
+          "high": 159.63,
+          "low": 155.7301,
+          "volume": 3954818.456236,
+          "vwap": 158.0818
+        },
+        {
+          "date": "2026-05-01",
+          "open": 158.31,
+          "close": 155.28,
+          "high": 160.14,
+          "low": 154.93,
+          "volume": 3143975.933451,
+          "vwap": 157.1733
+        },
+        {
+          "date": "2026-05-04",
+          "open": 157.69,
+          "close": 160.85,
+          "high": 162.38,
+          "low": 157.44,
+          "volume": 4209278.953234,
+          "vwap": 159.9636
+        },
+        {
+          "date": "2026-05-05",
+          "open": 163,
+          "close": 160.38,
+          "high": 163.8,
+          "low": 159.8,
+          "volume": 3567166.725544,
+          "vwap": 161.2983
+        },
+        {
+          "date": "2026-05-06",
+          "open": 161.495,
+          "close": 158.29,
+          "high": 162.99,
+          "low": 156.6,
+          "volume": 8213902.073999,
+          "vwap": 158.6111
+        },
+        {
+          "date": "2026-05-07",
+          "open": 163.04,
+          "close": 153.95,
+          "high": 168.39,
+          "low": 153.77,
+          "volume": 7895796.858399,
+          "vwap": 159.2476
+        },
+        {
+          "date": "2026-05-08",
+          "open": 155,
+          "close": 147.72,
+          "high": 155,
+          "low": 146.98,
+          "volume": 8074473.596526,
+          "vwap": 148.93
+        },
+        {
+          "date": "2026-05-11",
+          "open": 148,
+          "close": 152.05,
+          "high": 152.75,
+          "low": 146.2781,
+          "volume": 5905405.48825,
+          "vwap": 150.1334
+        },
+        {
+          "date": "2026-05-12",
+          "open": 149.49,
+          "close": 146.87,
+          "high": 150.3225,
+          "low": 145.66,
+          "volume": 4895629.763929,
+          "vwap": 147.2294
+        },
+        {
+          "date": "2026-05-13",
+          "open": 146.28,
+          "close": 142.61,
+          "high": 146.28,
+          "low": 139.51,
+          "volume": 6385353.885218,
+          "vwap": 141.9438
+        },
+        {
+          "date": "2026-05-14",
+          "open": 141.38,
+          "close": 141.9,
+          "high": 143.295,
+          "low": 139.9221,
+          "volume": 5117085.363004,
+          "vwap": 141.2534
+        },
+        {
           "date": "2026-05-15",
-          "close": 139.68
+          "open": 139.775,
+          "close": 139.68,
+          "high": 141.09,
+          "low": 137.81,
+          "volume": 6632205.757708,
+          "vwap": 139.596
         },
         {
           "date": "2026-05-18",
-          "close": 136.75
+          "open": 139,
+          "close": 136.75,
+          "high": 139.54,
+          "low": 133.86,
+          "volume": 6321803.154768,
+          "vwap": 135.8485
         },
         {
           "date": "2026-05-19",
-          "close": 134.71
+          "open": 135.8,
+          "close": 134.71,
+          "high": 136.7,
+          "low": 132.66,
+          "volume": 5860629.314292,
+          "vwap": 134.6831
         },
         {
           "date": "2026-05-20",
-          "close": 144
+          "open": 138,
+          "close": 144,
+          "high": 144.9,
+          "low": 137.81,
+          "volume": 7901626.364692,
+          "vwap": 142.8552
         },
         {
           "date": "2026-05-21",
-          "close": 149.08
+          "open": 145.47,
+          "close": 149.08,
+          "high": 149.28,
+          "low": 144.88,
+          "volume": 4601934.444633,
+          "vwap": 148.1031
         },
         {
           "date": "2026-05-22",
-          "close": 156.27
+          "open": 151.03,
+          "close": 156.27,
+          "high": 157.57,
+          "low": 150.75,
+          "volume": 8062520.151333,
+          "vwap": 155.7525
         },
         {
           "date": "2026-05-26",
-          "close": 164.56
+          "open": 158.91,
+          "close": 164.56,
+          "high": 167.4,
+          "low": 158.22,
+          "volume": 8521459.480782,
+          "vwap": 164.3817
         },
         {
           "date": "2026-05-27",
-          "close": 160.15
+          "open": 164.96,
+          "close": 160.15,
+          "high": 165.0223,
+          "low": 158.4075,
+          "volume": 4902670.721191,
+          "vwap": 160.5276
         },
         {
           "date": "2026-05-28",
-          "close": 160.28
+          "open": 158.84,
+          "close": 160.28,
+          "high": 163.53,
+          "low": 157.6,
+          "volume": 3606477.618125,
+          "vwap": 160.9498
         },
         {
           "date": "2026-05-29",
-          "close": 160.23
+          "open": 160,
+          "close": 160.23,
+          "high": 162.29,
+          "low": 156.88,
+          "volume": 3785150.097539,
+          "vwap": 159.5866
         },
         {
           "date": "2026-06-01",
-          "close": 154.76
+          "open": 157,
+          "close": 154.76,
+          "high": 158.55,
+          "low": 151.33,
+          "volume": 4322725.144965,
+          "vwap": 155.0871
         },
         {
           "date": "2026-06-02",
-          "close": 157.97
+          "open": 155.94,
+          "close": 157.97,
+          "high": 160.78,
+          "low": 152.88,
+          "volume": 4544915.370202,
+          "vwap": 157.7975
         },
         {
           "date": "2026-06-03",
-          "close": 153.8
+          "open": 156.51,
+          "close": 153.8,
+          "high": 157.91,
+          "low": 152.95,
+          "volume": 3884873.921517,
+          "vwap": 154.5785
         },
         {
           "date": "2026-06-04",
-          "close": 153.7
+          "open": 151.54,
+          "close": 153.7,
+          "high": 154.04,
+          "low": 150.19,
+          "volume": 2969439.215687,
+          "vwap": 152.3798
         },
         {
           "date": "2026-06-05",
-          "close": 148.76
+          "open": 152,
+          "close": 148.76,
+          "high": 154.29,
+          "low": 147.5,
+          "volume": 3673432.213489,
+          "vwap": 149.4985
         },
         {
           "date": "2026-06-08",
-          "close": 146.9
+          "open": 148.31,
+          "close": 146.9,
+          "high": 149.3004,
+          "low": 146.38,
+          "volume": 3327690.902457,
+          "vwap": 147.5026
         },
         {
           "date": "2026-06-09",
-          "close": 146.22
+          "open": 148.42,
+          "close": 146.22,
+          "high": 150.2999,
+          "low": 141.54,
+          "volume": 4058999.012595,
+          "vwap": 145.3659
         },
         {
           "date": "2026-06-10",
-          "close": 138.54
+          "open": 143.35,
+          "close": 138.54,
+          "high": 143.9999,
+          "low": 137.91,
+          "volume": 5194972.140436,
+          "vwap": 139.4958
         },
         {
           "date": "2026-06-11",
-          "close": 146.38
+          "open": 140.99,
+          "close": 146.38,
+          "high": 146.8999,
+          "low": 139.57,
+          "volume": 5127376.390709,
+          "vwap": 144.9666
         },
         {
           "date": "2026-06-12",
-          "close": 148.02
+          "open": 148,
+          "close": 148.02,
+          "high": 150.5,
+          "low": 147,
+          "volume": 4573294.087741,
+          "vwap": 148.2509
         }
       ],
+      "shortVolume": {
+        "latest": {
+          "date": "2026-06-12",
+          "totalVolume": 1470955,
+          "shortVolume": 568955,
+          "exemptVolume": 852,
+          "nonExemptVolume": 568103,
+          "shortVolumeRatio": 38.68,
+          "source": "Massive"
+        },
+        "history": [
+          {
+            "date": "2026-06-12",
+            "totalVolume": 1470955,
+            "shortVolume": 568955,
+            "exemptVolume": 852,
+            "nonExemptVolume": 568103,
+            "shortVolumeRatio": 38.68,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-11",
+            "totalVolume": 2057737,
+            "shortVolume": 919563,
+            "exemptVolume": 3284,
+            "nonExemptVolume": 916279,
+            "shortVolumeRatio": 44.69,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-10",
+            "totalVolume": 2261024,
+            "shortVolume": 821694,
+            "exemptVolume": 6268,
+            "nonExemptVolume": 815426,
+            "shortVolumeRatio": 36.34,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-09",
+            "totalVolume": 1618160,
+            "shortVolume": 619388,
+            "exemptVolume": 720,
+            "nonExemptVolume": 618668,
+            "shortVolumeRatio": 38.28,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-08",
+            "totalVolume": 1492411,
+            "shortVolume": 574095,
+            "exemptVolume": 663,
+            "nonExemptVolume": 573432,
+            "shortVolumeRatio": 38.47,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-05",
+            "totalVolume": 1506111,
+            "shortVolume": 536828,
+            "exemptVolume": 146,
+            "nonExemptVolume": 536682,
+            "shortVolumeRatio": 35.64,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-04",
+            "totalVolume": 1309656,
+            "shortVolume": 584664,
+            "exemptVolume": 68,
+            "nonExemptVolume": 584596,
+            "shortVolumeRatio": 44.64,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-03",
+            "totalVolume": 1393251,
+            "shortVolume": 496453,
+            "exemptVolume": 4282,
+            "nonExemptVolume": 492171,
+            "shortVolumeRatio": 35.63,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-02",
+            "totalVolume": 1949910,
+            "shortVolume": 882237,
+            "exemptVolume": 30,
+            "nonExemptVolume": 882207,
+            "shortVolumeRatio": 45.24,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-01",
+            "totalVolume": 1944275,
+            "shortVolume": 948869,
+            "exemptVolume": 4234,
+            "nonExemptVolume": 944635,
+            "shortVolumeRatio": 48.8,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-29",
+            "totalVolume": 1399096,
+            "shortVolume": 492381,
+            "exemptVolume": 4,
+            "nonExemptVolume": 492377,
+            "shortVolumeRatio": 35.19,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-28",
+            "totalVolume": 1387351,
+            "shortVolume": 634942,
+            "exemptVolume": 27,
+            "nonExemptVolume": 634915,
+            "shortVolumeRatio": 45.77,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-27",
+            "totalVolume": 2011540,
+            "shortVolume": 668459,
+            "exemptVolume": 472,
+            "nonExemptVolume": 667987,
+            "shortVolumeRatio": 33.23,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-26",
+            "totalVolume": 3699478,
+            "shortVolume": 1702492,
+            "exemptVolume": 8453,
+            "nonExemptVolume": 1694039,
+            "shortVolumeRatio": 46.02,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-22",
+            "totalVolume": 2659933,
+            "shortVolume": 1017885,
+            "exemptVolume": 2,
+            "nonExemptVolume": 1017883,
+            "shortVolumeRatio": 38.27,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-21",
+            "totalVolume": 1908978,
+            "shortVolume": 771241,
+            "exemptVolume": 6903,
+            "nonExemptVolume": 764338,
+            "shortVolumeRatio": 40.4,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-20",
+            "totalVolume": 2767858,
+            "shortVolume": 1026036,
+            "exemptVolume": 5948,
+            "nonExemptVolume": 1020088,
+            "shortVolumeRatio": 37.07,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-19",
+            "totalVolume": 2730451,
+            "shortVolume": 641396,
+            "exemptVolume": 6127,
+            "nonExemptVolume": 635269,
+            "shortVolumeRatio": 23.49,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-18",
+            "totalVolume": 2469300,
+            "shortVolume": 798356,
+            "exemptVolume": 6930,
+            "nonExemptVolume": 791426,
+            "shortVolumeRatio": 32.33,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-15",
+            "totalVolume": 2319056,
+            "shortVolume": 585881,
+            "exemptVolume": 6122,
+            "nonExemptVolume": 579759,
+            "shortVolumeRatio": 25.26,
+            "source": "Massive"
+          }
+        ],
+        "avgShortVolumeRatio20": 38.17,
+        "source": "Massive"
+      },
+      "unusualActivity": {
+        "asOf": "2026-06-12",
+        "source": "Massive aggregates + Massive short volume",
+        "tickTradesAvailable": false,
+        "volume": 4573294,
+        "avgVolume20": 5120899,
+        "volumeMultiple": 0.89,
+        "dayRangePct": 2.36,
+        "gapPct": 1.11,
+        "shortVolume": 568955,
+        "shortVolumeRatio": 38.68,
+        "signals": [],
+        "summary": "No unusual aggregate activity detected"
+      },
       "cik": "0001692819",
       "dataSources": {
         "price": "Massive",
         "financials": "SEC",
         "insider": "Massive",
         "ratios": "none",
-        "profile": "Massive"
+        "profile": "Massive",
+        "shortVolume": "Massive",
+        "unusualActivity": "Massive aggregates + Massive short volume"
       },
       "financials": {
         "quarters": [
@@ -3019,12 +3510,12 @@
       "price": 20.98,
       "previousClose": 20.63,
       "ytdPct": -11.1,
-      "marketCap": 6857387388.41,
+      "marketCap": 6973726970.860001,
       "peRatio": null,
       "rsi14": 35.1,
       "week52Low": 10.3,
       "week52High": 58.15,
-      "avgVolume": 52460803,
+      "avgVolume": 52462146,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -5502,93 +5993,590 @@
       ],
       "rawPoints": [
         {
+          "date": "2026-04-17",
+          "open": 19.91,
+          "close": 19.81,
+          "high": 20.17,
+          "low": 19.15,
+          "volume": 40352814.404222,
+          "vwap": 19.6374
+        },
+        {
+          "date": "2026-04-20",
+          "open": 19.26,
+          "close": 19.64,
+          "high": 19.885,
+          "low": 18.79,
+          "volume": 37778426.937852,
+          "vwap": 19.3931
+        },
+        {
+          "date": "2026-04-21",
+          "open": 19.66,
+          "close": 18.25,
+          "high": 19.88,
+          "low": 18.1575,
+          "volume": 35937398.122602,
+          "vwap": 18.7671
+        },
+        {
+          "date": "2026-04-22",
+          "open": 18.785,
+          "close": 18.38,
+          "high": 19.23,
+          "low": 17.92,
+          "volume": 34076010.420982,
+          "vwap": 18.5355
+        },
+        {
+          "date": "2026-04-23",
+          "open": 18.01,
+          "close": 16.86,
+          "high": 18.2657,
+          "low": 16.5,
+          "volume": 27598803.16597,
+          "vwap": 17.1652
+        },
+        {
+          "date": "2026-04-24",
+          "open": 17.12,
+          "close": 16.61,
+          "high": 17.15,
+          "low": 16.1,
+          "volume": 19592224.275982,
+          "vwap": 16.5735
+        },
+        {
+          "date": "2026-04-27",
+          "open": 16.25,
+          "close": 16.91,
+          "high": 16.9493,
+          "low": 16.11,
+          "volume": 18123144.582577,
+          "vwap": 16.5471
+        },
+        {
+          "date": "2026-04-28",
+          "open": 16.47,
+          "close": 16.39,
+          "high": 16.6299,
+          "low": 16.0501,
+          "volume": 17553483.682708,
+          "vwap": 16.3957
+        },
+        {
+          "date": "2026-04-29",
+          "open": 16.23,
+          "close": 16.08,
+          "high": 16.245,
+          "low": 15.3,
+          "volume": 21490046.4404,
+          "vwap": 15.8143
+        },
+        {
+          "date": "2026-04-30",
+          "open": 16.12,
+          "close": 17.45,
+          "high": 17.51,
+          "low": 16.06,
+          "volume": 25523281.978116,
+          "vwap": 16.9319
+        },
+        {
+          "date": "2026-05-01",
+          "open": 17.16,
+          "close": 17.5,
+          "high": 17.635,
+          "low": 16.805,
+          "volume": 16601527.828422,
+          "vwap": 17.2912
+        },
+        {
+          "date": "2026-05-04",
+          "open": 17.51,
+          "close": 17.7,
+          "high": 18.6486,
+          "low": 17.329,
+          "volume": 27828807.111461,
+          "vwap": 18.0172
+        },
+        {
+          "date": "2026-05-05",
+          "open": 17.89,
+          "close": 18.27,
+          "high": 18.47,
+          "low": 17.08,
+          "volume": 24574724.864486,
+          "vwap": 17.8974
+        },
+        {
+          "date": "2026-05-06",
+          "open": 18.71,
+          "close": 20.09,
+          "high": 20.12,
+          "low": 18.49,
+          "volume": 35257895.036742,
+          "vwap": 19.5142
+        },
+        {
+          "date": "2026-05-07",
+          "open": 19.275,
+          "close": 18.34,
+          "high": 19.64,
+          "low": 18.065,
+          "volume": 25537322.140329,
+          "vwap": 18.7893
+        },
+        {
+          "date": "2026-05-08",
+          "open": 18.835,
+          "close": 18.94,
+          "high": 19,
+          "low": 17.75,
+          "volume": 18261122.043589,
+          "vwap": 18.3747
+        },
+        {
+          "date": "2026-05-11",
+          "open": 18.665,
+          "close": 20.51,
+          "high": 20.85,
+          "low": 18.332,
+          "volume": 44620327.912094,
+          "vwap": 20.1929
+        },
+        {
+          "date": "2026-05-12",
+          "open": 20.5,
+          "close": 19.07,
+          "high": 21.02,
+          "low": 18.2301,
+          "volume": 49520601.034295,
+          "vwap": 19.6958
+        },
+        {
+          "date": "2026-05-13",
+          "open": 19.15,
+          "close": 18.415,
+          "high": 19.17,
+          "low": 17.89,
+          "volume": 27158551.464433,
+          "vwap": 18.44
+        },
+        {
+          "date": "2026-05-14",
+          "open": 18.16,
+          "close": 19.27,
+          "high": 19.835,
+          "low": 17.825,
+          "volume": 33827782.084651,
+          "vwap": 19.0637
+        },
+        {
           "date": "2026-05-15",
-          "close": 17.85
+          "open": 18.44,
+          "close": 17.85,
+          "high": 18.47,
+          "low": 17.55,
+          "volume": 27061945.519044,
+          "vwap": 18.0391
         },
         {
           "date": "2026-05-18",
-          "close": 16.62
+          "open": 17.905,
+          "close": 16.62,
+          "high": 17.93,
+          "low": 16.02,
+          "volume": 31095738.677645,
+          "vwap": 16.5534
         },
         {
           "date": "2026-05-19",
-          "close": 15.96
+          "open": 16.275,
+          "close": 15.96,
+          "high": 16.76,
+          "low": 15.46,
+          "volume": 20581490.443279,
+          "vwap": 16.0224
         },
         {
           "date": "2026-05-20",
-          "close": 16.88
+          "open": 16.095,
+          "close": 16.88,
+          "high": 17.21,
+          "low": 15.85,
+          "volume": 27194104.652243,
+          "vwap": 16.714
         },
         {
           "date": "2026-05-21",
-          "close": 22.04
+          "open": 18.685,
+          "close": 22.04,
+          "high": 22.1,
+          "low": 18.4,
+          "volume": 148178610.888638,
+          "vwap": 21.0327
         },
         {
           "date": "2026-05-22",
-          "close": 26.42
+          "open": 22.96,
+          "close": 26.42,
+          "high": 27.785,
+          "low": 22.66,
+          "volume": 204233224.015287,
+          "vwap": 25.8421
         },
         {
           "date": "2026-05-26",
-          "close": 25.065
+          "open": 26.01,
+          "close": 25.065,
+          "high": 26.57,
+          "low": 23.72,
+          "volume": 89078693.279111,
+          "vwap": 24.8578
         },
         {
           "date": "2026-05-27",
-          "close": 24.62
+          "open": 24.625,
+          "close": 24.62,
+          "high": 25.8523,
+          "low": 23.6201,
+          "volume": 56481128.341355,
+          "vwap": 24.4856
         },
         {
           "date": "2026-05-28",
-          "close": 27.03
+          "open": 24.89,
+          "close": 27.03,
+          "high": 27.58,
+          "low": 24.15,
+          "volume": 86058511.83453,
+          "vwap": 26.0737
         },
         {
           "date": "2026-05-29",
-          "close": 25.54
+          "open": 26.445,
+          "close": 25.54,
+          "high": 26.56,
+          "low": 24.435,
+          "volume": 61186089.978574,
+          "vwap": 25.3197
         },
         {
           "date": "2026-06-01",
-          "close": 25.63
+          "open": 24.74,
+          "close": 25.63,
+          "high": 26.48,
+          "low": 24.05,
+          "volume": 70028390.844014,
+          "vwap": 25.4792
         },
         {
           "date": "2026-06-02",
-          "close": 26.88
+          "open": 25.46,
+          "close": 26.88,
+          "high": 27.24,
+          "low": 25.43,
+          "volume": 74158372.509775,
+          "vwap": 26.3233
         },
         {
           "date": "2026-06-03",
-          "close": 24.095
+          "open": 26.56,
+          "close": 24.095,
+          "high": 28.06,
+          "low": 23.78,
+          "volume": 78372493.79689,
+          "vwap": 25.2469
         },
         {
           "date": "2026-06-04",
-          "close": 24.16
+          "open": 23.38,
+          "close": 24.16,
+          "high": 25.02,
+          "low": 22.95,
+          "volume": 48003268.773945,
+          "vwap": 24.0264
         },
         {
           "date": "2026-06-05",
-          "close": 20.68
+          "open": 23.165,
+          "close": 20.68,
+          "high": 23.19,
+          "low": 20.1,
+          "volume": 50337928.074682,
+          "vwap": 21.2746
         },
         {
           "date": "2026-06-08",
-          "close": 21.765
+          "open": 21.34,
+          "close": 21.765,
+          "high": 22.79,
+          "low": 20.725,
+          "volume": 35468724.189674,
+          "vwap": 21.9117
         },
         {
           "date": "2026-06-09",
-          "close": 19.69
+          "open": 21.675,
+          "close": 19.69,
+          "high": 22.63,
+          "low": 18.4701,
+          "volume": 49060810.451189,
+          "vwap": 20.1446
         },
         {
           "date": "2026-06-10",
-          "close": 19.445
+          "open": 19.595,
+          "close": 19.445,
+          "high": 20.84,
+          "low": 19.375,
+          "volume": 32632213.858406,
+          "vwap": 20.0422
         },
         {
           "date": "2026-06-11",
-          "close": 20.63
+          "open": 19.27,
+          "close": 20.63,
+          "high": 21.2314,
+          "low": 19.16,
+          "volume": 46720819.598171,
+          "vwap": 20.2022
         },
         {
           "date": "2026-06-12",
-          "close": 20.98
+          "open": 20.66,
+          "close": 20.98,
+          "high": 21.945,
+          "low": 20.28,
+          "volume": 34743159.139399,
+          "vwap": 21.1404
         }
       ],
+      "shortVolume": {
+        "latest": {
+          "date": "2026-06-12",
+          "totalVolume": 14768594,
+          "shortVolume": 8962729,
+          "exemptVolume": 30975,
+          "nonExemptVolume": 8931754,
+          "shortVolumeRatio": 60.69,
+          "source": "Massive"
+        },
+        "history": [
+          {
+            "date": "2026-06-12",
+            "totalVolume": 14768594,
+            "shortVolume": 8962729,
+            "exemptVolume": 30975,
+            "nonExemptVolume": 8931754,
+            "shortVolumeRatio": 60.69,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-11",
+            "totalVolume": 14208001,
+            "shortVolume": 8661233,
+            "exemptVolume": 23167,
+            "nonExemptVolume": 8638066,
+            "shortVolumeRatio": 60.96,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-10",
+            "totalVolume": 15782335,
+            "shortVolume": 9151105,
+            "exemptVolume": 769840,
+            "nonExemptVolume": 8381265,
+            "shortVolumeRatio": 57.98,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-09",
+            "totalVolume": 21868916,
+            "shortVolume": 13015966,
+            "exemptVolume": 501306,
+            "nonExemptVolume": 12514660,
+            "shortVolumeRatio": 59.52,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-08",
+            "totalVolume": 17031297,
+            "shortVolume": 9230949,
+            "exemptVolume": 669542,
+            "nonExemptVolume": 8561407,
+            "shortVolumeRatio": 54.2,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-05",
+            "totalVolume": 23615696,
+            "shortVolume": 13971605,
+            "exemptVolume": 1042141,
+            "nonExemptVolume": 12929463,
+            "shortVolumeRatio": 59.16,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-04",
+            "totalVolume": 21087423,
+            "shortVolume": 12705471,
+            "exemptVolume": 1144062,
+            "nonExemptVolume": 11561408,
+            "shortVolumeRatio": 60.25,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-03",
+            "totalVolume": 31833288,
+            "shortVolume": 18990888,
+            "exemptVolume": 561476,
+            "nonExemptVolume": 18429413,
+            "shortVolumeRatio": 59.66,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-02",
+            "totalVolume": 28126400,
+            "shortVolume": 16936519,
+            "exemptVolume": 97906,
+            "nonExemptVolume": 16838613,
+            "shortVolumeRatio": 60.22,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-01",
+            "totalVolume": 26995880,
+            "shortVolume": 16189968,
+            "exemptVolume": 77193,
+            "nonExemptVolume": 16112775,
+            "shortVolumeRatio": 59.97,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-29",
+            "totalVolume": 25747674,
+            "shortVolume": 14966771,
+            "exemptVolume": 241610,
+            "nonExemptVolume": 14725161,
+            "shortVolumeRatio": 58.13,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-28",
+            "totalVolume": 32178911,
+            "shortVolume": 16608322,
+            "exemptVolume": 137225,
+            "nonExemptVolume": 16471097,
+            "shortVolumeRatio": 51.61,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-27",
+            "totalVolume": 22782214,
+            "shortVolume": 12818102,
+            "exemptVolume": 1053233,
+            "nonExemptVolume": 11764868,
+            "shortVolumeRatio": 56.26,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-26",
+            "totalVolume": 34946414,
+            "shortVolume": 16090988,
+            "exemptVolume": 552036,
+            "nonExemptVolume": 15538952,
+            "shortVolumeRatio": 46.04,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-22",
+            "totalVolume": 82599554,
+            "shortVolume": 39860969,
+            "exemptVolume": 281877,
+            "nonExemptVolume": 39579092,
+            "shortVolumeRatio": 48.26,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-21",
+            "totalVolume": 44913972,
+            "shortVolume": 22720168,
+            "exemptVolume": 120859,
+            "nonExemptVolume": 22599309,
+            "shortVolumeRatio": 50.59,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-20",
+            "totalVolume": 10218049,
+            "shortVolume": 4602263,
+            "exemptVolume": 35093,
+            "nonExemptVolume": 4567170,
+            "shortVolumeRatio": 45.04,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-19",
+            "totalVolume": 9412151,
+            "shortVolume": 4262925,
+            "exemptVolume": 339837,
+            "nonExemptVolume": 3923088,
+            "shortVolumeRatio": 45.29,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-18",
+            "totalVolume": 13203960,
+            "shortVolume": 8824557,
+            "exemptVolume": 225969,
+            "nonExemptVolume": 8598588,
+            "shortVolumeRatio": 66.83,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-15",
+            "totalVolume": 10120377,
+            "shortVolume": 6570627,
+            "exemptVolume": 31049,
+            "nonExemptVolume": 6539578,
+            "shortVolumeRatio": 64.92,
+            "source": "Massive"
+          }
+        ],
+        "avgShortVolumeRatio20": 56.28,
+        "source": "Massive"
+      },
+      "unusualActivity": {
+        "asOf": "2026-06-12",
+        "source": "Massive aggregates + Massive short volume",
+        "tickTradesAvailable": false,
+        "volume": 34743159,
+        "avgVolume20": 63488017,
+        "volumeMultiple": 0.55,
+        "dayRangePct": 7.94,
+        "gapPct": 0.15,
+        "shortVolume": 8962729,
+        "shortVolumeRatio": 60.69,
+        "signals": [
+          {
+            "type": "short_ratio",
+            "severity": "warning",
+            "label": "60.69% short-volume ratio"
+          }
+        ],
+        "summary": "60.69% short-volume ratio"
+      },
       "cik": "0001838359",
       "dataSources": {
         "price": "Massive",
         "financials": "SEC",
         "insider": "Massive",
         "ratios": "none",
-        "profile": "Massive"
+        "profile": "Massive",
+        "shortVolume": "Massive",
+        "unusualActivity": "Massive aggregates + Massive short volume"
       },
       "financials": {
         "quarters": [
@@ -6295,12 +7283,12 @@
       "price": 57.85,
       "previousClose": 57.99,
       "ytdPct": 23.69,
-      "marketCap": 21645924284.52,
+      "marketCap": 21593666491.8,
       "peRatio": null,
       "rsi14": 43.1,
       "week52Low": 25.89,
       "week52High": 84.64,
-      "avgVolume": 33579176,
+      "avgVolume": 33580567,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -8778,93 +9766,590 @@
       ],
       "rawPoints": [
         {
+          "date": "2026-04-17",
+          "open": 44.09,
+          "close": 46.09,
+          "high": 46.69,
+          "low": 43.68,
+          "volume": 48967050.321039,
+          "vwap": 45.0915
+        },
+        {
+          "date": "2026-04-20",
+          "open": 45.34,
+          "close": 48.32,
+          "high": 48.565,
+          "low": 45.12,
+          "volume": 47869914.115291,
+          "vwap": 46.916
+        },
+        {
+          "date": "2026-04-21",
+          "open": 48.6,
+          "close": 46.28,
+          "high": 48.73,
+          "low": 45.72,
+          "volume": 38375542.077355,
+          "vwap": 47.0836
+        },
+        {
+          "date": "2026-04-22",
+          "open": 47.26,
+          "close": 47.36,
+          "high": 49.13,
+          "low": 46.54,
+          "volume": 34667699.870911,
+          "vwap": 47.7993
+        },
+        {
+          "date": "2026-04-23",
+          "open": 46.61,
+          "close": 43.63,
+          "high": 47.84,
+          "low": 41.92,
+          "volume": 35984349.792363,
+          "vwap": 44.3155
+        },
+        {
+          "date": "2026-04-24",
+          "open": 44.38,
+          "close": 42.69,
+          "high": 44.39,
+          "low": 41.26,
+          "volume": 20671068.596621,
+          "vwap": 42.5689
+        },
+        {
+          "date": "2026-04-27",
+          "open": 42.18,
+          "close": 43.84,
+          "high": 44.07,
+          "low": 41.11,
+          "volume": 22968458.436916,
+          "vwap": 42.5209
+        },
+        {
+          "date": "2026-04-28",
+          "open": 42.55,
+          "close": 43.08,
+          "high": 44.27,
+          "low": 42.25,
+          "volume": 21447727.547884,
+          "vwap": 43.4018
+        },
+        {
+          "date": "2026-04-29",
+          "open": 42.63,
+          "close": 42.11,
+          "high": 42.63,
+          "low": 39.765,
+          "volume": 24594068.995609,
+          "vwap": 41.4101
+        },
+        {
+          "date": "2026-04-30",
+          "open": 41.935,
+          "close": 45.12,
+          "high": 45.48,
+          "low": 41.49,
+          "volume": 23258804.147072,
+          "vwap": 44.1061
+        },
+        {
+          "date": "2026-05-01",
+          "open": 44.855,
+          "close": 46.2,
+          "high": 46.3091,
+          "low": 43.8,
+          "volume": 20621905.451641,
+          "vwap": 45.3626
+        },
+        {
+          "date": "2026-05-04",
+          "open": 46.53,
+          "close": 45.75,
+          "high": 49.14,
+          "low": 45.31,
+          "volume": 26396625.612062,
+          "vwap": 46.9992
+        },
+        {
+          "date": "2026-05-05",
+          "open": 46.61,
+          "close": 48,
+          "high": 48.34,
+          "low": 44.79,
+          "volume": 33457031.783775,
+          "vwap": 47.2431
+        },
+        {
+          "date": "2026-05-06",
+          "open": 49.1,
+          "close": 52.57,
+          "high": 53.485,
+          "low": 48.57,
+          "volume": 58397468.488317,
+          "vwap": 51.3355
+        },
+        {
+          "date": "2026-05-07",
+          "open": 50.035,
+          "close": 47.68,
+          "high": 51.9,
+          "low": 46.27,
+          "volume": 42874564.146621,
+          "vwap": 48.7655
+        },
+        {
+          "date": "2026-05-08",
+          "open": 48.685,
+          "close": 49.24,
+          "high": 49.44,
+          "low": 45.72,
+          "volume": 25990725.954326,
+          "vwap": 47.7262
+        },
+        {
+          "date": "2026-05-11",
+          "open": 48.14,
+          "close": 56.89,
+          "high": 58.54,
+          "low": 47.89,
+          "volume": 61486247.204147,
+          "vwap": 55.5811
+        },
+        {
+          "date": "2026-05-12",
+          "open": 57.25,
+          "close": 55.87,
+          "high": 59.15,
+          "low": 52.17,
+          "volume": 51692796.000718,
+          "vwap": 55.93
+        },
+        {
+          "date": "2026-05-13",
+          "open": 55.94,
+          "close": 55.26,
+          "high": 56.18,
+          "low": 52.94,
+          "volume": 24146509.811987,
+          "vwap": 54.9794
+        },
+        {
+          "date": "2026-05-14",
+          "open": 54.4,
+          "close": 57.47,
+          "high": 58.18,
+          "low": 53.91,
+          "volume": 26379221.044989,
+          "vwap": 56.656
+        },
+        {
           "date": "2026-05-15",
-          "close": 51.95
+          "open": 54.5,
+          "close": 51.95,
+          "high": 54.7,
+          "low": 51.285,
+          "volume": 27273159.103964,
+          "vwap": 52.4097
         },
         {
           "date": "2026-05-18",
-          "close": 49.31
+          "open": 51.81,
+          "close": 49.31,
+          "high": 52.2,
+          "low": 47.48,
+          "volume": 31649773.269292,
+          "vwap": 49.1878
         },
         {
           "date": "2026-05-19",
-          "close": 48.44
+          "open": 47.64,
+          "close": 48.44,
+          "high": 49.44,
+          "low": 45.51,
+          "volume": 22196998.788525,
+          "vwap": 47.7318
         },
         {
           "date": "2026-05-20",
-          "close": 52.47
+          "open": 49.25,
+          "close": 52.47,
+          "high": 52.74,
+          "low": 48.35,
+          "volume": 22745853.869289,
+          "vwap": 51.3662
         },
         {
           "date": "2026-05-21",
-          "close": 58.89
+          "open": 54.61,
+          "close": 58.89,
+          "high": 61.12,
+          "low": 53.93,
+          "volume": 62792647.294212,
+          "vwap": 58.1258
         },
         {
           "date": "2026-05-22",
-          "close": 63.64
+          "open": 58,
+          "close": 63.64,
+          "high": 65.8,
+          "low": 58,
+          "volume": 52650118.789423,
+          "vwap": 63.0261
         },
         {
           "date": "2026-05-26",
-          "close": 63.62
+          "open": 64.3,
+          "close": 63.62,
+          "high": 65,
+          "low": 60.09,
+          "volume": 30128800.183785,
+          "vwap": 62.8456
         },
         {
           "date": "2026-05-27",
-          "close": 65.4
+          "open": 62.67,
+          "close": 65.4,
+          "high": 66.81,
+          "low": 59.71,
+          "volume": 29690955.70852,
+          "vwap": 63.5909
         },
         {
           "date": "2026-05-28",
-          "close": 70.14
+          "open": 64.87,
+          "close": 70.14,
+          "high": 71.47,
+          "low": 64.72,
+          "volume": 31801214.193138,
+          "vwap": 68.6013
         },
         {
           "date": "2026-05-29",
-          "close": 72.07
+          "open": 69.64,
+          "close": 72.07,
+          "high": 72.17,
+          "low": 66.8,
+          "volume": 28460826.842408,
+          "vwap": 69.7994
         },
         {
           "date": "2026-06-01",
-          "close": 69.28
+          "open": 69.645,
+          "close": 69.28,
+          "high": 72.42,
+          "low": 66.97,
+          "volume": 28317580.309322,
+          "vwap": 69.8599
         },
         {
           "date": "2026-06-02",
-          "close": 71.4
+          "open": 69.35,
+          "close": 71.4,
+          "high": 72.63,
+          "low": 69.09,
+          "volume": 27650936.328737,
+          "vwap": 70.652
         },
         {
           "date": "2026-06-03",
-          "close": 68.23
+          "open": 70.325,
+          "close": 68.23,
+          "high": 73.65,
+          "low": 67.51,
+          "volume": 30856342.387844,
+          "vwap": 69.4096
         },
         {
           "date": "2026-06-04",
-          "close": 65.66
+          "open": 67.05,
+          "close": 65.66,
+          "high": 69.4641,
+          "low": 64.18,
+          "volume": 40211384.650369,
+          "vwap": 66.6391
         },
         {
           "date": "2026-06-05",
-          "close": 56.78
+          "open": 63.51,
+          "close": 56.78,
+          "high": 63.79,
+          "low": 55.84,
+          "volume": 32124857.171386,
+          "vwap": 58.8823
         },
         {
           "date": "2026-06-08",
-          "close": 62.8
+          "open": 59.54,
+          "close": 62.8,
+          "high": 64.9,
+          "low": 57.96,
+          "volume": 28561681.759397,
+          "vwap": 61.9917
         },
         {
           "date": "2026-06-09",
-          "close": 56.69
+          "open": 62.4,
+          "close": 56.69,
+          "high": 63.9484,
+          "low": 53.2646,
+          "volume": 35304013.170658,
+          "vwap": 57.6305
         },
         {
           "date": "2026-06-10",
-          "close": 56.63
+          "open": 57.74,
+          "close": 56.63,
+          "high": 60.75,
+          "low": 56.5,
+          "volume": 23605648.334722,
+          "vwap": 58.1293
         },
         {
           "date": "2026-06-11",
-          "close": 57.99
+          "open": 56.54,
+          "close": 57.99,
+          "high": 59.465,
+          "low": 54.75,
+          "volume": 25218825.2822,
+          "vwap": 57.1295
         },
         {
           "date": "2026-06-12",
-          "close": 57.85
+          "open": 57.7,
+          "close": 57.85,
+          "high": 60.23,
+          "low": 56.16,
+          "volume": 24732308.014669,
+          "vwap": 57.9503
         }
       ],
+      "shortVolume": {
+        "latest": {
+          "date": "2026-06-12",
+          "totalVolume": 6647695,
+          "shortVolume": 3966799,
+          "exemptVolume": 3246,
+          "nonExemptVolume": 3963553,
+          "shortVolumeRatio": 59.67,
+          "source": "Massive"
+        },
+        "history": [
+          {
+            "date": "2026-06-12",
+            "totalVolume": 6647695,
+            "shortVolume": 3966799,
+            "exemptVolume": 3246,
+            "nonExemptVolume": 3963553,
+            "shortVolumeRatio": 59.67,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-11",
+            "totalVolume": 8369509,
+            "shortVolume": 4441101,
+            "exemptVolume": 18456,
+            "nonExemptVolume": 4422645,
+            "shortVolumeRatio": 53.06,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-10",
+            "totalVolume": 9125417,
+            "shortVolume": 4297077,
+            "exemptVolume": 364551,
+            "nonExemptVolume": 3932526,
+            "shortVolumeRatio": 47.09,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-09",
+            "totalVolume": 14729745,
+            "shortVolume": 8424995,
+            "exemptVolume": 445325,
+            "nonExemptVolume": 7979669,
+            "shortVolumeRatio": 57.2,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-08",
+            "totalVolume": 11476867,
+            "shortVolume": 5685322,
+            "exemptVolume": 508565,
+            "nonExemptVolume": 5176757,
+            "shortVolumeRatio": 49.54,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-05",
+            "totalVolume": 12544737,
+            "shortVolume": 7467488,
+            "exemptVolume": 446878,
+            "nonExemptVolume": 7020610,
+            "shortVolumeRatio": 59.53,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-04",
+            "totalVolume": 12690743,
+            "shortVolume": 7240451,
+            "exemptVolume": 34378,
+            "nonExemptVolume": 7206074,
+            "shortVolumeRatio": 57.05,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-03",
+            "totalVolume": 9889307,
+            "shortVolume": 6320714,
+            "exemptVolume": 20965,
+            "nonExemptVolume": 6299749,
+            "shortVolumeRatio": 63.91,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-02",
+            "totalVolume": 9337169,
+            "shortVolume": 5830576,
+            "exemptVolume": 30599,
+            "nonExemptVolume": 5799977,
+            "shortVolumeRatio": 62.44,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-01",
+            "totalVolume": 9713284,
+            "shortVolume": 5628695,
+            "exemptVolume": 32548,
+            "nonExemptVolume": 5596147,
+            "shortVolumeRatio": 57.95,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-29",
+            "totalVolume": 8750012,
+            "shortVolume": 5213043,
+            "exemptVolume": 32187,
+            "nonExemptVolume": 5180856,
+            "shortVolumeRatio": 59.58,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-28",
+            "totalVolume": 12309468,
+            "shortVolume": 7543759,
+            "exemptVolume": 278202,
+            "nonExemptVolume": 7265557,
+            "shortVolumeRatio": 61.28,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-27",
+            "totalVolume": 11877582,
+            "shortVolume": 7208337,
+            "exemptVolume": 19195,
+            "nonExemptVolume": 7189142,
+            "shortVolumeRatio": 60.69,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-26",
+            "totalVolume": 11165331,
+            "shortVolume": 6602349,
+            "exemptVolume": 38807,
+            "nonExemptVolume": 6563542,
+            "shortVolumeRatio": 59.13,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-22",
+            "totalVolume": 21498458,
+            "shortVolume": 12738129,
+            "exemptVolume": 120454,
+            "nonExemptVolume": 12617675,
+            "shortVolumeRatio": 59.25,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-21",
+            "totalVolume": 22443178,
+            "shortVolume": 13958309,
+            "exemptVolume": 75471,
+            "nonExemptVolume": 13882838,
+            "shortVolumeRatio": 62.19,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-20",
+            "totalVolume": 8888384,
+            "shortVolume": 5396293,
+            "exemptVolume": 31314,
+            "nonExemptVolume": 5364979,
+            "shortVolumeRatio": 60.71,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-19",
+            "totalVolume": 8569414,
+            "shortVolume": 5142961,
+            "exemptVolume": 65890,
+            "nonExemptVolume": 5077071,
+            "shortVolumeRatio": 60.02,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-18",
+            "totalVolume": 8639912,
+            "shortVolume": 5110857,
+            "exemptVolume": 449782,
+            "nonExemptVolume": 4661075,
+            "shortVolumeRatio": 59.15,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-15",
+            "totalVolume": 9944195,
+            "shortVolume": 6399999,
+            "exemptVolume": 471687,
+            "nonExemptVolume": 5928312,
+            "shortVolumeRatio": 64.36,
+            "source": "Massive"
+          }
+        ],
+        "avgShortVolumeRatio20": 58.69,
+        "source": "Massive"
+      },
+      "unusualActivity": {
+        "asOf": "2026-06-12",
+        "source": "Massive aggregates + Massive short volume",
+        "tickTradesAvailable": false,
+        "volume": 24732308,
+        "avgVolume20": 31881042,
+        "volumeMultiple": 0.78,
+        "dayRangePct": 7.04,
+        "gapPct": -0.5,
+        "shortVolume": 3966799,
+        "shortVolumeRatio": 59.67,
+        "signals": [
+          {
+            "type": "short_ratio",
+            "severity": "warning",
+            "label": "59.67% short-volume ratio"
+          }
+        ],
+        "summary": "59.67% short-volume ratio"
+      },
       "cik": "0001824920",
       "dataSources": {
         "price": "Massive",
         "financials": "SEC",
         "insider": "Massive",
         "ratios": "none",
-        "profile": "Massive"
+        "profile": "Massive",
+        "shortVolume": "Massive",
+        "unusualActivity": "Massive aggregates + Massive short volume"
       },
       "financials": {
         "quarters": [
@@ -9328,12 +10813,12 @@
       "price": 4.55,
       "previousClose": 4.41,
       "ytdPct": -4.61,
-      "marketCap": 1548185527.98,
+      "marketCap": 1597334274.8999999,
       "peRatio": null,
       "rsi14": 44.6,
       "week52Low": 2.47,
       "week52High": 10.52,
-      "avgVolume": 12516949,
+      "avgVolume": 12517956,
       "recommendation": "HOLD",
       "opportunityScore": 55,
       "company": {
@@ -11811,93 +13296,584 @@
       ],
       "rawPoints": [
         {
+          "date": "2026-04-17",
+          "open": 5.03,
+          "close": 4.84,
+          "high": 5.03,
+          "low": 4.83,
+          "volume": 11083513.910854,
+          "vwap": 4.9308
+        },
+        {
+          "date": "2026-04-20",
+          "open": 4.8,
+          "close": 4.98,
+          "high": 5.17,
+          "low": 4.79,
+          "volume": 12801584.692527,
+          "vwap": 5.0033
+        },
+        {
+          "date": "2026-04-21",
+          "open": 4.98,
+          "close": 4.74,
+          "high": 5.015,
+          "low": 4.72,
+          "volume": 9500904.780786,
+          "vwap": 4.847
+        },
+        {
+          "date": "2026-04-22",
+          "open": 4.85,
+          "close": 4.98,
+          "high": 5.01,
+          "low": 4.85,
+          "volume": 9235690.958383,
+          "vwap": 4.9406
+        },
+        {
+          "date": "2026-04-23",
+          "open": 4.9,
+          "close": 4.72,
+          "high": 4.9599,
+          "low": 4.54,
+          "volume": 11127409.201704,
+          "vwap": 4.7477
+        },
+        {
+          "date": "2026-04-24",
+          "open": 4.78,
+          "close": 4.64,
+          "high": 4.83,
+          "low": 4.61,
+          "volume": 7165380.082586,
+          "vwap": 4.6723
+        },
+        {
+          "date": "2026-04-27",
+          "open": 4.605,
+          "close": 5.25,
+          "high": 5.3,
+          "low": 4.57,
+          "volume": 23304308.933022,
+          "vwap": 5.0623
+        },
+        {
+          "date": "2026-04-28",
+          "open": 5.05,
+          "close": 4.92,
+          "high": 5.06,
+          "low": 4.725,
+          "volume": 16138218.330577,
+          "vwap": 4.898
+        },
+        {
+          "date": "2026-04-29",
+          "open": 4.98,
+          "close": 4.95,
+          "high": 4.99,
+          "low": 4.685,
+          "volume": 10929427.897104,
+          "vwap": 4.8769
+        },
+        {
+          "date": "2026-04-30",
+          "open": 5.07,
+          "close": 5.73,
+          "high": 5.77,
+          "low": 5.05,
+          "volume": 28646344.890465,
+          "vwap": 5.5455
+        },
+        {
+          "date": "2026-05-01",
+          "open": 5.65,
+          "close": 5.71,
+          "high": 5.76,
+          "low": 5.4806,
+          "volume": 12456356.031823,
+          "vwap": 5.6223
+        },
+        {
+          "date": "2026-05-04",
+          "open": 5.73,
+          "close": 5.54,
+          "high": 5.86,
+          "low": 5.38,
+          "volume": 13493432.380377,
+          "vwap": 5.5756
+        },
+        {
+          "date": "2026-05-05",
+          "open": 5.6,
+          "close": 5.52,
+          "high": 5.655,
+          "low": 5.39,
+          "volume": 9113032.883765,
+          "vwap": 5.5305
+        },
+        {
+          "date": "2026-05-06",
+          "open": 5.69,
+          "close": 5.99,
+          "high": 6.07,
+          "low": 5.6301,
+          "volume": 17569070.327965,
+          "vwap": 5.8948
+        },
+        {
+          "date": "2026-05-07",
+          "open": 6.015,
+          "close": 5.66,
+          "high": 6.045,
+          "low": 5.62,
+          "volume": 13622578.721082,
+          "vwap": 5.804
+        },
+        {
+          "date": "2026-05-08",
+          "open": 5.68,
+          "close": 5.57,
+          "high": 5.71,
+          "low": 5.4225,
+          "volume": 11117826.811604,
+          "vwap": 5.5504
+        },
+        {
+          "date": "2026-05-11",
+          "open": 5.56,
+          "close": 5.79,
+          "high": 5.895,
+          "low": 5.4,
+          "volume": 13172799.01189,
+          "vwap": 5.7364
+        },
+        {
+          "date": "2026-05-12",
+          "open": 5.7,
+          "close": 5.57,
+          "high": 5.76,
+          "low": 5.32,
+          "volume": 10715980.483103,
+          "vwap": 5.5223
+        },
+        {
+          "date": "2026-05-13",
+          "open": 5.53,
+          "close": 5.48,
+          "high": 5.65,
+          "low": 5.32,
+          "volume": 10644593.319634,
+          "vwap": 5.4629
+        },
+        {
+          "date": "2026-05-14",
+          "open": 5.35,
+          "close": 5.14,
+          "high": 5.4284,
+          "low": 5.02,
+          "volume": 14675052.627472,
+          "vwap": 5.1427
+        },
+        {
           "date": "2026-05-15",
-          "close": 5.01
+          "open": 4.99,
+          "close": 5.01,
+          "high": 5.195,
+          "low": 4.9,
+          "volume": 11339333.793012,
+          "vwap": 5.0117
         },
         {
           "date": "2026-05-18",
-          "close": 4.78
+          "open": 5.04,
+          "close": 4.78,
+          "high": 5.07,
+          "low": 4.715,
+          "volume": 8306967.780532,
+          "vwap": 4.8177
         },
         {
           "date": "2026-05-19",
-          "close": 4.65
+          "open": 4.74,
+          "close": 4.65,
+          "high": 4.81,
+          "low": 4.55,
+          "volume": 9820104.057019,
+          "vwap": 4.6458
         },
         {
           "date": "2026-05-20",
-          "close": 4.76
+          "open": 4.74,
+          "close": 4.76,
+          "high": 4.8,
+          "low": 4.6,
+          "volume": 8312316.47871,
+          "vwap": 4.7235
         },
         {
           "date": "2026-05-21",
-          "close": 4.99
+          "open": 4.73,
+          "close": 4.99,
+          "high": 5.0499,
+          "low": 4.7,
+          "volume": 9670830.099894,
+          "vwap": 4.9204
         },
         {
           "date": "2026-05-22",
-          "close": 4.87
+          "open": 5.02,
+          "close": 4.87,
+          "high": 5.21,
+          "low": 4.87,
+          "volume": 12226589.659688,
+          "vwap": 4.953
         },
         {
           "date": "2026-05-26",
-          "close": 4.99
+          "open": 4.92,
+          "close": 4.99,
+          "high": 5.07,
+          "low": 4.82,
+          "volume": 11851155.034713,
+          "vwap": 4.9763
         },
         {
           "date": "2026-05-27",
-          "close": 5.03
+          "open": 4.94,
+          "close": 5.03,
+          "high": 5.13,
+          "low": 4.82,
+          "volume": 9431827.476716,
+          "vwap": 4.9947
         },
         {
           "date": "2026-05-28",
-          "close": 5.15
+          "open": 4.97,
+          "close": 5.15,
+          "high": 5.26,
+          "low": 4.95,
+          "volume": 11144046.132,
+          "vwap": 5.1542
         },
         {
           "date": "2026-05-29",
-          "close": 5.21
+          "open": 5.115,
+          "close": 5.21,
+          "high": 5.23,
+          "low": 4.99,
+          "volume": 11121920.634285,
+          "vwap": 5.1398
         },
         {
           "date": "2026-06-01",
-          "close": 5.51
+          "open": 5.11,
+          "close": 5.51,
+          "high": 5.52,
+          "low": 5.04,
+          "volume": 19998666.707168,
+          "vwap": 5.5114
         },
         {
           "date": "2026-06-02",
-          "close": 5.75
+          "open": 5.82,
+          "close": 5.75,
+          "high": 6.36,
+          "low": 5.68,
+          "volume": 40865183.398497,
+          "vwap": 5.996
         },
         {
           "date": "2026-06-03",
-          "close": 5.2
+          "open": 5.55,
+          "close": 5.2,
+          "high": 5.55,
+          "low": 5.17,
+          "volume": 15879127.673472,
+          "vwap": 5.3255
         },
         {
           "date": "2026-06-04",
-          "close": 5.1
+          "open": 5.11,
+          "close": 5.1,
+          "high": 5.17,
+          "low": 5,
+          "volume": 7483545.044298,
+          "vwap": 5.1022
         },
         {
           "date": "2026-06-05",
-          "close": 4.53
+          "open": 5,
+          "close": 4.53,
+          "high": 5.01,
+          "low": 4.49,
+          "volume": 16408004.01006,
+          "vwap": 4.6424
         },
         {
           "date": "2026-06-08",
-          "close": 4.56
+          "open": 4.66,
+          "close": 4.56,
+          "high": 4.7,
+          "low": 4.52,
+          "volume": 7630941.118865,
+          "vwap": 4.6033
         },
         {
           "date": "2026-06-09",
-          "close": 4.34
+          "open": 4.58,
+          "close": 4.34,
+          "high": 4.63,
+          "low": 4.18,
+          "volume": 11849864.213108,
+          "vwap": 4.3586
         },
         {
           "date": "2026-06-10",
-          "close": 4.15
+          "open": 4.27,
+          "close": 4.15,
+          "high": 4.32,
+          "low": 4.12,
+          "volume": 8136527.764241,
+          "vwap": 4.1882
         },
         {
           "date": "2026-06-11",
-          "close": 4.41
+          "open": 4.18,
+          "close": 4.41,
+          "high": 4.42,
+          "low": 4.14,
+          "volume": 8736116.702412,
+          "vwap": 4.3072
         },
         {
           "date": "2026-06-12",
-          "close": 4.55
+          "open": 4.39,
+          "close": 4.55,
+          "high": 4.58,
+          "low": 4.375,
+          "volume": 8744896.468212,
+          "vwap": 4.5019
         }
       ],
+      "shortVolume": {
+        "latest": {
+          "date": "2026-06-12",
+          "totalVolume": 4249002,
+          "shortVolume": 1923035,
+          "exemptVolume": 7784,
+          "nonExemptVolume": 1915251,
+          "shortVolumeRatio": 45.26,
+          "source": "Massive"
+        },
+        "history": [
+          {
+            "date": "2026-06-12",
+            "totalVolume": 4249002,
+            "shortVolume": 1923035,
+            "exemptVolume": 7784,
+            "nonExemptVolume": 1915251,
+            "shortVolumeRatio": 45.26,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-11",
+            "totalVolume": 3753025,
+            "shortVolume": 1548020,
+            "exemptVolume": 7939,
+            "nonExemptVolume": 1540081,
+            "shortVolumeRatio": 41.25,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-10",
+            "totalVolume": 3894140,
+            "shortVolume": 1624596,
+            "exemptVolume": 1011,
+            "nonExemptVolume": 1623585,
+            "shortVolumeRatio": 41.72,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-09",
+            "totalVolume": 6048822,
+            "shortVolume": 2134858,
+            "exemptVolume": 30830,
+            "nonExemptVolume": 2104028,
+            "shortVolumeRatio": 35.29,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-08",
+            "totalVolume": 3703263,
+            "shortVolume": 1520847,
+            "exemptVolume": 129386,
+            "nonExemptVolume": 1391461,
+            "shortVolumeRatio": 41.07,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-05",
+            "totalVolume": 8968900,
+            "shortVolume": 3271550,
+            "exemptVolume": 186122,
+            "nonExemptVolume": 3085428,
+            "shortVolumeRatio": 36.48,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-04",
+            "totalVolume": 4060581,
+            "shortVolume": 1222082,
+            "exemptVolume": 110351,
+            "nonExemptVolume": 1111730,
+            "shortVolumeRatio": 30.1,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-03",
+            "totalVolume": 7915459,
+            "shortVolume": 2973794,
+            "exemptVolume": 143874,
+            "nonExemptVolume": 2829920,
+            "shortVolumeRatio": 37.57,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-02",
+            "totalVolume": 20095882,
+            "shortVolume": 6410381,
+            "exemptVolume": 28777,
+            "nonExemptVolume": 6381604,
+            "shortVolumeRatio": 31.9,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-01",
+            "totalVolume": 8273588,
+            "shortVolume": 1648573,
+            "exemptVolume": 6,
+            "nonExemptVolume": 1648567,
+            "shortVolumeRatio": 19.93,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-29",
+            "totalVolume": 5566085,
+            "shortVolume": 1444948,
+            "exemptVolume": 6437,
+            "nonExemptVolume": 1438511,
+            "shortVolumeRatio": 25.96,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-28",
+            "totalVolume": 5631459,
+            "shortVolume": 979437,
+            "exemptVolume": 145,
+            "nonExemptVolume": 979292,
+            "shortVolumeRatio": 17.39,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-27",
+            "totalVolume": 4932836,
+            "shortVolume": 1295504,
+            "exemptVolume": 8885,
+            "nonExemptVolume": 1286619,
+            "shortVolumeRatio": 26.26,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-26",
+            "totalVolume": 5919072,
+            "shortVolume": 1576293,
+            "exemptVolume": 2331,
+            "nonExemptVolume": 1573962,
+            "shortVolumeRatio": 26.63,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-22",
+            "totalVolume": 4471038,
+            "shortVolume": 1487303,
+            "exemptVolume": 3750,
+            "nonExemptVolume": 1483553,
+            "shortVolumeRatio": 33.27,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-21",
+            "totalVolume": 4333539,
+            "shortVolume": 1450803,
+            "exemptVolume": 23241,
+            "nonExemptVolume": 1427562,
+            "shortVolumeRatio": 33.48,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-20",
+            "totalVolume": 3546352,
+            "shortVolume": 1681264,
+            "exemptVolume": 10829,
+            "nonExemptVolume": 1670435,
+            "shortVolumeRatio": 47.41,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-19",
+            "totalVolume": 4761215,
+            "shortVolume": 2064149,
+            "exemptVolume": 7040,
+            "nonExemptVolume": 2057109,
+            "shortVolumeRatio": 43.35,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-18",
+            "totalVolume": 4474746,
+            "shortVolume": 1115672,
+            "exemptVolume": 3066,
+            "nonExemptVolume": 1112606,
+            "shortVolumeRatio": 24.93,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-15",
+            "totalVolume": 4897505,
+            "shortVolume": 1445197,
+            "exemptVolume": 6421,
+            "nonExemptVolume": 1438776,
+            "shortVolumeRatio": 29.51,
+            "source": "Massive"
+          }
+        ],
+        "avgShortVolumeRatio20": 33.44,
+        "source": "Massive"
+      },
+      "unusualActivity": {
+        "asOf": "2026-06-12",
+        "source": "Massive aggregates + Massive short volume",
+        "tickTradesAvailable": false,
+        "volume": 8744896,
+        "avgVolume20": 12744406,
+        "volumeMultiple": 0.69,
+        "dayRangePct": 4.51,
+        "gapPct": -0.45,
+        "shortVolume": 1923035,
+        "shortVolumeRatio": 45.26,
+        "signals": [],
+        "summary": "No unusual aggregate activity detected"
+      },
       "cik": "0001966983",
       "dataSources": {
         "price": "Massive",
         "financials": "SEC",
         "insider": "Massive",
         "ratios": "none",
-        "profile": "Massive"
+        "profile": "Massive",
+        "shortVolume": "Massive",
+        "unusualActivity": "Massive aggregates + Massive short volume"
       },
       "financials": {
         "quarters": [],
@@ -12236,12 +14212,12 @@
       "price": 7.04,
       "previousClose": 7.33,
       "ytdPct": 18.72,
-      "marketCap": 1086200609.26,
+      "marketCap": 1043226778.88,
       "peRatio": null,
       "rsi14": 39.5,
       "week52Low": 1.94,
       "week52High": 19.71,
-      "avgVolume": 11918372,
+      "avgVolume": 11919180,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -14719,93 +16695,584 @@
       ],
       "rawPoints": [
         {
+          "date": "2026-04-17",
+          "open": 10.87,
+          "close": 10.57,
+          "high": 11.425,
+          "low": 10.36,
+          "volume": 10971281.492432,
+          "vwap": 10.8631
+        },
+        {
+          "date": "2026-04-20",
+          "open": 10.5,
+          "close": 10.64,
+          "high": 11.225,
+          "low": 10.4,
+          "volume": 10953178.538634,
+          "vwap": 10.7627
+        },
+        {
+          "date": "2026-04-21",
+          "open": 10.77,
+          "close": 10.07,
+          "high": 10.77,
+          "low": 9.98,
+          "volume": 9859214.158649,
+          "vwap": 10.3619
+        },
+        {
+          "date": "2026-04-22",
+          "open": 10.39,
+          "close": 10.6,
+          "high": 10.99,
+          "low": 10.005,
+          "volume": 8968577.813786,
+          "vwap": 10.3578
+        },
+        {
+          "date": "2026-04-23",
+          "open": 10.31,
+          "close": 10.12,
+          "high": 10.6,
+          "low": 9.77,
+          "volume": 11334223.391948,
+          "vwap": 10.1593
+        },
+        {
+          "date": "2026-04-24",
+          "open": 10.27,
+          "close": 9.74,
+          "high": 10.47,
+          "low": 9.58,
+          "volume": 11111879.419009,
+          "vwap": 9.9026
+        },
+        {
+          "date": "2026-04-27",
+          "open": 9.6,
+          "close": 11.18,
+          "high": 11.23,
+          "low": 9.595,
+          "volume": 14519804.972241,
+          "vwap": 10.5936
+        },
+        {
+          "date": "2026-04-28",
+          "open": 10.73,
+          "close": 10.81,
+          "high": 11.87,
+          "low": 10.35,
+          "volume": 19069425.43862,
+          "vwap": 11.2456
+        },
+        {
+          "date": "2026-04-29",
+          "open": 10.77,
+          "close": 9.98,
+          "high": 10.77,
+          "low": 9.34,
+          "volume": 15459091.749497,
+          "vwap": 9.9146
+        },
+        {
+          "date": "2026-04-30",
+          "open": 10.16,
+          "close": 12.01,
+          "high": 12.355,
+          "low": 10.13,
+          "volume": 21428974.440245,
+          "vwap": 11.5056
+        },
+        {
+          "date": "2026-05-01",
+          "open": 11.7877,
+          "close": 12.15,
+          "high": 12.605,
+          "low": 11.355,
+          "volume": 18476462.391492,
+          "vwap": 12.0852
+        },
+        {
+          "date": "2026-05-04",
+          "open": 12.3091,
+          "close": 11.75,
+          "high": 12.57,
+          "low": 11.53,
+          "volume": 21721477.151255,
+          "vwap": 12.0102
+        },
+        {
+          "date": "2026-05-05",
+          "open": 11.85,
+          "close": 11.15,
+          "high": 11.92,
+          "low": 10.575,
+          "volume": 18510227.532103,
+          "vwap": 11.0503
+        },
+        {
+          "date": "2026-05-06",
+          "open": 11.23,
+          "close": 12.61,
+          "high": 12.64,
+          "low": 10.96,
+          "volume": 17267728.457012,
+          "vwap": 12.1299
+        },
+        {
+          "date": "2026-05-07",
+          "open": 12.55,
+          "close": 11.02,
+          "high": 12.64,
+          "low": 10.85,
+          "volume": 14340118.60621,
+          "vwap": 11.4858
+        },
+        {
+          "date": "2026-05-08",
+          "open": 11.495,
+          "close": 10.66,
+          "high": 11.5,
+          "low": 10.49,
+          "volume": 10666096.9707,
+          "vwap": 10.7893
+        },
+        {
+          "date": "2026-05-11",
+          "open": 10.695,
+          "close": 10.65,
+          "high": 10.89,
+          "low": 10.04,
+          "volume": 12629690.253253,
+          "vwap": 10.4946
+        },
+        {
+          "date": "2026-05-12",
+          "open": 10.44,
+          "close": 10.5,
+          "high": 11.05,
+          "low": 9.77,
+          "volume": 13938982.725149,
+          "vwap": 10.2867
+        },
+        {
+          "date": "2026-05-13",
+          "open": 10.31,
+          "close": 9.97,
+          "high": 10.55,
+          "low": 9.79,
+          "volume": 9301259.292359,
+          "vwap": 10.0394
+        },
+        {
+          "date": "2026-05-14",
+          "open": 9.85,
+          "close": 9.57,
+          "high": 9.9,
+          "low": 9.1,
+          "volume": 11168333.931643,
+          "vwap": 9.4895
+        },
+        {
           "date": "2026-05-15",
-          "close": 8.61
+          "open": 9.34,
+          "close": 8.61,
+          "high": 9.71,
+          "low": 8.46,
+          "volume": 14692851.356492,
+          "vwap": 8.7906
         },
         {
           "date": "2026-05-18",
-          "close": 8.04
+          "open": 8.74,
+          "close": 8.04,
+          "high": 8.8,
+          "low": 8.02,
+          "volume": 9009342.822025,
+          "vwap": 8.2276
         },
         {
           "date": "2026-05-19",
-          "close": 7.44
+          "open": 8,
+          "close": 7.44,
+          "high": 8.06,
+          "low": 7.33,
+          "volume": 15583083.955486,
+          "vwap": 7.542
         },
         {
           "date": "2026-05-20",
-          "close": 8.33
+          "open": 7.75,
+          "close": 8.33,
+          "high": 8.56,
+          "low": 7.57,
+          "volume": 16401022.076817,
+          "vwap": 8.234
         },
         {
           "date": "2026-05-21",
-          "close": 8.2
+          "open": 8.25,
+          "close": 8.2,
+          "high": 8.6,
+          "low": 8.11,
+          "volume": 10028259.571745,
+          "vwap": 8.3392
         },
         {
           "date": "2026-05-22",
-          "close": 8.42
+          "open": 8.4,
+          "close": 8.42,
+          "high": 8.7,
+          "low": 8.25,
+          "volume": 9861067.023742,
+          "vwap": 8.4492
         },
         {
           "date": "2026-05-26",
-          "close": 8.81
+          "open": 8.66,
+          "close": 8.81,
+          "high": 8.965,
+          "low": 8.38,
+          "volume": 12100798.642345,
+          "vwap": 8.7487
         },
         {
           "date": "2026-05-27",
-          "close": 9.24
+          "open": 8.5,
+          "close": 9.24,
+          "high": 9.26,
+          "low": 8.43,
+          "volume": 10257300.236144,
+          "vwap": 8.9924
         },
         {
           "date": "2026-05-28",
-          "close": 9.1
+          "open": 9.06,
+          "close": 9.1,
+          "high": 9.22,
+          "low": 8.845,
+          "volume": 6553467.66156,
+          "vwap": 9.0715
         },
         {
           "date": "2026-05-29",
-          "close": 8.98
+          "open": 9.05,
+          "close": 8.98,
+          "high": 9.16,
+          "low": 8.68,
+          "volume": 7261199.182063,
+          "vwap": 8.9224
         },
         {
           "date": "2026-06-01",
-          "close": 9.26
+          "open": 8.81,
+          "close": 9.26,
+          "high": 9.65,
+          "low": 8.6,
+          "volume": 9850369.81187,
+          "vwap": 9.2794
         },
         {
           "date": "2026-06-02",
-          "close": 10.19
+          "open": 9.22,
+          "close": 10.19,
+          "high": 10.23,
+          "low": 9.17,
+          "volume": 11907255.336737,
+          "vwap": 9.9174
         },
         {
           "date": "2026-06-03",
-          "close": 9.16
+          "open": 9.97,
+          "close": 9.16,
+          "high": 10.13,
+          "low": 9.085,
+          "volume": 10400192.701422,
+          "vwap": 9.3999
         },
         {
           "date": "2026-06-04",
-          "close": 8.65
+          "open": 9.135,
+          "close": 8.65,
+          "high": 9.135,
+          "low": 8.5,
+          "volume": 10239879.784454,
+          "vwap": 8.6704
         },
         {
           "date": "2026-06-05",
-          "close": 7.71
+          "open": 8.45,
+          "close": 7.71,
+          "high": 8.45,
+          "low": 7.6,
+          "volume": 10450649.730353,
+          "vwap": 7.9584
         },
         {
           "date": "2026-06-08",
-          "close": 7.81
+          "open": 8.02,
+          "close": 7.81,
+          "high": 8.07,
+          "low": 7.725,
+          "volume": 5775968.893579,
+          "vwap": 7.8821
         },
         {
           "date": "2026-06-09",
-          "close": 7.28
+          "open": 7.86,
+          "close": 7.28,
+          "high": 7.89,
+          "low": 6.95,
+          "volume": 10830769.171836,
+          "vwap": 7.3017
         },
         {
           "date": "2026-06-10",
-          "close": 6.86
+          "open": 7.27,
+          "close": 6.86,
+          "high": 7.545,
+          "low": 6.77,
+          "volume": 11538609.281464,
+          "vwap": 6.9526
         },
         {
           "date": "2026-06-11",
-          "close": 7.33
+          "open": 6.9,
+          "close": 7.33,
+          "high": 7.34,
+          "low": 6.72,
+          "volume": 9943089.61963,
+          "vwap": 7.0519
         },
         {
           "date": "2026-06-12",
-          "close": 7.04
+          "open": 7.28,
+          "close": 7.04,
+          "high": 7.32,
+          "low": 6.89,
+          "volume": 6869852.376843,
+          "vwap": 7.1196
         }
       ],
+      "shortVolume": {
+        "latest": {
+          "date": "2026-06-12",
+          "totalVolume": 3348785,
+          "shortVolume": 1607777,
+          "exemptVolume": 21459,
+          "nonExemptVolume": 1586318,
+          "shortVolumeRatio": 48.01,
+          "source": "Massive"
+        },
+        "history": [
+          {
+            "date": "2026-06-12",
+            "totalVolume": 3348785,
+            "shortVolume": 1607777,
+            "exemptVolume": 21459,
+            "nonExemptVolume": 1586318,
+            "shortVolumeRatio": 48.01,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-11",
+            "totalVolume": 5132787,
+            "shortVolume": 1946014,
+            "exemptVolume": 100,
+            "nonExemptVolume": 1945914,
+            "shortVolumeRatio": 37.91,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-10",
+            "totalVolume": 5966918,
+            "shortVolume": 2398244,
+            "exemptVolume": 238382,
+            "nonExemptVolume": 2159862,
+            "shortVolumeRatio": 40.19,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-09",
+            "totalVolume": 5241738,
+            "shortVolume": 1981296,
+            "exemptVolume": 129831,
+            "nonExemptVolume": 1851464,
+            "shortVolumeRatio": 37.8,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-08",
+            "totalVolume": 2462495,
+            "shortVolume": 1346584,
+            "exemptVolume": 101522,
+            "nonExemptVolume": 1245062,
+            "shortVolumeRatio": 54.68,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-05",
+            "totalVolume": 4748420,
+            "shortVolume": 2089777,
+            "exemptVolume": 66450,
+            "nonExemptVolume": 2023327,
+            "shortVolumeRatio": 44.01,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-04",
+            "totalVolume": 5001296,
+            "shortVolume": 2073846,
+            "exemptVolume": 174461,
+            "nonExemptVolume": 1899385,
+            "shortVolumeRatio": 41.47,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-03",
+            "totalVolume": 5175203,
+            "shortVolume": 1796442,
+            "exemptVolume": 45684,
+            "nonExemptVolume": 1750758,
+            "shortVolumeRatio": 34.71,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-02",
+            "totalVolume": 5831740,
+            "shortVolume": 2188943,
+            "exemptVolume": 41864,
+            "nonExemptVolume": 2147079,
+            "shortVolumeRatio": 37.53,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-01",
+            "totalVolume": 4573436,
+            "shortVolume": 1550404,
+            "exemptVolume": 14152,
+            "nonExemptVolume": 1536252,
+            "shortVolumeRatio": 33.9,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-29",
+            "totalVolume": 3849290,
+            "shortVolume": 1413682,
+            "exemptVolume": 2291,
+            "nonExemptVolume": 1411391,
+            "shortVolumeRatio": 36.73,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-28",
+            "totalVolume": 3436271,
+            "shortVolume": 1274995,
+            "exemptVolume": 18355,
+            "nonExemptVolume": 1256640,
+            "shortVolumeRatio": 37.1,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-27",
+            "totalVolume": 4683903,
+            "shortVolume": 1900983,
+            "exemptVolume": 37371,
+            "nonExemptVolume": 1863612,
+            "shortVolumeRatio": 40.59,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-26",
+            "totalVolume": 5394229,
+            "shortVolume": 2169921,
+            "exemptVolume": 27149,
+            "nonExemptVolume": 2142772,
+            "shortVolumeRatio": 40.23,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-22",
+            "totalVolume": 4989020,
+            "shortVolume": 2229457,
+            "exemptVolume": 19894,
+            "nonExemptVolume": 2209563,
+            "shortVolumeRatio": 44.69,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-21",
+            "totalVolume": 4363935,
+            "shortVolume": 2319003,
+            "exemptVolume": 9428,
+            "nonExemptVolume": 2309575,
+            "shortVolumeRatio": 53.14,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-20",
+            "totalVolume": 7560335,
+            "shortVolume": 3813595,
+            "exemptVolume": 15335,
+            "nonExemptVolume": 3798260,
+            "shortVolumeRatio": 50.44,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-19",
+            "totalVolume": 6651612,
+            "shortVolume": 3130167,
+            "exemptVolume": 11820,
+            "nonExemptVolume": 3118347,
+            "shortVolumeRatio": 47.06,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-18",
+            "totalVolume": 4525638,
+            "shortVolume": 1936015,
+            "exemptVolume": 216960,
+            "nonExemptVolume": 1719055,
+            "shortVolumeRatio": 42.78,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-15",
+            "totalVolume": 6343232,
+            "shortVolume": 2718651,
+            "exemptVolume": 140351,
+            "nonExemptVolume": 2578300,
+            "shortVolumeRatio": 42.86,
+            "source": "Massive"
+          }
+        ],
+        "avgShortVolumeRatio20": 42.29,
+        "source": "Massive"
+      },
+      "unusualActivity": {
+        "asOf": "2026-06-12",
+        "source": "Massive aggregates + Massive short volume",
+        "tickTradesAvailable": false,
+        "volume": 6869852,
+        "avgVolume20": 10692676,
+        "volumeMultiple": 0.64,
+        "dayRangePct": 6.11,
+        "gapPct": -0.68,
+        "shortVolume": 1607777,
+        "shortVolumeRatio": 48.01,
+        "signals": [],
+        "summary": "No unusual aggregate activity detected"
+      },
       "cik": "0000101538",
       "dataSources": {
         "price": "Massive",
         "financials": "SEC",
         "insider": "Massive",
         "ratios": "none",
-        "profile": "Massive"
+        "profile": "Massive",
+        "shortVolume": "Massive",
+        "unusualActivity": "Massive aggregates + Massive short volume"
       },
       "financials": {
         "quarters": [
@@ -15274,12 +17741,12 @@
       "price": 453.89,
       "previousClose": 456.29,
       "ytdPct": -5.52,
-      "marketCap": 87370101204.25,
+      "marketCap": 86910550824.25,
       "peRatio": null,
       "rsi14": 29.6,
       "week52Low": 376.18,
       "week52High": 651.73,
-      "avgVolume": 1876112,
+      "avgVolume": 1876115,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -17757,93 +20224,584 @@
       ],
       "rawPoints": [
         {
+          "date": "2026-04-17",
+          "open": 452.55,
+          "close": 449.58,
+          "high": 459.015,
+          "low": 447.18,
+          "volume": 1718569.375312,
+          "vwap": 451.422
+        },
+        {
+          "date": "2026-04-20",
+          "open": 448.08,
+          "close": 460.95,
+          "high": 463.16,
+          "low": 447.4304,
+          "volume": 2122205.014019,
+          "vwap": 459.3173
+        },
+        {
+          "date": "2026-04-21",
+          "open": 464.27,
+          "close": 467.58,
+          "high": 480.248,
+          "low": 462,
+          "volume": 1832244.096658,
+          "vwap": 470.6339
+        },
+        {
+          "date": "2026-04-22",
+          "open": 470.9,
+          "close": 477.26,
+          "high": 478.72,
+          "low": 470.9,
+          "volume": 1460651.657636,
+          "vwap": 475.1191
+        },
+        {
+          "date": "2026-04-23",
+          "open": 466.11,
+          "close": 456.85,
+          "high": 467.31,
+          "low": 450.13,
+          "volume": 1864070.29072,
+          "vwap": 458.4013
+        },
+        {
+          "date": "2026-04-24",
+          "open": 469.38,
+          "close": 500.82,
+          "high": 502.28,
+          "low": 469.19,
+          "volume": 2890822.304955,
+          "vwap": 495.5827
+        },
+        {
+          "date": "2026-04-27",
+          "open": 496.935,
+          "close": 498.54,
+          "high": 500.99,
+          "low": 488.001,
+          "volume": 2225730.340544,
+          "vwap": 497.7166
+        },
+        {
+          "date": "2026-04-28",
+          "open": 497,
+          "close": 483.89,
+          "high": 498,
+          "low": 479,
+          "volume": 1548544.193036,
+          "vwap": 484.7369
+        },
+        {
+          "date": "2026-04-29",
+          "open": 480,
+          "close": 481.22,
+          "high": 481.62,
+          "low": 471.7025,
+          "volume": 1159519.191855,
+          "vwap": 477.8288
+        },
+        {
+          "date": "2026-04-30",
+          "open": 481,
+          "close": 482.6,
+          "high": 483.68,
+          "low": 471.62,
+          "volume": 1341720.99538,
+          "vwap": 480.5006
+        },
+        {
+          "date": "2026-05-01",
+          "open": 491.16,
+          "close": 489.02,
+          "high": 497.94,
+          "low": 485.44,
+          "volume": 846275.805496,
+          "vwap": 489.8246
+        },
+        {
+          "date": "2026-05-04",
+          "open": 493.84,
+          "close": 497.5,
+          "high": 500.25,
+          "low": 488.3436,
+          "volume": 1642491.974921,
+          "vwap": 496.0429
+        },
+        {
+          "date": "2026-05-05",
+          "open": 501.71,
+          "close": 502.51,
+          "high": 512.54,
+          "low": 500.01,
+          "volume": 1883311.860482,
+          "vwap": 504.8003
+        },
+        {
+          "date": "2026-05-06",
+          "open": 504.6,
+          "close": 504.42,
+          "high": 507.335,
+          "low": 497.51,
+          "volume": 1867175.919986,
+          "vwap": 502.6636
+        },
+        {
+          "date": "2026-05-07",
+          "open": 506.3,
+          "close": 505.19,
+          "high": 517,
+          "low": 503.49,
+          "volume": 1597072.921952,
+          "vwap": 509.146
+        },
+        {
+          "date": "2026-05-08",
+          "open": 504.37,
+          "close": 516.48,
+          "high": 519.11,
+          "low": 500.589,
+          "volume": 1733379.696003,
+          "vwap": 514.2698
+        },
+        {
+          "date": "2026-05-11",
+          "open": 513.89,
+          "close": 516.19,
+          "high": 519.71,
+          "low": 512,
+          "volume": 1310223.556248,
+          "vwap": 515.3772
+        },
+        {
+          "date": "2026-05-12",
+          "open": 511.3,
+          "close": 513.21,
+          "high": 517.17,
+          "low": 508.16,
+          "volume": 1217697.588359,
+          "vwap": 512.4422
+        },
+        {
+          "date": "2026-05-13",
+          "open": 514.59,
+          "close": 509.28,
+          "high": 514.74,
+          "low": 502.27,
+          "volume": 1335472.459312,
+          "vwap": 507.3933
+        },
+        {
+          "date": "2026-05-14",
+          "open": 508.59,
+          "close": 510.02,
+          "high": 513.65,
+          "low": 504.64,
+          "volume": 1150047.339607,
+          "vwap": 509.8512
+        },
+        {
           "date": "2026-05-15",
-          "close": 502.42
+          "open": 502.24,
+          "close": 502.42,
+          "high": 509,
+          "low": 491.05,
+          "volume": 1488942.093736,
+          "vwap": 501.2285
         },
         {
           "date": "2026-05-18",
-          "close": 498.43
+          "open": 499.175,
+          "close": 498.43,
+          "high": 501.83,
+          "low": 489.09,
+          "volume": 1883517.365413,
+          "vwap": 495.1043
         },
         {
           "date": "2026-05-19",
-          "close": 493.87
+          "open": 494.32,
+          "close": 493.87,
+          "high": 501,
+          "low": 490.58,
+          "volume": 1312148.369931,
+          "vwap": 494.2208
         },
         {
           "date": "2026-05-20",
-          "close": 498.93
+          "open": 479.34,
+          "close": 498.93,
+          "high": 499.225,
+          "low": 473.77,
+          "volume": 2259250.81934,
+          "vwap": 492.4563
         },
         {
           "date": "2026-05-21",
-          "close": 503.98
+          "open": 491.26,
+          "close": 503.98,
+          "high": 504.73,
+          "low": 488.685,
+          "volume": 1422435.771866,
+          "vwap": 500.8043
         },
         {
           "date": "2026-05-22",
-          "close": 524.74
+          "open": 510,
+          "close": 524.74,
+          "high": 534.11,
+          "low": 508.51,
+          "volume": 1873634.609742,
+          "vwap": 526.2743
         },
         {
           "date": "2026-05-26",
-          "close": 534.56
+          "open": 529.97,
+          "close": 534.56,
+          "high": 539.48,
+          "low": 524.18,
+          "volume": 1794013.022802,
+          "vwap": 534.531
         },
         {
           "date": "2026-05-27",
-          "close": 525.92
+          "open": 534.56,
+          "close": 525.92,
+          "high": 534.62,
+          "low": 523.15,
+          "volume": 2443464.198379,
+          "vwap": 526.7196
         },
         {
           "date": "2026-05-28",
-          "close": 480.64
+          "open": 510,
+          "close": 480.64,
+          "high": 526.09,
+          "low": 471.69,
+          "volume": 4749407.451022,
+          "vwap": 483.5197
         },
         {
           "date": "2026-05-29",
-          "close": 475.62
+          "open": 480.665,
+          "close": 475.62,
+          "high": 484.5,
+          "low": 469.37,
+          "volume": 3358303.689962,
+          "vwap": 475.9283
         },
         {
           "date": "2026-06-01",
-          "close": 492.29
+          "open": 484.07,
+          "close": 492.29,
+          "high": 494.2501,
+          "low": 470.74,
+          "volume": 2586624.585299,
+          "vwap": 485.1169
         },
         {
           "date": "2026-06-02",
-          "close": 508.35
+          "open": 485.63,
+          "close": 508.35,
+          "high": 508.72,
+          "low": 485.63,
+          "volume": 2347237.632256,
+          "vwap": 501.6389
         },
         {
           "date": "2026-06-03",
-          "close": 498.02
+          "open": 502.78,
+          "close": 498.02,
+          "high": 504.1218,
+          "low": 491.2,
+          "volume": 1660948.59236,
+          "vwap": 497.3079
         },
         {
           "date": "2026-06-04",
-          "close": 494.48
+          "open": 500.35,
+          "close": 494.48,
+          "high": 500.35,
+          "low": 485,
+          "volume": 2013488.024971,
+          "vwap": 492.6108
         },
         {
           "date": "2026-06-05",
-          "close": 464.85
+          "open": 487.98,
+          "close": 464.85,
+          "high": 488.952,
+          "low": 458.53,
+          "volume": 1839401.391687,
+          "vwap": 468.8741
         },
         {
           "date": "2026-06-08",
-          "close": 473.48
+          "open": 467.28,
+          "close": 473.48,
+          "high": 478.51,
+          "low": 463.38,
+          "volume": 1579681.353396,
+          "vwap": 472.9948
         },
         {
           "date": "2026-06-09",
-          "close": 465.27
+          "open": 475.81,
+          "close": 465.27,
+          "high": 487.55,
+          "low": 451,
+          "volume": 2165900.664974,
+          "vwap": 464.1106
         },
         {
           "date": "2026-06-10",
-          "close": 460.54
+          "open": 454.88,
+          "close": 460.54,
+          "high": 472.4375,
+          "low": 453.28,
+          "volume": 1671666.78498,
+          "vwap": 461.3919
         },
         {
           "date": "2026-06-11",
-          "close": 456.29
+          "open": 457.755,
+          "close": 456.29,
+          "high": 464.375,
+          "low": 445,
+          "volume": 1960569.173535,
+          "vwap": 454.9894
         },
         {
           "date": "2026-06-12",
-          "close": 453.89
+          "open": 457.085,
+          "close": 453.89,
+          "high": 461.09,
+          "low": 445.01,
+          "volume": 1289665.058433,
+          "vwap": 454.1469
         }
       ],
+      "shortVolume": {
+        "latest": {
+          "date": "2026-06-12",
+          "totalVolume": 542292,
+          "shortVolume": 183781,
+          "exemptVolume": 1013,
+          "nonExemptVolume": 182768,
+          "shortVolumeRatio": 33.89,
+          "source": "Massive"
+        },
+        "history": [
+          {
+            "date": "2026-06-12",
+            "totalVolume": 542292,
+            "shortVolume": 183781,
+            "exemptVolume": 1013,
+            "nonExemptVolume": 182768,
+            "shortVolumeRatio": 33.89,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-11",
+            "totalVolume": 680297,
+            "shortVolume": 203046,
+            "exemptVolume": 174,
+            "nonExemptVolume": 202872,
+            "shortVolumeRatio": 29.85,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-10",
+            "totalVolume": 574449,
+            "shortVolume": 229517,
+            "exemptVolume": 121,
+            "nonExemptVolume": 229396,
+            "shortVolumeRatio": 39.95,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-09",
+            "totalVolume": 807579,
+            "shortVolume": 296720,
+            "exemptVolume": 225,
+            "nonExemptVolume": 296495,
+            "shortVolumeRatio": 36.74,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-08",
+            "totalVolume": 475433,
+            "shortVolume": 235291,
+            "exemptVolume": 6293,
+            "nonExemptVolume": 228998,
+            "shortVolumeRatio": 49.49,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-05",
+            "totalVolume": 613852,
+            "shortVolume": 388364,
+            "exemptVolume": 222,
+            "nonExemptVolume": 388142,
+            "shortVolumeRatio": 63.27,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-04",
+            "totalVolume": 793899,
+            "shortVolume": 437463,
+            "exemptVolume": 288,
+            "nonExemptVolume": 437175,
+            "shortVolumeRatio": 55.1,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-03",
+            "totalVolume": 519733,
+            "shortVolume": 304220,
+            "exemptVolume": 835,
+            "nonExemptVolume": 303385,
+            "shortVolumeRatio": 58.53,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-02",
+            "totalVolume": 938282,
+            "shortVolume": 449307,
+            "exemptVolume": 240,
+            "nonExemptVolume": 449067,
+            "shortVolumeRatio": 47.89,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-01",
+            "totalVolume": 1051267,
+            "shortVolume": 431963,
+            "exemptVolume": 1665,
+            "nonExemptVolume": 430298,
+            "shortVolumeRatio": 41.09,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-29",
+            "totalVolume": 912232,
+            "shortVolume": 430045,
+            "exemptVolume": 17178,
+            "nonExemptVolume": 412867,
+            "shortVolumeRatio": 47.14,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-28",
+            "totalVolume": 2181306,
+            "shortVolume": 993921,
+            "exemptVolume": 7246,
+            "nonExemptVolume": 986675,
+            "shortVolumeRatio": 45.57,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-27",
+            "totalVolume": 817022,
+            "shortVolume": 287374,
+            "exemptVolume": 1711,
+            "nonExemptVolume": 285663,
+            "shortVolumeRatio": 35.17,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-26",
+            "totalVolume": 581651,
+            "shortVolume": 311517,
+            "exemptVolume": 2209,
+            "nonExemptVolume": 309308,
+            "shortVolumeRatio": 53.56,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-22",
+            "totalVolume": 608649,
+            "shortVolume": 314526,
+            "exemptVolume": 2485,
+            "nonExemptVolume": 312041,
+            "shortVolumeRatio": 51.68,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-21",
+            "totalVolume": 459579,
+            "shortVolume": 203261,
+            "exemptVolume": 1348,
+            "nonExemptVolume": 201913,
+            "shortVolumeRatio": 44.23,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-20",
+            "totalVolume": 723612,
+            "shortVolume": 237532,
+            "exemptVolume": 1180,
+            "nonExemptVolume": 236352,
+            "shortVolumeRatio": 32.83,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-19",
+            "totalVolume": 499259,
+            "shortVolume": 191585,
+            "exemptVolume": 2242,
+            "nonExemptVolume": 189343,
+            "shortVolumeRatio": 38.37,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-18",
+            "totalVolume": 568936,
+            "shortVolume": 222132,
+            "exemptVolume": 922,
+            "nonExemptVolume": 221210,
+            "shortVolumeRatio": 39.04,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-15",
+            "totalVolume": 542932,
+            "shortVolume": 208269,
+            "exemptVolume": 3277,
+            "nonExemptVolume": 204992,
+            "shortVolumeRatio": 38.36,
+            "source": "Massive"
+          }
+        ],
+        "avgShortVolumeRatio20": 44.09,
+        "source": "Massive"
+      },
+      "unusualActivity": {
+        "asOf": "2026-06-12",
+        "source": "Massive aggregates + Massive short volume",
+        "tickTradesAvailable": false,
+        "volume": 1289665,
+        "avgVolume20": 2078034,
+        "volumeMultiple": 0.62,
+        "dayRangePct": 3.54,
+        "gapPct": 0.17,
+        "shortVolume": 183781,
+        "shortVolumeRatio": 33.89,
+        "signals": [],
+        "summary": "No unusual aggregate activity detected"
+      },
       "cik": "0000883241",
       "dataSources": {
         "price": "Massive",
         "financials": "SEC",
         "insider": "Massive",
         "ratios": "none",
-        "profile": "Massive"
+        "profile": "Massive",
+        "shortVolume": "Massive",
+        "unusualActivity": "Massive aggregates + Massive short volume"
       },
       "financials": {
         "quarters": [
@@ -18294,12 +21252,12 @@
       "price": 211.72,
       "previousClose": 202.96,
       "ytdPct": 22.4,
-      "marketCap": 213919840000,
+      "marketCap": 223152880000,
       "peRatio": null,
       "rsi14": 42.2,
       "week52Low": 121.99,
       "week52High": 259.92,
-      "avgVolume": 25972465,
+      "avgVolume": 25972682,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -20777,93 +23735,590 @@
       ],
       "rawPoints": [
         {
+          "date": "2026-04-17",
+          "open": 136.69,
+          "close": 136.2,
+          "high": 136.965,
+          "low": 134.41,
+          "volume": 9667577.546488,
+          "vwap": 136.1097
+        },
+        {
+          "date": "2026-04-20",
+          "open": 136.41,
+          "close": 137.52,
+          "high": 138.5,
+          "low": 136.08,
+          "volume": 7951773.80284,
+          "vwap": 137.4858
+        },
+        {
+          "date": "2026-04-21",
+          "open": 138.12,
+          "close": 135.56,
+          "high": 138.26,
+          "low": 135.045,
+          "volume": 11869262.24306,
+          "vwap": 136.2387
+        },
+        {
+          "date": "2026-04-22",
+          "open": 136.64,
+          "close": 136.07,
+          "high": 137.49,
+          "low": 135.55,
+          "volume": 9432669.045727,
+          "vwap": 136.2103
+        },
+        {
+          "date": "2026-04-23",
+          "open": 136,
+          "close": 133.95,
+          "high": 136.99,
+          "low": 132.05,
+          "volume": 10164899.049663,
+          "vwap": 134.2435
+        },
+        {
+          "date": "2026-04-24",
+          "open": 145.61,
+          "close": 148.85,
+          "high": 151.5399,
+          "low": 143.58,
+          "volume": 29447156.869826,
+          "vwap": 147.7529
+        },
+        {
+          "date": "2026-04-27",
+          "open": 156.305,
+          "close": 150.26,
+          "high": 161,
+          "low": 147.05,
+          "volume": 41099246.449859,
+          "vwap": 152.6879
+        },
+        {
+          "date": "2026-04-28",
+          "open": 145.08,
+          "close": 150,
+          "high": 151.5,
+          "low": 144.0001,
+          "volume": 22920551.867549,
+          "vwap": 148.8874
+        },
+        {
+          "date": "2026-04-29",
+          "open": 151.45,
+          "close": 156,
+          "high": 157.29,
+          "low": 151,
+          "volume": 37571190.291589,
+          "vwap": 158.8466
+        },
+        {
+          "date": "2026-04-30",
+          "open": 172.05,
+          "close": 179.58,
+          "high": 186.8899,
+          "low": 163.56,
+          "volume": 61132023.253479,
+          "vwap": 177.6856
+        },
+        {
+          "date": "2026-05-01",
+          "open": 179.13,
+          "close": 177.01,
+          "high": 179.99,
+          "low": 171.15,
+          "volume": 21111476.143274,
+          "vwap": 175.3971
+        },
+        {
+          "date": "2026-05-04",
+          "open": 177.22,
+          "close": 168.38,
+          "high": 180.49,
+          "low": 166.8305,
+          "volume": 23117409.415672,
+          "vwap": 169.9928
+        },
+        {
+          "date": "2026-05-05",
+          "open": 167.65,
+          "close": 186.55,
+          "high": 187.22,
+          "low": 164.79,
+          "volume": 34274858.176671,
+          "vwap": 181.7784
+        },
+        {
+          "date": "2026-05-06",
+          "open": 195.18,
+          "close": 192.57,
+          "high": 197.5,
+          "low": 188.22,
+          "volume": 30142966.549902,
+          "vwap": 193.3254
+        },
+        {
+          "date": "2026-05-07",
+          "open": 190.67,
+          "close": 202.55,
+          "high": 223.66,
+          "low": 187.64,
+          "volume": 51092198.877716,
+          "vwap": 205.3087
+        },
+        {
+          "date": "2026-05-08",
+          "open": 213,
+          "close": 219.09,
+          "high": 228.05,
+          "low": 208.63,
+          "volume": 37849999.894148,
+          "vwap": 218.7672
+        },
+        {
+          "date": "2026-05-11",
+          "open": 232.005,
+          "close": 237.53,
+          "high": 247.9,
+          "low": 231.2,
+          "volume": 45473982.648607,
+          "vwap": 237.3876
+        },
+        {
+          "date": "2026-05-12",
+          "open": 229.84,
+          "close": 210.31,
+          "high": 230,
+          "low": 202,
+          "volume": 38596346.122577,
+          "vwap": 212.4754
+        },
+        {
+          "date": "2026-05-13",
+          "open": 216.625,
+          "close": 213.17,
+          "high": 219.49,
+          "low": 207.15,
+          "volume": 26226304.744249,
+          "vwap": 213.7704
+        },
+        {
+          "date": "2026-05-14",
+          "open": 208.51,
+          "close": 200.08,
+          "high": 209.53,
+          "low": 199.66,
+          "volume": 24883884.825562,
+          "vwap": 202.8243
+        },
+        {
           "date": "2026-05-15",
-          "close": 201.49
+          "open": 201.65,
+          "close": 201.49,
+          "high": 207.4,
+          "low": 199.16,
+          "volume": 25876820.922349,
+          "vwap": 202.7754
         },
         {
           "date": "2026-05-18",
-          "close": 203.64
+          "open": 206.77,
+          "close": 203.64,
+          "high": 210.8,
+          "low": 193.58,
+          "volume": 21082525.179068,
+          "vwap": 200.9223
         },
         {
           "date": "2026-05-19",
-          "close": 195.61
+          "open": 196.855,
+          "close": 195.61,
+          "high": 201.5,
+          "low": 191.02,
+          "volume": 19607220.311684,
+          "vwap": 196.1598
         },
         {
           "date": "2026-05-20",
-          "close": 202.51
+          "open": 197,
+          "close": 202.51,
+          "high": 203.59,
+          "low": 194,
+          "volume": 19037516.217064,
+          "vwap": 201.0566
         },
         {
           "date": "2026-05-21",
-          "close": 213.41
+          "open": 202.78,
+          "close": 213.41,
+          "high": 214.01,
+          "low": 197.6,
+          "volume": 28073284.130089,
+          "vwap": 207.9923
         },
         {
           "date": "2026-05-22",
-          "close": 238.16
+          "open": 214.43,
+          "close": 238.16,
+          "high": 243,
+          "low": 214.17,
+          "volume": 30375674.348937,
+          "vwap": 235.0671
         },
         {
           "date": "2026-05-26",
-          "close": 248.82
+          "open": 240.715,
+          "close": 248.82,
+          "high": 258,
+          "low": 235.8001,
+          "volume": 30646375.784059,
+          "vwap": 247.9211
         },
         {
           "date": "2026-05-27",
-          "close": 233.4
+          "open": 245.43,
+          "close": 233.4,
+          "high": 248.265,
+          "low": 224.18,
+          "volume": 25694710.055167,
+          "vwap": 231.7399
         },
         {
           "date": "2026-05-28",
-          "close": 243.29
+          "open": 236,
+          "close": 243.29,
+          "high": 249.46,
+          "low": 231.52,
+          "volume": 21118348.777425,
+          "vwap": 242.1501
         },
         {
           "date": "2026-05-29",
-          "close": 251.02
+          "open": 250.19,
+          "close": 251.02,
+          "high": 259.92,
+          "low": 247.5101,
+          "volume": 28781844.290843,
+          "vwap": 251.9324
         },
         {
           "date": "2026-06-01",
-          "close": 228.99
+          "open": 233.33,
+          "close": 228.99,
+          "high": 238.02,
+          "low": 226.8118,
+          "volume": 21185169.510698,
+          "vwap": 231.4236
         },
         {
           "date": "2026-06-02",
-          "close": 240.84
+          "open": 232,
+          "close": 240.84,
+          "high": 245.187,
+          "low": 226.05,
+          "volume": 18508339.916971,
+          "vwap": 238.7038
         },
         {
           "date": "2026-06-03",
-          "close": 250.01
+          "open": 235.02,
+          "close": 250.01,
+          "high": 255.09,
+          "low": 233.02,
+          "volume": 19466983.771019,
+          "vwap": 248.8614
         },
         {
           "date": "2026-06-04",
-          "close": 242.57
+          "open": 239.45,
+          "close": 242.57,
+          "high": 246.7,
+          "low": 235.32,
+          "volume": 14185629.076547,
+          "vwap": 241.2161
         },
         {
           "date": "2026-06-05",
-          "close": 215.94
+          "open": 237.65,
+          "close": 215.94,
+          "high": 238.44,
+          "low": 215,
+          "volume": 24189155.418881,
+          "vwap": 220.9112
         },
         {
           "date": "2026-06-08",
-          "close": 217.77
+          "open": 221.03,
+          "close": 217.77,
+          "high": 221.93,
+          "low": 214.63,
+          "volume": 17180586.67439,
+          "vwap": 218.7611
         },
         {
           "date": "2026-06-09",
-          "close": 205.42
+          "open": 216.46,
+          "close": 205.42,
+          "high": 219.64,
+          "low": 192.67,
+          "volume": 29906286.548755,
+          "vwap": 204.9004
         },
         {
           "date": "2026-06-10",
-          "close": 191.2
+          "open": 199.455,
+          "close": 191.2,
+          "high": 204.895,
+          "low": 190.1,
+          "volume": 18426634.03354,
+          "vwap": 194.3638
         },
         {
           "date": "2026-06-11",
-          "close": 202.96
+          "open": 190.92,
+          "close": 202.96,
+          "high": 203.84,
+          "low": 190.745,
+          "volume": 18933064.75121,
+          "vwap": 199.8978
         },
         {
           "date": "2026-06-12",
-          "close": 211.72
+          "open": 201.85,
+          "close": 211.72,
+          "high": 215.01,
+          "low": 200.1,
+          "volume": 14134867.522137,
+          "vwap": 210.7729
         }
       ],
+      "shortVolume": {
+        "latest": {
+          "date": "2026-06-12",
+          "totalVolume": 4702616,
+          "shortVolume": 2628719,
+          "exemptVolume": 12515,
+          "nonExemptVolume": 2616204,
+          "shortVolumeRatio": 55.9,
+          "source": "Massive"
+        },
+        "history": [
+          {
+            "date": "2026-06-12",
+            "totalVolume": 4702616,
+            "shortVolume": 2628719,
+            "exemptVolume": 12515,
+            "nonExemptVolume": 2616204,
+            "shortVolumeRatio": 55.9,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-11",
+            "totalVolume": 5331884,
+            "shortVolume": 2375268,
+            "exemptVolume": 3394,
+            "nonExemptVolume": 2371874,
+            "shortVolumeRatio": 44.55,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-10",
+            "totalVolume": 6575266,
+            "shortVolume": 2969539,
+            "exemptVolume": 251875,
+            "nonExemptVolume": 2717664,
+            "shortVolumeRatio": 45.16,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-09",
+            "totalVolume": 11755311,
+            "shortVolume": 3747133,
+            "exemptVolume": 141377,
+            "nonExemptVolume": 3605756,
+            "shortVolumeRatio": 31.88,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-08",
+            "totalVolume": 4845715,
+            "shortVolume": 848989,
+            "exemptVolume": 84374,
+            "nonExemptVolume": 764615,
+            "shortVolumeRatio": 17.52,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-05",
+            "totalVolume": 7490841,
+            "shortVolume": 2562782,
+            "exemptVolume": 64806,
+            "nonExemptVolume": 2497976,
+            "shortVolumeRatio": 34.21,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-04",
+            "totalVolume": 4918135,
+            "shortVolume": 1328042,
+            "exemptVolume": 8742,
+            "nonExemptVolume": 1319300,
+            "shortVolumeRatio": 27,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-03",
+            "totalVolume": 8139486,
+            "shortVolume": 3587462,
+            "exemptVolume": 54279,
+            "nonExemptVolume": 3533183,
+            "shortVolumeRatio": 44.07,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-02",
+            "totalVolume": 6578057,
+            "shortVolume": 2594243,
+            "exemptVolume": 29869,
+            "nonExemptVolume": 2564374,
+            "shortVolumeRatio": 39.44,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-01",
+            "totalVolume": 8568070,
+            "shortVolume": 2055514,
+            "exemptVolume": 40791,
+            "nonExemptVolume": 2014723,
+            "shortVolumeRatio": 23.99,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-29",
+            "totalVolume": 7718905,
+            "shortVolume": 3504886,
+            "exemptVolume": 25647,
+            "nonExemptVolume": 3479239,
+            "shortVolumeRatio": 45.41,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-28",
+            "totalVolume": 7184849,
+            "shortVolume": 3270287,
+            "exemptVolume": 15249,
+            "nonExemptVolume": 3255038,
+            "shortVolumeRatio": 45.52,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-27",
+            "totalVolume": 10802256,
+            "shortVolume": 3256762,
+            "exemptVolume": 40672,
+            "nonExemptVolume": 3216090,
+            "shortVolumeRatio": 30.15,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-26",
+            "totalVolume": 11247477,
+            "shortVolume": 4255982,
+            "exemptVolume": 14191,
+            "nonExemptVolume": 4241791,
+            "shortVolumeRatio": 37.84,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-22",
+            "totalVolume": 12335396,
+            "shortVolume": 4320144,
+            "exemptVolume": 28469,
+            "nonExemptVolume": 4291675,
+            "shortVolumeRatio": 35.02,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-21",
+            "totalVolume": 10979799,
+            "shortVolume": 4637516,
+            "exemptVolume": 40986,
+            "nonExemptVolume": 4596530,
+            "shortVolumeRatio": 42.24,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-20",
+            "totalVolume": 6894938,
+            "shortVolume": 2556756,
+            "exemptVolume": 34355,
+            "nonExemptVolume": 2522401,
+            "shortVolumeRatio": 37.08,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-19",
+            "totalVolume": 7524249,
+            "shortVolume": 2373513,
+            "exemptVolume": 8666,
+            "nonExemptVolume": 2364847,
+            "shortVolumeRatio": 31.54,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-18",
+            "totalVolume": 7832411,
+            "shortVolume": 3192001,
+            "exemptVolume": 26167,
+            "nonExemptVolume": 3165834,
+            "shortVolumeRatio": 40.75,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-15",
+            "totalVolume": 8772215,
+            "shortVolume": 3949067,
+            "exemptVolume": 12333,
+            "nonExemptVolume": 3936734,
+            "shortVolumeRatio": 45.02,
+            "source": "Massive"
+          }
+        ],
+        "avgShortVolumeRatio20": 37.71,
+        "source": "Massive"
+      },
+      "unusualActivity": {
+        "asOf": "2026-06-12",
+        "source": "Massive aggregates + Massive short volume",
+        "tickTradesAvailable": false,
+        "volume": 14134868,
+        "avgVolume20": 22858003,
+        "volumeMultiple": 0.62,
+        "dayRangePct": 7.04,
+        "gapPct": -0.55,
+        "shortVolume": 2628719,
+        "shortVolumeRatio": 55.9,
+        "signals": [
+          {
+            "type": "short_ratio",
+            "severity": "warning",
+            "label": "55.9% short-volume ratio"
+          }
+        ],
+        "summary": "55.9% short-volume ratio"
+      },
       "cik": "0000804328",
       "dataSources": {
         "price": "Massive",
         "financials": "SEC",
         "insider": "Massive",
         "ratios": "none",
-        "profile": "Massive"
+        "profile": "Massive",
+        "shortVolume": "Massive",
+        "unusualActivity": "Massive aggregates + Massive short volume"
       },
       "financials": {
         "quarters": [
@@ -21630,12 +25085,12 @@
       "price": 212.31,
       "previousClose": 211.24,
       "ytdPct": 45.32,
-      "marketCap": 14062156600.52,
+      "marketCap": 14133386043.630001,
       "peRatio": null,
       "rsi14": 57.7,
       "week52Low": 127.96,
       "week52High": 236.34,
-      "avgVolume": 1104592,
+      "avgVolume": 1104756,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -24113,93 +27568,590 @@
       ],
       "rawPoints": [
         {
+          "date": "2026-04-17",
+          "open": 200.17,
+          "close": 205.4,
+          "high": 208.275,
+          "low": 200.17,
+          "volume": 1062330.823396,
+          "vwap": 205.6181
+        },
+        {
+          "date": "2026-04-20",
+          "open": 204.43,
+          "close": 207.96,
+          "high": 209.49,
+          "low": 202.72,
+          "volume": 610643.883765,
+          "vwap": 207.5746
+        },
+        {
+          "date": "2026-04-21",
+          "open": 207.71,
+          "close": 209.76,
+          "high": 212.51,
+          "low": 207.37,
+          "volume": 846810.551885,
+          "vwap": 209.6958
+        },
+        {
+          "date": "2026-04-22",
+          "open": 212.75,
+          "close": 211.14,
+          "high": 217.05,
+          "low": 210.62,
+          "volume": 1886418.478449,
+          "vwap": 213.0291
+        },
+        {
+          "date": "2026-04-23",
+          "open": 212.17,
+          "close": 213.47,
+          "high": 216.27,
+          "low": 210.03,
+          "volume": 808785.71258,
+          "vwap": 213.4272
+        },
+        {
+          "date": "2026-04-24",
+          "open": 213.24,
+          "close": 212.25,
+          "high": 215.68,
+          "low": 207.87,
+          "volume": 1064227.951066,
+          "vwap": 212.5482
+        },
+        {
+          "date": "2026-04-27",
+          "open": 213.79,
+          "close": 213.28,
+          "high": 219.175,
+          "low": 210.46,
+          "volume": 864480.627834,
+          "vwap": 213.2955
+        },
+        {
+          "date": "2026-04-28",
+          "open": 210.91,
+          "close": 209.56,
+          "high": 212.37,
+          "low": 205.71,
+          "volume": 743595.227754,
+          "vwap": 208.8901
+        },
+        {
+          "date": "2026-04-29",
+          "open": 209.96,
+          "close": 203.82,
+          "high": 212.9,
+          "low": 203.45,
+          "volume": 927982.487107,
+          "vwap": 205.6031
+        },
+        {
+          "date": "2026-04-30",
+          "open": 207.05,
+          "close": 215.03,
+          "high": 216.54,
+          "low": 207.05,
+          "volume": 1041367.861165,
+          "vwap": 214.3806
+        },
+        {
+          "date": "2026-05-01",
+          "open": 214.16,
+          "close": 213.02,
+          "high": 218.38,
+          "low": 210.68,
+          "volume": 966233.549998,
+          "vwap": 213.1279
+        },
+        {
+          "date": "2026-05-04",
+          "open": 213,
+          "close": 212.49,
+          "high": 216.63,
+          "low": 210.73,
+          "volume": 892368.318228,
+          "vwap": 213.8193
+        },
+        {
+          "date": "2026-05-05",
+          "open": 215.63,
+          "close": 222.02,
+          "high": 224.98,
+          "low": 215.58,
+          "volume": 1513785.183786,
+          "vwap": 222.4959
+        },
+        {
+          "date": "2026-05-06",
+          "open": 226.66,
+          "close": 231.37,
+          "high": 236.345,
+          "low": 225.76,
+          "volume": 2206664.759107,
+          "vwap": 232.1036
+        },
+        {
+          "date": "2026-05-07",
+          "open": 211.17,
+          "close": 206.26,
+          "high": 217.84,
+          "low": 201,
+          "volume": 3478971.06934,
+          "vwap": 209.5037
+        },
+        {
+          "date": "2026-05-08",
+          "open": 209.08,
+          "close": 214.36,
+          "high": 217.38,
+          "low": 208.48,
+          "volume": 1536015.222995,
+          "vwap": 214.3798
+        },
+        {
+          "date": "2026-05-11",
+          "open": 213.85,
+          "close": 211.33,
+          "high": 217.275,
+          "low": 209.34,
+          "volume": 1460331.982675,
+          "vwap": 212.3889
+        },
+        {
+          "date": "2026-05-12",
+          "open": 209.91,
+          "close": 209.78,
+          "high": 211.265,
+          "low": 201.86,
+          "volume": 789133.572541,
+          "vwap": 206.8468
+        },
+        {
+          "date": "2026-05-13",
+          "open": 211.77,
+          "close": 205.72,
+          "high": 211.77,
+          "low": 202.61,
+          "volume": 1055471.934139,
+          "vwap": 205.235
+        },
+        {
+          "date": "2026-05-14",
+          "open": 207.97,
+          "close": 207.38,
+          "high": 210.92,
+          "low": 205.66,
+          "volume": 810896.209402,
+          "vwap": 208.6402
+        },
+        {
           "date": "2026-05-15",
-          "close": 197.16
+          "open": 203.07,
+          "close": 197.16,
+          "high": 203.07,
+          "low": 195.14,
+          "volume": 814241.017414,
+          "vwap": 197.3506
         },
         {
           "date": "2026-05-18",
-          "close": 188.22
+          "open": 196.67,
+          "close": 188.22,
+          "high": 196.67,
+          "low": 186.27,
+          "volume": 1406255.453742,
+          "vwap": 189.4916
         },
         {
           "date": "2026-05-19",
-          "close": 186.49
+          "open": 184.04,
+          "close": 186.49,
+          "high": 191.0225,
+          "low": 180.8,
+          "volume": 969422.126972,
+          "vwap": 186.0598
         },
         {
           "date": "2026-05-20",
-          "close": 195.19
+          "open": 189.35,
+          "close": 195.19,
+          "high": 200.415,
+          "low": 187.565,
+          "volume": 1735864.560837,
+          "vwap": 195.7508
         },
         {
           "date": "2026-05-21",
-          "close": 196.39
+          "open": 194.54,
+          "close": 196.39,
+          "high": 197.83,
+          "low": 190.01,
+          "volume": 837773.705136,
+          "vwap": 194.7527
         },
         {
           "date": "2026-05-22",
-          "close": 200.78
+          "open": 199.12,
+          "close": 200.78,
+          "high": 201.7899,
+          "low": 194.465,
+          "volume": 482237.401745,
+          "vwap": 199.8388
         },
         {
           "date": "2026-05-26",
-          "close": 209.85
+          "open": 204.13,
+          "close": 209.85,
+          "high": 209.93,
+          "low": 202.66,
+          "volume": 595937.308533,
+          "vwap": 208.409
         },
         {
           "date": "2026-05-27",
-          "close": 206.01
+          "open": 210.04,
+          "close": 206.01,
+          "high": 212.05,
+          "low": 203.02,
+          "volume": 800841.511899,
+          "vwap": 205.5461
         },
         {
           "date": "2026-05-28",
-          "close": 202.85
+          "open": 202.98,
+          "close": 202.85,
+          "high": 205.82,
+          "low": 195.84,
+          "volume": 679310.57173,
+          "vwap": 201.9732
         },
         {
           "date": "2026-05-29",
-          "close": 201.76
+          "open": 202.56,
+          "close": 201.76,
+          "high": 203.215,
+          "low": 199.13,
+          "volume": 784730.696124,
+          "vwap": 201.5908
         },
         {
           "date": "2026-06-01",
-          "close": 202.09
+          "open": 194.76,
+          "close": 202.09,
+          "high": 202.3,
+          "low": 190.785,
+          "volume": 639233.151484,
+          "vwap": 198.7743
         },
         {
           "date": "2026-06-02",
-          "close": 213.98
+          "open": 204.74,
+          "close": 213.98,
+          "high": 214.78,
+          "low": 203.765,
+          "volume": 1282611.614183,
+          "vwap": 211.3914
         },
         {
           "date": "2026-06-03",
-          "close": 215.27
+          "open": 212.41,
+          "close": 215.27,
+          "high": 218.27,
+          "low": 210.84,
+          "volume": 924740.057194,
+          "vwap": 215.6421
         },
         {
           "date": "2026-06-04",
-          "close": 213.86
+          "open": 210.8,
+          "close": 213.86,
+          "high": 214.42,
+          "low": 208.915,
+          "volume": 991074.572282,
+          "vwap": 212.9551
         },
         {
           "date": "2026-06-05",
-          "close": 204.4
+          "open": 209.33,
+          "close": 204.4,
+          "high": 212.095,
+          "low": 202.41,
+          "volume": 701894.426606,
+          "vwap": 205.0517
         },
         {
           "date": "2026-06-08",
-          "close": 210.28
+          "open": 209.25,
+          "close": 210.28,
+          "high": 213.62,
+          "low": 206.38,
+          "volume": 949239.781268,
+          "vwap": 210.8193
         },
         {
           "date": "2026-06-09",
-          "close": 213.3
+          "open": 213.47,
+          "close": 213.3,
+          "high": 219.61,
+          "low": 202.5678,
+          "volume": 1090247.816393,
+          "vwap": 211.383
         },
         {
           "date": "2026-06-10",
-          "close": 200.45
+          "open": 210.56,
+          "close": 200.45,
+          "high": 211.8875,
+          "low": 199.34,
+          "volume": 1165682.749687,
+          "vwap": 202.6037
         },
         {
           "date": "2026-06-11",
-          "close": 211.24
+          "open": 203.82,
+          "close": 211.24,
+          "high": 212.12,
+          "low": 201.885,
+          "volume": 976604.773008,
+          "vwap": 208.7521
         },
         {
           "date": "2026-06-12",
-          "close": 212.31
+          "open": 213.58,
+          "close": 212.31,
+          "high": 216.425,
+          "low": 209.955,
+          "volume": 604865.027802,
+          "vwap": 212.2803
         }
       ],
+      "shortVolume": {
+        "latest": {
+          "date": "2026-06-12",
+          "totalVolume": 251232,
+          "shortVolume": 141220,
+          "exemptVolume": 0,
+          "nonExemptVolume": 141220,
+          "shortVolumeRatio": 56.21,
+          "source": "Massive"
+        },
+        "history": [
+          {
+            "date": "2026-06-12",
+            "totalVolume": 251232,
+            "shortVolume": 141220,
+            "exemptVolume": 0,
+            "nonExemptVolume": 141220,
+            "shortVolumeRatio": 56.21,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-11",
+            "totalVolume": 270854,
+            "shortVolume": 156823,
+            "exemptVolume": 0,
+            "nonExemptVolume": 156823,
+            "shortVolumeRatio": 57.9,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-10",
+            "totalVolume": 503432,
+            "shortVolume": 263380,
+            "exemptVolume": 0,
+            "nonExemptVolume": 263380,
+            "shortVolumeRatio": 52.32,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-09",
+            "totalVolume": 544841,
+            "shortVolume": 249197,
+            "exemptVolume": 0,
+            "nonExemptVolume": 249197,
+            "shortVolumeRatio": 45.74,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-08",
+            "totalVolume": 310337,
+            "shortVolume": 166421,
+            "exemptVolume": 0,
+            "nonExemptVolume": 166421,
+            "shortVolumeRatio": 53.63,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-05",
+            "totalVolume": 277414,
+            "shortVolume": 167884,
+            "exemptVolume": 46,
+            "nonExemptVolume": 167838,
+            "shortVolumeRatio": 60.52,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-04",
+            "totalVolume": 404104,
+            "shortVolume": 218865,
+            "exemptVolume": 411,
+            "nonExemptVolume": 218454,
+            "shortVolumeRatio": 54.16,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-03",
+            "totalVolume": 390227,
+            "shortVolume": 258043,
+            "exemptVolume": 0,
+            "nonExemptVolume": 258043,
+            "shortVolumeRatio": 66.13,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-02",
+            "totalVolume": 465492,
+            "shortVolume": 331979,
+            "exemptVolume": 3,
+            "nonExemptVolume": 331976,
+            "shortVolumeRatio": 71.32,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-06-01",
+            "totalVolume": 245259,
+            "shortVolume": 168687,
+            "exemptVolume": 42,
+            "nonExemptVolume": 168645,
+            "shortVolumeRatio": 68.78,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-29",
+            "totalVolume": 222979,
+            "shortVolume": 137014,
+            "exemptVolume": 153,
+            "nonExemptVolume": 136861,
+            "shortVolumeRatio": 61.45,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-28",
+            "totalVolume": 271138,
+            "shortVolume": 126399,
+            "exemptVolume": 60,
+            "nonExemptVolume": 126339,
+            "shortVolumeRatio": 46.62,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-27",
+            "totalVolume": 325360,
+            "shortVolume": 202479,
+            "exemptVolume": 0,
+            "nonExemptVolume": 202479,
+            "shortVolumeRatio": 62.23,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-26",
+            "totalVolume": 266995,
+            "shortVolume": 154935,
+            "exemptVolume": 54,
+            "nonExemptVolume": 154881,
+            "shortVolumeRatio": 58.03,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-22",
+            "totalVolume": 243736,
+            "shortVolume": 141212,
+            "exemptVolume": 1,
+            "nonExemptVolume": 141211,
+            "shortVolumeRatio": 57.94,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-21",
+            "totalVolume": 341657,
+            "shortVolume": 190132,
+            "exemptVolume": 0,
+            "nonExemptVolume": 190132,
+            "shortVolumeRatio": 55.65,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-20",
+            "totalVolume": 729482,
+            "shortVolume": 422282,
+            "exemptVolume": 0,
+            "nonExemptVolume": 422282,
+            "shortVolumeRatio": 57.89,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-19",
+            "totalVolume": 384932,
+            "shortVolume": 253529,
+            "exemptVolume": 0,
+            "nonExemptVolume": 253529,
+            "shortVolumeRatio": 65.86,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-18",
+            "totalVolume": 571267,
+            "shortVolume": 353002,
+            "exemptVolume": 0,
+            "nonExemptVolume": 353002,
+            "shortVolumeRatio": 61.79,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-05-15",
+            "totalVolume": 365149,
+            "shortVolume": 168969,
+            "exemptVolume": 0,
+            "nonExemptVolume": 168969,
+            "shortVolumeRatio": 46.27,
+            "source": "Massive"
+          }
+        ],
+        "avgShortVolumeRatio20": 58.02,
+        "source": "Massive"
+      },
+      "unusualActivity": {
+        "asOf": "2026-06-12",
+        "source": "Massive aggregates + Massive short volume",
+        "tickTradesAvailable": false,
+        "volume": 604865,
+        "avgVolume20": 931942,
+        "volumeMultiple": 0.65,
+        "dayRangePct": 3.05,
+        "gapPct": 1.11,
+        "shortVolume": 141220,
+        "shortVolumeRatio": 56.21,
+        "signals": [
+          {
+            "type": "short_ratio",
+            "severity": "warning",
+            "label": "56.21% short-volume ratio"
+          }
+        ],
+        "summary": "56.21% short-volume ratio"
+      },
       "cik": "0000082811",
       "dataSources": {
         "price": "Massive",
         "financials": "SEC",
         "insider": "Massive",
         "ratios": "none",
-        "profile": "Massive"
+        "profile": "Massive",
+        "shortVolume": "Massive",
+        "unusualActivity": "Massive aggregates + Massive short volume"
       },
       "financials": {
         "quarters": [
@@ -24973,22 +28925,46 @@
   ],
   "alerts": [
     {
+      "symbol": "RGTI",
+      "severity": "warning",
+      "message": "60.69% short-volume ratio",
+      "createdAt": "2026-06-13T10:58:35.727Z"
+    },
+    {
+      "symbol": "IONQ",
+      "severity": "warning",
+      "message": "59.67% short-volume ratio",
+      "createdAt": "2026-06-13T09:58:35.727Z"
+    },
+    {
       "symbol": "SNPS",
       "severity": "info",
       "message": "RSI oversold: 29.6",
-      "createdAt": "2026-06-12T23:13:56.753Z"
+      "createdAt": "2026-06-13T08:58:35.727Z"
+    },
+    {
+      "symbol": "QCOM",
+      "severity": "warning",
+      "message": "55.9% short-volume ratio",
+      "createdAt": "2026-06-13T07:58:35.727Z"
     },
     {
       "symbol": "RRX",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-06-12T22:13:56.753Z"
+      "createdAt": "2026-06-13T06:58:35.727Z"
     },
     {
       "symbol": "RRX",
       "severity": "success",
       "message": "Strong YTD performer: +45.32%",
-      "createdAt": "2026-06-12T21:13:56.753Z"
+      "createdAt": "2026-06-13T05:58:35.727Z"
+    },
+    {
+      "symbol": "RRX",
+      "severity": "warning",
+      "message": "56.21% short-volume ratio",
+      "createdAt": "2026-06-13T04:58:35.727Z"
     }
   ],
   "errors": [],
@@ -24999,7 +28975,7 @@
     },
     {
       "symbol": "VST",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=VST&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=VST&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "RGTI",
@@ -25023,7 +28999,7 @@
     },
     {
       "symbol": "LAC",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=LAC&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=LAC&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "UAMY",
@@ -25047,7 +29023,7 @@
     },
     {
       "symbol": "QCOM",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=QCOM&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=QCOM&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "RRX",
