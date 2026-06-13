@@ -16,6 +16,7 @@
     <nav>
       <a href="#dashboard">Dashboard</a>
       <a href="#technical">Technical</a>
+      <a href="#market-flow">Market Flow</a>
       <a href="#financial">Financial</a>
       <a href="#insider">Insider</a>
       <a href="#alerts">Alerts</a>
@@ -54,6 +55,16 @@
           <article class="panel"><h3>MACD (12,26,9)</h3><canvas id="macd-chart" height="170"></canvas></article>
           <article class="panel"><h3>RSI (14)</h3><canvas id="rsi-chart" height="170"></canvas></article>
         </div>
+      </section>
+
+      <section class="page-section" id="market-flow">
+        <div class="section-head"><div><p class="eyebrow">Market flow</p><h2>Short Volume · Unusual Activity</h2><p>Massive short-volume data and unusual aggregate activity checks for each ticker. The trade tape is plan-gated, so this page flags accessible volume, range, gap, and short-ratio signals.</p></div><select id="market-symbol"></select></div>
+        <div class="ratio-grid flow-grid" id="flow-metrics"></div>
+        <div class="grid two-col">
+          <article class="panel profile-panel flow-summary" id="flow-summary"></article>
+          <article class="panel"><h3>Unusual Signals</h3><div class="alerts" id="flow-signals"></div></article>
+        </div>
+        <article class="panel"><h3>Recent Short Volume</h3><div class="table-wrap"><table id="short-volume-table"></table></div></article>
       </section>
 
       <section class="page-section" id="financial">

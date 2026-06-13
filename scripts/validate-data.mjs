@@ -15,5 +15,16 @@ for (const s of data.symbols) {
   if (!s.financials || !Array.isArray(s.financials.quarters) || !Array.isArray(s.financials.forecast)) throw new Error(`${s.symbol}.financials missing`);
   if (!Array.isArray(s.insider)) throw new Error(`${s.symbol}.insider missing`);
   if (!s.insiderSummary || typeof s.insiderSummary.sentiment !== 'string') throw new Error(`${s.symbol}.insiderSummary missing`);
+  if (s.shortVolume) {
+    if (!Array.isArray(s.shortVolume.history)) throw new Error(`${s.symbol}.shortVolume.history invalid`);
+    for (const row of s.shortVolume.history) {
+      if (!row.date || Number.isNaN(Date.parse(row.date))) throw new Error(`${s.symbol}.shortVolume.history.date invalid`);
+      for (const field of ['totalVolume', 'shortVolume', 'shortVolumeRatio']) if (row[field] !== null && !Number.isFinite(row[field])) throw new Error(`${s.symbol}.shortVolume.${field} invalid`);
+    }
+  }
+  if (s.unusualActivity) {
+    if (!Array.isArray(s.unusualActivity.signals)) throw new Error(`${s.symbol}.unusualActivity.signals invalid`);
+    for (const field of ['volumeMultiple', 'dayRangePct', 'gapPct', 'shortVolumeRatio']) if (s.unusualActivity[field] !== null && !Number.isFinite(s.unusualActivity[field])) throw new Error(`${s.symbol}.unusualActivity.${field} invalid`);
+  }
 }
 console.log(`OK: ${data.symbols.length} symbols, generated ${data.generatedAt}, status ${data.dataStatus}`);

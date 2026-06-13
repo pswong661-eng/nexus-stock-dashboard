@@ -117,6 +117,19 @@ async function fetchMassiveRatios(symbol) {
     marketCap: round(finite(row.market_cap), 0)
   };
 }
+async function fetchMassiveShortVolume(symbol, limit = 20) {
+  const data = await fetchMassiveJson(massiveUrl('/stocks/v1/short-volume', { ticker: symbol, limit, sort: 'date.desc' }));
+  const rows = Array.isArray(data.results) ? data.results : [];
+  return rows.map(row => ({
+    date: row.date || null,
+    totalVolume: round(finite(row.total_volume), 0),
+    shortVolume: round(finite(row.short_volume), 0),
+    exemptVolume: round(finite(row.exempt_volume), 0),
+    nonExemptVolume: round(finite(row.non_exempt_volume), 0),
+    shortVolumeRatio: round(finite(row.short_volume_ratio), 2),
+    source: 'Massive'
+  })).filter(row => row.date);
+}
 async function fetchMassiveStatement(path, symbol, limit = 8) {
   const data = await fetchMassiveJson(massiveUrl(path, { tickers: symbol, timeframe: 'quarterly', limit, sort: 'period_end.desc' }));
   return Array.isArray(data.results) ? data.results : [];
@@ -225,7 +238,7 @@ async function fetchMassiveInsider(symbol) {
 function normalizeMassiveChart(symbol, bars, details = {}) {
   const points = bars
     .filter(b => Number.isFinite(b.c) && Number.isFinite(b.t))
-    .map(b => ({ date: new Date(b.t).toISOString().slice(0, 10), close: round(b.c, 4), high: finite(b.h), low: finite(b.l), volume: finite(b.v) }));
+    .map(b => ({ date: new Date(b.t).toISOString().slice(0, 10), open: finite(b.o), close: round(b.c, 4), high: finite(b.h), low: finite(b.l), volume: finite(b.v), vwap: finite(b.vw) }));
   if (!points.length) throw new Error('Massive aggregate bars contained no close prices');
   const closeValues = points.map(p => p.close);
   const firstTradingDay = points.find(p => p.date >= `${new Date().getUTCFullYear()}-01-01`) || points[0];
@@ -266,17 +279,21 @@ function normalizeMassiveChart(symbol, bars, details = {}) {
       icon: details.branding?.icon_url || '',
       logo: details.branding?.logo_url || ''
     },
-    series: normalized, technical, rawPoints: points.slice(-20).map(({ date, close }) => ({ date, close }))
+    series: normalized, technical, rawPoints: points.slice(-40)
   };
 }
 function normalizeChart(symbol, result) {
   const meta = result.meta || {}, quote = result.indicators?.quote?.[0] || {};
   const timestamps = result.timestamp || [];
   const closes = (quote.close || []).map(finite);
-  const highs = (quote.high || []).map(finite).filter(Number.isFinite);
-  const lows = (quote.low || []).map(finite).filter(Number.isFinite);
-  const volumes = (quote.volume || []).map(finite).filter(Number.isFinite);
-  const points = timestamps.map((ts, i) => ({ date: new Date(ts * 1000).toISOString().slice(0, 10), close: round(closes[i], 4) })).filter(p => Number.isFinite(p.close));
+  const highsAll = (quote.high || []).map(finite);
+  const lowsAll = (quote.low || []).map(finite);
+  const opensAll = (quote.open || []).map(finite);
+  const volumesAll = (quote.volume || []).map(finite);
+  const highs = highsAll.filter(Number.isFinite);
+  const lows = lowsAll.filter(Number.isFinite);
+  const volumes = volumesAll.filter(Number.isFinite);
+  const points = timestamps.map((ts, i) => ({ date: new Date(ts * 1000).toISOString().slice(0, 10), open: opensAll[i], close: round(closes[i], 4), high: highsAll[i], low: lowsAll[i], volume: volumesAll[i] })).filter(p => Number.isFinite(p.close));
   const closeValues = points.map(p => p.close);
   const firstTradingDay = points.find(p => p.date >= `${new Date().getUTCFullYear()}-01-01`) || points[0];
   const last = points.at(-1)?.close ?? finite(meta.regularMarketPrice);
@@ -305,6 +322,47 @@ function normalizeChart(symbol, result) {
     marketCap: null, peRatio: null, rsi14: round(rsi14, 1), week52Low: round(week52Low, 2), week52High: round(week52High, 2), avgVolume: round(avgVolume, 0),
     recommendation: rec, opportunityScore: rec === 'BUY' ? 78 : rec === 'HOLD' ? 55 : 32,
     series: normalized, technical, rawPoints: points.slice(-20)
+  };
+}
+function summarizeShortVolume(rows = []) {
+  const latest = rows[0] || null;
+  const ratioAvg20 = sma(rows.map(r => r.shortVolumeRatio).filter(Number.isFinite));
+  return {
+    latest,
+    history: rows.slice(0, 20),
+    avgShortVolumeRatio20: round(ratioAvg20, 2),
+    source: latest ? 'Massive' : 'none'
+  };
+}
+function detectUnusualActivity(stock, shortVolumeRows = []) {
+  const points = stock.rawPoints || [];
+  const latest = points.at(-1) || {};
+  const prev = points.at(-2) || {};
+  const prior = points.slice(0, -1);
+  const avgVolume20 = sma(prior.slice(-20).map(p => p.volume).filter(Number.isFinite));
+  const volumeMultiple = Number.isFinite(latest.volume) && Number.isFinite(avgVolume20) && avgVolume20 > 0 ? latest.volume / avgVolume20 : null;
+  const dayRangePct = [latest.high, latest.low, latest.close].every(Number.isFinite) && latest.close !== 0 ? ((latest.high - latest.low) / latest.close) * 100 : null;
+  const gapPct = Number.isFinite(latest.open) && Number.isFinite(prev.close) && prev.close !== 0 ? ((latest.open - prev.close) / prev.close) * 100 : null;
+  const shortSummary = summarizeShortVolume(shortVolumeRows);
+  const latestShort = shortSummary.latest || {};
+  const signals = [];
+  if (Number.isFinite(volumeMultiple) && volumeMultiple >= 2) signals.push({ type: 'volume_spike', severity: volumeMultiple >= 4 ? 'danger' : 'warning', label: `${round(volumeMultiple, 1)}x 20-day volume` });
+  if (Number.isFinite(dayRangePct) && dayRangePct >= 8) signals.push({ type: 'wide_range', severity: dayRangePct >= 15 ? 'danger' : 'warning', label: `${round(dayRangePct, 1)}% intraday range` });
+  if (Number.isFinite(gapPct) && Math.abs(gapPct) >= 5) signals.push({ type: 'price_gap', severity: Math.abs(gapPct) >= 10 ? 'danger' : 'warning', label: `${gapPct > 0 ? '+' : ''}${round(gapPct, 1)}% opening gap` });
+  if (Number.isFinite(latestShort.shortVolumeRatio) && latestShort.shortVolumeRatio >= 50) signals.push({ type: 'short_ratio', severity: latestShort.shortVolumeRatio >= 65 ? 'danger' : 'warning', label: `${latestShort.shortVolumeRatio}% short-volume ratio` });
+  return {
+    asOf: latest.date || latestShort.date || null,
+    source: 'Massive aggregates + Massive short volume',
+    tickTradesAvailable: false,
+    volume: round(latest.volume, 0),
+    avgVolume20: round(avgVolume20, 0),
+    volumeMultiple: round(volumeMultiple, 2),
+    dayRangePct: round(dayRangePct, 2),
+    gapPct: round(gapPct, 2),
+    shortVolume: latestShort.shortVolume ?? null,
+    shortVolumeRatio: latestShort.shortVolumeRatio ?? null,
+    signals,
+    summary: signals.length ? signals.map(s => s.label).join(' · ') : 'No unusual aggregate activity detected'
   };
 }
 async function cikMap() {
@@ -507,7 +565,7 @@ let ciks = {};
 try { ciks = await cikMap(); } catch (e) { errors.push({ symbol: 'SEC', error: String(e.message || e) }); }
 for (const symbol of SYMBOLS) {
   try {
-    let base, profile = null, ratios = null, massiveFinancials = null, massiveInsider = null, priceSource = 'Yahoo';
+    let base, profile = null, ratios = null, shortVolume = [], massiveFinancials = null, massiveInsider = null, priceSource = 'Yahoo';
     if (MASSIVE_API_KEY) {
       try {
         profile = await fetchMassiveTickerDetails(symbol).catch(err => {
@@ -519,6 +577,10 @@ for (const symbol of SYMBOLS) {
         ratios = await fetchMassiveRatios(symbol).catch(err => {
           warnings.push({ symbol, warning: `Massive ratios unavailable: ${redact(err.message || err)}` });
           return null;
+        });
+        shortVolume = await fetchMassiveShortVolume(symbol).catch(err => {
+          warnings.push({ symbol, warning: `Massive short volume unavailable: ${redact(err.message || err)}` });
+          return [];
         });
         massiveFinancials = await fetchMassiveFinancials(symbol).catch(err => {
           warnings.push({ symbol, warning: `Massive financial statements fallback to SEC: ${redact(err.message || err)}` });
@@ -537,13 +599,17 @@ for (const symbol of SYMBOLS) {
       if (!chart) throw new Error('empty chart result');
       base = normalizeChart(symbol, chart);
     }
+    const shortVolumeSummary = summarizeShortVolume(shortVolume);
+    const unusualActivity = detectUnusualActivity(base, shortVolume);
+    base.shortVolume = shortVolumeSummary;
+    base.unusualActivity = unusualActivity;
     if (ratios) {
       base.ratios = ratios;
       base.peRatio = ratios.pe ?? base.peRatio;
       base.marketCap = ratios.marketCap ?? base.marketCap;
     }
     const extra = await fetchFinancialAndInsider(symbol, ciks[symbol] || profile?.cik, { financials: massiveFinancials, insider: massiveInsider });
-    results.push({ ...base, cik: ciks[symbol] || profile?.cik || null, dataSources: { price: priceSource, financials: extra.financials?.source || 'SEC', insider: extra.insiderSummary?.source || 'SEC', ratios: ratios ? 'Massive' : 'none', profile: profile ? 'Massive' : 'none' }, ...extra });
+    results.push({ ...base, cik: ciks[symbol] || profile?.cik || null, dataSources: { price: priceSource, financials: extra.financials?.source || 'SEC', insider: extra.insiderSummary?.source || 'SEC', ratios: ratios ? 'Massive' : 'none', profile: profile ? 'Massive' : 'none', shortVolume: shortVolumeSummary.source, unusualActivity: unusualActivity.source }, ...extra });
   } catch (err) { errors.push({ symbol, error: redact(err.message || err) }); }
   await sleep(MASSIVE_API_KEY ? 13_000 : 350);
 }
@@ -561,6 +627,7 @@ const alerts = results.flatMap(s => {
   if (Number.isFinite(s.rsi14) && s.rsi14 < 30) arr.push({ symbol: s.symbol, severity: 'info', message: `RSI oversold: ${s.rsi14}` });
   if (Number.isFinite(lastTech.macd) && Number.isFinite(lastTech.macdSignal) && lastTech.macd > lastTech.macdSignal) arr.push({ symbol: s.symbol, severity: 'success', message: `MACD above signal line` });
   if (Number.isFinite(s.ytdPct) && s.ytdPct > 25) arr.push({ symbol: s.symbol, severity: 'success', message: `Strong YTD performer: +${s.ytdPct}%` });
+  for (const signal of s.unusualActivity?.signals || []) arr.push({ symbol: s.symbol, severity: signal.severity, message: signal.label });
   return arr;
 }).slice(0, 14).map((a, i) => ({ ...a, createdAt: new Date(Date.now() - i * 3600_000).toISOString() }));
 const payload = {
