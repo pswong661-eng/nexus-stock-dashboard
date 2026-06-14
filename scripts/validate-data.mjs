@@ -13,6 +13,12 @@ for (const s of data.symbols) {
   const last = s.technical.at(-1);
   for (const field of ['ema50','rsi14','macd','macdSignal']) if (last[field] !== null && !Number.isFinite(last[field])) throw new Error(`${s.symbol}.technical.${field} invalid`);
   if (!s.financials || !Array.isArray(s.financials.quarters) || !Array.isArray(s.financials.forecast)) throw new Error(`${s.symbol}.financials missing`);
+  const seenPeriods = new Set();
+  for (const q of s.financials.quarters) {
+    const key = `${q.period || ''}-${q.end || ''}`;
+    if (seenPeriods.has(key)) throw new Error(`${s.symbol}.financials duplicate period ${key}`);
+    seenPeriods.add(key);
+  }
   if (!Array.isArray(s.insider)) throw new Error(`${s.symbol}.insider missing`);
   if (!s.insiderSummary || typeof s.insiderSummary.sentiment !== 'string') throw new Error(`${s.symbol}.insiderSummary missing`);
   if (s.shortVolume) {

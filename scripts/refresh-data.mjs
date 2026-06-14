@@ -378,14 +378,35 @@ function pickFact(facts, names) {
   }
   return [];
 }
+function factDurationDays(fact) {
+  if (!fact?.start || !fact?.end) return null;
+  const start = Date.parse(fact.start);
+  const end = Date.parse(fact.end);
+  if (Number.isNaN(start) || Number.isNaN(end) || end < start) return null;
+  return Math.round((end - start) / 86400_000);
+}
+function fiscalPeriodKey(fact) {
+  return fact.fp && fact.fy && fact.end ? `${fact.fy}-${fact.fp}-${fact.end}` : fact.end || fact.frame || `${fact.filed || ''}-${fact.val}`;
+}
+function betterFact(next, prev) {
+  if (!prev) return true;
+  const nextDays = factDurationDays(next);
+  const prevDays = factDurationDays(prev);
+  const nextQuarter = /^Q[1-4]$/i.test(next.fp || '');
+  const prevQuarter = /^Q[1-4]$/i.test(prev.fp || '');
+  if (nextQuarter && prevQuarter && Number.isFinite(nextDays) && Number.isFinite(prevDays) && nextDays !== prevDays) return nextDays < prevDays;
+  if (next.form === '10-Q' && prev.form !== '10-Q') return true;
+  if (next.form !== '10-Q' && prev.form === '10-Q') return false;
+  return (next.filed || '') > (prev.filed || '');
+}
 function lastQuarters(items) {
   const seen = new Map();
   for (const f of items) {
     if (!Number.isFinite(f.val) || !f.end) continue;
     if (!['10-Q','10-K'].includes(f.form)) continue;
-    const key = f.frame || `${f.fy || ''}-${f.fp || ''}-${f.end}`;
+    const key = fiscalPeriodKey(f);
     const prev = seen.get(key);
-    if (!prev || (f.filed || '') > (prev.filed || '')) seen.set(key, f);
+    if (betterFact(f, prev)) seen.set(key, f);
   }
   return [...seen.values()].sort((a,b)=>new Date(a.end)-new Date(b.end)).slice(-6).map(f => ({
     period: f.fp && f.fy ? `${f.fy} ${f.fp}` : f.end,

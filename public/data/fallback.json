@@ -3107,22 +3107,6 @@
           {
             "period": "2025 Q2",
             "end": "2025-06-30",
-            "value": 8003000000,
-            "form": "10-Q",
-            "filed": "2025-08-08",
-            "source": "SEC",
-            "revenue": 8003000000,
-            "netIncome": 327000000,
-            "operatingCashFlow": 1171000000,
-            "capex": 1458000000,
-            "freeCashFlow": -287000000,
-            "assets": 38146000000,
-            "liabilities": 33310000000,
-            "equity": 4823000000
-          },
-          {
-            "period": "2025 Q2",
-            "end": "2025-06-30",
             "value": 3753000000,
             "form": "10-Q",
             "filed": "2025-08-08",
@@ -3135,22 +3119,6 @@
             "assets": 38146000000,
             "liabilities": 33310000000,
             "equity": 4823000000
-          },
-          {
-            "period": "2025 Q3",
-            "end": "2025-09-30",
-            "value": 12781000000,
-            "form": "10-Q",
-            "filed": "2025-11-07",
-            "source": "SEC",
-            "revenue": 12781000000,
-            "netIncome": 652000000,
-            "operatingCashFlow": 2638000000,
-            "capex": 1916000000,
-            "freeCashFlow": 722000000,
-            "assets": 38020000000,
-            "liabilities": 32797000000,
-            "equity": 5210000000
           },
           {
             "period": "2025 Q3",
@@ -6604,22 +6572,6 @@
             "filed": "2022-08-12",
             "source": "SEC",
             "revenue": 4238000,
-            "netIncome": null,
-            "operatingCashFlow": null,
-            "capex": null,
-            "freeCashFlow": null,
-            "assets": null,
-            "liabilities": null,
-            "equity": null
-          },
-          {
-            "period": "2022 Q3",
-            "end": "2022-09-30",
-            "value": 7042000,
-            "form": "10-Q",
-            "filed": "2022-11-22",
-            "source": "SEC",
-            "revenue": 7042000,
             "netIncome": null,
             "operatingCashFlow": null,
             "capex": null,
@@ -10356,22 +10308,6 @@
           {
             "period": "2025 Q2",
             "end": "2025-06-30",
-            "value": 28260000,
-            "form": "10-Q",
-            "filed": "2025-08-06",
-            "source": "SEC",
-            "revenue": 28260000,
-            "netIncome": -176838000,
-            "operatingCashFlow": -85599000,
-            "capex": 3501000,
-            "freeCashFlow": -89100000,
-            "assets": 1346608000,
-            "liabilities": 168162000,
-            "equity": 1161633000
-          },
-          {
-            "period": "2025 Q2",
-            "end": "2025-06-30",
             "value": 20694000,
             "form": "10-Q",
             "filed": "2025-08-06",
@@ -10384,22 +10320,6 @@
             "assets": 1346608000,
             "liabilities": 168162000,
             "equity": 1161633000
-          },
-          {
-            "period": "2025 Q3",
-            "end": "2025-09-30",
-            "value": 68126000,
-            "form": "10-Q",
-            "filed": "2025-11-05",
-            "source": "SEC",
-            "revenue": 68126000,
-            "netIncome": -1054955000,
-            "operatingCashFlow": -208677000,
-            "capex": 7628000,
-            "freeCashFlow": -216305000,
-            "assets": 4319348000,
-            "liabilities": 2031549000,
-            "equity": 2273361000
           },
           {
             "period": "2025 Q3",
@@ -20808,22 +20728,6 @@
           {
             "period": "2025 Q3",
             "end": "2025-07-31",
-            "value": 4799318000,
-            "form": "10-Q",
-            "filed": "2025-09-09",
-            "source": "SEC",
-            "revenue": 4799318000,
-            "netIncome": 242509000,
-            "operatingCashFlow": 878870000,
-            "capex": 134908000,
-            "freeCashFlow": 743962000,
-            "assets": 48230256000,
-            "liabilities": 20616070000,
-            "equity": 27614531000
-          },
-          {
-            "period": "2025 Q3",
-            "end": "2025-07-31",
             "value": 1739737000,
             "form": "10-Q",
             "filed": "2025-09-09",
@@ -20872,22 +20776,6 @@
           {
             "period": "2026 Q2",
             "end": "2026-04-30",
-            "value": 4684783000,
-            "form": "10-Q",
-            "filed": "2026-05-27",
-            "source": "SEC",
-            "revenue": 4684783000,
-            "netIncome": 17105000,
-            "operatingCashFlow": 1485766000,
-            "capex": 89518000,
-            "freeCashFlow": 1396248000,
-            "assets": 46889027000,
-            "liabilities": 16411962000,
-            "equity": 30478131000
-          },
-          {
-            "period": "2026 Q2",
-            "end": "2026-04-30",
             "value": 2275985000,
             "form": "10-Q",
             "filed": "2026-05-27",
@@ -20905,12 +20793,12 @@
         "forecast": [
           {
             "period": "Forecast Q+1",
-            "value": 1706988750,
+            "value": 2150494861,
             "basis": "simple trend forecast"
           },
           {
             "period": "Forecast Q+2",
-            "value": 1280241563,
+            "value": 2031923825,
             "basis": "simple trend forecast"
           }
         ],
@@ -24325,22 +24213,6 @@
           {
             "period": "2025 Q3",
             "end": "2025-06-29",
-            "value": 33013000000,
-            "form": "10-Q",
-            "filed": "2025-07-30",
-            "source": "SEC",
-            "revenue": 33013000000,
-            "netIncome": 2666000000,
-            "operatingCashFlow": 10016000000,
-            "capex": 785000000,
-            "freeCashFlow": 9231000000,
-            "assets": 54862000000,
-            "liabilities": 27653000000,
-            "equity": null
-          },
-          {
-            "period": "2025 Q3",
-            "end": "2025-06-29",
             "value": 10365000000,
             "form": "10-Q",
             "filed": "2025-07-30",
@@ -24389,22 +24261,6 @@
           {
             "period": "2026 Q2",
             "end": "2026-03-29",
-            "value": 22851000000,
-            "form": "10-Q",
-            "filed": "2026-04-29",
-            "source": "SEC",
-            "revenue": 22851000000,
-            "netIncome": 7370000000,
-            "operatingCashFlow": 7414000000,
-            "capex": 1082000000,
-            "freeCashFlow": 6332000000,
-            "assets": 57136000000,
-            "liabilities": 29858000000,
-            "equity": null
-          },
-          {
-            "period": "2026 Q2",
-            "end": "2026-03-29",
             "value": 10599000000,
             "form": "10-Q",
             "filed": "2026-04-29",
@@ -24422,12 +24278,12 @@
         "forecast": [
           {
             "period": "Forecast Q+1",
-            "value": 7949250000,
+            "value": 9169017385,
             "basis": "simple trend forecast"
           },
           {
             "period": "Forecast Q+2",
-            "value": 5961937500,
+            "value": 7931963374,
             "basis": "simple trend forecast"
           }
         ],
@@ -28158,22 +28014,6 @@
           {
             "period": "2023 Q3",
             "end": "2023-09-30",
-            "value": 4642500000,
-            "form": "10-Q",
-            "filed": "2023-11-03",
-            "source": "SEC",
-            "revenue": 4642500000,
-            "netIncome": null,
-            "operatingCashFlow": null,
-            "capex": null,
-            "freeCashFlow": null,
-            "assets": null,
-            "liabilities": null,
-            "equity": null
-          },
-          {
-            "period": "2023 Q3",
-            "end": "2023-09-30",
             "value": 1649800000,
             "form": "10-Q",
             "filed": "2023-11-03",
@@ -28222,22 +28062,6 @@
           {
             "period": "2024 Q2",
             "end": "2024-06-30",
-            "value": 3095300000,
-            "form": "10-Q",
-            "filed": "2024-08-01",
-            "source": "SEC",
-            "revenue": 3095300000,
-            "netIncome": null,
-            "operatingCashFlow": null,
-            "capex": null,
-            "freeCashFlow": null,
-            "assets": null,
-            "liabilities": null,
-            "equity": null
-          },
-          {
-            "period": "2024 Q2",
-            "end": "2024-06-30",
             "value": 1547600000,
             "form": "10-Q",
             "filed": "2024-08-01",
@@ -28255,12 +28079,12 @@
         "forecast": [
           {
             "period": "Forecast Q+1",
-            "value": 1160700000,
+            "value": 1547500006,
             "basis": "simple trend forecast"
           },
           {
             "period": "Forecast Q+2",
-            "value": 870525000,
+            "value": 1547400019,
             "basis": "simple trend forecast"
           }
         ],
