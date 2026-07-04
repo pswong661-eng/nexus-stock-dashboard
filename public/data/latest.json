@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T22:59:06.273Z",
+  "generatedAt": "2026-07-04T05:51:36.068Z",
   "staleAfterMinutes": 1440,
   "source": "Massive.com OHLC aggregates + SEC companyfacts/submissions via scheduled Node refresh",
   "tickers": [
@@ -13,7 +13,7 @@
     "RRX"
   ],
   "dataStatus": "fresh",
-  "marketStatus": "weekday",
+  "marketStatus": "closed_or_weekend",
   "summary": {
     "totalMarketCap": null,
     "avgPeRatio": null,
@@ -2875,7 +2875,7 @@
           "close": 151.05,
           "high": 156.24,
           "low": 148.5,
-          "volume": 4255892.997428,
+          "volume": 4255892.096449,
           "vwap": 151.3358
         }
       ],
@@ -3078,7 +3078,7 @@
         "asOf": "2026-07-02",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 4255893,
+        "volume": 4255892,
         "avgVolume20": 4421774,
         "volumeMultiple": 0.96,
         "dayRangePct": 5.12,
@@ -3611,7 +3611,7 @@
       "rsi14": 38.1,
       "week52Low": 11.14,
       "week52High": 58.15,
-      "avgVolume": 53791560,
+      "avgVolume": 53791561,
       "recommendation": "HOLD",
       "opportunityScore": 55,
       "company": {
@@ -6441,7 +6441,7 @@
           "close": 17.94,
           "high": 19.675,
           "low": 17.55,
-          "volume": 25313949.856441,
+          "volume": 25313968.983056,
           "vwap": 18.3338
         }
       ],
@@ -6644,7 +6644,7 @@
         "asOf": "2026-07-02",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 25313950,
+        "volume": 25313969,
         "avgVolume20": 38591786,
         "volumeMultiple": 0.66,
         "dayRangePct": 11.85,
@@ -10111,7 +10111,7 @@
           "close": 49.12,
           "high": 54.4,
           "low": 48.18,
-          "volume": 17018808.888079,
+          "volume": 17018808.361889,
           "vwap": 50.4446
         }
       ],
@@ -10314,7 +10314,7 @@
         "asOf": "2026-07-02",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 17018809,
+        "volume": 17018808,
         "avgVolume20": 27481237,
         "volumeMultiple": 0.62,
         "dayRangePct": 12.66,
@@ -13621,7 +13621,7 @@
           "close": 3.76,
           "high": 4.04,
           "low": 3.71,
-          "volume": 9403113.833148,
+          "volume": 9403112.855812,
           "vwap": 3.8254
         }
       ],
@@ -13824,7 +13824,7 @@
         "asOf": "2026-07-02",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 9403114,
+        "volume": 9403113,
         "avgVolume20": 9277902,
         "volumeMultiple": 1.01,
         "dayRangePct": 8.78,
@@ -17676,7 +17676,7 @@
       "rsi14": 39,
       "week52Low": 376.18,
       "week52High": 651.73,
-      "avgVolume": 2244823,
+      "avgVolume": 2244826,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -20506,8 +20506,8 @@
           "close": 437.16,
           "high": 453.48,
           "low": 434.245,
-          "volume": 1419913.970403,
-          "vwap": 440.2684
+          "volume": 1420007.151398,
+          "vwap": 440.2683
         }
       ],
       "shortVolume": {
@@ -20709,7 +20709,7 @@
         "asOf": "2026-07-02",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 1419914,
+        "volume": 1420007,
         "avgVolume20": 2154520,
         "volumeMultiple": 0.66,
         "dayRangePct": 4.4,
@@ -21435,7 +21435,7 @@
       "rsi14": 37.1,
       "week52Low": 121.99,
       "week52High": 259.92,
-      "avgVolume": 23255471,
+      "avgVolume": 23255472,
       "recommendation": "HOLD",
       "opportunityScore": 55,
       "company": {
@@ -24265,7 +24265,7 @@
           "close": 176.25,
           "high": 185.799,
           "low": 172.12,
-          "volume": 18682416.172102,
+          "volume": 18682459.387023,
           "vwap": 176.3356
         }
       ],
@@ -24468,7 +24468,7 @@
         "asOf": "2026-07-02",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 18682416,
+        "volume": 18682459,
         "avgVolume20": 22778022,
         "volumeMultiple": 0.82,
         "dayRangePct": 7.76,
@@ -29123,67 +29123,67 @@
       "symbol": "RGTI",
       "severity": "warning",
       "message": "11.8% intraday range",
-      "createdAt": "2026-07-03T22:59:06.273Z"
+      "createdAt": "2026-07-04T05:51:36.068Z"
     },
     {
       "symbol": "RGTI",
       "severity": "warning",
       "message": "59.92% short-volume ratio",
-      "createdAt": "2026-07-03T21:59:06.273Z"
+      "createdAt": "2026-07-04T04:51:36.068Z"
     },
     {
       "symbol": "IONQ",
       "severity": "warning",
       "message": "12.7% intraday range",
-      "createdAt": "2026-07-03T20:59:06.273Z"
+      "createdAt": "2026-07-04T03:51:36.068Z"
     },
     {
       "symbol": "LAC",
       "severity": "info",
       "message": "RSI oversold: 21.7",
-      "createdAt": "2026-07-03T19:59:06.273Z"
+      "createdAt": "2026-07-04T02:51:36.068Z"
     },
     {
       "symbol": "LAC",
       "severity": "warning",
       "message": "8.8% intraday range",
-      "createdAt": "2026-07-03T18:59:06.273Z"
+      "createdAt": "2026-07-04T01:51:36.068Z"
     },
     {
       "symbol": "UAMY",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-07-03T17:59:06.273Z"
+      "createdAt": "2026-07-04T00:51:36.068Z"
     },
     {
       "symbol": "UAMY",
       "severity": "success",
       "message": "Strong YTD performer: +25.3%",
-      "createdAt": "2026-07-03T16:59:06.273Z"
+      "createdAt": "2026-07-03T23:51:36.068Z"
     },
     {
       "symbol": "UAMY",
       "severity": "warning",
       "message": "13.3% intraday range",
-      "createdAt": "2026-07-03T15:59:06.273Z"
+      "createdAt": "2026-07-03T22:51:36.068Z"
     },
     {
       "symbol": "RRX",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-07-03T14:59:06.273Z"
+      "createdAt": "2026-07-03T21:51:36.068Z"
     },
     {
       "symbol": "RRX",
       "severity": "success",
       "message": "Strong YTD performer: +49.52%",
-      "createdAt": "2026-07-03T13:59:06.273Z"
+      "createdAt": "2026-07-03T20:51:36.068Z"
     },
     {
       "symbol": "RRX",
       "severity": "warning",
       "message": "9.4% intraday range",
-      "createdAt": "2026-07-03T12:59:06.273Z"
+      "createdAt": "2026-07-03T19:51:36.068Z"
     }
   ],
   "errors": [],
@@ -29194,7 +29194,7 @@
     },
     {
       "symbol": "VST",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=VST&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=VST&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "RGTI",
@@ -29218,7 +29218,7 @@
     },
     {
       "symbol": "LAC",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=LAC&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=LAC&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "UAMY",
@@ -29226,7 +29226,7 @@
     },
     {
       "symbol": "UAMY",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=UAMY&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=UAMY&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "SNPS",
