@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-04T05:51:36.068Z",
+  "generatedAt": "2026-07-04T09:43:06.081Z",
   "staleAfterMinutes": 1440,
   "source": "Massive.com OHLC aggregates + SEC companyfacts/submissions via scheduled Node refresh",
   "tickers": [
@@ -29123,67 +29123,67 @@
       "symbol": "RGTI",
       "severity": "warning",
       "message": "11.8% intraday range",
-      "createdAt": "2026-07-04T05:51:36.068Z"
+      "createdAt": "2026-07-04T09:43:06.081Z"
     },
     {
       "symbol": "RGTI",
       "severity": "warning",
       "message": "59.92% short-volume ratio",
-      "createdAt": "2026-07-04T04:51:36.068Z"
+      "createdAt": "2026-07-04T08:43:06.081Z"
     },
     {
       "symbol": "IONQ",
       "severity": "warning",
       "message": "12.7% intraday range",
-      "createdAt": "2026-07-04T03:51:36.068Z"
+      "createdAt": "2026-07-04T07:43:06.081Z"
     },
     {
       "symbol": "LAC",
       "severity": "info",
       "message": "RSI oversold: 21.7",
-      "createdAt": "2026-07-04T02:51:36.068Z"
+      "createdAt": "2026-07-04T06:43:06.081Z"
     },
     {
       "symbol": "LAC",
       "severity": "warning",
       "message": "8.8% intraday range",
-      "createdAt": "2026-07-04T01:51:36.068Z"
+      "createdAt": "2026-07-04T05:43:06.081Z"
     },
     {
       "symbol": "UAMY",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-07-04T00:51:36.068Z"
+      "createdAt": "2026-07-04T04:43:06.081Z"
     },
     {
       "symbol": "UAMY",
       "severity": "success",
       "message": "Strong YTD performer: +25.3%",
-      "createdAt": "2026-07-03T23:51:36.068Z"
+      "createdAt": "2026-07-04T03:43:06.081Z"
     },
     {
       "symbol": "UAMY",
       "severity": "warning",
       "message": "13.3% intraday range",
-      "createdAt": "2026-07-03T22:51:36.068Z"
+      "createdAt": "2026-07-04T02:43:06.081Z"
     },
     {
       "symbol": "RRX",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-07-03T21:51:36.068Z"
+      "createdAt": "2026-07-04T01:43:06.081Z"
     },
     {
       "symbol": "RRX",
       "severity": "success",
       "message": "Strong YTD performer: +49.52%",
-      "createdAt": "2026-07-03T20:51:36.068Z"
+      "createdAt": "2026-07-04T00:43:06.081Z"
     },
     {
       "symbol": "RRX",
       "severity": "warning",
       "message": "9.4% intraday range",
-      "createdAt": "2026-07-03T19:51:36.068Z"
+      "createdAt": "2026-07-03T23:43:06.081Z"
     }
   ],
   "errors": [],
@@ -29218,7 +29218,7 @@
     },
     {
       "symbol": "LAC",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=LAC&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=LAC&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "UAMY",
@@ -29226,7 +29226,7 @@
     },
     {
       "symbol": "UAMY",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=UAMY&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=UAMY&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "SNPS",
@@ -29242,7 +29242,7 @@
     },
     {
       "symbol": "QCOM",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=QCOM&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=QCOM&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "RRX",
