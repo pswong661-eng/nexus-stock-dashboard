@@ -6,7 +6,7 @@ const root = new URL('../', import.meta.url);
 const dist = new URL('../dist/', import.meta.url);
 await fs.rm(dist, { recursive: true, force: true });
 await fs.mkdir(new URL('./public/data/', dist), { recursive: true });
-for (const file of ['index.html', 'style.css', 'app.js', 'CNAME']) {
+for (const file of ['index.html', 'style.css', 'app.js', 'CNAME', 'favicon.ico', 'favicon.svg']) {
   try {
     await fs.copyFile(new URL(file, root), new URL(file, dist));
   } catch (err) {

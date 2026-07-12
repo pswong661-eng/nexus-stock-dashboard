@@ -13,7 +13,18 @@ const fmtRatioPct = n => Number.isFinite(n) ? `${n.toFixed(1)}%` : 'N/A';
 const refreshBtn = $('refresh-btn');
 function updateClock(){ $('clock').textContent = new Date().toLocaleTimeString(); } setInterval(updateClock,1000); updateClock();
 async function loadData(){ const res = await fetch(`${DATA_URL}?t=${Date.now()}`, { cache:'no-store' }); if(!res.ok) throw new Error(`Data fetch failed: ${res.status}`); return res.json(); }
-function renderStatus(data){ const g=new Date(data.generatedAt); const age=(Date.now()-g.getTime())/60000; const stale=age>(data.staleAfterMinutes||1440); const pill=$('status-pill'); pill.className=`status-pill ${stale?'stale':'live'}`; pill.textContent=`${stale?'STALE':'LIVE'} · ${data.dataStatus.toUpperCase()} · ${g.toLocaleString()}`; }
+function renderStatus(data){
+  const g=new Date(data.generatedAt);
+  const age=(Date.now()-g.getTime())/60000;
+  const dataStatus=String(data.dataStatus||'unknown').toUpperCase();
+  const stale=age>(data.staleAfterMinutes||1440);
+  const isFresh=dataStatus==='FRESH';
+  const statusLabel=stale&&!isFresh?'STALE':isFresh?'FRESH':'LIVE';
+  const pill=$('status-pill');
+  pill.className=`status-pill ${statusLabel==='STALE'?'stale':'live'}`;
+  pill.textContent=`${statusLabel} · ${g.toLocaleString()}`;
+  pill.title=`Data status: ${dataStatus}; age: ${Math.round(age)} minutes`;
+}
 function renderTickerStrip(symbols){ $('ticker-strip').innerHTML=symbols.map(s=>`<div class="ticker-chip"><b>${s.symbol}</b><span>${fmtMoney(s.price,s.currency)}</span><br><small class="${cls(s.ytdPct)}">${sign(s.ytdPct)}${fmtNum(s.ytdPct,'%')} YTD</small></div>`).join(''); }
 function renderCards(symbols){ $('stock-cards').innerHTML=symbols.map(s=>{ const pos=([s.price,s.week52Low,s.week52High].every(Number.isFinite)&&s.week52High>s.week52Low)?Math.max(0,Math.min(100,((s.price-s.week52Low)/(s.week52High-s.week52Low))*100)):0; const short=s.shortVolume?.latest||{}; const unusual=s.unusualActivity||{}; return `<article class="stock-card"><div class="card-head"><div><div class="symbol">${s.symbol}</div><div class="name" title="${s.name}">${s.name}</div></div><span class="badge ${s.recommendation}">${s.recommendation}</span></div><div class="price">${fmtMoney(s.price,s.currency)}</div><div class="ytd ${cls(s.ytdPct)}">${sign(s.ytdPct)}${fmtNum(s.ytdPct,'%')} <span class="flat">YTD</span></div><div class="mini-metrics"><div><span>Short Vol</span><b>${fmtCap(short.shortVolume).replace('$','')}</b></div><div><span>Short Ratio</span><b>${fmtRatioPct(short.shortVolumeRatio)}</b></div><div><span>Vol Spike</span><b>${Number.isFinite(unusual.volumeMultiple)?`${unusual.volumeMultiple.toFixed(1)}x`:'N/A'}</b></div><div><span>Signals</span><b>${unusual.signals?.length||0}</b></div></div><div class="range"><div class="range-line"><i style="width:${pos}%"></i></div><div class="range-labels"><span>${fmtMoney(s.week52Low,s.currency)}</span><span>${fmtMoney(s.week52High,s.currency)}</span></div></div></article>`; }).join(''); }
 function makeLineChart(canvas, datasets, labels, extra={}){ return new Chart(canvas,{type:'line',data:{labels,datasets},options:{responsive:true,interaction:{mode:'index',intersect:false},plugins:{legend:{labels:{color:'#cbd5e1'}}},scales:{x:{ticks:{color:'#8ea3bd',maxTicksLimit:7},grid:{color:'rgba(148,163,184,.09)'}},y:{ticks:{color:'#8ea3bd'},grid:{color:'rgba(148,163,184,.09)'},...extra.y}}}}); }
