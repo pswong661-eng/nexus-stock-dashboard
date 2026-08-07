@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T01:30:17.590Z",
+  "generatedAt": "2026-08-07T22:30:31.158Z",
   "staleAfterMinutes": 1440,
   "source": "Massive.com OHLC aggregates + SEC companyfacts/submissions via scheduled Node refresh",
   "tickers": [
@@ -17,18 +17,18 @@
   "summary": {
     "totalMarketCap": null,
     "avgPeRatio": null,
-    "avgRsi14": 51.5,
-    "sentimentScore": 64,
-    "bullPct": 38,
-    "neutralPct": 63,
+    "avgRsi14": 56.5,
+    "sentimentScore": 61,
+    "bullPct": 25,
+    "neutralPct": 75,
     "bearPct": 0,
     "bestPerformer": {
       "symbol": "RRX",
-      "ytdPct": 22.53
+      "ytdPct": 21.83
     },
     "worstPerformer": {
       "symbol": "LAC",
-      "ytdPct": -36.69
+      "ytdPct": -32.29
     }
   },
   "symbols": [
@@ -37,15 +37,15 @@
       "name": "Vistra Corp.",
       "exchange": "XNYS",
       "currency": "USD",
-      "price": 141.38,
-      "previousClose": 140.58,
-      "ytdPct": -14.43,
-      "marketCap": 47401111351.44,
+      "price": 140.59,
+      "previousClose": 141.38,
+      "ytdPct": -14.91,
+      "marketCap": 47670857325.84,
       "peRatio": null,
-      "rsi14": 39.9,
+      "rsi14": 37.2,
       "week52Low": 132.66,
       "week52High": 219.82,
-      "avgVolume": 4460321,
+      "avgVolume": 4600679,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -1073,18 +1073,13 @@
         {
           "date": "2026-08-06",
           "value": 66.05
+        },
+        {
+          "date": "2026-08-07",
+          "value": 65.68
         }
       ],
       "technical": [
-        {
-          "date": "2025-12-16",
-          "close": 173.45,
-          "ema50": 181.5861,
-          "rsi14": 52.5,
-          "macd": -3.88,
-          "macdSignal": -4.7404,
-          "macdHist": 0.8604
-        },
         {
           "date": "2025-12-17",
           "close": 159.97,
@@ -2515,18 +2510,18 @@
           "macd": -3.5823,
           "macdSignal": -1.6788,
           "macdHist": -1.9035
+        },
+        {
+          "date": "2026-08-07",
+          "close": 140.59,
+          "ema50": 153.9259,
+          "rsi14": 37.22,
+          "macd": -4.0133,
+          "macdSignal": -2.1457,
+          "macdHist": -1.8676
         }
       ],
       "rawPoints": [
-        {
-          "date": "2026-06-10",
-          "open": 143.35,
-          "close": 138.54,
-          "high": 143.9999,
-          "low": 137.91,
-          "volume": 5194972.140436,
-          "vwap": 139.4958
-        },
         {
           "date": "2026-06-11",
           "open": 140.99,
@@ -2866,8 +2861,8 @@
           "close": 140.58,
           "high": 145.5,
           "low": 140.17,
-          "volume": 6095731.889292,
-          "vwap": 141.455
+          "volume": 6091481.305224,
+          "vwap": 141.4564
         },
         {
           "date": "2026-08-06",
@@ -2877,19 +2872,37 @@
           "low": 140.14,
           "volume": 5422712.368348,
           "vwap": 141.5194
+        },
+        {
+          "date": "2026-08-07",
+          "open": 138.615,
+          "close": 140.59,
+          "high": 142.69,
+          "low": 134.75,
+          "volume": 7851844.314484,
+          "vwap": 139.5573
         }
       ],
       "shortVolume": {
         "latest": {
-          "date": "2026-08-06",
-          "totalVolume": 1975456,
-          "shortVolume": 986919,
-          "exemptVolume": 1101,
-          "nonExemptVolume": 985818,
-          "shortVolumeRatio": 49.96,
+          "date": "2026-08-07",
+          "totalVolume": 3508028,
+          "shortVolume": 2084321,
+          "exemptVolume": 5830,
+          "nonExemptVolume": 2078491,
+          "shortVolumeRatio": 59.42,
           "source": "Massive"
         },
         "history": [
+          {
+            "date": "2026-08-07",
+            "totalVolume": 3508028,
+            "shortVolume": 2084321,
+            "exemptVolume": 5830,
+            "nonExemptVolume": 2078491,
+            "shortVolumeRatio": 59.42,
+            "source": "Massive"
+          },
           {
             "date": "2026-08-06",
             "totalVolume": 1975456,
@@ -3060,33 +3073,30 @@
             "nonExemptVolume": 386217,
             "shortVolumeRatio": 32.29,
             "source": "Massive"
-          },
-          {
-            "date": "2026-07-10",
-            "totalVolume": 1187233,
-            "shortVolume": 330018,
-            "exemptVolume": 10,
-            "nonExemptVolume": 330008,
-            "shortVolumeRatio": 27.8,
-            "source": "Massive"
           }
         ],
-        "avgShortVolumeRatio20": 45.76,
+        "avgShortVolumeRatio20": 47.34,
         "source": "Massive"
       },
       "unusualActivity": {
-        "asOf": "2026-08-06",
+        "asOf": "2026-08-07",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 5422712,
-        "avgVolume20": 4644555,
-        "volumeMultiple": 1.17,
-        "dayRangePct": 2.04,
-        "gapPct": 1.01,
-        "shortVolume": 986919,
-        "shortVolumeRatio": 49.96,
-        "signals": [],
-        "summary": "No unusual aggregate activity detected"
+        "volume": 7851844,
+        "avgVolume20": 4770102,
+        "volumeMultiple": 1.65,
+        "dayRangePct": 5.65,
+        "gapPct": -1.96,
+        "shortVolume": 2084321,
+        "shortVolumeRatio": 59.42,
+        "signals": [
+          {
+            "type": "short_ratio",
+            "severity": "warning",
+            "label": "59.42% short-volume ratio"
+          }
+        ],
+        "summary": "59.42% short-volume ratio"
       },
       "cik": "0001692819",
       "dataSources": {
@@ -3603,15 +3613,15 @@
       "name": "Rigetti Computing, Inc. Common Stock",
       "exchange": "XNAS",
       "currency": "USD",
-      "price": 16.53,
-      "previousClose": 16.78,
-      "ytdPct": -29.96,
-      "marketCap": 5577651981.46,
+      "price": 17.94,
+      "previousClose": 16.53,
+      "ytdPct": -23.98,
+      "marketCap": 5494552279.71,
       "peRatio": null,
-      "rsi14": 60.6,
+      "rsi14": 64.6,
       "week52Low": 12.53,
       "week52High": 58.15,
-      "avgVolume": 22684789,
+      "avgVolume": 22748929,
       "recommendation": "HOLD",
       "opportunityScore": 55,
       "company": {
@@ -4639,18 +4649,13 @@
         {
           "date": "2026-08-06",
           "value": 104.89
+        },
+        {
+          "date": "2026-08-07",
+          "value": 113.83
         }
       ],
       "technical": [
-        {
-          "date": "2025-12-16",
-          "close": 23.96,
-          "ema50": 29.0182,
-          "rsi14": 44.12,
-          "macd": -1.7098,
-          "macdSignal": -1.8763,
-          "macdHist": 0.1665
-        },
         {
           "date": "2025-12-17",
           "close": 22.47,
@@ -6081,18 +6086,18 @@
           "macd": -0.4744,
           "macdSignal": -0.9261,
           "macdHist": 0.4517
+        },
+        {
+          "date": "2026-08-07",
+          "close": 17.94,
+          "ema50": 17.2708,
+          "rsi14": 64.61,
+          "macd": -0.269,
+          "macdSignal": -0.7947,
+          "macdHist": 0.5257
         }
       ],
       "rawPoints": [
-        {
-          "date": "2026-06-10",
-          "open": 19.595,
-          "close": 19.445,
-          "high": 20.84,
-          "low": 19.375,
-          "volume": 32632213.858406,
-          "vwap": 20.0422
-        },
         {
           "date": "2026-06-11",
           "open": 19.27,
@@ -6432,7 +6437,7 @@
           "close": 16.78,
           "high": 17.46,
           "low": 16.6898,
-          "volume": 19241393.942728,
+          "volume": 19241393.335297,
           "vwap": 16.9353
         },
         {
@@ -6443,19 +6448,37 @@
           "low": 16.06,
           "volume": 22637231.266518,
           "vwap": 16.6301
+        },
+        {
+          "date": "2026-08-07",
+          "open": 16.775,
+          "close": 17.94,
+          "high": 17.95,
+          "low": 16.405,
+          "volume": 29948077.778579,
+          "vwap": 17.2861
         }
       ],
       "shortVolume": {
         "latest": {
-          "date": "2026-08-06",
-          "totalVolume": 9035806,
-          "shortVolume": 5053204,
-          "exemptVolume": 23924,
-          "nonExemptVolume": 5029280,
-          "shortVolumeRatio": 55.92,
+          "date": "2026-08-07",
+          "totalVolume": 12448013,
+          "shortVolume": 7170157,
+          "exemptVolume": 63040,
+          "nonExemptVolume": 7107117,
+          "shortVolumeRatio": 57.6,
           "source": "Massive"
         },
         "history": [
+          {
+            "date": "2026-08-07",
+            "totalVolume": 12448013,
+            "shortVolume": 7170157,
+            "exemptVolume": 63040,
+            "nonExemptVolume": 7107117,
+            "shortVolumeRatio": 57.6,
+            "source": "Massive"
+          },
           {
             "date": "2026-08-06",
             "totalVolume": 9035806,
@@ -6626,39 +6649,35 @@
             "nonExemptVolume": 8309397,
             "shortVolumeRatio": 65.48,
             "source": "Massive"
-          },
-          {
-            "date": "2026-07-10",
-            "totalVolume": 8583558,
-            "shortVolume": 5527273,
-            "exemptVolume": 13519,
-            "nonExemptVolume": 5513754,
-            "shortVolumeRatio": 64.39,
-            "source": "Massive"
           }
         ],
-        "avgShortVolumeRatio20": 55.29,
+        "avgShortVolumeRatio20": 54.96,
         "source": "Massive"
       },
       "unusualActivity": {
-        "asOf": "2026-08-06",
+        "asOf": "2026-08-07",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 22637231,
-        "avgVolume20": 21509139,
-        "volumeMultiple": 1.05,
-        "dayRangePct": 6.53,
-        "gapPct": -3.75,
-        "shortVolume": 5053204,
-        "shortVolumeRatio": 55.92,
+        "volume": 29948078,
+        "avgVolume20": 21774024,
+        "volumeMultiple": 1.38,
+        "dayRangePct": 8.61,
+        "gapPct": 1.48,
+        "shortVolume": 7170157,
+        "shortVolumeRatio": 57.6,
         "signals": [
+          {
+            "type": "wide_range",
+            "severity": "warning",
+            "label": "8.6% intraday range"
+          },
           {
             "type": "short_ratio",
             "severity": "warning",
-            "label": "55.92% short-volume ratio"
+            "label": "57.6% short-volume ratio"
           }
         ],
-        "summary": "55.92% short-volume ratio"
+        "summary": "8.6% intraday range · 57.6% short-volume ratio"
       },
       "cik": "0001838359",
       "dataSources": {
@@ -7268,15 +7287,15 @@
       "name": "IonQ, Inc.",
       "exchange": "XNYS",
       "currency": "USD",
-      "price": 39.72,
-      "previousClose": 39.93,
-      "ytdPct": -15.07,
-      "marketCap": 14904669023.64,
+      "price": 44.43,
+      "previousClose": 39.72,
+      "ytdPct": -5,
+      "marketCap": 14826282334.56,
       "peRatio": null,
-      "rsi14": 60.6,
+      "rsi14": 68.6,
       "week52Low": 25.89,
       "week52High": 84.64,
-      "avgVolume": 21312725,
+      "avgVolume": 21729828,
       "recommendation": "HOLD",
       "opportunityScore": 55,
       "company": {
@@ -8304,18 +8323,13 @@
         {
           "date": "2026-08-06",
           "value": 99.65
+        },
+        {
+          "date": "2026-08-07",
+          "value": 111.47
         }
       ],
       "technical": [
-        {
-          "date": "2025-12-16",
-          "close": 49.67,
-          "ema50": 52.9981,
-          "rsi14": 54.31,
-          "macd": -1.0209,
-          "macdSignal": -1.3958,
-          "macdHist": 0.3749
-        },
         {
           "date": "2025-12-17",
           "close": 45.85,
@@ -9746,18 +9760,18 @@
           "macd": -2.3261,
           "macdSignal": -3.6876,
           "macdHist": 1.3615
+        },
+        {
+          "date": "2026-08-07",
+          "close": 44.43,
+          "ema50": 43.7429,
+          "rsi14": 68.6,
+          "macd": -1.6409,
+          "macdSignal": -3.2783,
+          "macdHist": 1.6374
         }
       ],
       "rawPoints": [
-        {
-          "date": "2026-06-10",
-          "open": 57.74,
-          "close": 56.63,
-          "high": 60.75,
-          "low": 56.5,
-          "volume": 23605648.334722,
-          "vwap": 58.1293
-        },
         {
           "date": "2026-06-11",
           "open": 56.54,
@@ -10097,8 +10111,8 @@
           "close": 39.93,
           "high": 41.9,
           "low": 39.7,
-          "volume": 24366164.597888,
-          "vwap": 40.534
+          "volume": 24378401.176519,
+          "vwap": 40.5339
         },
         {
           "date": "2026-08-06",
@@ -10108,19 +10122,37 @@
           "low": 39.655,
           "volume": 26420705.155878,
           "vwap": 40.772
+        },
+        {
+          "date": "2026-08-07",
+          "open": 40.385,
+          "close": 44.43,
+          "high": 44.615,
+          "low": 40,
+          "volume": 34392106.352193,
+          "vwap": 43.0954
         }
       ],
       "shortVolume": {
         "latest": {
-          "date": "2026-08-06",
-          "totalVolume": 8767232,
-          "shortVolume": 5427757,
-          "exemptVolume": 14063,
-          "nonExemptVolume": 5413694,
-          "shortVolumeRatio": 61.91,
+          "date": "2026-08-07",
+          "totalVolume": 11494311,
+          "shortVolume": 6379781,
+          "exemptVolume": 87072,
+          "nonExemptVolume": 6292709,
+          "shortVolumeRatio": 55.5,
           "source": "Massive"
         },
         "history": [
+          {
+            "date": "2026-08-07",
+            "totalVolume": 11494311,
+            "shortVolume": 6379781,
+            "exemptVolume": 87072,
+            "nonExemptVolume": 6292709,
+            "shortVolumeRatio": 55.5,
+            "source": "Massive"
+          },
           {
             "date": "2026-08-06",
             "totalVolume": 8767232,
@@ -10291,39 +10323,35 @@
             "nonExemptVolume": 4428819,
             "shortVolumeRatio": 51.83,
             "source": "Massive"
-          },
-          {
-            "date": "2026-07-10",
-            "totalVolume": 5312050,
-            "shortVolume": 3261394,
-            "exemptVolume": 2549,
-            "nonExemptVolume": 3258845,
-            "shortVolumeRatio": 61.4,
-            "source": "Massive"
           }
         ],
-        "avgShortVolumeRatio20": 55.84,
+        "avgShortVolumeRatio20": 55.55,
         "source": "Massive"
       },
       "unusualActivity": {
-        "asOf": "2026-08-06",
+        "asOf": "2026-08-07",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 26420705,
-        "avgVolume20": 20374192,
-        "volumeMultiple": 1.3,
-        "dayRangePct": 5.6,
-        "gapPct": 3.61,
-        "shortVolume": 5427757,
-        "shortVolumeRatio": 61.91,
+        "volume": 34392106,
+        "avgVolume20": 21043261,
+        "volumeMultiple": 1.63,
+        "dayRangePct": 10.39,
+        "gapPct": 1.67,
+        "shortVolume": 6379781,
+        "shortVolumeRatio": 55.5,
         "signals": [
+          {
+            "type": "wide_range",
+            "severity": "warning",
+            "label": "10.4% intraday range"
+          },
           {
             "type": "short_ratio",
             "severity": "warning",
-            "label": "61.91% short-volume ratio"
+            "label": "55.5% short-volume ratio"
           }
         ],
-        "summary": "61.91% short-volume ratio"
+        "summary": "10.4% intraday range · 55.5% short-volume ratio"
       },
       "cik": "0001824920",
       "dataSources": {
@@ -10778,15 +10806,15 @@
       "name": "Lithium Americas Corp.",
       "exchange": "XNYS",
       "currency": "USD",
-      "price": 3.02,
-      "previousClose": 3.09,
-      "ytdPct": -36.69,
-      "marketCap": 1084783057.02,
+      "price": 3.23,
+      "previousClose": 3.02,
+      "ytdPct": -32.29,
+      "marketCap": 1060208683.5600001,
       "peRatio": null,
-      "rsi14": 52.9,
+      "rsi14": 61.9,
       "week52Low": 2.53,
       "week52High": 10.52,
-      "avgVolume": 9280922,
+      "avgVolume": 9444558,
       "recommendation": "HOLD",
       "opportunityScore": 55,
       "company": {
@@ -11814,18 +11842,13 @@
         {
           "date": "2026-08-06",
           "value": 113.96
+        },
+        {
+          "date": "2026-08-07",
+          "value": 121.89
         }
       ],
       "technical": [
-        {
-          "date": "2025-12-16",
-          "close": 4.78,
-          "ema50": 5.2299,
-          "rsi14": 44.68,
-          "macd": -0.1026,
-          "macdSignal": -0.0872,
-          "macdHist": -0.0154
-        },
         {
           "date": "2025-12-17",
           "close": 4.61,
@@ -13256,18 +13279,18 @@
           "macd": -0.2197,
           "macdSignal": -0.295,
           "macdHist": 0.0753
+        },
+        {
+          "date": "2026-08-07",
+          "close": 3.23,
+          "ema50": 3.602,
+          "rsi14": 61.87,
+          "macd": -0.1849,
+          "macdSignal": -0.2729,
+          "macdHist": 0.088
         }
       ],
       "rawPoints": [
-        {
-          "date": "2026-06-10",
-          "open": 4.27,
-          "close": 4.15,
-          "high": 4.32,
-          "low": 4.12,
-          "volume": 8136527.764241,
-          "vwap": 4.1882
-        },
         {
           "date": "2026-06-11",
           "open": 4.18,
@@ -13607,7 +13630,7 @@
           "close": 3.09,
           "high": 3.134,
           "low": 3.03,
-          "volume": 8831408.2716,
+          "volume": 8838175.502722,
           "vwap": 3.0951
         },
         {
@@ -13618,19 +13641,37 @@
           "low": 2.93,
           "volume": 11132820.714468,
           "vwap": 3.0176
+        },
+        {
+          "date": "2026-08-07",
+          "open": 3.14,
+          "close": 3.23,
+          "high": 3.26,
+          "low": 3.0901,
+          "volume": 12728739.242877,
+          "vwap": 3.1969
         }
       ],
       "shortVolume": {
         "latest": {
-          "date": "2026-08-06",
-          "totalVolume": 3986882,
-          "shortVolume": 1535099,
-          "exemptVolume": 4646,
-          "nonExemptVolume": 1530453,
-          "shortVolumeRatio": 38.5,
+          "date": "2026-08-07",
+          "totalVolume": 4697406,
+          "shortVolume": 1833383,
+          "exemptVolume": 2385,
+          "nonExemptVolume": 1830998,
+          "shortVolumeRatio": 39.03,
           "source": "Massive"
         },
         "history": [
+          {
+            "date": "2026-08-07",
+            "totalVolume": 4697406,
+            "shortVolume": 1833383,
+            "exemptVolume": 2385,
+            "nonExemptVolume": 1830998,
+            "shortVolumeRatio": 39.03,
+            "source": "Massive"
+          },
           {
             "date": "2026-08-06",
             "totalVolume": 3986882,
@@ -13801,31 +13842,22 @@
             "nonExemptVolume": 1943185,
             "shortVolumeRatio": 24.8,
             "source": "Massive"
-          },
-          {
-            "date": "2026-07-10",
-            "totalVolume": 15661844,
-            "shortVolume": 3044487,
-            "exemptVolume": 2559,
-            "nonExemptVolume": 3041928,
-            "shortVolumeRatio": 19.44,
-            "source": "Massive"
           }
         ],
-        "avgShortVolumeRatio20": 38.56,
+        "avgShortVolumeRatio20": 39.54,
         "source": "Massive"
       },
       "unusualActivity": {
-        "asOf": "2026-08-06",
+        "asOf": "2026-08-07",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 11132821,
-        "avgVolume20": 9987916,
-        "volumeMultiple": 1.11,
-        "dayRangePct": 4.8,
-        "gapPct": -1.46,
-        "shortVolume": 1535099,
-        "shortVolumeRatio": 38.5,
+        "volume": 12728739,
+        "avgVolume20": 10215281,
+        "volumeMultiple": 1.25,
+        "dayRangePct": 5.26,
+        "gapPct": 3.97,
+        "shortVolume": 1833383,
+        "shortVolumeRatio": 39.03,
         "signals": [],
         "summary": "No unusual aggregate activity detected"
       },
@@ -14106,17 +14138,17 @@
       "name": "United States Antimony Corporation",
       "exchange": "XNYS",
       "currency": "USD",
-      "price": 6.21,
-      "previousClose": 6.38,
-      "ytdPct": 4.72,
-      "marketCap": 945424268.36,
+      "price": 6.85,
+      "previousClose": 6.21,
+      "ytdPct": 15.51,
+      "marketCap": 920232712.62,
       "peRatio": null,
-      "rsi14": 59.4,
+      "rsi14": 66.4,
       "week52Low": 3.01,
       "week52High": 19.71,
-      "avgVolume": 5681069,
-      "recommendation": "BUY",
-      "opportunityScore": 78,
+      "avgVolume": 5675805,
+      "recommendation": "HOLD",
+      "opportunityScore": 55,
       "company": {
         "description": "United States Antimony Corp is a fully integrated mining, transportation, milling, smelting, and selling company. It has two operating segments: antimony and zeolite. Its products and services include antimony; silver; gold; zeolite products; and storage, handling, & packaging services. The company's geographical segments are the Domestic, Canada, and Mexico, of which the vast majority of its revenue comes from the Domestic.",
         "homepage": "https://www.usantimony.com",
@@ -15142,18 +15174,13 @@
         {
           "date": "2026-08-06",
           "value": 174.93
+        },
+        {
+          "date": "2026-08-07",
+          "value": 192.96
         }
       ],
       "technical": [
-        {
-          "date": "2025-12-16",
-          "close": 4.98,
-          "ema50": 6.8494,
-          "rsi14": 39.53,
-          "macd": -0.6108,
-          "macdSignal": -0.625,
-          "macdHist": 0.0142
-        },
         {
           "date": "2025-12-17",
           "close": 4.54,
@@ -16584,18 +16611,18 @@
           "macd": -0.285,
           "macdSignal": -0.4723,
           "macdHist": 0.1873
+        },
+        {
+          "date": "2026-08-07",
+          "close": 6.85,
+          "ema50": 6.7551,
+          "rsi14": 66.37,
+          "macd": -0.1788,
+          "macdSignal": -0.4136,
+          "macdHist": 0.2348
         }
       ],
       "rawPoints": [
-        {
-          "date": "2026-06-10",
-          "open": 7.27,
-          "close": 6.86,
-          "high": 7.545,
-          "low": 6.77,
-          "volume": 11538609.281464,
-          "vwap": 6.9526
-        },
         {
           "date": "2026-06-11",
           "open": 6.9,
@@ -16935,7 +16962,7 @@
           "close": 6.38,
           "high": 6.52,
           "low": 6.1,
-          "volume": 5273063.107212,
+          "volume": 5276836.107212,
           "vwap": 6.3717
         },
         {
@@ -16946,19 +16973,37 @@
           "low": 6.04,
           "volume": 4148794.886797,
           "vwap": 6.3106
+        },
+        {
+          "date": "2026-08-07",
+          "open": 6.67,
+          "close": 6.85,
+          "high": 6.87,
+          "low": 6.44,
+          "volume": 6133850.026296,
+          "vwap": 6.7126
         }
       ],
       "shortVolume": {
         "latest": {
-          "date": "2026-08-06",
-          "totalVolume": 2006653,
-          "shortVolume": 831437,
-          "exemptVolume": 27467,
-          "nonExemptVolume": 803970,
-          "shortVolumeRatio": 41.43,
+          "date": "2026-08-07",
+          "totalVolume": 2676980,
+          "shortVolume": 1079365,
+          "exemptVolume": 3900,
+          "nonExemptVolume": 1075465,
+          "shortVolumeRatio": 40.32,
           "source": "Massive"
         },
         "history": [
+          {
+            "date": "2026-08-07",
+            "totalVolume": 2676980,
+            "shortVolume": 1079365,
+            "exemptVolume": 3900,
+            "nonExemptVolume": 1075465,
+            "shortVolumeRatio": 40.32,
+            "source": "Massive"
+          },
           {
             "date": "2026-08-06",
             "totalVolume": 2006653,
@@ -17129,39 +17174,30 @@
             "nonExemptVolume": 1235246,
             "shortVolumeRatio": 44.83,
             "source": "Massive"
-          },
-          {
-            "date": "2026-07-10",
-            "totalVolume": 1947064,
-            "shortVolume": 1008659,
-            "exemptVolume": 4321,
-            "nonExemptVolume": 1004338,
-            "shortVolumeRatio": 51.8,
-            "source": "Massive"
           }
         ],
-        "avgShortVolumeRatio20": 45.74,
+        "avgShortVolumeRatio20": 45.17,
         "source": "Massive"
       },
       "unusualActivity": {
-        "asOf": "2026-08-06",
+        "asOf": "2026-08-07",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 4148795,
-        "avgVolume20": 5377394,
-        "volumeMultiple": 0.77,
-        "dayRangePct": 8.53,
-        "gapPct": -4.39,
-        "shortVolume": 831437,
-        "shortVolumeRatio": 41.43,
+        "volume": 6133850,
+        "avgVolume20": 5365912,
+        "volumeMultiple": 1.14,
+        "dayRangePct": 6.28,
+        "gapPct": 7.41,
+        "shortVolume": 1079365,
+        "shortVolumeRatio": 40.32,
         "signals": [
           {
-            "type": "wide_range",
+            "type": "price_gap",
             "severity": "warning",
-            "label": "8.5% intraday range"
+            "label": "+7.4% opening gap"
           }
         ],
-        "summary": "8.5% intraday range"
+        "summary": "+7.4% opening gap"
       },
       "cik": "0000101538",
       "dataSources": {
@@ -17622,15 +17658,15 @@
       "name": "Synopsys Inc",
       "exchange": "XNAS",
       "currency": "USD",
-      "price": 405.98,
-      "previousClose": 400.82,
-      "ytdPct": -15.49,
-      "marketCap": 76748743046.5,
+      "price": 415.99,
+      "previousClose": 405.98,
+      "ytdPct": -13.41,
+      "marketCap": 77736776363.5,
       "peRatio": null,
-      "rsi14": 60.4,
+      "rsi14": 67.3,
       "week52Low": 366,
       "week52High": 636.61,
-      "avgVolume": 1995233,
+      "avgVolume": 1981762,
       "recommendation": "HOLD",
       "opportunityScore": 55,
       "company": {
@@ -18658,18 +18694,13 @@
         {
           "date": "2026-08-06",
           "value": 63.83
+        },
+        {
+          "date": "2026-08-07",
+          "value": 65.41
         }
       ],
       "technical": [
-        {
-          "date": "2025-12-16",
-          "close": 463.34,
-          "ema50": 450.9138,
-          "rsi14": 76.21,
-          "macd": 11.1361,
-          "macdSignal": 7.7676,
-          "macdHist": 3.3685
-        },
         {
           "date": "2025-12-17",
           "close": 453.07,
@@ -20100,18 +20131,18 @@
           "macd": -12.0029,
           "macdSignal": -16.9048,
           "macdHist": 4.9019
+        },
+        {
+          "date": "2026-08-07",
+          "close": 415.99,
+          "ema50": 424.9523,
+          "rsi14": 67.35,
+          "macd": -9.4505,
+          "macdSignal": -15.4139,
+          "macdHist": 5.9634
         }
       ],
       "rawPoints": [
-        {
-          "date": "2026-06-10",
-          "open": 454.88,
-          "close": 460.54,
-          "high": 472.4375,
-          "low": 453.28,
-          "volume": 1671666.78498,
-          "vwap": 461.3919
-        },
         {
           "date": "2026-06-11",
           "open": 457.755,
@@ -20451,8 +20482,8 @@
           "close": 400.82,
           "high": 412,
           "low": 400.68,
-          "volume": 1381045.810648,
-          "vwap": 402.8771
+          "volume": 1380020.588345,
+          "vwap": 402.8774
         },
         {
           "date": "2026-08-06",
@@ -20462,19 +20493,37 @@
           "low": 396.2733,
           "volume": 1480710.02966,
           "vwap": 406.0676
+        },
+        {
+          "date": "2026-08-07",
+          "open": 408.79,
+          "close": 415.99,
+          "high": 416.4407,
+          "low": 405.62,
+          "volume": 1161463.78242,
+          "vwap": 413.3021
         }
       ],
       "shortVolume": {
         "latest": {
-          "date": "2026-08-06",
-          "totalVolume": 503522,
-          "shortVolume": 181038,
-          "exemptVolume": 3156,
-          "nonExemptVolume": 177882,
-          "shortVolumeRatio": 35.95,
+          "date": "2026-08-07",
+          "totalVolume": 442224,
+          "shortVolume": 144417,
+          "exemptVolume": 86,
+          "nonExemptVolume": 144331,
+          "shortVolumeRatio": 32.66,
           "source": "Massive"
         },
         "history": [
+          {
+            "date": "2026-08-07",
+            "totalVolume": 442224,
+            "shortVolume": 144417,
+            "exemptVolume": 86,
+            "nonExemptVolume": 144331,
+            "shortVolumeRatio": 32.66,
+            "source": "Massive"
+          },
           {
             "date": "2026-08-06",
             "totalVolume": 503522,
@@ -20645,31 +20694,22 @@
             "nonExemptVolume": 152042,
             "shortVolumeRatio": 26.43,
             "source": "Massive"
-          },
-          {
-            "date": "2026-07-10",
-            "totalVolume": 330416,
-            "shortVolume": 128814,
-            "exemptVolume": 1304,
-            "nonExemptVolume": 127510,
-            "shortVolumeRatio": 38.99,
-            "source": "Massive"
           }
         ],
-        "avgShortVolumeRatio20": 27.83,
+        "avgShortVolumeRatio20": 27.52,
         "source": "Massive"
       },
       "unusualActivity": {
-        "asOf": "2026-08-06",
+        "asOf": "2026-08-07",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 1480710,
-        "avgVolume20": 1986731,
-        "volumeMultiple": 0.75,
-        "dayRangePct": 3.36,
-        "gapPct": -0.7,
-        "shortVolume": 181038,
-        "shortVolumeRatio": 35.95,
+        "volume": 1161464,
+        "avgVolume20": 1998463,
+        "volumeMultiple": 0.58,
+        "dayRangePct": 2.6,
+        "gapPct": 0.69,
+        "shortVolume": 144417,
+        "shortVolumeRatio": 32.66,
         "signals": [],
         "summary": "No unusual aggregate activity detected"
       },
@@ -21381,15 +21421,15 @@
       "name": "Qualcomm Inc",
       "exchange": "XNAS",
       "currency": "USD",
-      "price": 160.39,
-      "previousClose": 157.53,
-      "ytdPct": -7.28,
-      "marketCap": 165406500000,
+      "price": 167.86,
+      "previousClose": 160.39,
+      "ytdPct": -2.96,
+      "marketCap": 168409500000,
       "peRatio": null,
-      "rsi14": 41.1,
+      "rsi14": 48.2,
       "week52Low": 121.99,
       "week52High": 259.92,
-      "avgVolume": 15755235,
+      "avgVolume": 14916419,
       "recommendation": "HOLD",
       "opportunityScore": 55,
       "company": {
@@ -22417,18 +22457,13 @@
         {
           "date": "2026-08-06",
           "value": 108.73
+        },
+        {
+          "date": "2026-08-07",
+          "value": 113.8
         }
       ],
       "technical": [
-        {
-          "date": "2025-12-16",
-          "close": 176.12,
-          "ema50": 170.9492,
-          "rsi14": 72.51,
-          "macd": 2.4151,
-          "macdSignal": 1.6253,
-          "macdHist": 0.7898
-        },
         {
           "date": "2025-12-17",
           "close": 172.34,
@@ -23859,18 +23894,18 @@
           "macd": -9.4757,
           "macdSignal": -9.8258,
           "macdHist": 0.3501
+        },
+        {
+          "date": "2026-08-07",
+          "close": 167.86,
+          "ema50": 178.2414,
+          "rsi14": 48.24,
+          "macd": -8.2711,
+          "macdSignal": -9.5149,
+          "macdHist": 1.2438
         }
       ],
       "rawPoints": [
-        {
-          "date": "2026-06-10",
-          "open": 199.455,
-          "close": 191.2,
-          "high": 204.895,
-          "low": 190.1,
-          "volume": 18426634.03354,
-          "vwap": 194.3638
-        },
         {
           "date": "2026-06-11",
           "open": 190.92,
@@ -24210,8 +24245,8 @@
           "close": 157.53,
           "high": 162.8,
           "low": 157.1,
-          "volume": 9728579.89882,
-          "vwap": 158.642
+          "volume": 9725677.197238,
+          "vwap": 158.6422
         },
         {
           "date": "2026-08-06",
@@ -24221,19 +24256,37 @@
           "low": 155.22,
           "volume": 7236878.794228,
           "vwap": 160.209
+        },
+        {
+          "date": "2026-08-07",
+          "open": 163.07,
+          "close": 167.86,
+          "high": 167.99,
+          "low": 162.3,
+          "volume": 9717691.43011,
+          "vwap": 166.4797
         }
       ],
       "shortVolume": {
         "latest": {
-          "date": "2026-08-06",
-          "totalVolume": 2587607,
-          "shortVolume": 1001217,
-          "exemptVolume": 804,
-          "nonExemptVolume": 1000413,
-          "shortVolumeRatio": 38.69,
+          "date": "2026-08-07",
+          "totalVolume": 3071723,
+          "shortVolume": 1158841,
+          "exemptVolume": 912,
+          "nonExemptVolume": 1157929,
+          "shortVolumeRatio": 37.73,
           "source": "Massive"
         },
         "history": [
+          {
+            "date": "2026-08-07",
+            "totalVolume": 3071723,
+            "shortVolume": 1158841,
+            "exemptVolume": 912,
+            "nonExemptVolume": 1157929,
+            "shortVolumeRatio": 37.73,
+            "source": "Massive"
+          },
           {
             "date": "2026-08-06",
             "totalVolume": 2587607,
@@ -24404,31 +24457,22 @@
             "nonExemptVolume": 1263041,
             "shortVolumeRatio": 33.17,
             "source": "Massive"
-          },
-          {
-            "date": "2026-07-10",
-            "totalVolume": 2354094,
-            "shortVolume": 835942,
-            "exemptVolume": 993,
-            "nonExemptVolume": 834949,
-            "shortVolumeRatio": 35.51,
-            "source": "Massive"
           }
         ],
-        "avgShortVolumeRatio20": 39.55,
+        "avgShortVolumeRatio20": 39.66,
         "source": "Massive"
       },
       "unusualActivity": {
-        "asOf": "2026-08-06",
+        "asOf": "2026-08-07",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 7236879,
-        "avgVolume20": 13284484,
-        "volumeMultiple": 0.54,
-        "dayRangePct": 4.6,
-        "gapPct": -1.34,
-        "shortVolume": 1001217,
-        "shortVolumeRatio": 38.69,
+        "volume": 9717691,
+        "avgVolume20": 13001424,
+        "volumeMultiple": 0.75,
+        "dayRangePct": 3.39,
+        "gapPct": 1.67,
+        "shortVolume": 1158841,
+        "shortVolumeRatio": 37.73,
         "signals": [],
         "summary": "No unusual aggregate activity detected"
       },
@@ -25275,15 +25319,15 @@
       "name": "Regal Rexnord Corporation",
       "exchange": "XNYS",
       "currency": "USD",
-      "price": 179.02,
-      "previousClose": 183.24,
-      "ytdPct": 22.53,
-      "marketCap": 12198208556.52,
+      "price": 178,
+      "previousClose": 179.02,
+      "ytdPct": 21.83,
+      "marketCap": 11921276030.34,
       "peRatio": null,
-      "rsi14": 37.5,
+      "rsi14": 37.6,
       "week52Low": 127.96,
       "week52High": 247.8,
-      "avgVolume": 1274969,
+      "avgVolume": 1282868,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -26311,18 +26355,13 @@
         {
           "date": "2026-08-06",
           "value": 121.36
+        },
+        {
+          "date": "2026-08-07",
+          "value": 120.67
         }
       ],
       "technical": [
-        {
-          "date": "2025-12-16",
-          "close": 144.21,
-          "ema50": 143.0876,
-          "rsi14": 45.72,
-          "macd": 2.4237,
-          "macdSignal": 1.9925,
-          "macdHist": 0.4312
-        },
         {
           "date": "2025-12-17",
           "close": 141.63,
@@ -27753,18 +27792,18 @@
           "macd": -5.2859,
           "macdSignal": -2.9469,
           "macdHist": -2.339
+        },
+        {
+          "date": "2026-08-07",
+          "close": 178,
+          "ema50": 207.0838,
+          "rsi14": 37.56,
+          "macd": -6.7402,
+          "macdSignal": -3.7055,
+          "macdHist": -3.0347
         }
       ],
       "rawPoints": [
-        {
-          "date": "2026-06-10",
-          "open": 210.56,
-          "close": 200.45,
-          "high": 211.8875,
-          "low": 199.34,
-          "volume": 1165682.749687,
-          "vwap": 202.6037
-        },
         {
           "date": "2026-06-11",
           "open": 203.82,
@@ -28104,8 +28143,8 @@
           "close": 183.24,
           "high": 196.185,
           "low": 183.14,
-          "volume": 4214393.237357,
-          "vwap": 187.8071
+          "volume": 4226819.101064,
+          "vwap": 187.8113
         },
         {
           "date": "2026-08-06",
@@ -28115,19 +28154,37 @@
           "low": 179,
           "volume": 1889512.64501,
           "vwap": 182.1421
+        },
+        {
+          "date": "2026-08-07",
+          "open": 180.24,
+          "close": 178,
+          "high": 183.31,
+          "low": 176.65,
+          "volume": 1570157.945422,
+          "vwap": 178.8386
         }
       ],
       "shortVolume": {
         "latest": {
-          "date": "2026-08-06",
-          "totalVolume": 917489,
-          "shortVolume": 428841,
-          "exemptVolume": 4716,
-          "nonExemptVolume": 424126,
-          "shortVolumeRatio": 46.74,
+          "date": "2026-08-07",
+          "totalVolume": 698495,
+          "shortVolume": 261331,
+          "exemptVolume": 0,
+          "nonExemptVolume": 261331,
+          "shortVolumeRatio": 37.41,
           "source": "Massive"
         },
         "history": [
+          {
+            "date": "2026-08-07",
+            "totalVolume": 698495,
+            "shortVolume": 261331,
+            "exemptVolume": 0,
+            "nonExemptVolume": 261331,
+            "shortVolumeRatio": 37.41,
+            "source": "Massive"
+          },
           {
             "date": "2026-08-06",
             "totalVolume": 917489,
@@ -28298,31 +28355,22 @@
             "nonExemptVolume": 127704,
             "shortVolumeRatio": 55.2,
             "source": "Massive"
-          },
-          {
-            "date": "2026-07-10",
-            "totalVolume": 529552,
-            "shortVolume": 309044,
-            "exemptVolume": 0,
-            "nonExemptVolume": 309044,
-            "shortVolumeRatio": 58.36,
-            "source": "Massive"
           }
         ],
-        "avgShortVolumeRatio20": 49.33,
+        "avgShortVolumeRatio20": 48.29,
         "source": "Massive"
       },
       "unusualActivity": {
-        "asOf": "2026-08-06",
+        "asOf": "2026-08-07",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 1889513,
-        "avgVolume20": 1155714,
-        "volumeMultiple": 1.63,
-        "dayRangePct": 5.32,
-        "gapPct": -1.5,
-        "shortVolume": 428841,
-        "shortVolumeRatio": 46.74,
+        "volume": 1570158,
+        "avgVolume20": 1189617,
+        "volumeMultiple": 1.32,
+        "dayRangePct": 3.74,
+        "gapPct": 0.68,
+        "shortVolume": 261331,
+        "shortVolumeRatio": 37.41,
         "signals": [],
         "summary": "No unusual aggregate activity detected"
       },
@@ -28884,58 +28932,76 @@
   ],
   "alerts": [
     {
+      "symbol": "VST",
+      "severity": "warning",
+      "message": "59.42% short-volume ratio",
+      "createdAt": "2026-08-07T22:30:31.158Z"
+    },
+    {
       "symbol": "RGTI",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-08-07T01:30:17.590Z"
+      "createdAt": "2026-08-07T21:30:31.158Z"
     },
     {
       "symbol": "RGTI",
       "severity": "warning",
-      "message": "55.92% short-volume ratio",
-      "createdAt": "2026-08-07T00:30:17.590Z"
+      "message": "8.6% intraday range",
+      "createdAt": "2026-08-07T20:30:31.158Z"
+    },
+    {
+      "symbol": "RGTI",
+      "severity": "warning",
+      "message": "57.6% short-volume ratio",
+      "createdAt": "2026-08-07T19:30:31.158Z"
     },
     {
       "symbol": "IONQ",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-08-06T23:30:17.590Z"
+      "createdAt": "2026-08-07T18:30:31.158Z"
     },
     {
       "symbol": "IONQ",
       "severity": "warning",
-      "message": "61.91% short-volume ratio",
-      "createdAt": "2026-08-06T22:30:17.590Z"
+      "message": "10.4% intraday range",
+      "createdAt": "2026-08-07T17:30:31.158Z"
+    },
+    {
+      "symbol": "IONQ",
+      "severity": "warning",
+      "message": "55.5% short-volume ratio",
+      "createdAt": "2026-08-07T16:30:31.158Z"
     },
     {
       "symbol": "LAC",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-08-06T21:30:17.590Z"
+      "createdAt": "2026-08-07T15:30:31.158Z"
     },
     {
       "symbol": "UAMY",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-08-06T20:30:17.590Z"
+      "createdAt": "2026-08-07T14:30:31.158Z"
     },
     {
       "symbol": "UAMY",
       "severity": "warning",
-      "message": "8.5% intraday range",
-      "createdAt": "2026-08-06T19:30:17.590Z"
+      "message": "+7.4% opening gap",
+      "createdAt": "2026-08-07T13:30:31.158Z"
     },
     {
       "symbol": "SNPS",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-08-06T18:30:17.590Z"
+      "createdAt": "2026-08-07T12:30:31.158Z"
     },
     {
       "symbol": "QCOM",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-08-06T17:30:17.590Z"
+      "createdAt": "2026-08-07T11:30:31.158Z"
     }
   ],
   "errors": [],
@@ -28954,7 +29020,7 @@
     },
     {
       "symbol": "RGTI",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=RGTI&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=RGTI&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "IONQ",
@@ -28970,7 +29036,7 @@
     },
     {
       "symbol": "LAC",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=LAC&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=LAC&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "UAMY",
@@ -28978,7 +29044,7 @@
     },
     {
       "symbol": "UAMY",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=UAMY&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=UAMY&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "SNPS",
@@ -28994,7 +29060,7 @@
     },
     {
       "symbol": "QCOM",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=QCOM&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=QCOM&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "RRX",
