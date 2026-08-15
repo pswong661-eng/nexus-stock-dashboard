@@ -1,96 +1,561 @@
 const DATA_URL = './public/data/latest.json';
-const colors = ['#28e6a3', '#59b4ff', '#a78bfa', '#ffd166', '#ff647c', '#38bdf8', '#f472b6', '#84cc16'];
-let comparisonChart, emaChart, macdChart, rsiChart, financialChart, latestData;
-const $ = id => document.getElementById(id);
-const fmtMoney = (n, currency = 'USD') => Number.isFinite(n) ? new Intl.NumberFormat('en-US', { style: 'currency', currency, maximumFractionDigits: n >= 100 ? 0 : 2 }).format(n) : 'N/A';
-const fmtCap = n => !Number.isFinite(n) ? 'N/A' : n >= 1e12 ? `$${(n/1e12).toFixed(1)}T` : n >= 1e9 ? `$${(n/1e9).toFixed(1)}B` : n >= 1e6 ? `$${(n/1e6).toFixed(1)}M` : `$${Math.round(n).toLocaleString()}`;
-const fmtNum = (n, suffix = '') => Number.isFinite(n) ? `${n.toLocaleString(undefined, { maximumFractionDigits: 1 })}${suffix}` : 'N/A';
-const cls = n => Number.isFinite(n) ? n > 0 ? 'up' : n < 0 ? 'down' : 'flat' : 'flat';
-const sign = n => Number.isFinite(n) && n > 0 ? '+' : '';
-const usd0 = n => Number.isFinite(n) ? `$${Math.round(n).toLocaleString()}` : 'N/A';
-const fmtPct = n => Number.isFinite(n) ? `${(n * 100).toFixed(1)}%` : 'N/A';
-const fmtRatioPct = n => Number.isFinite(n) ? `${n.toFixed(1)}%` : 'N/A';
-const refreshBtn = $('refresh-btn');
-function updateClock(){ $('clock').textContent = new Date().toLocaleTimeString(); } setInterval(updateClock,1000); updateClock();
-async function loadData(){ const res = await fetch(`${DATA_URL}?t=${Date.now()}`, { cache:'no-store' }); if(!res.ok) throw new Error(`Data fetch failed: ${res.status}`); return res.json(); }
-function renderStatus(data){
-  const g=new Date(data.generatedAt);
-  const age=(Date.now()-g.getTime())/60000;
-  const dataStatus=String(data.dataStatus||'unknown').toUpperCase();
-  const stale=age>(data.staleAfterMinutes||1440);
-  const isFresh=dataStatus==='FRESH';
-  const statusLabel=stale&&!isFresh?'STALE':isFresh?'FRESH':'LIVE';
-  const pill=$('status-pill');
-  pill.className=`status-pill ${statusLabel==='STALE'?'stale':'live'}`;
-  pill.textContent=`${statusLabel} · ${g.toLocaleString()}`;
-  pill.title=`Data status: ${dataStatus}; age: ${Math.round(age)} minutes`;
+const PANES = ['chart', 'flow', 'financial', 'insider', 'alerts'];
+const CHART_INK = {
+  grid: 'rgba(140, 154, 170, .12)',
+  tick: '#8b97a8',
+  blue: '#6cb6ff',
+  green: '#3dcc8a',
+  gold: '#e6c36a',
+  red: '#f07178',
+  muted: '#8b97a8'
+};
+
+let latestData = null;
+let selectedSymbol = 'VST';
+let activePane = 'chart';
+let chartRange = 260;
+let emaChart, macdChart, rsiChart, financialChart;
+
+const $ = (id) => document.getElementById(id);
+
+const cls = (n) => Number.isFinite(n) ? (n > 0 ? 'up' : n < 0 ? 'down' : 'flat') : 'flat';
+const sign = (n) => Number.isFinite(n) && n > 0 ? '+' : '';
+
+function fmtMoney(n, digits) {
+  if (!Number.isFinite(n)) return '—';
+  const d = digits ?? (Math.abs(n) >= 100 ? 2 : 2);
+  return `$${n.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d })}`;
 }
-function renderTickerStrip(symbols){ $('ticker-strip').innerHTML=symbols.map(s=>`<div class="ticker-chip"><b>${s.symbol}</b><span>${fmtMoney(s.price,s.currency)}</span><br><small class="${cls(s.ytdPct)}">${sign(s.ytdPct)}${fmtNum(s.ytdPct,'%')} YTD</small></div>`).join(''); }
-function renderCards(symbols){ $('stock-cards').innerHTML=symbols.map(s=>{ const pos=([s.price,s.week52Low,s.week52High].every(Number.isFinite)&&s.week52High>s.week52Low)?Math.max(0,Math.min(100,((s.price-s.week52Low)/(s.week52High-s.week52Low))*100)):0; const short=s.shortVolume?.latest||{}; const unusual=s.unusualActivity||{}; return `<article class="stock-card"><div class="card-head"><div><div class="symbol">${s.symbol}</div><div class="name" title="${s.name}">${s.name}</div></div><span class="badge ${s.recommendation}">${s.recommendation}</span></div><div class="price">${fmtMoney(s.price,s.currency)}</div><div class="ytd ${cls(s.ytdPct)}">${sign(s.ytdPct)}${fmtNum(s.ytdPct,'%')} <span class="flat">YTD</span></div><div class="mini-metrics"><div><span>Short Vol</span><b>${fmtCap(short.shortVolume).replace('$','')}</b></div><div><span>Short Ratio</span><b>${fmtRatioPct(short.shortVolumeRatio)}</b></div><div><span>Vol Spike</span><b>${Number.isFinite(unusual.volumeMultiple)?`${unusual.volumeMultiple.toFixed(1)}x`:'N/A'}</b></div><div><span>Signals</span><b>${unusual.signals?.length||0}</b></div></div><div class="range"><div class="range-line"><i style="width:${pos}%"></i></div><div class="range-labels"><span>${fmtMoney(s.week52Low,s.currency)}</span><span>${fmtMoney(s.week52High,s.currency)}</span></div></div></article>`; }).join(''); }
-function makeLineChart(canvas, datasets, labels, extra={}){ return new Chart(canvas,{type:'line',data:{labels,datasets},options:{responsive:true,interaction:{mode:'index',intersect:false},plugins:{legend:{labels:{color:'#cbd5e1'}}},scales:{x:{ticks:{color:'#8ea3bd',maxTicksLimit:7},grid:{color:'rgba(148,163,184,.09)'}},y:{ticks:{color:'#8ea3bd'},grid:{color:'rgba(148,163,184,.09)'},...extra.y}}}}); }
-function renderComparison(symbols){ const labels=symbols[0]?.series?.map(p=>p.date)||[]; const datasets=symbols.map((s,i)=>({label:s.symbol,data:s.series.map(p=>p.value),borderColor:colors[i%colors.length],backgroundColor:colors[i%colors.length],borderWidth:2,pointRadius:0,tension:.24})); if(comparisonChart) comparisonChart.destroy(); comparisonChart=makeLineChart($('comparison-chart'),datasets,labels); }
-function fillSelect(id,symbols){ const sel=$(id); const cur=sel.value || symbols[0]?.symbol; sel.innerHTML=symbols.map(s=>`<option value="${s.symbol}">${s.symbol} — ${s.name}</option>`).join(''); if(symbols.some(s=>s.symbol===cur)) sel.value=cur; }
-function selected(id){ return latestData.symbols.find(s=>s.symbol===$(id).value) || latestData.symbols[0]; }
-function renderTechnical(){ const s=selected('technical-symbol'); if(!s) return; const t=s.technical||[]; const labels=t.map(p=>p.date); if(emaChart) emaChart.destroy(); if(macdChart) macdChart.destroy(); if(rsiChart) rsiChart.destroy(); emaChart=makeLineChart($('ema-chart'),[{label:`${s.symbol} Close`,data:t.map(p=>p.close),borderColor:'#59b4ff',pointRadius:0,tension:.2},{label:'EMA50',data:t.map(p=>p.ema50),borderColor:'#28e6a3',pointRadius:0,tension:.2}],labels); macdChart=makeLineChart($('macd-chart'),[{label:'MACD',data:t.map(p=>p.macd),borderColor:'#a78bfa',pointRadius:0,tension:.2},{label:'Signal',data:t.map(p=>p.macdSignal),borderColor:'#ffd166',pointRadius:0,tension:.2},{label:'Histogram',data:t.map(p=>p.macdHist),borderColor:'#ff647c',backgroundColor:'rgba(255,100,124,.18)',pointRadius:0,tension:.2}],labels); rsiChart=makeLineChart($('rsi-chart'),[{label:'RSI(14)',data:t.map(p=>p.rsi14),borderColor:'#28e6a3',pointRadius:0,tension:.2},{label:'Overbought 70',data:t.map(()=>70),borderColor:'#ff647c',borderDash:[6,6],pointRadius:0},{label:'Oversold 30',data:t.map(()=>30),borderColor:'#59b4ff',borderDash:[6,6],pointRadius:0}],labels,{y:{min:0,max:100}}); }
-function renderCompanyProfile(s){ const c=s.company||{}; const source=s.dataSources?.profile||'none'; $('company-profile').innerHTML=`<div><p class="eyebrow">Company profile</p><h3>${s.name}</h3><p>${c.description||'Company profile will appear after the next Massive.com refresh.'}</p></div><dl class="profile-metrics"><div><dt>Industry</dt><dd>${c.industry||'N/A'}</dd></div><div><dt>Market Cap</dt><dd>${fmtCap(s.marketCap)}</dd></div><div><dt>Employees</dt><dd>${fmtNum(c.employees)}</dd></div><div><dt>Source</dt><dd>${source}</dd></div></dl>`; }
-function renderRatios(s){ const r=s.ratios||{}; const rows=[['P/E',fmtNum(r.pe)],['P/S',fmtNum(r.ps)],['EV/EBITDA',fmtNum(r.evToEbitda)],['ROE',fmtPct(r.roe)],['Debt/Equity',fmtNum(r.debtToEquity)],['Current',fmtNum(r.currentRatio)],['FCF',fmtCap(r.freeCashFlow)],['Dividend Yield',fmtPct(r.dividendYield)]]; $('ratio-grid').innerHTML=rows.map(([label,value])=>`<article class="ratio-card"><span>${label}</span><b>${value}</b></article>`).join(''); }
-function renderMarketActivity(){
-  const s=selected('market-symbol'); if(!s) return;
-  const flow=s.shortVolume||{}, latest=flow.latest||{}, activity=s.unusualActivity||{};
-  const metrics=[
-    ['Short Volume', fmtCap(latest.shortVolume).replace('$','')],
-    ['Short Ratio', fmtRatioPct(latest.shortVolumeRatio)],
-    ['Short Ratio 20D Avg', fmtRatioPct(flow.avgShortVolumeRatio20)],
-    ['Total Volume', fmtCap(latest.totalVolume).replace('$','')],
-    ['Volume Spike', Number.isFinite(activity.volumeMultiple)?`${activity.volumeMultiple.toFixed(2)}x`:'N/A'],
-    ['Day Range', fmtRatioPct(activity.dayRangePct)],
-    ['Opening Gap', Number.isFinite(activity.gapPct)?`${activity.gapPct>0?'+':''}${activity.gapPct.toFixed(2)}%`:'N/A'],
-    ['Trade Tape', activity.tickTradesAvailable?'Available':'Plan gated']
+
+function fmtCompact(n) {
+  if (!Number.isFinite(n)) return '—';
+  const a = Math.abs(n);
+  const s = n < 0 ? '-' : '';
+  if (a >= 1e12) return `${s}$${(a / 1e12).toFixed(2)}T`;
+  if (a >= 1e9) return `${s}$${(a / 1e9).toFixed(2)}B`;
+  if (a >= 1e6) return `${s}$${(a / 1e6).toFixed(2)}M`;
+  if (a >= 1e3) return `${s}$${(a / 1e3).toFixed(1)}K`;
+  return `${s}$${a.toFixed(0)}`;
+}
+
+function fmtShares(n) {
+  if (!Number.isFinite(n)) return '—';
+  return n.toLocaleString('en-US', { maximumFractionDigits: 0 });
+}
+
+function fmtPct(n, digits = 1) {
+  if (!Number.isFinite(n)) return '—';
+  return `${sign(n)}${n.toFixed(digits)}%`;
+}
+
+function fmtRatio(n, digits = 1) {
+  if (!Number.isFinite(n)) return '—';
+  if (Math.abs(n) >= 100) return n.toFixed(0);
+  return n.toFixed(digits);
+}
+
+function displayName(s) {
+  return String(s.name || s.symbol)
+    .replace(/\s+Common Stock$/i, '')
+    .replace(/\s+Ordinary Shares.*$/i, '')
+    .replace(/\s+Class [A-Z].*$/i, '')
+    .trim();
+}
+
+function titleCase(str) {
+  if (!str) return '—';
+  return String(str)
+    .toLowerCase()
+    .replace(/(^|[\s-/])([a-z])/g, (_, a, b) => a + b.toUpperCase())
+    .replace(/\bTv\b/g, 'TV')
+    .replace(/\bUs\b/g, 'US');
+}
+
+function dayChg(s) {
+  if (!Number.isFinite(s.price) || !Number.isFinite(s.previousClose) || !s.previousClose) return { abs: null, pct: null };
+  const abs = s.price - s.previousClose;
+  return { abs, pct: (abs / s.previousClose) * 100 };
+}
+
+function lastTech(s) {
+  const t = s.technical || [];
+  return t[t.length - 1] || {};
+}
+
+function shortRatio(s) {
+  const latest = s.shortVolume?.latest?.shortVolumeRatio;
+  if (Number.isFinite(latest)) return latest;
+  return s.unusualActivity?.shortVolumeRatio;
+}
+
+function vsEma(s) {
+  const last = lastTech(s);
+  if (!Number.isFinite(s.price) || !Number.isFinite(last.ema50) || !last.ema50) return null;
+  return ((s.price - last.ema50) / last.ema50) * 100;
+}
+
+function edgarUrl(cik, accession) {
+  if (!cik || !accession) return null;
+  const cikNum = String(cik).replace(/^0+/, '');
+  const acc = String(accession).replace(/-/g, '');
+  if (!cikNum || !acc) return null;
+  return `https://www.sec.gov/Archives/edgar/data/${cikNum}/${acc}/${accession}-index.html`;
+}
+
+function uniqueQuarters(rows) {
+  const byEnd = new Map();
+  for (const q of rows || []) {
+    if (!q?.end || /FY/i.test(q.period || '')) continue;
+    const prev = byEnd.get(q.end);
+    const endY = q.end.slice(0, 4);
+    if (!prev || String(q.period || '').includes(endY)) byEnd.set(q.end, q);
+  }
+  return [...byEnd.values()].sort((a, b) => a.end.localeCompare(b.end));
+}
+
+function computedRatios(s) {
+  const out = [];
+  if (Number.isFinite(s.peRatio)) out.push({ label: 'P/E', value: fmtRatio(s.peRatio), src: 'feed' });
+  const r = s.ratios || {};
+  const map = [
+    ['P/E', r.pe, (v) => fmtRatio(v)],
+    ['P/S', r.ps, (v) => fmtRatio(v)],
+    ['EV/EBITDA', r.evToEbitda, (v) => fmtRatio(v)],
+    ['ROE', r.roe, (v) => (Math.abs(v) <= 2 ? fmtPct(v * 100) : fmtPct(v))],
+    ['D/E', r.debtToEquity, (v) => fmtRatio(v)],
+    ['Current', r.currentRatio, (v) => fmtRatio(v)],
+    ['FCF', r.freeCashFlow, (v) => fmtCompact(v)],
+    ['Div yld', r.dividendYield, (v) => (Math.abs(v) <= 1 ? fmtPct(v * 100) : fmtPct(v))]
   ];
-  $('flow-metrics').innerHTML=metrics.map(([label,value])=>`<article class="ratio-card"><span>${label}</span><b>${value}</b></article>`).join('');
-  $('flow-summary').innerHTML=`<div><p class="eyebrow">Activity summary</p><h3>${s.symbol} · ${activity.asOf||latest.date||'Latest available'}</h3><p>${activity.summary||'No unusual aggregate activity detected.'}</p><small>Uses Massive short-volume data plus accessible OHLC aggregate volume/range/gap checks. Tick-level trades are not shown unless the Massive plan entitles the trades endpoint.</small></div>`;
-  $('flow-signals').innerHTML=(activity.signals?.length?activity.signals:[{label:'No unusual aggregate activity detected',severity:'info'}]).map(sig=>`<div class="alert ${sig.severity||'info'}"><b>${s.symbol}</b>${sig.label}</div>`).join('');
-  const rows=flow.history||[];
-  $('short-volume-table').innerHTML=`<thead><tr><th>Date</th><th>Short Volume</th><th>Total Volume</th><th>Short Ratio</th><th>Exempt</th></tr></thead><tbody>${rows.length?rows.map(r=>`<tr><td>${r.date}</td><td>${fmtCap(r.shortVolume).replace('$','')}</td><td>${fmtCap(r.totalVolume).replace('$','')}</td><td>${fmtRatioPct(r.shortVolumeRatio)}</td><td>${fmtCap(r.exemptVolume).replace('$','')}</td></tr>`).join(''):`<tr><td colspan="5">No Massive short-volume rows available for this ticker.</td></tr>`}</tbody>`;
+  for (const [label, val, fn] of map) {
+    if (!Number.isFinite(val)) continue;
+    if (out.some((x) => x.label === label)) continue;
+    out.push({ label, value: fn(val), src: 'feed' });
+  }
+
+  const qs = uniqueQuarters(s.financials?.quarters).slice(-4);
+  if (qs.length) {
+    const ttmRev = qs.reduce((a, q) => a + (Number(q.revenue) || 0), 0);
+    const ttmNi = qs.reduce((a, q) => a + (Number(q.netIncome) || 0), 0);
+    const ttmFcf = qs.reduce((a, q) => a + (Number(q.freeCashFlow) || 0), 0);
+    const last = qs[qs.length - 1];
+    if (Number.isFinite(s.marketCap) && ttmRev > 0 && !out.some((x) => x.label === 'P/S')) {
+      out.push({ label: 'P/S', value: fmtRatio(s.marketCap / ttmRev), src: 'TTM calc' });
+    }
+    if (Number.isFinite(s.marketCap) && ttmNi > 0 && !out.some((x) => x.label === 'P/E')) {
+      out.push({ label: 'P/E', value: fmtRatio(s.marketCap / ttmNi), src: 'TTM calc' });
+    }
+    if (Number.isFinite(last?.equity) && last.equity > 0 && !out.some((x) => x.label === 'ROE')) {
+      out.push({ label: 'ROE', value: fmtPct((ttmNi / last.equity) * 100), src: 'TTM calc' });
+    }
+    if (ttmFcf && !out.some((x) => x.label === 'FCF')) {
+      out.push({ label: 'FCF TTM', value: fmtCompact(ttmFcf), src: 'TTM calc' });
+    }
+  }
+  return out;
 }
-function renderFinancial(){ const s=selected('financial-symbol'); if(!s) return; renderCompanyProfile(s); renderRatios(s); const quarters=s.financials?.quarters||[], forecasts=s.financials?.forecast||[]; $('financial-table').innerHTML=`<thead><tr><th>Period</th><th>Revenue</th><th>Net Income</th><th>Op Cash Flow</th><th>Free Cash Flow</th><th>Assets</th><th>Source</th></tr></thead><tbody>${quarters.map(q=>`<tr><td>${q.period}<br><small>${q.end||''}</small></td><td>${usd0(q.revenue)}</td><td>${usd0(q.netIncome)}</td><td>${usd0(q.operatingCashFlow)}</td><td>${usd0(q.freeCashFlow)}</td><td>${usd0(q.assets)}</td><td>${q.source||q.form||'SEC'}</td></tr>`).join('')}${forecasts.map(f=>`<tr class="forecast"><td>${f.period}</td><td>${usd0(f.value)}</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>${f.basis}</td></tr>`).join('') || ''}</tbody>`; const labels=[...quarters.map(q=>q.period),...forecasts.map(f=>f.period)]; const reported=quarters.map(q=>q.revenue).concat(forecasts.map(()=>null)); const forecast=quarters.map(()=>null).concat(forecasts.map(f=>f.value)); if(financialChart) financialChart.destroy(); financialChart=makeLineChart($('financial-chart'),[{label:'Reported revenue',data:reported,borderColor:'#59b4ff',backgroundColor:'#59b4ff',pointRadius:3},{label:'Forecast revenue',data:forecast,borderColor:'#ffd166',backgroundColor:'#ffd166',borderDash:[6,6],pointRadius:3}],labels); }
-function sentimentClass(x){ return /BULL/i.test(x||'') ? 'up' : /BEAR/i.test(x||'') ? 'down' : 'flat'; }
-function renderList(el, rows, empty, fn){ el.innerHTML = rows?.length ? rows.map(fn).join('') : `<p class="flat">${empty}</p>`; }
-function renderInsider(){
-  const s=selected('insider-symbol'); if(!s) return;
-  const summary=s.insiderSummary || {};
-  $('insider-sentiment').textContent=(summary.sentiment||'NEUTRAL').replaceAll('_',' ');
-  $('insider-sentiment').className=sentimentClass(summary.sentiment);
-  $('insider-score').textContent=`${summary.score ?? '--'}/100`;
-  $('insider-total-tx').textContent=fmtNum(summary.totalTransactions);
-  $('insider-buy-sell').innerHTML=`<span class="up">${summary.buyCount||0}</span> / <span class="down">${summary.sellCount||0}</span>`;
-  $('insider-net-shares').className=cls(summary.netShares);
-  $('insider-net-shares').textContent=fmtNum(summary.netShares);
-  $('insider-value-flow').innerHTML=`<span class="up">${fmtCap(summary.totalBought)}</span> / <span class="down">${fmtCap(summary.totalSold)}</span>`;
 
-  renderList($('key-insiders'), summary.keyInsiders, 'No open-market insider transactions detected.', i => `
-    <div class="insider-row">
-      <div><b>${i.owner}</b><small>${i.title || 'Insider'} · ${i.txCount} tx</small></div>
-      <div class="right"><span class="${cls(i.netShares)}">${fmtNum(i.netShares)} sh</span><small>Sold ${fmtCap(i.soldValue)} · Bought ${fmtCap(i.boughtValue)}</small></div>
-    </div>`);
-
-  renderList($('largest-transactions'), summary.largestTransactions, 'No priced open-market transactions found.', t => `
-    <div class="insider-row">
-      <div><b>${t.owner}</b><small>${t.date} · ${t.title || 'Insider'}</small></div>
-      <div class="right"><span class="${t.type==='BUY'?'up':'down'}">${t.type} ${fmtNum(t.shares)} sh</span><small>${fmtMoney(t.price)} · ${fmtCap(t.value)} · <a class="table-link" href="${t.filingUrl}" target="_blank" rel="noopener">SEC</a></small></div>
-    </div>`);
-
-  $('insider-patterns').innerHTML=(summary.patterns?.length?summary.patterns:['No strong open-market pattern detected']).map(p=>`<li><span>＋</span>${p}</li>`).join('');
-  $('insider-alerts').innerHTML=(summary.alerts?.length?summary.alerts:['No major insider alert flags.']).map(p=>`<li><span>!</span>${p}</li>`).join('');
-
-  const rows=s.insider||[];
-  $('insider-table').innerHTML=`<thead><tr><th>Date</th><th>Insider</th><th>Type</th><th>Shares</th><th>Value</th><th>SEC Filing</th></tr></thead><tbody>${rows.length?rows.map(f=>{
-    const tx=(f.transactions||[]).find(t=>['BUY','SELL'].includes(t.type)) || (f.transactions||[])[0] || {};
-    return `<tr><td>${tx.date||f.reportDate||f.filingDate||'N/A'}</td><td>${f.owner||'Unknown'}<br><small>${f.title||''}</small></td><td><span class="${tx.type==='BUY'?'up':tx.type==='SELL'?'down':'flat'}">${tx.type||f.dominantType||'FORM 4'}</span></td><td>${fmtNum(tx.shares)}</td><td>${fmtCap(tx.value)}</td><td>${f.url?`<a class="table-link" href="${f.url}" target="_blank" rel="noopener">Open SEC</a>`:'N/A'}</td></tr>`;
-  }).join(''):`<tr><td colspan="6">No recent Form 4 filings found in SEC recent submissions.</td></tr>`}</tbody>`;
+function sparkPath(series) {
+  const pts = (series || []).slice(-60).map((p) => p.value ?? p.close).filter(Number.isFinite);
+  if (pts.length < 2) return '';
+  const w = 56;
+  const h = 18;
+  const min = Math.min(...pts);
+  const max = Math.max(...pts);
+  const span = max - min || 1;
+  return pts.map((v, i) => {
+    const x = (i / (pts.length - 1)) * w;
+    const y = h - ((v - min) / span) * (h - 2) - 1;
+    return `${i ? 'L' : 'M'}${x.toFixed(1)} ${y.toFixed(1)}`;
+  }).join(' ');
 }
-function renderSentiment(summary){ const score=summary.sentimentScore||0; const ring=$('sentiment-score'); ring.textContent=''; ring.style.setProperty('--score',score); ring.dataset.score=score; $('sentiment-label').textContent=score>=65?'BULLISH':score>=45?'NEUTRAL / MIXED':'BEARISH'; for(const [id,pct] of [['bull',summary.bullPct],['neutral',summary.neutralPct],['bear',summary.bearPct]]){ $(`${id}-bar`).style.width=`${pct||0}%`; $(`${id}-pct`).textContent=`${pct||0}%`; } }
-function renderPortfolio(summary){ const best=summary.bestPerformer?`${summary.bestPerformer.symbol} ${sign(summary.bestPerformer.ytdPct)}${summary.bestPerformer.ytdPct}%`:'N/A'; const worst=summary.worstPerformer?`${summary.worstPerformer.symbol} ${summary.worstPerformer.ytdPct}%`:'N/A'; $('portfolio-metrics').innerHTML=`<div><dt>Avg RSI (14)</dt><dd>${fmtNum(summary.avgRsi14)}</dd></div><div><dt>Sentiment Score</dt><dd>${summary.sentimentScore}/100</dd></div><div><dt>Best Performer</dt><dd class="up">${best}</dd></div><div><dt>Worst Performer</dt><dd class="down">${worst}</dd></div><div><dt>Market Flow</dt><dd>Massive short volume</dd></div><div><dt>Refresh Time</dt><dd>5AM ICT</dd></div>`; }
-function renderAlerts(alerts){ $('alert-count').textContent=`${alerts.length} new`; $('alerts-list').innerHTML=alerts.length?alerts.map(a=>`<div class="alert ${a.severity}"><b>${a.symbol}</b>${a.message}<br><small>${new Date(a.createdAt).toLocaleString()}</small></div>`).join(''):'<p class="flat">No active alerts.</p>'; }
-async function render({ manual = false } = {}){ try{ if(manual){ refreshBtn.disabled=true; refreshBtn.textContent='Refreshing...'; $('status-pill').className='status-pill'; $('status-pill').textContent='Refreshing JSON...'; } latestData=await loadData(); renderStatus(latestData); renderTickerStrip(latestData.symbols); renderCards(latestData.symbols); renderComparison(latestData.symbols); for(const id of ['technical-symbol','market-symbol','financial-symbol','insider-symbol']) fillSelect(id,latestData.symbols); renderTechnical(); renderMarketActivity(); renderFinancial(); renderInsider(); renderSentiment(latestData.summary); renderPortfolio(latestData.summary); renderAlerts(latestData.alerts||[]); if(manual){ refreshBtn.textContent='Updated'; setTimeout(()=>{ refreshBtn.textContent='Refresh now'; refreshBtn.disabled=false; },1400); } }catch(err){ $('status-pill').className='status-pill stale'; $('status-pill').textContent=`ERROR · ${err.message}`; if(manual){ refreshBtn.textContent='Retry refresh'; refreshBtn.disabled=false; } console.error(err); } }
-refreshBtn.addEventListener('click',()=>render({ manual:true })); ['technical-symbol','market-symbol','financial-symbol','insider-symbol'].forEach(id=>$(id).addEventListener('change',()=>({ 'technical-symbol':renderTechnical, 'market-symbol':renderMarketActivity, 'financial-symbol':renderFinancial, 'insider-symbol':renderInsider }[id]()))); render(); setInterval(render,60000);
+
+function selected() {
+  return latestData?.symbols?.find((s) => s.symbol === selectedSymbol) || latestData?.symbols?.[0];
+}
+
+function parseHash() {
+  const raw = (location.hash || '').replace(/^#\/?/, '');
+  if (!raw) return {};
+  const [a, b] = raw.split('/');
+  if (PANES.includes(a) && !b) return { pane: a };
+  const pane = PANES.includes(b) ? b : PANES.includes(a) ? a : null;
+  const symbol = PANES.includes(a) ? null : (a || '').toUpperCase();
+  return { symbol, pane };
+}
+
+function writeHash() {
+  const next = `#${selectedSymbol}/${activePane}`;
+  if (location.hash !== next) history.replaceState(null, '', next);
+}
+
+function applyHash() {
+  const { symbol, pane } = parseHash();
+  if (symbol && latestData?.symbols?.some((s) => s.symbol === symbol)) selectedSymbol = symbol;
+  if (pane) activePane = pane;
+}
+
+function setNav() {
+  document.querySelectorAll('[data-pane]').forEach((el) => {
+    const on = el.dataset.pane === activePane;
+    if (on) el.setAttribute('aria-current', 'page');
+    else el.removeAttribute('aria-current');
+    if (el.tagName === 'A') el.href = `#${selectedSymbol}/${el.dataset.pane}`;
+  });
+  PANES.forEach((p) => {
+    const node = $(`pane-${p}`);
+    if (node) node.hidden = p !== activePane;
+  });
+}
+
+function renderStatus(data) {
+  const g = new Date(data.generatedAt);
+  const ageMin = (Date.now() - g.getTime()) / 60000;
+  const stale = ageMin > (data.staleAfterMinutes || 1440);
+  const fresh = String(data.dataStatus || '').toLowerCase() === 'fresh';
+  const label = stale && !fresh ? 'STALE' : fresh ? 'FRESH' : 'LIVE';
+  const pill = $('status-pill');
+  pill.textContent = label;
+  pill.className = `status ${label === 'STALE' ? 'stale' : 'live'}`;
+  $('asof').textContent = `As of ${g.toLocaleString()} · ${data.source ? 'Massive / SEC' : 'local JSON'}`;
+  document.querySelector('.live-dot')?.classList.toggle('stale', label === 'STALE');
+}
+
+function renderQuote(s) {
+  const chg = dayChg(s);
+  const last = lastTech(s);
+  const ema = vsEma(s);
+  const short = shortRatio(s);
+  $('q-symbol').textContent = s.symbol;
+  $('q-name').textContent = displayName(s);
+  const cells = [
+    ['Last', fmtMoney(s.price), ''],
+    ['Day', `${fmtMoney(chg.abs)}  ${fmtPct(chg.pct)}`, cls(chg.pct)],
+    ['YTD', fmtPct(s.ytdPct), cls(s.ytdPct)],
+    ['RSI', fmtRatio(s.rsi14 ?? last.rsi14), Number(s.rsi14) >= 70 ? 'down' : Number(s.rsi14) <= 30 ? 'up' : ''],
+    ['vs EMA50', fmtPct(ema), cls(ema)],
+    ['Short', Number.isFinite(short) ? `${short.toFixed(1)}%` : '—', short >= 50 ? 'warn' : ''],
+    ['Vol', fmtShares(s.unusualActivity?.volume || s.avgVolume), '']
+  ];
+  $('quote-metrics').innerHTML = cells.map(([k, v, c]) => `<div><dt>${k}</dt><dd class="${c}">${v}</dd></div>`).join('');
+}
+
+function renderWatch(symbols) {
+  $('book-count').textContent = `${symbols.length} names`;
+  $('watch-body').innerHTML = symbols.map((s) => {
+    const chg = dayChg(s);
+    const short = shortRatio(s);
+    const on = s.symbol === selectedSymbol ? 'on' : '';
+    const d = sparkPath(s.series);
+    const stroke = (s.ytdPct || 0) >= 0 ? '#3dcc8a' : '#f07178';
+    return `<tr class="${on}" data-symbol="${s.symbol}" tabindex="0">
+      <td><b>${s.symbol}</b></td>
+      <td class="num mono">${fmtMoney(s.price)}</td>
+      <td class="num ${cls(chg.pct)}">${fmtPct(chg.pct)}</td>
+      <td class="num ${cls(s.ytdPct)}">${fmtPct(s.ytdPct)}</td>
+      <td class="num mono">${Number.isFinite(short) ? `${short.toFixed(1)}` : '—'}</td>
+      <td><svg class="spark" viewBox="0 0 56 18" aria-hidden="true"><path d="${d}" fill="none" stroke="${stroke}" stroke-width="1.2"/></svg></td>
+    </tr>`;
+  }).join('');
+}
+
+function chartOpts(extra = {}) {
+  const yTicks = extra.compactY
+    ? { color: CHART_INK.tick, callback: (v) => fmtCompact(v) }
+    : { color: CHART_INK.tick };
+  return {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    plugins: { legend: { labels: { color: CHART_INK.tick, boxWidth: 10, font: { size: 11 } } } },
+    scales: {
+      x: { ticks: { color: CHART_INK.tick, maxTicksLimit: 6 }, grid: { color: CHART_INK.grid } },
+      y: { ticks: yTicks, grid: { color: CHART_INK.grid }, ...(extra.y || {}) }
+    }
+  };
+}
+
+function line(canvas, datasets, labels, extra) {
+  const parent = canvas.parentElement;
+  if (parent && !parent.style.height) parent.style.minHeight = `${canvas.getAttribute('height') || 140}px`;
+  return new Chart(canvas, { type: 'line', data: { labels, datasets }, options: chartOpts(extra) });
+}
+
+function sliceTech(s) {
+  const t = s.technical || [];
+  return t.slice(Math.max(0, t.length - chartRange));
+}
+
+function renderTechnical(s) {
+  const t = sliceTech(s);
+  const labels = t.map((p) => p.date);
+  const last = t[t.length - 1] || {};
+  $('chart-readout').textContent = `${s.symbol} last ${fmtMoney(s.price)} · EMA50 ${fmtMoney(last.ema50)} · RSI ${fmtRatio(last.rsi14)} · MACD hist ${fmtRatio(last.macdHist, 2)}`;
+  document.querySelectorAll('[data-range]').forEach((btn) => btn.classList.toggle('on', Number(btn.dataset.range) === chartRange));
+  if (emaChart) emaChart.destroy();
+  if (macdChart) macdChart.destroy();
+  if (rsiChart) rsiChart.destroy();
+  const slim = { pointRadius: 0, tension: 0.15, borderWidth: 1.6 };
+  emaChart = line($('ema-chart'), [
+    { label: 'Close', data: t.map((p) => p.close), borderColor: CHART_INK.blue, ...slim },
+    { label: 'EMA50', data: t.map((p) => p.ema50), borderColor: CHART_INK.green, ...slim }
+  ], labels);
+  macdChart = line($('macd-chart'), [
+    { label: 'MACD', data: t.map((p) => p.macd), borderColor: CHART_INK.blue, ...slim },
+    { label: 'Signal', data: t.map((p) => p.macdSignal), borderColor: CHART_INK.gold, ...slim },
+    { label: 'Hist', data: t.map((p) => p.macdHist), borderColor: CHART_INK.red, backgroundColor: 'rgba(240,113,120,.18)', ...slim }
+  ], labels);
+  rsiChart = line($('rsi-chart'), [
+    { label: 'RSI', data: t.map((p) => p.rsi14), borderColor: CHART_INK.green, ...slim },
+    { label: '70', data: t.map(() => 70), borderColor: CHART_INK.red, borderDash: [4, 4], pointRadius: 0, borderWidth: 1 },
+    { label: '30', data: t.map(() => 30), borderColor: CHART_INK.blue, borderDash: [4, 4], pointRadius: 0, borderWidth: 1 }
+  ], labels, { y: { min: 0, max: 100 } });
+
+  const rows = latestData.symbols.map((x) => {
+    const c = dayChg(x);
+    const sh = shortRatio(x);
+    return `<tr class="${x.symbol === s.symbol ? 'on' : ''}" data-symbol="${x.symbol}">
+      <td><b>${x.symbol}</b></td>
+      <td class="num">${fmtMoney(x.price)}</td>
+      <td class="num ${cls(c.pct)}">${fmtPct(c.pct)}</td>
+      <td class="num ${cls(x.ytdPct)}">${fmtPct(x.ytdPct)}</td>
+      <td class="num">${fmtRatio(x.rsi14)}</td>
+      <td class="num">${Number.isFinite(sh) ? `${sh.toFixed(1)}%` : '—'}</td>
+    </tr>`;
+  }).join('');
+  $('peer-table').innerHTML = `<thead><tr><th>Name</th><th class="num">Last</th><th class="num">Day</th><th class="num">YTD</th><th class="num">RSI</th><th class="num">Short</th></tr></thead><tbody>${rows}</tbody>`;
+}
+
+function renderFlow(s) {
+  const flow = s.shortVolume || {};
+  const latest = flow.latest || {};
+  const act = s.unusualActivity || {};
+  const metrics = [
+    ['Short vol', fmtShares(latest.shortVolume)],
+    ['Short ratio', Number.isFinite(latest.shortVolumeRatio) ? `${latest.shortVolumeRatio.toFixed(1)}%` : '—'],
+    ['20D avg', Number.isFinite(flow.avgShortVolumeRatio20) ? `${flow.avgShortVolumeRatio20.toFixed(1)}%` : '—'],
+    ['Total vol', fmtShares(latest.totalVolume)],
+    ['Vol spike', Number.isFinite(act.volumeMultiple) ? `${act.volumeMultiple.toFixed(2)}x` : '—'],
+    ['Day range', Number.isFinite(act.dayRangePct) ? `${act.dayRangePct.toFixed(1)}%` : '—'],
+    ['Open gap', Number.isFinite(act.gapPct) ? fmtPct(act.gapPct, 2) : '—']
+  ].filter(([, v]) => v !== '—');
+  $('flow-metrics').innerHTML = metrics.map(([k, v]) => `<div class="stat"><span>${k}</span><b>${v}</b></div>`).join('');
+  const asOf = act.asOf || latest.date || '—';
+  $('flow-summary').textContent = `${s.symbol} · ${asOf}. ${act.summary || 'No unusual aggregate activity detected.'}`;
+  const sigs = act.signals?.length ? act.signals : [{ label: 'No unusual aggregate activity.', severity: 'info' }];
+  $('flow-signals').innerHTML = sigs.map((sig) => `<div class="event"><b>${s.symbol}</b> ${sig.label || sig}</div>`).join('');
+  const hist = flow.history || [];
+  $('short-volume-table').innerHTML = `<thead><tr><th>Date</th><th class="num">Short</th><th class="num">Total</th><th class="num">Ratio</th></tr></thead><tbody>${
+    hist.length
+      ? hist.map((r) => `<tr><td>${r.date}</td><td class="num">${fmtShares(r.shortVolume)}</td><td class="num">${fmtShares(r.totalVolume)}</td><td class="num">${Number.isFinite(r.shortVolumeRatio) ? `${r.shortVolumeRatio.toFixed(1)}%` : '—'}</td></tr>`).join('')
+      : '<tr><td colspan="4">No short-volume rows for this name.</td></tr>'
+  }</tbody>`;
+}
+
+function renderFinancial(s) {
+  const c = s.company || {};
+  $('fin-kicker').textContent = titleCase(c.industry) || 'Profile';
+  $('fin-name').textContent = displayName(s);
+  $('fin-desc').textContent = c.description || 'No profile text in the last refresh.';
+  const meta = [
+    ['Industry', titleCase(c.industry)],
+    ['Mkt cap', fmtCompact(s.marketCap)],
+    ['Employees', Number.isFinite(c.employees) ? c.employees.toLocaleString() : '—'],
+    ['Home', c.homepage ? `<a href="${c.homepage}" target="_blank" rel="noopener">site</a>` : '—']
+  ];
+  $('fin-meta').innerHTML = meta.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('');
+  const ratios = computedRatios(s);
+  $('ratio-grid').innerHTML = ratios.length
+    ? ratios.map((r) => `<div class="stat"><span>${r.label}</span><b>${r.value}</b><small>${r.src}</small></div>`).join('')
+    : '<p class="empty">No usable ratios in the feed. Statements are below.</p>';
+  const qs = uniqueQuarters(s.financials?.quarters);
+  const forecasts = s.financials?.forecast || [];
+  $('financial-table').innerHTML = `<thead><tr><th>Period</th><th class="num">Rev</th><th class="num">NI</th><th class="num">OCF</th><th class="num">FCF</th></tr></thead><tbody>${
+    qs.map((q) => `<tr><td>${q.period}<br><small class="flat">${q.end || ''}</small></td><td class="num">${fmtCompact(q.revenue)}</td><td class="num ${cls(q.netIncome)}">${fmtCompact(q.netIncome)}</td><td class="num">${fmtCompact(q.operatingCashFlow)}</td><td class="num ${cls(q.freeCashFlow)}">${fmtCompact(q.freeCashFlow)}</td></tr>`).join('')
+  }${forecasts.map((f) => `<tr><td class="warn">${f.period}</td><td class="num warn">${fmtCompact(f.value)}</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>`).join('')}</tbody>`;
+  const labels = [...qs.map((q) => q.period), ...forecasts.map((f) => f.period)];
+  const reported = qs.map((q) => q.revenue).concat(forecasts.map(() => null));
+  const forecast = qs.map(() => null).concat(forecasts.map((f) => f.value));
+  if (financialChart) financialChart.destroy();
+  financialChart = line($('financial-chart'), [
+    { label: 'Reported', data: reported, borderColor: CHART_INK.blue, pointRadius: 3, tension: 0 },
+    { label: 'Trend', data: forecast, borderColor: CHART_INK.gold, borderDash: [5, 4], pointRadius: 3, tension: 0 }
+  ], labels, { compactY: true });
+}
+
+function matchAccession(s, row) {
+  if (row.accessionNumber) return row.accessionNumber;
+  const owner = String(row.owner || '').toLowerCase();
+  for (const f of s.insider || []) {
+    if (String(f.owner || '').toLowerCase() !== owner) continue;
+    const tx = (f.transactions || []).find((t) => t.date === row.date && (!row.type || t.type === row.type));
+    if (tx || f.reportDate === row.date || f.filingDate === row.date) return f.accessionNumber;
+  }
+  return null;
+}
+
+function filingLink(s, row) {
+  const url = row.filingUrl || row.url || edgarUrl(s.cik, row.accessionNumber || matchAccession(s, row));
+  return url ? `<a href="${url}" target="_blank" rel="noopener">EDGAR</a>` : '—';
+}
+
+function renderInsider(s) {
+  const sum = s.insiderSummary || {};
+  const sent = String(sum.sentiment || 'NEUTRAL').replaceAll('_', ' ');
+  const sentCls = /BULL/i.test(sent) ? 'up' : /BEAR/i.test(sent) ? 'down' : 'flat';
+  const strip = [
+    ['Sentiment', sent, sentCls],
+    ['Score', `${sum.score ?? '—'}/100`, ''],
+    ['Buy / Sell', `${sum.buyCount || 0} / ${sum.sellCount || 0}`, ''],
+    ['Net sh', fmtShares(sum.netShares), cls(sum.netShares)],
+    ['Bought', fmtCompact(sum.totalBought), 'up'],
+    ['Sold', fmtCompact(sum.totalSold), 'down']
+  ];
+  $('insider-strip').innerHTML = strip.map(([k, v, c]) => `<div class="stat"><span>${k}</span><b class="${c}">${v}</b></div>`).join('');
+
+  const holders = sum.keyInsiders || [];
+  $('key-insiders').innerHTML = holders.length
+    ? holders.map((i) => `<div class="row"><div><b>${i.owner}</b><small>${i.title || 'Insider'} · ${i.txCount} tx</small></div><div class="right"><span class="${cls(i.netShares)}">${fmtShares(i.netShares)} sh</span><small>Sold ${fmtCompact(i.soldValue)}</small></div></div>`).join('')
+    : '<p class="empty">No open-market insider rows.</p>';
+
+  const large = sum.largestTransactions || [];
+  $('largest-transactions').innerHTML = large.length
+    ? large.map((t) => `<div class="row"><div><b>${t.owner}</b><small>${t.date} · ${t.title || ''}</small></div><div class="right"><span class="${t.type === 'BUY' ? 'up' : 'down'}">${t.type} ${fmtShares(t.shares)}</span><small>${fmtMoney(t.price)} · ${fmtCompact(t.value)} · ${filingLink(s, t)}</small></div></div>`).join('')
+    : '<p class="empty">No priced prints.</p>';
+
+  $('insider-patterns').innerHTML = (sum.patterns?.length ? sum.patterns : ['No strong open-market pattern.']).map((p) => `<li>${p}</li>`).join('');
+  $('insider-alerts').innerHTML = (sum.alerts?.length ? sum.alerts : ['No major flags.']).map((p) => `<li>${p}</li>`).join('');
+
+  const rows = s.insider || [];
+  $('insider-table').innerHTML = `<thead><tr><th>Date</th><th>Insider</th><th>Type</th><th class="num">Shares</th><th class="num">Value</th><th>Filing</th></tr></thead><tbody>${
+    rows.length
+      ? rows.map((f) => {
+        const tx = (f.transactions || []).find((t) => ['BUY', 'SELL'].includes(t.type)) || (f.transactions || [])[0] || {};
+        const href = filingLink(s, { ...f, accessionNumber: f.accessionNumber });
+        return `<tr><td>${tx.date || f.reportDate || f.filingDate || '—'}</td><td>${f.owner || 'Unknown'}<br><small class="flat">${f.title || ''}</small></td><td class="${tx.type === 'BUY' ? 'up' : tx.type === 'SELL' ? 'down' : 'flat'}">${tx.type || f.dominantType || '4'}</td><td class="num">${fmtShares(tx.shares)}</td><td class="num">${fmtCompact(tx.value)}</td><td>${href}</td></tr>`;
+      }).join('')
+      : '<tr><td colspan="6">No Form 4 rows.</td></tr>'
+  }</tbody>`;
+}
+
+function collapseAlerts(alerts) {
+  const last = new Map();
+  for (const a of alerts || []) {
+    if (!last.has(a.symbol)) last.set(a.symbol, a);
+  }
+  return [...last.values()];
+}
+
+function renderAlerts(data) {
+  const sum = data.summary || {};
+  const best = sum.bestPerformer ? `${sum.bestPerformer.symbol} ${fmtPct(sum.bestPerformer.ytdPct)}` : '—';
+  const worst = sum.worstPerformer ? `${sum.worstPerformer.symbol} ${fmtPct(sum.worstPerformer.ytdPct)}` : '—';
+  $('portfolio-metrics').innerHTML = [
+    ['Names', String(data.symbols.length)],
+    ['Avg RSI', fmtRatio(sum.avgRsi14)],
+    ['Book score', `${sum.sentimentScore ?? '—'}/100`],
+    ['Best YTD', `<span class="up">${best}</span>`],
+    ['Worst YTD', `<span class="down">${worst}</span>`],
+    ['Refresh', '05:00 ICT']
+  ].map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('');
+  const collapsed = collapseAlerts(data.alerts);
+  $('alert-count').textContent = `${collapsed.length}`;
+  $('alerts-list').innerHTML = collapsed.length
+    ? collapsed.map((a) => `<div class="event" data-symbol="${a.symbol}"><b>${a.symbol}</b> ${a.message}<small>${new Date(a.createdAt).toLocaleString()}</small></div>`).join('')
+    : '<p class="empty">No alerts.</p>';
+}
+
+function renderDesk() {
+  const s = selected();
+  if (!s) return;
+  selectedSymbol = s.symbol;
+  renderQuote(s);
+  renderWatch(latestData.symbols);
+  setNav();
+  if (activePane === 'chart') renderTechnical(s);
+  if (activePane === 'flow') renderFlow(s);
+  if (activePane === 'financial') renderFinancial(s);
+  if (activePane === 'insider') renderInsider(s);
+  if (activePane === 'alerts') renderAlerts(latestData);
+  writeHash();
+}
+
+function selectSymbol(sym) {
+  if (!latestData?.symbols?.some((s) => s.symbol === sym)) return;
+  selectedSymbol = sym;
+  renderDesk();
+}
+
+function moveSelection(delta) {
+  const list = latestData?.symbols || [];
+  const i = list.findIndex((s) => s.symbol === selectedSymbol);
+  const next = list[(i + delta + list.length) % list.length];
+  if (next) selectSymbol(next.symbol);
+}
+
+async function loadData() {
+  const res = await fetch(`${DATA_URL}?t=${Date.now()}`, { cache: 'no-store' });
+  if (!res.ok) throw new Error(`Data fetch failed: ${res.status}`);
+  return res.json();
+}
+
+async function render({ manual = false } = {}) {
+  const btn = $('refresh-btn');
+  try {
+    if (manual) {
+      btn.disabled = true;
+      btn.textContent = 'Refreshing';
+    }
+    latestData = await loadData();
+    applyHash();
+    if (!latestData.symbols.some((s) => s.symbol === selectedSymbol)) {
+      selectedSymbol = latestData.symbols[0].symbol;
+    }
+    renderStatus(latestData);
+    renderDesk();
+    if (manual) {
+      btn.textContent = 'Updated';
+      setTimeout(() => { btn.textContent = 'Refresh'; btn.disabled = false; }, 900);
+    }
+  } catch (err) {
+    $('status-pill').className = 'status err';
+    $('status-pill').textContent = 'ERROR';
+    $('asof').textContent = err.message;
+    document.querySelector('.live-dot')?.classList.add('err');
+    if (manual) {
+      btn.textContent = 'Retry';
+      btn.disabled = false;
+    }
+    console.error(err);
+  }
+}
+
+function bind() {
+  $('refresh-btn').addEventListener('click', () => render({ manual: true }));
+  document.addEventListener('click', (e) => {
+    const row = e.target.closest('[data-symbol]');
+    if (row?.dataset.symbol) selectSymbol(row.dataset.symbol);
+    const range = e.target.closest('[data-range]');
+    if (range) {
+      chartRange = Number(range.dataset.range);
+      if (activePane === 'chart') renderTechnical(selected());
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.target.matches('input, textarea, select')) return;
+    if (e.key === 'j') { e.preventDefault(); moveSelection(1); }
+    if (e.key === 'k') { e.preventDefault(); moveSelection(-1); }
+    if (e.key >= '1' && e.key <= '5') {
+      activePane = PANES[Number(e.key) - 1];
+      renderDesk();
+    }
+  });
+  window.addEventListener('hashchange', () => {
+    applyHash();
+    renderDesk();
+  });
+}
+
+bind();
+render();
+setInterval(render, 60000);
