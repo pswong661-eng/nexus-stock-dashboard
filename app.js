@@ -72,9 +72,17 @@ function titleCase(str) {
 }
 
 function dayChg(s) {
-  if (!Number.isFinite(s.price) || !Number.isFinite(s.previousClose) || !s.previousClose) return { abs: null, pct: null };
-  const abs = s.price - s.previousClose;
-  return { abs, pct: (abs / s.previousClose) * 100 };
+  let prev = s.previousClose;
+  const prior = (s.technical || []).at(-2)?.close;
+  if (Number.isFinite(s.price) && Number.isFinite(prev) && prev) {
+    const raw = ((s.price - prev) / prev) * 100;
+    if (Math.abs(raw) > 35 && Number.isFinite(prior)) prev = prior;
+  } else if (Number.isFinite(prior)) {
+    prev = prior;
+  }
+  if (!Number.isFinite(s.price) || !Number.isFinite(prev) || !prev) return { abs: null, pct: null };
+  const abs = s.price - prev;
+  return { abs, pct: (abs / prev) * 100 };
 }
 
 function lastTech(s) {
@@ -370,9 +378,12 @@ function renderFinancial(s) {
     : '<p class="empty">No usable ratios in the feed. Statements are below.</p>';
   const qs = uniqueQuarters(s.financials?.quarters);
   const forecasts = s.financials?.forecast || [];
-  $('financial-table').innerHTML = `<thead><tr><th>Period</th><th class="num">Rev</th><th class="num">NI</th><th class="num">OCF</th><th class="num">FCF</th></tr></thead><tbody>${
-    qs.map((q) => `<tr><td>${q.period}<br><small class="flat">${q.end || ''}</small></td><td class="num">${fmtCompact(q.revenue)}</td><td class="num ${cls(q.netIncome)}">${fmtCompact(q.netIncome)}</td><td class="num">${fmtCompact(q.operatingCashFlow)}</td><td class="num ${cls(q.freeCashFlow)}">${fmtCompact(q.freeCashFlow)}</td></tr>`).join('')
-  }${forecasts.map((f) => `<tr><td class="warn">${f.period}</td><td class="num warn">${fmtCompact(f.value)}</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>`).join('')}</tbody>`;
+  const body = qs.length
+    ? qs.map((q) => `<tr><td>${q.period}<br><small class="flat">${q.end || ''}</small></td><td class="num">${fmtCompact(q.revenue)}</td><td class="num ${cls(q.netIncome)}">${fmtCompact(q.netIncome)}</td><td class="num">${fmtCompact(q.operatingCashFlow)}</td><td class="num ${cls(q.freeCashFlow)}">${fmtCompact(q.freeCashFlow)}</td></tr>`).join('')
+    : '<tr><td colspan="5">No quarterly statements in the last refresh.</td></tr>';
+  $('financial-table').innerHTML = `<thead><tr><th>Period</th><th class="num">Rev</th><th class="num">NI</th><th class="num">OCF</th><th class="num">FCF</th></tr></thead><tbody>${body}${
+    forecasts.map((f) => `<tr><td class="warn">${f.period}</td><td class="num warn">${fmtCompact(f.value)}</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>`).join('')
+  }</tbody>`;
   const labels = [...qs.map((q) => q.period), ...forecasts.map((f) => f.period)];
   const reported = qs.map((q) => q.revenue).concat(forecasts.map(() => null));
   const forecast = qs.map(() => null).concat(forecasts.map((f) => f.value));

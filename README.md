@@ -16,6 +16,12 @@ Default watchlist:
 - `SNPS`
 - `QCOM`
 - `RRX`
+- `AAOI`
+- `LITE`
+- `AXTI`
+- `NVAX`
+- `NBIS`
+- `LRCX`
 
 Override in GitHub Actions with:
 

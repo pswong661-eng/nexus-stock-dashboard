@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const SYMBOLS = (process.env.STOCK_SYMBOLS || 'VST,RGTI,IONQ,LAC,UAMY,SNPS,QCOM,RRX')
+const SYMBOLS = (process.env.STOCK_SYMBOLS || 'VST,RGTI,IONQ,LAC,UAMY,SNPS,QCOM,RRX,AAOI,LITE,AXTI,NVAX,NBIS,LRCX')
   .split(',').map(s => s.trim().toUpperCase()).filter(Boolean);
 
 const OUT = new URL('../public/data/latest.json', import.meta.url);
@@ -318,7 +318,7 @@ function normalizeChart(symbol, result) {
   })).slice(-160);
   return {
     symbol, name: meta.longName || meta.shortName || symbol, exchange: meta.fullExchangeName || meta.exchangeName || '', currency: meta.currency || 'USD',
-    price: round(last, 2), previousClose: round(finite(meta.chartPreviousClose), 2), ytdPct: round(ytdPct, 2),
+    price: round(last, 2), previousClose: round(points.at(-2)?.close ?? finite(meta.regularMarketPreviousClose), 2), ytdPct: round(ytdPct, 2),
     marketCap: null, peRatio: null, rsi14: round(rsi14, 1), week52Low: round(week52Low, 2), week52High: round(week52High, 2), avgVolume: round(avgVolume, 0),
     recommendation: rec, opportunityScore: rec === 'BUY' ? 78 : rec === 'HOLD' ? 55 : 32,
     series: normalized, technical, rawPoints: points.slice(-20)
