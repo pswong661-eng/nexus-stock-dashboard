@@ -113,12 +113,12 @@ function edgarUrl(cik, accession) {
 function uniqueQuarters(rows) {
   const byEnd = new Map();
   for (const q of rows || []) {
-    if (!q?.end || /FY/i.test(q.period || '')) continue;
-    const prev = byEnd.get(q.end);
-    const endY = q.end.slice(0, 4);
-    if (!prev || String(q.period || '').includes(endY)) byEnd.set(q.end, q);
+    if (!q?.end) continue;
+    if (!byEnd.has(q.end)) byEnd.set(q.end, q);
   }
-  return [...byEnd.values()].sort((a, b) => a.end.localeCompare(b.end));
+  const uniq = [...byEnd.values()].sort((a, b) => a.end.localeCompare(b.end));
+  const quarterly = uniq.filter((q) => !/FY/i.test(q.period || ''));
+  return quarterly.length ? quarterly : uniq;
 }
 
 function computedRatios(s) {
@@ -377,7 +377,9 @@ function renderFinancial(s) {
     ? ratios.map((r) => `<div class="stat"><span>${r.label}</span><b>${r.value}</b><small>${r.src}</small></div>`).join('')
     : '<p class="empty">No usable ratios in the feed. Statements are below.</p>';
   const qs = uniqueQuarters(s.financials?.quarters);
-  const forecasts = s.financials?.forecast || [];
+  const forecasts = s.financials?.basis === 'annual' ? [] : (s.financials?.forecast || []);
+  const title = $('fin-table-title');
+  if (title) title.textContent = s.financials?.basis === 'annual' ? 'Annual statements' : 'Quarterly statements';
   const body = qs.length
     ? qs.map((q) => `<tr><td>${q.period}<br><small class="flat">${q.end || ''}</small></td><td class="num">${fmtCompact(q.revenue)}</td><td class="num ${cls(q.netIncome)}">${fmtCompact(q.netIncome)}</td><td class="num">${fmtCompact(q.operatingCashFlow)}</td><td class="num ${cls(q.freeCashFlow)}">${fmtCompact(q.freeCashFlow)}</td></tr>`).join('')
     : '<tr><td colspan="5">No quarterly statements in the last refresh.</td></tr>';

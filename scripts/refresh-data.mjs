@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { buildFinancialsFromFacts, forecastTwo } from './sec-financials.mjs';
 const SYMBOLS = (process.env.STOCK_SYMBOLS || 'VST,RGTI,IONQ,LAC,UAMY,SNPS,QCOM,RRX,AAOI,LITE,AXTI,NVAX,NBIS,LRCX')
   .split(',').map(s => s.trim().toUpperCase()).filter(Boolean);
 
@@ -371,63 +372,7 @@ async function cikMap() {
   for (const row of Object.values(raw)) map[row.ticker.toUpperCase()] = String(row.cik_str).padStart(10, '0');
   return map;
 }
-function pickFact(facts, names) {
-  for (const name of names) {
-    const usd = facts?.['us-gaap']?.[name]?.units?.USD;
-    if (Array.isArray(usd)) return usd;
-  }
-  return [];
-}
-function factDurationDays(fact) {
-  if (!fact?.start || !fact?.end) return null;
-  const start = Date.parse(fact.start);
-  const end = Date.parse(fact.end);
-  if (Number.isNaN(start) || Number.isNaN(end) || end < start) return null;
-  return Math.round((end - start) / 86400_000);
-}
-function fiscalPeriodKey(fact) {
-  return fact.fp && fact.fy && fact.end ? `${fact.fy}-${fact.fp}-${fact.end}` : fact.end || fact.frame || `${fact.filed || ''}-${fact.val}`;
-}
-function betterFact(next, prev) {
-  if (!prev) return true;
-  const nextDays = factDurationDays(next);
-  const prevDays = factDurationDays(prev);
-  const nextQuarter = /^Q[1-4]$/i.test(next.fp || '');
-  const prevQuarter = /^Q[1-4]$/i.test(prev.fp || '');
-  if (nextQuarter && prevQuarter && Number.isFinite(nextDays) && Number.isFinite(prevDays) && nextDays !== prevDays) return nextDays < prevDays;
-  if (next.form === '10-Q' && prev.form !== '10-Q') return true;
-  if (next.form !== '10-Q' && prev.form === '10-Q') return false;
-  return (next.filed || '') > (prev.filed || '');
-}
-function lastQuarters(items) {
-  const seen = new Map();
-  for (const f of items) {
-    if (!Number.isFinite(f.val) || !f.end) continue;
-    if (!['10-Q','10-K'].includes(f.form)) continue;
-    const key = fiscalPeriodKey(f);
-    const prev = seen.get(key);
-    if (betterFact(f, prev)) seen.set(key, f);
-  }
-  return [...seen.values()].sort((a,b)=>new Date(a.end)-new Date(b.end)).slice(-6).map(f => ({
-    period: f.fp && f.fy ? `${f.fy} ${f.fp}` : f.end,
-    end: f.end,
-    value: round(f.val, 0),
-    form: f.form,
-    filed: f.filed || null
-  }));
-}
-function byEnd(items) {
-  const map = new Map();
-  for (const row of lastQuarters(items)) map.set(row.end, row.value);
-  return map;
-}
-function forecastTwo(quarters) {
-  if (!quarters.length) return [];
-  const vals = quarters.map(q => q.value).filter(Number.isFinite);
-  const last = vals.at(-1); const prev = vals.at(-2) ?? last;
-  const growth = last && prev ? Math.max(-0.25, Math.min(0.25, (last - prev) / Math.abs(prev))) : 0;
-  return [1,2].map(i => ({ period: `Forecast Q+${i}`, value: round(last * Math.pow(1 + growth, i), 0), basis: 'simple trend forecast' }));
-}
+
 function tagText(xml, tag) {
   const m = xml.match(new RegExp(`<${tag}>([\\s\\S]*?)</${tag}>`, 'i'));
   if (!m) return '';
@@ -537,29 +482,7 @@ async function fetchFinancialAndInsider(symbol, cik, massive = {}) {
     fetchJson(`https://data.sec.gov/api/xbrl/companyfacts/CIK${cik}.json`).catch(() => null),
     fetchJson(`https://data.sec.gov/submissions/CIK${cik}.json`).catch(() => null)
   ]);
-  const revenues = lastQuarters(pickFact(facts?.facts, ['RevenueFromContractWithCustomerExcludingAssessedTax', 'Revenues', 'SalesRevenueNet']));
-  const netIncome = byEnd(pickFact(facts?.facts, ['NetIncomeLoss']));
-  const operatingCashFlow = byEnd(pickFact(facts?.facts, ['NetCashProvidedByUsedInOperatingActivities', 'NetCashProvidedByUsedInOperatingActivitiesContinuingOperations']));
-  const capex = byEnd(pickFact(facts?.facts, ['PaymentsToAcquirePropertyPlantAndEquipment', 'PaymentsToAcquireProductiveAssets']));
-  const assets = byEnd(pickFact(facts?.facts, ['Assets']));
-  const liabilities = byEnd(pickFact(facts?.facts, ['Liabilities']));
-  const equity = byEnd(pickFact(facts?.facts, ['StockholdersEquity', 'StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest']));
-  const quarters = revenues.map((r) => {
-    const ocf = operatingCashFlow.get(r.end) ?? null;
-    const capexValue = capex.get(r.end) ?? null;
-    return {
-      ...r,
-      source: 'SEC',
-      revenue: r.value,
-      netIncome: netIncome.get(r.end) ?? null,
-      operatingCashFlow: ocf,
-      capex: capexValue,
-      freeCashFlow: Number.isFinite(ocf) && Number.isFinite(capexValue) ? round(ocf - Math.abs(capexValue), 0) : null,
-      assets: assets.get(r.end) ?? null,
-      liabilities: liabilities.get(r.end) ?? null,
-      equity: equity.get(r.end) ?? null
-    };
-  });
+  const parsed = facts?.facts ? buildFinancialsFromFacts(facts.facts) : { quarters: [], forecast: [], source: 'none' };
   const recent = sub?.filings?.recent || {};
   const basicFilings = (recent.form || []).map((form, i) => ({ form, reportDate: recent.reportDate?.[i], filingDate: recent.filingDate?.[i], accessionNumber: recent.accessionNumber?.[i], document: recent.primaryDocument?.[i], description: recent.primaryDocDescription?.[i] }))
     .filter(f => f.form === '4')
@@ -577,7 +500,7 @@ async function fetchFinancialAndInsider(symbol, cik, massive = {}) {
       await sleep(120);
     }
   }
-  const financials = massive.financials || { quarters, forecast: forecastTwo(quarters.map(q => ({...q, value: q.revenue}))), source: 'SEC' };
+  const financials = massive.financials || parsed;
   return { financials, insider, insiderSummary: summarizeInsider(insider, massive.insider?.length ? 'Massive' : 'SEC') };
 }
 

@@ -6,6 +6,7 @@
   "scripts": {
     "refresh:data": "node scripts/refresh-data.mjs",
     "validate:data": "node scripts/validate-data.mjs",
+    "rebuild:financials": "node scripts/rebuild-financials.mjs",
     "build": "npm run validate:data && node scripts/build-site.mjs",
     "serve": "python3 -m http.server 4173",
     "test": "npm run validate:data"
