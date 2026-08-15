@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs/promises';
-import { buildFinancialsFromFacts } from './sec-financials.mjs';
+import { buildFinancialsFromFacts, forecastTwo } from './sec-financials.mjs';
+import { fetchYahooQuarterlies } from './yahoo-financials.mjs';
 
 const OUT = new URL('../public/data/latest.json', import.meta.url);
 const FALLBACK = new URL('../public/data/fallback.json', import.meta.url);
@@ -21,7 +22,15 @@ for (const s of data.symbols) {
   }
   try {
     const facts = await fetchJson(`https://data.sec.gov/api/xbrl/companyfacts/CIK${s.cik}.json`);
-    s.financials = buildFinancialsFromFacts(facts.facts || {});
+    let financials = buildFinancialsFromFacts(facts.facts || {});
+    if (financials.basis !== 'quarterly' || (financials.quarters || []).length < 4) {
+      const yahoo = await fetchYahooQuarterlies(s.symbol).catch(() => null);
+      if (yahoo?.quarters?.length) {
+        yahoo.forecast = forecastTwo(yahoo.quarters);
+        financials = yahoo;
+      }
+    }
+    s.financials = financials;
     s.dataSources = { ...(s.dataSources || {}), financials: s.financials.source };
     report.push({
       symbol: s.symbol,

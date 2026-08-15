@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { buildFinancialsFromFacts, forecastTwo } from './sec-financials.mjs';
+import { fetchYahooQuarterlies } from './yahoo-financials.mjs';
 const SYMBOLS = (process.env.STOCK_SYMBOLS || 'VST,RGTI,IONQ,LAC,UAMY,SNPS,QCOM,RRX,AAOI,LITE,AXTI,NVAX,NBIS,LRCX')
   .split(',').map(s => s.trim().toUpperCase()).filter(Boolean);
 
@@ -500,7 +501,18 @@ async function fetchFinancialAndInsider(symbol, cik, massive = {}) {
       await sleep(120);
     }
   }
-  const financials = massive.financials || parsed;
+  let financials = massive.financials || parsed;
+  if (!financials || financials.basis !== 'quarterly' || (financials.quarters || []).length < 4) {
+    try {
+      const yahoo = await fetchYahooQuarterlies(symbol);
+      if (yahoo?.quarters?.length) {
+        yahoo.forecast = forecastTwo(yahoo.quarters);
+        financials = yahoo;
+      }
+    } catch (err) {
+      warnings.push({ symbol, warning: `Yahoo quarterly financials unavailable: ${redact(err.message || err)}` });
+    }
+  }
   return { financials, insider, insiderSummary: summarizeInsider(insider, massive.insider?.length ? 'Massive' : 'SEC') };
 }
 
