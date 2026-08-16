@@ -1,6 +1,6 @@
 # Agent Setup
 
-This static dashboard is served at `nanolaos.com` through GitHub Pages and the `CNAME` file. Cloudflare DNS sits in front of the custom domain.
+This static dashboard is served through GitHub Pages and the `CNAME` file. Keep the live hostname out of README/docs and out of search indexes (`robots.txt` + noindex metas).
 
 ## Market Data
 

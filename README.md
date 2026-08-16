@@ -1,8 +1,6 @@
 # Nexus Stock Intelligence Dashboard
 
-A public static stock dashboard inspired by the Kimi Nexus terminal at `https://t2wh36j4nxzys.kimi.page/`.
-
-Live domain: `nanolaos.com` through the repository `CNAME` file. Cloudflare should proxy DNS to the GitHub Pages target; GitHub Actions handles the static build and deploy.
+A private-use static stock dashboard. GitHub Actions builds and deploys GitHub Pages from this repo. Search crawlers are blocked via `robots.txt` and noindex meta tags; do not advertise the live hostname.
 
 ## Tickers
 
@@ -76,7 +74,7 @@ Use the `massive` MCP for endpoint discovery, market-data research, ticker valid
 
 ## Deploy
 
-This repo is configured for GitHub Pages using Actions and served at `nanolaos.com` through `CNAME`.
+This repo is configured for GitHub Pages using Actions. The live hostname lives only in `CNAME` and should stay out of search indexes.
 
 1. Go to **Settings → Pages**.
 2. Set **Source** to **GitHub Actions**.
