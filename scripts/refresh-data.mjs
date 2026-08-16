@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 import { buildFinancialsFromFacts, forecastTwo } from './sec-financials.mjs';
 import { fetchYahooQuarterlies } from './yahoo-financials.mjs';
-const SYMBOLS = (process.env.STOCK_SYMBOLS || 'VST,RGTI,IONQ,LAC,UAMY,SNPS,QCOM,RRX,AAOI,LITE,AXTI,NVAX,NBIS,LRCX')
+const SYMBOLS = (process.env.STOCK_SYMBOLS || 'VST,RGTI,IONQ,LAC,UAMY,SNPS,QCOM,RRX,AAOI,LITE,AXTI,NVAX,NBIS,LRCX,CCXI')
   .split(',').map(s => s.trim().toUpperCase()).filter(Boolean);
+const MERGE_EXISTING = process.env.MERGE_EXISTING === '1';
 
 const OUT = new URL('../public/data/latest.json', import.meta.url);
 const FALLBACK = new URL('../public/data/fallback.json', import.meta.url);
@@ -568,6 +569,25 @@ for (const symbol of SYMBOLS) {
     results.push({ ...base, cik: ciks[symbol] || profile?.cik || null, dataSources: { price: priceSource, financials: extra.financials?.source || 'SEC', insider: extra.insiderSummary?.source || 'SEC', ratios: ratios ? 'Massive' : 'none', profile: profile ? 'Massive' : 'none', shortVolume: shortVolumeSummary.source, unusualActivity: unusualActivity.source }, ...extra });
   } catch (err) { errors.push({ symbol, error: redact(err.message || err) }); }
   await sleep(MASSIVE_API_KEY ? 13_000 : 350);
+}
+if (MERGE_EXISTING) {
+  const fs = await import('node:fs/promises');
+  const old = JSON.parse(await fs.readFile(OUT, 'utf8'));
+  const refreshed = new Set(results.map(s => s.symbol));
+  const bySymbol = new Map((old.symbols || []).map(s => [s.symbol, s]));
+  for (const row of results) bySymbol.set(row.symbol, row);
+  const mergedTickers = [...(old.tickers || [])];
+  for (const ticker of SYMBOLS) {
+    if (!mergedTickers.includes(ticker)) mergedTickers.push(ticker);
+  }
+  SYMBOLS.length = 0;
+  SYMBOLS.push(...mergedTickers);
+  results.length = 0;
+  for (const ticker of mergedTickers) {
+    const row = bySymbol.get(ticker);
+    if (row) results.push(row);
+  }
+  warnings.unshift(...(old.warnings || []).filter(w => w?.symbol && !refreshed.has(w.symbol)));
 }
 const bull = results.filter(s => s.recommendation === 'BUY').length;
 const bear = results.filter(s => s.recommendation === 'SELL').length;

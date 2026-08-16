@@ -36,7 +36,7 @@ jobs:
       - name: Refresh data snapshot
         run: npm run refresh:data
         env:
-          STOCK_SYMBOLS: ${{ vars.STOCK_SYMBOLS || 'VST,RGTI,IONQ,LAC,UAMY,SNPS,QCOM,RRX,AAOI,LITE,AXTI,NVAX,NBIS,LRCX' }}
+          STOCK_SYMBOLS: ${{ vars.STOCK_SYMBOLS || 'VST,RGTI,IONQ,LAC,UAMY,SNPS,QCOM,RRX,AAOI,LITE,AXTI,NVAX,NBIS,LRCX,CCXI' }}
           MASSIVE_API_KEY: ${{ secrets.MASSIVE_API_KEY }}
       - run: npm run validate:data
       - name: Pull latest changes
