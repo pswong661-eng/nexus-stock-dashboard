@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-16T12:04:55.662Z",
+  "generatedAt": "2026-08-16T12:09:33.723Z",
   "staleAfterMinutes": 1440,
-  "source": "Yahoo Finance chart endpoint + SEC companyfacts/submissions via scheduled Node refresh",
+  "source": "Massive.com OHLC aggregates + SEC companyfacts/submissions via scheduled Node refresh",
   "tickers": [
     "VST",
     "RGTI",
@@ -2886,7 +2886,7 @@
           "close": 148.13,
           "high": 150.18,
           "low": 146.13,
-          "volume": 3040001.148107,
+          "volume": 3040000.104404,
           "vwap": 148.5286
         }
       ],
@@ -3089,7 +3089,7 @@
         "asOf": "2026-08-14",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 3040001,
+        "volume": 3040000,
         "avgVolume20": 4606859,
         "volumeMultiple": 0.66,
         "dayRangePct": 2.73,
@@ -3655,7 +3655,7 @@
       "rsi14": 65.2,
       "week52Low": 12.53,
       "week52High": 58.15,
-      "avgVolume": 21217622,
+      "avgVolume": 21217625,
       "recommendation": "HOLD",
       "opportunityScore": 55,
       "company": {
@@ -6489,7 +6489,7 @@
           "close": 18.82,
           "high": 19.25,
           "low": 18.4,
-          "volume": 16960572.364419,
+          "volume": 16960652.086054,
           "vwap": 18.8988
         }
       ],
@@ -6692,7 +6692,7 @@
         "asOf": "2026-08-14",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 16960572,
+        "volume": 16960652,
         "avgVolume20": 21175314,
         "volumeMultiple": 0.8,
         "dayRangePct": 4.52,
@@ -10191,7 +10191,7 @@
           "close": 46.26,
           "high": 47.27,
           "low": 44.36,
-          "volume": 18133534.078657,
+          "volume": 18133532.894762,
           "vwap": 46.2715
         }
       ],
@@ -10394,7 +10394,7 @@
         "asOf": "2026-08-14",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 18133534,
+        "volume": 18133533,
         "avgVolume20": 21521396,
         "volumeMultiple": 0.84,
         "dayRangePct": 6.29,
@@ -13738,7 +13738,7 @@
           "close": 3.38,
           "high": 3.58,
           "low": 3.35,
-          "volume": 12107695.232979,
+          "volume": 12107694.755049,
           "vwap": 3.451
         }
       ],
@@ -20785,7 +20785,7 @@
           "close": 421.5,
           "high": 423.95,
           "low": 409.4,
-          "volume": 1243043.838657,
+          "volume": 1243042.717048,
           "vwap": 420.2388
         }
       ],
@@ -20988,7 +20988,7 @@
         "asOf": "2026-08-14",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 1243044,
+        "volume": 1243043,
         "avgVolume20": 1975018,
         "volumeMultiple": 0.63,
         "dayRangePct": 3.45,
@@ -24581,7 +24581,7 @@
           "close": 165.79,
           "high": 166.965,
           "low": 163.18,
-          "volume": 5807738.843397,
+          "volume": 5807737.619306,
           "vwap": 165.2339
         }
       ],
@@ -24784,7 +24784,7 @@
         "asOf": "2026-08-14",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 5807739,
+        "volume": 5807738,
         "avgVolume20": 12121499,
         "volumeMultiple": 0.48,
         "dayRangePct": 2.28,
@@ -25676,7 +25676,7 @@
       "rsi14": 34,
       "week52Low": 127.96,
       "week52High": 247.8,
-      "avgVolume": 1202529,
+      "avgVolume": 1202530,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -28510,7 +28510,7 @@
           "close": 175.49,
           "high": 178,
           "low": 168.98,
-          "volume": 1077900.456593,
+          "volume": 1077934.456593,
           "vwap": 175.405
         }
       ],
@@ -28713,7 +28713,7 @@
         "asOf": "2026-08-14",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 1077900,
+        "volume": 1077934,
         "avgVolume20": 1314886,
         "volumeMultiple": 0.82,
         "dayRangePct": 5.14,
@@ -29355,7 +29355,7 @@
       "rsi14": 69.9,
       "week52Low": 18.5,
       "week52High": 233.67,
-      "avgVolume": 10957610,
+      "avgVolume": 10957614,
       "recommendation": "HOLD",
       "opportunityScore": 55,
       "company": {
@@ -32189,7 +32189,7 @@
           "close": 150.28,
           "high": 153.39,
           "low": 130.34,
-          "volume": 18774825.151407,
+          "volume": 18774955.151407,
           "vwap": 147.2183
         }
       ],
@@ -32392,7 +32392,7 @@
         "asOf": "2026-08-14",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 18774825,
+        "volume": 18774955,
         "avgVolume20": 11679303,
         "volumeMultiple": 1.61,
         "dayRangePct": 15.34,
@@ -33090,7 +33090,7 @@
       "rsi14": 64.5,
       "week52Low": 111.2,
       "week52High": 1085.68,
-      "avgVolume": 4779345,
+      "avgVolume": 4779349,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -35924,8 +35924,8 @@
           "close": 926.14,
           "high": 957.895,
           "low": 885.2701,
-          "volume": 4251723.644631,
-          "vwap": 924.7686
+          "volume": 4251856.830829,
+          "vwap": 924.7674
         }
       ],
       "shortVolume": {
@@ -36127,7 +36127,7 @@
         "asOf": "2026-08-14",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 4251724,
+        "volume": 4251857,
         "avgVolume20": 5210875,
         "volumeMultiple": 0.82,
         "dayRangePct": 7.84,
@@ -36650,7 +36650,7 @@
       "rsi14": 68,
       "week52Low": 2.05,
       "week52High": 143.16,
-      "avgVolume": 11057986,
+      "avgVolume": 11057987,
       "recommendation": "HOLD",
       "opportunityScore": 55,
       "company": {
@@ -39484,7 +39484,7 @@
           "close": 81.64,
           "high": 85.42,
           "low": 76.75,
-          "volume": 9632513.267638,
+          "volume": 9632543.267638,
           "vwap": 81.2242
         }
       ],
@@ -39687,7 +39687,7 @@
         "asOf": "2026-08-14",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 9632513,
+        "volume": 9632543,
         "avgVolume20": 12007296,
         "volumeMultiple": 0.8,
         "dayRangePct": 10.62,
@@ -43105,7 +43105,7 @@
           "close": 8.05,
           "high": 8.13,
           "low": 7.915,
-          "volume": 2279572.109398,
+          "volume": 2279571.797631,
           "vwap": 8.0002
         }
       ],
@@ -43973,7 +43973,7 @@
       "rsi14": 67.2,
       "week52Low": 62.01,
       "week52High": 299.86,
-      "avgVolume": 23769849,
+      "avgVolume": 23768552,
       "recommendation": "HOLD",
       "opportunityScore": 55,
       "company": {
@@ -46807,8 +46807,8 @@
           "close": 277.68,
           "high": 278.66,
           "low": 256.905,
-          "volume": 29063570.644279,
-          "vwap": 271.2387
+          "volume": 29024669.931058,
+          "vwap": 271.2382
         }
       ],
       "shortVolume": {
@@ -47010,7 +47010,7 @@
         "asOf": "2026-08-14",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 29063571,
+        "volume": 29024670,
         "avgVolume20": 26639000,
         "volumeMultiple": 1.09,
         "dayRangePct": 7.83,
@@ -50663,7 +50663,7 @@
           "close": 332.36,
           "high": 342,
           "low": 326.555,
-          "volume": 7422941.710234,
+          "volume": 7422941.310064,
           "vwap": 332.2791
         }
       ],
@@ -50866,7 +50866,7 @@
         "asOf": "2026-08-14",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 7422942,
+        "volume": 7422941,
         "avgVolume20": 10921740,
         "volumeMultiple": 0.68,
         "dayRangePct": 4.65,
@@ -51730,20 +51730,29 @@
     },
     {
       "symbol": "CCXI",
-      "name": "Churchill Capital Corp XI",
-      "exchange": "NasdaqGM",
+      "name": "Churchill Capital Corp XI Class A Ordinary Shares",
+      "exchange": "XNAS",
       "currency": "USD",
       "price": 17.07,
       "previousClose": 16.19,
       "ytdPct": 66.37,
-      "marketCap": null,
+      "marketCap": 950799000,
       "peRatio": null,
       "rsi14": 73.4,
       "week52Low": 10.07,
       "week52High": 19.69,
-      "avgVolume": 3194227,
+      "avgVolume": 3194358,
       "recommendation": "HOLD",
       "opportunityScore": 55,
+      "company": {
+        "description": "Churchill Capital Corp XI is a blank check company.",
+        "homepage": "",
+        "employees": null,
+        "sic": "3569",
+        "industry": "GENERAL INDUSTRIAL MACHINERY & EQUIPMENT, NEC",
+        "icon": "",
+        "logo": ""
+      },
       "series": [
         {
           "date": "2026-02-09",
@@ -51755,7 +51764,7 @@
         },
         {
           "date": "2026-02-11",
-          "value": 99.81
+          "value": 99.76
         },
         {
           "date": "2026-02-12",
@@ -51795,7 +51804,7 @@
         },
         {
           "date": "2026-02-26",
-          "value": 99.32
+          "value": 99.3
         },
         {
           "date": "2026-02-27",
@@ -51803,10 +51812,6 @@
         },
         {
           "date": "2026-03-02",
-          "value": 99.12
-        },
-        {
-          "date": "2026-03-03",
           "value": 99.12
         },
         {
@@ -51822,14 +51827,6 @@
           "value": 99.03
         },
         {
-          "date": "2026-03-09",
-          "value": 99.03
-        },
-        {
-          "date": "2026-03-10",
-          "value": 99.03
-        },
-        {
           "date": "2026-03-11",
           "value": 98.93
         },
@@ -51839,7 +51836,7 @@
         },
         {
           "date": "2026-03-13",
-          "value": 98.93
+          "value": 98.88
         },
         {
           "date": "2026-03-16",
@@ -51847,11 +51844,11 @@
         },
         {
           "date": "2026-03-17",
-          "value": 98.34
+          "value": 98.39
         },
         {
           "date": "2026-03-18",
-          "value": 98.64
+          "value": 98.59
         },
         {
           "date": "2026-03-19",
@@ -51859,11 +51856,7 @@
         },
         {
           "date": "2026-03-20",
-          "value": 99.03
-        },
-        {
-          "date": "2026-03-23",
-          "value": 99.03
+          "value": 99
         },
         {
           "date": "2026-03-24",
@@ -51871,10 +51864,6 @@
         },
         {
           "date": "2026-03-25",
-          "value": 99.12
-        },
-        {
-          "date": "2026-03-26",
           "value": 99.12
         },
         {
@@ -51911,7 +51900,7 @@
         },
         {
           "date": "2026-04-09",
-          "value": 99.42
+          "value": 99.41
         },
         {
           "date": "2026-04-10",
@@ -51931,7 +51920,7 @@
         },
         {
           "date": "2026-04-16",
-          "value": 99.32
+          "value": 99.27
         },
         {
           "date": "2026-04-17",
@@ -51939,7 +51928,7 @@
         },
         {
           "date": "2026-04-20",
-          "value": 99.32
+          "value": 99.27
         },
         {
           "date": "2026-04-21",
@@ -51970,22 +51959,6 @@
           "value": 99.61
         },
         {
-          "date": "2026-04-30",
-          "value": 99.61
-        },
-        {
-          "date": "2026-05-01",
-          "value": 99.61
-        },
-        {
-          "date": "2026-05-04",
-          "value": 99.61
-        },
-        {
-          "date": "2026-05-05",
-          "value": 99.61
-        },
-        {
           "date": "2026-05-06",
           "value": 99.61
         },
@@ -52002,10 +51975,6 @@
           "value": 99.81
         },
         {
-          "date": "2026-05-12",
-          "value": 99.81
-        },
-        {
           "date": "2026-05-13",
           "value": 99.81
         },
@@ -52018,10 +51987,6 @@
           "value": 100.19
         },
         {
-          "date": "2026-05-18",
-          "value": 100.19
-        },
-        {
           "date": "2026-05-19",
           "value": 99.9
         },
@@ -52031,7 +51996,7 @@
         },
         {
           "date": "2026-05-21",
-          "value": 100.19
+          "value": 100.16
         },
         {
           "date": "2026-05-22",
@@ -52062,31 +52027,11 @@
           "value": 99.61
         },
         {
-          "date": "2026-06-03",
-          "value": 99.61
-        },
-        {
-          "date": "2026-06-04",
-          "value": 99.61
-        },
-        {
           "date": "2026-06-05",
           "value": 100.29
         },
         {
           "date": "2026-06-08",
-          "value": 100.29
-        },
-        {
-          "date": "2026-06-09",
-          "value": 100.29
-        },
-        {
-          "date": "2026-06-10",
-          "value": 100.29
-        },
-        {
-          "date": "2026-06-11",
           "value": 100.29
         },
         {
@@ -52099,15 +52044,15 @@
         },
         {
           "date": "2026-06-16",
-          "value": 99.9
+          "value": 99.88
         },
         {
           "date": "2026-06-17",
-          "value": 100.68
+          "value": 100.63
         },
         {
           "date": "2026-06-18",
-          "value": 100.49
+          "value": 100.44
         },
         {
           "date": "2026-06-22",
@@ -52243,7 +52188,7 @@
         },
         {
           "date": "2026-08-07",
-          "value": 161.99
+          "value": 161.94
         },
         {
           "date": "2026-08-10",
@@ -52287,71 +52232,71 @@
         },
         {
           "date": "2026-02-11",
-          "close": 10.24,
-          "ema50": 10.2585,
+          "close": 10.235,
+          "ema50": 10.2583,
           "rsi14": null,
-          "macd": -0.0028,
-          "macdSignal": -0.0008,
-          "macdHist": -0.002
+          "macd": -0.0032,
+          "macdSignal": -0.0009,
+          "macdHist": -0.0023
         },
         {
           "date": "2026-02-12",
           "close": 10.24,
-          "ema50": 10.2577,
+          "ema50": 10.2575,
           "rsi14": null,
-          "macd": -0.0038,
-          "macdSignal": -0.0014,
-          "macdHist": -0.0024
+          "macd": -0.004,
+          "macdSignal": -0.0015,
+          "macdHist": -0.0025
         },
         {
           "date": "2026-02-13",
           "close": 10.19,
-          "ema50": 10.2551,
+          "ema50": 10.2549,
           "rsi14": null,
-          "macd": -0.0084,
-          "macdSignal": -0.0028,
-          "macdHist": -0.0056
+          "macd": -0.0087,
+          "macdSignal": -0.003,
+          "macdHist": -0.0057
         },
         {
           "date": "2026-02-17",
           "close": 10.26,
-          "ema50": 10.2553,
+          "ema50": 10.2551,
           "rsi14": null,
-          "macd": -0.0065,
-          "macdSignal": -0.0035,
-          "macdHist": -0.003
+          "macd": -0.0066,
+          "macdSignal": -0.0037,
+          "macdHist": -0.0029
         },
         {
           "date": "2026-02-18",
           "close": 10.2,
-          "ema50": 10.2531,
+          "ema50": 10.2529,
           "rsi14": null,
-          "macd": -0.0095,
-          "macdSignal": -0.0047,
+          "macd": -0.0097,
+          "macdSignal": -0.0049,
           "macdHist": -0.0048
         },
         {
           "date": "2026-02-19",
           "close": 10.2,
-          "ema50": 10.251,
+          "ema50": 10.2509,
           "rsi14": null,
           "macd": -0.0119,
-          "macdSignal": -0.0062,
-          "macdHist": -0.0057
+          "macdSignal": -0.0063,
+          "macdHist": -0.0056
         },
         {
           "date": "2026-02-20",
           "close": 10.19,
-          "ema50": 10.2486,
+          "ema50": 10.2485,
           "rsi14": null,
           "macd": -0.0144,
-          "macdSignal": -0.0078,
-          "macdHist": -0.0066
+          "macdSignal": -0.0079,
+          "macdHist": -0.0065
         },
         {
           "date": "2026-02-23",
           "close": 10.18,
-          "ema50": 10.2459,
+          "ema50": 10.2458,
           "rsi14": null,
           "macd": -0.017,
           "macdSignal": -0.0097,
@@ -52360,16 +52305,16 @@
         {
           "date": "2026-02-24",
           "close": 10.14,
-          "ema50": 10.2418,
+          "ema50": 10.2416,
           "rsi14": null,
           "macd": -0.022,
-          "macdSignal": -0.0121,
-          "macdHist": -0.0099
+          "macdSignal": -0.0122,
+          "macdHist": -0.0098
         },
         {
           "date": "2026-02-25",
           "close": 10.15,
-          "ema50": 10.2382,
+          "ema50": 10.238,
           "rsi14": null,
           "macd": -0.0249,
           "macdSignal": -0.0147,
@@ -52377,17 +52322,17 @@
         },
         {
           "date": "2026-02-26",
-          "close": 10.19,
-          "ema50": 10.2363,
+          "close": 10.1885,
+          "ema50": 10.2361,
           "rsi14": null,
-          "macd": -0.0237,
+          "macd": -0.0238,
           "macdSignal": -0.0165,
-          "macdHist": -0.0072
+          "macdHist": -0.0073
         },
         {
           "date": "2026-02-27",
           "close": 10.16,
-          "ema50": 10.2333,
+          "ema50": 10.2331,
           "rsi14": null,
           "macd": -0.0249,
           "macdSignal": -0.0182,
@@ -52396,1227 +52341,1472 @@
         {
           "date": "2026-03-02",
           "close": 10.17,
-          "ema50": 10.2308,
-          "rsi14": 37.14,
-          "macd": -0.0248,
+          "ema50": 10.2306,
+          "rsi14": 37.39,
+          "macd": -0.0247,
           "macdSignal": -0.0195,
-          "macdHist": -0.0053
-        },
-        {
-          "date": "2026-03-03",
-          "close": 10.17,
-          "ema50": 10.2284,
-          "rsi14": 39.39,
-          "macd": -0.0243,
-          "macdSignal": -0.0205,
-          "macdHist": -0.0038
+          "macdHist": -0.0052
         },
         {
           "date": "2026-03-04",
           "close": 10.11,
-          "ema50": 10.2238,
-          "rsi14": 33.33,
-          "macd": -0.0285,
-          "macdSignal": -0.0221,
-          "macdHist": -0.0064
+          "ema50": 10.2259,
+          "rsi14": 33.63,
+          "macd": -0.0291,
+          "macdSignal": -0.0214,
+          "macdHist": -0.0077
         },
         {
           "date": "2026-03-05",
           "close": 10.16,
-          "ema50": 10.2213,
-          "rsi14": 40.91,
-          "macd": -0.0274,
-          "macdSignal": -0.0231,
-          "macdHist": -0.0043
+          "ema50": 10.2233,
+          "rsi14": 41.52,
+          "macd": -0.0282,
+          "macdSignal": -0.0228,
+          "macdHist": -0.0054
         },
         {
           "date": "2026-03-06",
           "close": 10.16,
-          "ema50": 10.2189,
-          "rsi14": 46.15,
-          "macd": -0.0263,
-          "macdSignal": -0.0238,
-          "macdHist": -0.0025
-        },
-        {
-          "date": "2026-03-09",
-          "close": 10.16,
-          "ema50": 10.2166,
-          "rsi14": 34.37,
-          "macd": -0.0252,
-          "macdSignal": -0.0241,
-          "macdHist": -0.0011
-        },
-        {
-          "date": "2026-03-10",
-          "close": 10.16,
-          "ema50": 10.2144,
-          "rsi14": 42.31,
-          "macd": -0.024,
-          "macdSignal": -0.024,
-          "macdHist": 0
+          "ema50": 10.2208,
+          "rsi14": 40.85,
+          "macd": -0.0272,
+          "macdSignal": -0.0237,
+          "macdHist": -0.0035
         },
         {
           "date": "2026-03-11",
           "close": 10.15,
-          "ema50": 10.2118,
-          "rsi14": 40.74,
-          "macd": -0.0236,
-          "macdSignal": -0.024,
-          "macdHist": 0.0004
+          "ema50": 10.2181,
+          "rsi14": 44.96,
+          "macd": -0.0269,
+          "macdSignal": -0.0243,
+          "macdHist": -0.0026
         },
         {
           "date": "2026-03-12",
           "close": 10.14,
-          "ema50": 10.209,
-          "rsi14": 40.74,
-          "macd": -0.0237,
-          "macdSignal": -0.0239,
-          "macdHist": 0.0002
+          "ema50": 10.215,
+          "rsi14": 32.2,
+          "macd": -0.0271,
+          "macdSignal": -0.0249,
+          "macdHist": -0.0022
         },
         {
           "date": "2026-03-13",
-          "close": 10.15,
-          "ema50": 10.2067,
-          "rsi14": 44.44,
-          "macd": -0.0228,
-          "macdSignal": -0.0237,
-          "macdHist": 0.0009
+          "close": 10.145,
+          "ema50": 10.2123,
+          "rsi14": 40.25,
+          "macd": -0.0265,
+          "macdSignal": -0.0252,
+          "macdHist": -0.0013
         },
         {
           "date": "2026-03-16",
           "close": 10.17,
-          "ema50": 10.2053,
-          "rsi14": 56,
-          "macd": -0.0202,
-          "macdSignal": -0.023,
-          "macdHist": 0.0028
+          "ema50": 10.2106,
+          "rsi14": 45.11,
+          "macd": -0.0238,
+          "macdSignal": -0.0249,
+          "macdHist": 0.0011
         },
         {
           "date": "2026-03-17",
-          "close": 10.09,
-          "ema50": 10.2007,
-          "rsi14": 40.62,
-          "macd": -0.0244,
-          "macdSignal": -0.0233,
-          "macdHist": -0.0011
+          "close": 10.0946,
+          "ema50": 10.2061,
+          "rsi14": 37.19,
+          "macd": -0.0275,
+          "macdSignal": -0.0254,
+          "macdHist": -0.0021
         },
         {
           "date": "2026-03-18",
-          "close": 10.12,
-          "ema50": 10.1976,
-          "rsi14": 38.71,
-          "macd": -0.025,
-          "macdSignal": -0.0236,
-          "macdHist": -0.0014
+          "close": 10.115,
+          "ema50": 10.2025,
+          "rsi14": 41.51,
+          "macd": -0.0284,
+          "macdSignal": -0.026,
+          "macdHist": -0.0024
         },
         {
           "date": "2026-03-19",
           "close": 10.17,
-          "ema50": 10.1965,
-          "rsi14": 51.52,
-          "macd": -0.0212,
-          "macdSignal": -0.0231,
-          "macdHist": 0.0019
+          "ema50": 10.2012,
+          "rsi14": 53.77,
+          "macd": -0.0244,
+          "macdSignal": -0.0257,
+          "macdHist": 0.0013
         },
         {
           "date": "2026-03-20",
-          "close": 10.16,
-          "ema50": 10.1951,
-          "rsi14": 48.48,
-          "macd": -0.0187,
-          "macdSignal": -0.0222,
-          "macdHist": 0.0035
-        },
-        {
-          "date": "2026-03-23",
-          "close": 10.16,
-          "ema50": 10.1937,
-          "rsi14": 48.48,
-          "macd": -0.0166,
-          "macdSignal": -0.0211,
-          "macdHist": 0.0045
+          "close": 10.1574,
+          "ema50": 10.1995,
+          "rsi14": 50.92,
+          "macd": -0.0219,
+          "macdSignal": -0.0249,
+          "macdHist": 0.003
         },
         {
           "date": "2026-03-24",
           "close": 10.17,
-          "ema50": 10.1928,
-          "rsi14": 60.71,
-          "macd": -0.0139,
-          "macdSignal": -0.0197,
-          "macdHist": 0.0058
+          "ema50": 10.1983,
+          "rsi14": 47.53,
+          "macd": -0.0188,
+          "macdSignal": -0.0237,
+          "macdHist": 0.0049
         },
         {
           "date": "2026-03-25",
           "close": 10.17,
-          "ema50": 10.1919,
-          "rsi14": 52.17,
-          "macd": -0.0117,
-          "macdSignal": -0.0181,
-          "macdHist": 0.0064
-        },
-        {
-          "date": "2026-03-26",
-          "close": 10.17,
-          "ema50": 10.191,
-          "rsi14": 52.17,
-          "macd": -0.0098,
-          "macdSignal": -0.0164,
-          "macdHist": 0.0066
+          "ema50": 10.1972,
+          "rsi14": 51.45,
+          "macd": -0.0161,
+          "macdSignal": -0.0222,
+          "macdHist": 0.0061
         },
         {
           "date": "2026-03-27",
           "close": 10.14,
-          "ema50": 10.189,
-          "rsi14": 46.15,
-          "macd": -0.0106,
-          "macdSignal": -0.0153,
-          "macdHist": 0.0047
+          "ema50": 10.195,
+          "rsi14": 45.9,
+          "macd": -0.0162,
+          "macdSignal": -0.021,
+          "macdHist": 0.0048
         },
         {
           "date": "2026-03-30",
           "close": 10.11,
-          "ema50": 10.1859,
-          "rsi14": 41.38,
-          "macd": -0.0135,
-          "macdSignal": -0.0149,
-          "macdHist": 0.0014
+          "ema50": 10.1916,
+          "rsi14": 50,
+          "macd": -0.0186,
+          "macdSignal": -0.0205,
+          "macdHist": 0.0019
         },
         {
           "date": "2026-03-31",
           "close": 10.16,
-          "ema50": 10.1849,
-          "rsi14": 51.52,
-          "macd": -0.0116,
-          "macdSignal": -0.0142,
-          "macdHist": 0.0026
+          "ema50": 10.1904,
+          "rsi14": 50,
+          "macd": -0.0161,
+          "macdSignal": -0.0196,
+          "macdHist": 0.0035
         },
         {
           "date": "2026-04-01",
           "close": 10.15,
-          "ema50": 10.1835,
-          "rsi14": 51.52,
-          "macd": -0.0108,
-          "macdSignal": -0.0136,
-          "macdHist": 0.0028
+          "ema50": 10.1888,
+          "rsi14": 48.55,
+          "macd": -0.0149,
+          "macdSignal": -0.0187,
+          "macdHist": 0.0038
         },
         {
           "date": "2026-04-02",
           "close": 10.2,
-          "ema50": 10.1842,
-          "rsi14": 56.76,
-          "macd": -0.0061,
-          "macdSignal": -0.0121,
-          "macdHist": 0.006
+          "ema50": 10.1893,
+          "rsi14": 56.48,
+          "macd": -0.0098,
+          "macdSignal": -0.0169,
+          "macdHist": 0.0071
         },
         {
           "date": "2026-04-06",
           "close": 10.2,
-          "ema50": 10.1848,
-          "rsi14": 54.29,
-          "macd": -0.0023,
-          "macdSignal": -0.0101,
-          "macdHist": 0.0078
+          "ema50": 10.1897,
+          "rsi14": 57.98,
+          "macd": -0.0055,
+          "macdSignal": -0.0146,
+          "macdHist": 0.0091
         },
         {
           "date": "2026-04-07",
           "close": 10.2,
-          "ema50": 10.1854,
-          "rsi14": 70.37,
-          "macd": 0.0007,
-          "macdSignal": -0.0079,
-          "macdHist": 0.0086
+          "ema50": 10.1901,
+          "rsi14": 57.41,
+          "macd": -0.0023,
+          "macdSignal": -0.0122,
+          "macdHist": 0.0099
         },
         {
           "date": "2026-04-08",
           "close": 10.18,
-          "ema50": 10.1852,
-          "rsi14": 61.54,
-          "macd": 0.0014,
-          "macdSignal": -0.0061,
-          "macdHist": 0.0075
+          "ema50": 10.1897,
+          "rsi14": 51.37,
+          "macd": -0.0012,
+          "macdSignal": -0.01,
+          "macdHist": 0.0088
         },
         {
           "date": "2026-04-09",
-          "close": 10.2,
-          "ema50": 10.1858,
-          "rsi14": 56.52,
-          "macd": 0.0036,
-          "macdSignal": -0.0041,
-          "macdHist": 0.0077
+          "close": 10.1999,
+          "ema50": 10.1901,
+          "rsi14": 66.96,
+          "macd": 0.0012,
+          "macdSignal": -0.0077,
+          "macdHist": 0.0089
         },
         {
           "date": "2026-04-10",
           "close": 10.2,
-          "ema50": 10.1863,
-          "rsi14": 59.09,
-          "macd": 0.0052,
-          "macdSignal": -0.0023,
-          "macdHist": 0.0075
+          "ema50": 10.1905,
+          "rsi14": 64.65,
+          "macd": 0.0031,
+          "macdSignal": -0.0056,
+          "macdHist": 0.0087
         },
         {
           "date": "2026-04-13",
           "close": 10.18,
-          "ema50": 10.1861,
-          "rsi14": 54.17,
-          "macd": 0.0048,
-          "macdSignal": -0.0009,
-          "macdHist": 0.0057
+          "ema50": 10.1901,
+          "rsi14": 51.96,
+          "macd": 0.0029,
+          "macdSignal": -0.0039,
+          "macdHist": 0.0068
         },
         {
           "date": "2026-04-14",
           "close": 10.19,
-          "ema50": 10.1862,
-          "rsi14": 54.17,
-          "macd": 0.0053,
-          "macdSignal": 0.0004,
-          "macdHist": 0.0049
+          "ema50": 10.1901,
+          "rsi14": 56.45,
+          "macd": 0.0035,
+          "macdSignal": -0.0024,
+          "macdHist": 0.0059
         },
         {
           "date": "2026-04-15",
           "close": 10.19,
-          "ema50": 10.1864,
+          "ema50": 10.1901,
           "rsi14": 54.17,
-          "macd": 0.0057,
-          "macdSignal": 0.0014,
-          "macdHist": 0.0043
+          "macd": 0.004,
+          "macdSignal": -0.0011,
+          "macdHist": 0.0051
         },
         {
           "date": "2026-04-16",
-          "close": 10.19,
-          "ema50": 10.1865,
-          "rsi14": 54.17,
-          "macd": 0.0058,
-          "macdSignal": 0.0023,
-          "macdHist": 0.0035
+          "close": 10.185,
+          "ema50": 10.1899,
+          "rsi14": 53.06,
+          "macd": 0.0039,
+          "macdSignal": -0.0001,
+          "macdHist": 0.004
         },
         {
           "date": "2026-04-17",
           "close": 10.19,
-          "ema50": 10.1867,
-          "rsi14": 61.9,
-          "macd": 0.0058,
-          "macdSignal": 0.003,
-          "macdHist": 0.0028
+          "ema50": 10.1899,
+          "rsi14": 61.36,
+          "macd": 0.0042,
+          "macdSignal": 0.0007,
+          "macdHist": 0.0035
         },
         {
           "date": "2026-04-20",
-          "close": 10.19,
-          "ema50": 10.1868,
-          "rsi14": 72.22,
-          "macd": 0.0058,
-          "macdSignal": 0.0036,
-          "macdHist": 0.0022
+          "close": 10.1853,
+          "ema50": 10.1897,
+          "rsi14": 69.34,
+          "macd": 0.004,
+          "macdSignal": 0.0014,
+          "macdHist": 0.0026
         },
         {
           "date": "2026-04-21",
           "close": 10.29,
-          "ema50": 10.1908,
-          "rsi14": 78.26,
-          "macd": 0.0137,
-          "macdSignal": 0.0056,
-          "macdHist": 0.0081
+          "ema50": 10.1936,
+          "rsi14": 76.06,
+          "macd": 0.0122,
+          "macdSignal": 0.0036,
+          "macdHist": 0.0086
         },
         {
           "date": "2026-04-22",
           "close": 10.2,
-          "ema50": 10.1912,
-          "rsi14": 58.06,
-          "macd": 0.0126,
-          "macdSignal": 0.007,
-          "macdHist": 0.0056
+          "ema50": 10.1939,
+          "rsi14": 57.59,
+          "macd": 0.0112,
+          "macdSignal": 0.0051,
+          "macdHist": 0.0061
         },
         {
           "date": "2026-04-23",
           "close": 10.25,
-          "ema50": 10.1935,
-          "rsi14": 58.06,
-          "macd": 0.0156,
-          "macdSignal": 0.0087,
-          "macdHist": 0.0069
+          "ema50": 10.1961,
+          "rsi14": 57.59,
+          "macd": 0.0144,
+          "macdSignal": 0.0069,
+          "macdHist": 0.0075
         },
         {
           "date": "2026-04-24",
           "close": 10.25,
-          "ema50": 10.1957,
-          "rsi14": 58.06,
-          "macd": 0.0177,
-          "macdSignal": 0.0105,
-          "macdHist": 0.0072
+          "ema50": 10.1982,
+          "rsi14": 57.59,
+          "macd": 0.0166,
+          "macdSignal": 0.0089,
+          "macdHist": 0.0077
         },
         {
           "date": "2026-04-27",
           "close": 10.24,
-          "ema50": 10.1974,
-          "rsi14": 56.25,
-          "macd": 0.0183,
-          "macdSignal": 0.0121,
-          "macdHist": 0.0062
+          "ema50": 10.1998,
+          "rsi14": 55.89,
+          "macd": 0.0175,
+          "macdSignal": 0.0106,
+          "macdHist": 0.0069
         },
         {
           "date": "2026-04-28",
           "close": 10.24,
-          "ema50": 10.1991,
-          "rsi14": 60,
-          "macd": 0.0186,
-          "macdSignal": 0.0134,
-          "macdHist": 0.0052
+          "ema50": 10.2014,
+          "rsi14": 59.39,
+          "macd": 0.0179,
+          "macdSignal": 0.0121,
+          "macdHist": 0.0058
         },
         {
           "date": "2026-04-29",
           "close": 10.22,
-          "ema50": 10.1999,
-          "rsi14": 53.33,
-          "macd": 0.0171,
-          "macdSignal": 0.0141,
-          "macdHist": 0.003
-        },
-        {
-          "date": "2026-04-30",
-          "close": 10.22,
-          "ema50": 10.2007,
-          "rsi14": 53.33,
-          "macd": 0.0157,
-          "macdSignal": 0.0144,
-          "macdHist": 0.0013
-        },
-        {
-          "date": "2026-05-01",
-          "close": 10.22,
-          "ema50": 10.2015,
-          "rsi14": 57.14,
-          "macd": 0.0144,
-          "macdSignal": 0.0144,
-          "macdHist": 0
-        },
-        {
-          "date": "2026-05-04",
-          "close": 10.22,
-          "ema50": 10.2022,
-          "rsi14": 55.56,
-          "macd": 0.0132,
-          "macdSignal": 0.0142,
-          "macdHist": -0.001
-        },
-        {
-          "date": "2026-05-05",
-          "close": 10.22,
-          "ema50": 10.2029,
-          "rsi14": 55.56,
-          "macd": 0.0122,
-          "macdSignal": 0.0138,
-          "macdHist": -0.0016
+          "ema50": 10.2021,
+          "rsi14": 53.15,
+          "macd": 0.0164,
+          "macdSignal": 0.0129,
+          "macdHist": 0.0035
         },
         {
           "date": "2026-05-06",
           "close": 10.22,
-          "ema50": 10.2036,
-          "rsi14": 55.56,
-          "macd": 0.0112,
-          "macdSignal": 0.0133,
-          "macdHist": -0.0021
+          "ema50": 10.2028,
+          "rsi14": 53.13,
+          "macd": 0.0151,
+          "macdSignal": 0.0134,
+          "macdHist": 0.0017
         },
         {
           "date": "2026-05-07",
           "close": 10.21,
-          "ema50": 10.2038,
-          "rsi14": 53.57,
-          "macd": 0.0095,
-          "macdSignal": 0.0125,
-          "macdHist": -0.003
+          "ema50": 10.2031,
+          "rsi14": 54.85,
+          "macd": 0.0131,
+          "macdSignal": 0.0133,
+          "macdHist": -0.0002
         },
         {
           "date": "2026-05-08",
           "close": 10.2,
-          "ema50": 10.2037,
-          "rsi14": 51.72,
-          "macd": 0.0072,
-          "macdSignal": 0.0115,
-          "macdHist": -0.0043
+          "ema50": 10.203,
+          "rsi14": 51.62,
+          "macd": 0.0106,
+          "macdSignal": 0.0128,
+          "macdHist": -0.0022
         },
         {
           "date": "2026-05-11",
           "close": 10.24,
-          "ema50": 10.2051,
-          "rsi14": 39.13,
-          "macd": 0.0086,
-          "macdSignal": 0.0109,
-          "macdHist": -0.0023
-        },
-        {
-          "date": "2026-05-12",
-          "close": 10.24,
-          "ema50": 10.2065,
-          "rsi14": 64.29,
-          "macd": 0.0096,
-          "macdSignal": 0.0106,
-          "macdHist": -0.001
+          "ema50": 10.2044,
+          "rsi14": 57.16,
+          "macd": 0.0116,
+          "macdSignal": 0.0125,
+          "macdHist": -0.0009
         },
         {
           "date": "2026-05-13",
           "close": 10.24,
-          "ema50": 10.2078,
-          "rsi14": 44.44,
-          "macd": 0.0102,
-          "macdSignal": 0.0105,
-          "macdHist": -0.0003
+          "ema50": 10.2058,
+          "rsi14": 57.98,
+          "macd": 0.0124,
+          "macdSignal": 0.0125,
+          "macdHist": -0.0001
         },
         {
           "date": "2026-05-14",
           "close": 10.24,
-          "ema50": 10.209,
-          "rsi14": 44.44,
-          "macd": 0.0106,
-          "macdSignal": 0.0106,
-          "macdHist": 0
+          "ema50": 10.2072,
+          "rsi14": 57.37,
+          "macd": 0.0128,
+          "macdSignal": 0.0126,
+          "macdHist": 0.0002
         },
         {
           "date": "2026-05-15",
           "close": 10.28,
-          "ema50": 10.2118,
-          "rsi14": 66.67,
-          "macd": 0.014,
-          "macdSignal": 0.0112,
-          "macdHist": 0.0028
-        },
-        {
-          "date": "2026-05-18",
-          "close": 10.28,
-          "ema50": 10.2145,
-          "rsi14": 66.67,
-          "macd": 0.0165,
-          "macdSignal": 0.0123,
-          "macdHist": 0.0042
+          "ema50": 10.21,
+          "rsi14": 62.64,
+          "macd": 0.0162,
+          "macdSignal": 0.0133,
+          "macdHist": 0.0029
         },
         {
           "date": "2026-05-19",
           "close": 10.25,
-          "ema50": 10.2159,
-          "rsi14": 61.54,
-          "macd": 0.0159,
-          "macdSignal": 0.013,
-          "macdHist": 0.0029
+          "ema50": 10.2116,
+          "rsi14": 43.33,
+          "macd": 0.0162,
+          "macdSignal": 0.0139,
+          "macdHist": 0.0023
         },
         {
           "date": "2026-05-20",
           "close": 10.27,
-          "ema50": 10.218,
-          "rsi14": 66.67,
-          "macd": 0.0168,
-          "macdSignal": 0.0138,
-          "macdHist": 0.003
+          "ema50": 10.2139,
+          "rsi14": 65.22,
+          "macd": 0.0177,
+          "macdSignal": 0.0146,
+          "macdHist": 0.0031
         },
         {
           "date": "2026-05-21",
-          "close": 10.28,
-          "ema50": 10.2204,
-          "rsi14": 68.75,
-          "macd": 0.0181,
-          "macdSignal": 0.0146,
-          "macdHist": 0.0035
+          "close": 10.2766,
+          "ema50": 10.2164,
+          "rsi14": 57.13,
+          "macd": 0.0192,
+          "macdSignal": 0.0156,
+          "macdHist": 0.0036
         },
         {
           "date": "2026-05-22",
           "close": 10.25,
-          "ema50": 10.2216,
-          "rsi14": 57.89,
-          "macd": 0.0165,
-          "macdSignal": 0.015,
-          "macdHist": 0.0015
+          "ema50": 10.2177,
+          "rsi14": 50,
+          "macd": 0.018,
+          "macdSignal": 0.016,
+          "macdHist": 0.002
         },
         {
           "date": "2026-05-26",
           "close": 10.25,
-          "ema50": 10.2227,
-          "rsi14": 57.89,
-          "macd": 0.0152,
-          "macdSignal": 0.015,
-          "macdHist": 0.0002
+          "ema50": 10.2189,
+          "rsi14": 52.46,
+          "macd": 0.0169,
+          "macdSignal": 0.0162,
+          "macdHist": 0.0007
         },
         {
           "date": "2026-05-27",
           "close": 10.2,
-          "ema50": 10.2218,
-          "rsi14": 45.83,
-          "macd": 0.0099,
-          "macdSignal": 0.014,
-          "macdHist": -0.0041
+          "ema50": 10.2182,
+          "rsi14": 42.1,
+          "macd": 0.0118,
+          "macdSignal": 0.0153,
+          "macdHist": -0.0035
         },
         {
           "date": "2026-05-28",
           "close": 10.22,
-          "ema50": 10.2218,
-          "rsi14": 52,
+          "ema50": 10.2183,
+          "rsi14": 50,
+          "macd": 0.0093,
+          "macdSignal": 0.0141,
+          "macdHist": -0.0048
+        },
+        {
+          "date": "2026-05-29",
+          "close": 10.22,
+          "ema50": 10.2183,
+          "rsi14": 50,
           "macd": 0.0072,
           "macdSignal": 0.0127,
           "macdHist": -0.0055
         },
         {
-          "date": "2026-05-29",
-          "close": 10.22,
-          "ema50": 10.2217,
-          "rsi14": 54.17,
-          "macd": 0.0051,
-          "macdSignal": 0.0111,
-          "macdHist": -0.006
-        },
-        {
           "date": "2026-06-01",
           "close": 10.23,
-          "ema50": 10.222,
-          "rsi14": 47.62,
-          "macd": 0.0042,
-          "macdSignal": 0.0098,
-          "macdHist": -0.0056
+          "ema50": 10.2188,
+          "rsi14": 53.95,
+          "macd": 0.0063,
+          "macdSignal": 0.0115,
+          "macdHist": -0.0052
         },
         {
           "date": "2026-06-02",
           "close": 10.22,
-          "ema50": 10.2219,
-          "rsi14": 45.45,
-          "macd": 0.0025,
-          "macdSignal": 0.0083,
-          "macdHist": -0.0058
-        },
-        {
-          "date": "2026-06-03",
-          "close": 10.22,
-          "ema50": 10.2219,
-          "rsi14": 45.45,
-          "macd": 0.0013,
-          "macdSignal": 0.0069,
-          "macdHist": -0.0056
-        },
-        {
-          "date": "2026-06-04",
-          "close": 10.22,
-          "ema50": 10.2218,
-          "rsi14": 45.45,
-          "macd": 0.0002,
-          "macdSignal": 0.0056,
+          "ema50": 10.2188,
+          "rsi14": 53.95,
+          "macd": 0.0047,
+          "macdSignal": 0.0101,
           "macdHist": -0.0054
         },
         {
           "date": "2026-06-05",
           "close": 10.29,
-          "ema50": 10.2245,
-          "rsi14": 52,
-          "macd": 0.005,
-          "macdSignal": 0.0055,
-          "macdHist": -0.0005
+          "ema50": 10.2216,
+          "rsi14": 58.83,
+          "macd": 0.009,
+          "macdSignal": 0.0099,
+          "macdHist": -0.0009
         },
         {
           "date": "2026-06-08",
-          "close": 10.29,
-          "ema50": 10.227,
-          "rsi14": 52,
-          "macd": 0.0087,
-          "macdSignal": 0.0061,
-          "macdHist": 0.0026
-        },
-        {
-          "date": "2026-06-09",
-          "close": 10.29,
-          "ema50": 10.2295,
-          "rsi14": 59.09,
-          "macd": 0.0115,
-          "macdSignal": 0.0072,
-          "macdHist": 0.0043
-        },
-        {
-          "date": "2026-06-10",
-          "close": 10.29,
-          "ema50": 10.2319,
-          "rsi14": 55,
-          "macd": 0.0136,
-          "macdSignal": 0.0085,
-          "macdHist": 0.0051
-        },
-        {
-          "date": "2026-06-11",
-          "close": 10.29,
-          "ema50": 10.2342,
-          "rsi14": 52.63,
-          "macd": 0.0151,
-          "macdSignal": 0.0098,
-          "macdHist": 0.0053
+          "close": 10.2899,
+          "ema50": 10.2243,
+          "rsi14": 58.81,
+          "macd": 0.0122,
+          "macdSignal": 0.0103,
+          "macdHist": 0.0019
         },
         {
           "date": "2026-06-12",
           "close": 10.22,
-          "ema50": 10.2336,
-          "rsi14": 43.48,
-          "macd": 0.0104,
-          "macdSignal": 0.0099,
-          "macdHist": 0.0005
+          "ema50": 10.2241,
+          "rsi14": 47.17,
+          "macd": 0.0091,
+          "macdSignal": 0.0101,
+          "macdHist": -0.001
         },
         {
           "date": "2026-06-15",
           "close": 10.24,
-          "ema50": 10.2338,
-          "rsi14": 48,
-          "macd": 0.0083,
-          "macdSignal": 0.0096,
-          "macdHist": -0.0013
+          "ema50": 10.2248,
+          "rsi14": 44,
+          "macd": 0.0081,
+          "macdSignal": 0.0097,
+          "macdHist": -0.0016
         },
         {
           "date": "2026-06-16",
-          "close": 10.25,
-          "ema50": 10.2345,
-          "rsi14": 61.9,
-          "macd": 0.0073,
-          "macdSignal": 0.0091,
-          "macdHist": -0.0018
+          "close": 10.2482,
+          "ema50": 10.2257,
+          "rsi14": 49.71,
+          "macd": 0.0079,
+          "macdSignal": 0.0093,
+          "macdHist": -0.0014
         },
         {
           "date": "2026-06-17",
-          "close": 10.33,
-          "ema50": 10.2382,
-          "rsi14": 70.37,
-          "macd": 0.0128,
-          "macdSignal": 0.0099,
-          "macdHist": 0.0029
+          "close": 10.325,
+          "ema50": 10.2296,
+          "rsi14": 57.47,
+          "macd": 0.0138,
+          "macdSignal": 0.0102,
+          "macdHist": 0.0036
         },
         {
           "date": "2026-06-18",
-          "close": 10.31,
-          "ema50": 10.241,
-          "rsi14": 65.52,
-          "macd": 0.0155,
-          "macdSignal": 0.011,
-          "macdHist": 0.0045
+          "close": 10.305,
+          "ema50": 10.2325,
+          "rsi14": 53.72,
+          "macd": 0.0166,
+          "macdSignal": 0.0115,
+          "macdHist": 0.0051
         },
         {
           "date": "2026-06-22",
           "close": 10.37,
-          "ema50": 10.2461,
-          "rsi14": 70.59,
-          "macd": 0.0221,
-          "macdSignal": 0.0132,
-          "macdHist": 0.0089
+          "ema50": 10.2379,
+          "rsi14": 64.29,
+          "macd": 0.0238,
+          "macdSignal": 0.014,
+          "macdHist": 0.0098
         },
         {
           "date": "2026-06-23",
-          "close": 10.42,
-          "ema50": 10.2529,
-          "rsi14": 76.32,
-          "macd": 0.0311,
-          "macdSignal": 0.0168,
-          "macdHist": 0.0143
+          "close": 10.4199,
+          "ema50": 10.2451,
+          "rsi14": 68.08,
+          "macd": 0.0332,
+          "macdSignal": 0.0178,
+          "macdHist": 0.0154
         },
         {
           "date": "2026-06-24",
           "close": 11.99,
-          "ema50": 10.321,
-          "rsi14": 95.38,
-          "macd": 0.163,
-          "macdSignal": 0.046,
-          "macdHist": 0.117
+          "ema50": 10.3135,
+          "rsi14": 94.97,
+          "macd": 0.1654,
+          "macdSignal": 0.0473,
+          "macdHist": 0.1181
         },
         {
           "date": "2026-06-25",
           "close": 12.44,
-          "ema50": 10.4041,
-          "rsi14": 96.25,
-          "macd": 0.3003,
-          "macdSignal": 0.0969,
-          "macdHist": 0.2034
+          "ema50": 10.3969,
+          "rsi14": 95.87,
+          "macd": 0.303,
+          "macdSignal": 0.0985,
+          "macdHist": 0.2045
         },
         {
           "date": "2026-06-26",
           "close": 13.86,
-          "ema50": 10.5397,
-          "rsi14": 97.6,
-          "macd": 0.5178,
-          "macdSignal": 0.1811,
-          "macdHist": 0.3367
+          "ema50": 10.5327,
+          "rsi14": 97.4,
+          "macd": 0.5206,
+          "macdSignal": 0.1829,
+          "macdHist": 0.3377
         },
         {
           "date": "2026-06-29",
           "close": 16.4,
-          "ema50": 10.7695,
-          "rsi14": 98.57,
-          "macd": 0.8849,
-          "macdSignal": 0.3218,
-          "macdHist": 0.5631
+          "ema50": 10.7628,
+          "rsi14": 98.43,
+          "macd": 0.8878,
+          "macdSignal": 0.3239,
+          "macdHist": 0.5639
         },
         {
           "date": "2026-06-30",
           "close": 17.45,
-          "ema50": 11.0315,
-          "rsi14": 98.77,
-          "macd": 1.2462,
-          "macdSignal": 0.5067,
-          "macdHist": 0.7395
+          "ema50": 11.025,
+          "rsi14": 98.79,
+          "macd": 1.2491,
+          "macdSignal": 0.5089,
+          "macdHist": 0.7402
         },
         {
           "date": "2026-07-01",
           "close": 17.06,
-          "ema50": 11.2679,
+          "ema50": 11.2617,
           "rsi14": 93.79,
-          "macd": 1.484,
-          "macdSignal": 0.7022,
-          "macdHist": 0.7818
+          "macd": 1.4869,
+          "macdSignal": 0.7045,
+          "macdHist": 0.7824
         },
         {
           "date": "2026-07-02",
           "close": 19.1,
-          "ema50": 11.575,
+          "ema50": 11.5691,
           "rsi14": 95.09,
-          "macd": 1.8161,
-          "macdSignal": 0.925,
-          "macdHist": 0.8911
+          "macd": 1.819,
+          "macdSignal": 0.9274,
+          "macdHist": 0.8916
         },
         {
           "date": "2026-07-06",
           "close": 17.22,
-          "ema50": 11.7964,
+          "ema50": 11.7907,
           "rsi14": 80.22,
-          "macd": 1.9056,
-          "macdSignal": 1.1211,
-          "macdHist": 0.7845
+          "macd": 1.9084,
+          "macdSignal": 1.1236,
+          "macdHist": 0.7848
         },
         {
           "date": "2026-07-07",
           "close": 15.86,
-          "ema50": 11.9557,
+          "ema50": 11.9503,
           "rsi14": 71.75,
-          "macd": 1.8456,
-          "macdSignal": 1.266,
-          "macdHist": 0.5796
+          "macd": 1.8483,
+          "macdSignal": 1.2685,
+          "macdHist": 0.5798
         },
         {
           "date": "2026-07-08",
           "close": 15.26,
-          "ema50": 12.0853,
-          "rsi14": 68.54,
-          "macd": 1.7296,
-          "macdSignal": 1.3587,
-          "macdHist": 0.3709
+          "ema50": 12.0801,
+          "rsi14": 68.55,
+          "macd": 1.7323,
+          "macdSignal": 1.3613,
+          "macdHist": 0.371
         },
         {
           "date": "2026-07-09",
           "close": 16.23,
-          "ema50": 12.2479,
-          "rsi14": 70.49,
-          "macd": 1.6964,
-          "macdSignal": 1.4262,
-          "macdHist": 0.2702
+          "ema50": 12.2428,
+          "rsi14": 70.5,
+          "macd": 1.6989,
+          "macdSignal": 1.4288,
+          "macdHist": 0.2701
         },
         {
           "date": "2026-07-10",
           "close": 15.55,
-          "ema50": 12.3774,
-          "rsi14": 67.4,
-          "macd": 1.5968,
-          "macdSignal": 1.4604,
+          "ema50": 12.3725,
+          "rsi14": 67.41,
+          "macd": 1.5993,
+          "macdSignal": 1.4629,
           "macdHist": 0.1364
         },
         {
           "date": "2026-07-13",
           "close": 14.34,
-          "ema50": 12.4543,
+          "ema50": 12.4496,
           "rsi14": 62.25,
-          "macd": 1.4041,
-          "macdSignal": 1.4491,
-          "macdHist": -0.045
+          "macd": 1.4064,
+          "macdSignal": 1.4516,
+          "macdHist": -0.0452
         },
         {
           "date": "2026-07-14",
           "close": 15.97,
-          "ema50": 12.5922,
+          "ema50": 12.5877,
           "rsi14": 65.6,
-          "macd": 1.3671,
-          "macdSignal": 1.4327,
-          "macdHist": -0.0656
+          "macd": 1.3693,
+          "macdSignal": 1.4351,
+          "macdHist": -0.0658
         },
         {
           "date": "2026-07-15",
           "close": 15.74,
-          "ema50": 12.7156,
+          "ema50": 12.7113,
           "rsi14": 61.4,
-          "macd": 1.3042,
-          "macdSignal": 1.407,
-          "macdHist": -0.1028
+          "macd": 1.3063,
+          "macdSignal": 1.4094,
+          "macdHist": -0.1031
         },
         {
           "date": "2026-07-16",
           "close": 14.61,
-          "ema50": 12.7899,
+          "ema50": 12.7858,
           "rsi14": 56.33,
-          "macd": 1.15,
-          "macdSignal": 1.3556,
-          "macdHist": -0.2056
+          "macd": 1.1519,
+          "macdSignal": 1.3579,
+          "macdHist": -0.206
         },
         {
           "date": "2026-07-17",
           "close": 14.47,
-          "ema50": 12.8558,
+          "ema50": 12.8518,
           "rsi14": 51.92,
-          "macd": 1.0048,
-          "macdSignal": 1.2854,
-          "macdHist": -0.2806
+          "macd": 1.0067,
+          "macdSignal": 1.2876,
+          "macdHist": -0.2809
         },
         {
           "date": "2026-07-20",
           "close": 14.39,
-          "ema50": 12.916,
+          "ema50": 12.9121,
           "rsi14": 42.49,
-          "macd": 0.8732,
-          "macdSignal": 1.203,
-          "macdHist": -0.3298
+          "macd": 0.8749,
+          "macdSignal": 1.2051,
+          "macdHist": -0.3302
         },
         {
           "date": "2026-07-21",
           "close": 14.83,
-          "ema50": 12.991,
+          "ema50": 12.9874,
           "rsi14": 39.75,
-          "macd": 0.7953,
-          "macdSignal": 1.1215,
-          "macdHist": -0.3262
+          "macd": 0.797,
+          "macdSignal": 1.1235,
+          "macdHist": -0.3265
         },
         {
           "date": "2026-07-22",
           "close": 14.65,
-          "ema50": 13.0561,
+          "ema50": 13.0526,
           "rsi14": 40.41,
-          "macd": 0.7108,
-          "macdSignal": 1.0393,
-          "macdHist": -0.3285
+          "macd": 0.7124,
+          "macdSignal": 1.0413,
+          "macdHist": -0.3289
         },
         {
           "date": "2026-07-23",
           "close": 14.4,
-          "ema50": 13.1088,
+          "ema50": 13.1054,
           "rsi14": 28.2,
-          "macd": 0.6166,
-          "macdSignal": 0.9548,
-          "macdHist": -0.3382
+          "macd": 0.6181,
+          "macdSignal": 0.9566,
+          "macdHist": -0.3385
         },
         {
           "date": "2026-07-24",
           "close": 13.68,
-          "ema50": 13.1312,
+          "ema50": 13.1279,
           "rsi14": 31.6,
-          "macd": 0.4783,
-          "macdSignal": 0.8595,
-          "macdHist": -0.3812
+          "macd": 0.4797,
+          "macdSignal": 0.8612,
+          "macdHist": -0.3815
         },
         {
           "date": "2026-07-27",
           "close": 13.72,
-          "ema50": 13.1543,
+          "ema50": 13.1512,
           "rsi14": 37.11,
-          "macd": 0.3678,
-          "macdSignal": 0.7611,
-          "macdHist": -0.3933
+          "macd": 0.369,
+          "macdSignal": 0.7628,
+          "macdHist": -0.3938
         },
         {
           "date": "2026-07-28",
           "close": 14.52,
-          "ema50": 13.2078,
+          "ema50": 13.2048,
           "rsi14": 45.65,
-          "macd": 0.3407,
-          "macdSignal": 0.6771,
-          "macdHist": -0.3364
+          "macd": 0.3419,
+          "macdSignal": 0.6786,
+          "macdHist": -0.3367
         },
         {
           "date": "2026-07-29",
           "close": 13.52,
-          "ema50": 13.2201,
+          "ema50": 13.2172,
           "rsi14": 34.11,
-          "macd": 0.2359,
-          "macdSignal": 0.5888,
-          "macdHist": -0.3529
+          "macd": 0.237,
+          "macdSignal": 0.5903,
+          "macdHist": -0.3533
         },
         {
           "date": "2026-07-30",
           "close": 14,
-          "ema50": 13.2507,
+          "ema50": 13.2479,
           "rsi14": 40.7,
-          "macd": 0.1893,
-          "macdSignal": 0.5089,
-          "macdHist": -0.3196
+          "macd": 0.1903,
+          "macdSignal": 0.5103,
+          "macdHist": -0.32
         },
         {
           "date": "2026-07-31",
           "close": 13.86,
-          "ema50": 13.2746,
+          "ema50": 13.2719,
           "rsi14": 46.69,
-          "macd": 0.1396,
-          "macdSignal": 0.4351,
-          "macdHist": -0.2955
+          "macd": 0.1405,
+          "macdSignal": 0.4363,
+          "macdHist": -0.2958
         },
         {
           "date": "2026-08-03",
           "close": 15.47,
-          "ema50": 13.3607,
+          "ema50": 13.3581,
           "rsi14": 46.55,
-          "macd": 0.2274,
-          "macdSignal": 0.3935,
-          "macdHist": -0.1661
+          "macd": 0.2283,
+          "macdSignal": 0.3947,
+          "macdHist": -0.1664
         },
         {
           "date": "2026-08-04",
           "close": 15.4,
-          "ema50": 13.4406,
+          "ema50": 13.4382,
           "rsi14": 47.6,
-          "macd": 0.2881,
-          "macdSignal": 0.3724,
-          "macdHist": -0.0843
+          "macd": 0.2889,
+          "macdSignal": 0.3736,
+          "macdHist": -0.0847
         },
         {
           "date": "2026-08-05",
           "close": 15.93,
-          "ema50": 13.5383,
+          "ema50": 13.5359,
           "rsi14": 60.19,
-          "macd": 0.3745,
-          "macdSignal": 0.3729,
-          "macdHist": 0.0016
+          "macd": 0.3753,
+          "macdSignal": 0.3739,
+          "macdHist": 0.0014
         },
         {
           "date": "2026-08-06",
           "close": 16.4,
-          "ema50": 13.6505,
+          "ema50": 13.6482,
           "rsi14": 64.17,
-          "macd": 0.4755,
-          "macdSignal": 0.3934,
-          "macdHist": 0.0821
+          "macd": 0.4763,
+          "macdSignal": 0.3944,
+          "macdHist": 0.0819
         },
         {
           "date": "2026-08-07",
-          "close": 16.62,
-          "ema50": 13.7669,
-          "rsi14": 66.04,
-          "macd": 0.5668,
-          "macdSignal": 0.4281,
-          "macdHist": 0.1387
+          "close": 16.615,
+          "ema50": 13.7646,
+          "rsi14": 66.02,
+          "macd": 0.5671,
+          "macdSignal": 0.4289,
+          "macdHist": 0.1382
         },
         {
           "date": "2026-08-10",
           "close": 16.1,
-          "ema50": 13.8584,
-          "rsi14": 59.03,
-          "macd": 0.5904,
-          "macdSignal": 0.4605,
-          "macdHist": 0.1299
+          "ema50": 13.8561,
+          "rsi14": 59.05,
+          "macd": 0.5907,
+          "macdSignal": 0.4613,
+          "macdHist": 0.1294
         },
         {
           "date": "2026-08-11",
           "close": 16.37,
-          "ema50": 13.9569,
-          "rsi14": 62.08,
-          "macd": 0.6236,
-          "macdSignal": 0.4931,
-          "macdHist": 0.1305
+          "ema50": 13.9547,
+          "rsi14": 62.1,
+          "macd": 0.624,
+          "macdSignal": 0.4938,
+          "macdHist": 0.1302
         },
         {
           "date": "2026-08-12",
           "close": 16.19,
-          "ema50": 14.0445,
-          "rsi14": 62.7,
-          "macd": 0.6283,
-          "macdSignal": 0.5202,
-          "macdHist": 0.1081
+          "ema50": 14.0424,
+          "rsi14": 62.71,
+          "macd": 0.6286,
+          "macdSignal": 0.5208,
+          "macdHist": 0.1078
         },
         {
           "date": "2026-08-13",
           "close": 16.19,
-          "ema50": 14.1286,
-          "rsi14": 69.83,
-          "macd": 0.6247,
-          "macdSignal": 0.5411,
-          "macdHist": 0.0836
+          "ema50": 14.1266,
+          "rsi14": 69.86,
+          "macd": 0.6251,
+          "macdSignal": 0.5416,
+          "macdHist": 0.0835
         },
         {
           "date": "2026-08-14",
           "close": 17.07,
-          "ema50": 14.244,
-          "rsi14": 73.36,
-          "macd": 0.685,
-          "macdSignal": 0.5699,
-          "macdHist": 0.1151
+          "ema50": 14.242,
+          "rsi14": 73.39,
+          "macd": 0.6854,
+          "macdSignal": 0.5704,
+          "macdHist": 0.115
         }
       ],
       "rawPoints": [
         {
+          "date": "2026-06-18",
+          "open": 10.27,
+          "close": 10.305,
+          "high": 10.305,
+          "low": 10.27,
+          "volume": 620,
+          "vwap": 10.2977
+        },
+        {
+          "date": "2026-06-22",
+          "open": 10.3,
+          "close": 10.37,
+          "high": 10.5,
+          "low": 10.3,
+          "volume": 16456,
+          "vwap": 10.4007
+        },
+        {
+          "date": "2026-06-23",
+          "open": 10.44,
+          "close": 10.4199,
+          "high": 10.44,
+          "low": 10.395,
+          "volume": 11190,
+          "vwap": 10.4233
+        },
+        {
+          "date": "2026-06-24",
+          "open": 12.64,
+          "close": 11.99,
+          "high": 13.49,
+          "low": 11.83,
+          "volume": 13827884.696317,
+          "vwap": 12.3417
+        },
+        {
+          "date": "2026-06-25",
+          "open": 12.51,
+          "close": 12.44,
+          "high": 13,
+          "low": 12.3,
+          "volume": 4168663.343177,
+          "vwap": 12.6213
+        },
+        {
+          "date": "2026-06-26",
+          "open": 12.72,
+          "close": 13.86,
+          "high": 13.9785,
+          "low": 12.5,
+          "volume": 5613072.274553,
+          "vwap": 13.2304
+        },
+        {
+          "date": "2026-06-29",
+          "open": 15.26,
+          "close": 16.4,
+          "high": 16.8,
+          "low": 15.01,
+          "volume": 8717335.812942,
+          "vwap": 15.8381
+        },
+        {
+          "date": "2026-06-30",
+          "open": 16.4,
+          "close": 17.45,
+          "high": 17.5,
+          "low": 15.98,
+          "volume": 8048253.159036,
+          "vwap": 16.8613
+        },
+        {
+          "date": "2026-07-01",
+          "open": 18.69,
+          "close": 17.06,
+          "high": 19.62,
+          "low": 16.62,
+          "volume": 9730381.832062,
+          "vwap": 18.0665
+        },
+        {
+          "date": "2026-07-02",
+          "open": 17.35,
+          "close": 19.1,
+          "high": 19.59,
+          "low": 15.37,
+          "volume": 10872806.743403,
+          "vwap": 17.5336
+        },
+        {
+          "date": "2026-07-06",
+          "open": 18.905,
+          "close": 17.22,
+          "high": 19.69,
+          "low": 17.1,
+          "volume": 8342853.923033,
+          "vwap": 18.2751
+        },
+        {
+          "date": "2026-07-07",
+          "open": 17.28,
+          "close": 15.86,
+          "high": 17.35,
+          "low": 15.7,
+          "volume": 6395508.104625,
+          "vwap": 16.2593
+        },
+        {
+          "date": "2026-07-08",
+          "open": 15.51,
+          "close": 15.26,
+          "high": 16.69,
+          "low": 15.16,
+          "volume": 3884583.528286,
+          "vwap": 15.8269
+        },
+        {
+          "date": "2026-07-09",
+          "open": 16.29,
+          "close": 16.23,
+          "high": 16.76,
+          "low": 15.7,
+          "volume": 3371296.857891,
+          "vwap": 16.1827
+        },
+        {
+          "date": "2026-07-10",
+          "open": 16.555,
+          "close": 15.55,
+          "high": 17.4,
+          "low": 15.25,
+          "volume": 2986490.444479,
+          "vwap": 16.2338
+        },
+        {
+          "date": "2026-07-13",
+          "open": 15.02,
+          "close": 14.34,
+          "high": 15.4,
+          "low": 14.3,
+          "volume": 3254710.996272,
+          "vwap": 14.7401
+        },
+        {
+          "date": "2026-07-14",
+          "open": 15.055,
+          "close": 15.97,
+          "high": 16.2,
+          "low": 15,
+          "volume": 4010713.363046,
+          "vwap": 15.6615
+        },
+        {
+          "date": "2026-07-15",
+          "open": 16.34,
+          "close": 15.74,
+          "high": 16.45,
+          "low": 15,
+          "volume": 2777021.121148,
+          "vwap": 15.6089
+        },
+        {
+          "date": "2026-07-16",
+          "open": 15.01,
+          "close": 14.61,
+          "high": 15.39,
+          "low": 14.5,
+          "volume": 3127770.145969,
+          "vwap": 14.8643
+        },
+        {
+          "date": "2026-07-17",
+          "open": 14.29,
+          "close": 14.47,
+          "high": 15.45,
+          "low": 14.09,
+          "volume": 3115812.551145,
+          "vwap": 14.6057
+        },
+        {
           "date": "2026-07-20",
-          "open": 14.850000381469727,
+          "open": 14.85,
           "close": 14.39,
-          "high": 14.899999618530273,
-          "low": 13.880000114440918,
-          "volume": 2379400
+          "high": 14.895,
+          "low": 13.88,
+          "volume": 2379354.86401,
+          "vwap": 14.2331
         },
         {
           "date": "2026-07-21",
-          "open": 14.720000267028809,
+          "open": 14.72,
           "close": 14.83,
           "high": 15.25,
-          "low": 14.390000343322754,
-          "volume": 2168800
+          "low": 14.39,
+          "volume": 2168793.038453,
+          "vwap": 14.883
         },
         {
           "date": "2026-07-22",
-          "open": 14.579999923706055,
+          "open": 14.58,
           "close": 14.65,
-          "high": 15.289999961853027,
-          "low": 14.550000190734863,
-          "volume": 1242000
+          "high": 15.29,
+          "low": 14.55,
+          "volume": 1242006.126497,
+          "vwap": 14.8403
         },
         {
           "date": "2026-07-23",
-          "open": 14.199999809265137,
+          "open": 14.2,
           "close": 14.4,
-          "high": 14.649999618530273,
-          "low": 13.800000190734863,
-          "volume": 2068800
+          "high": 14.65,
+          "low": 13.8,
+          "volume": 2068836.074933,
+          "vwap": 14.2175
         },
         {
           "date": "2026-07-24",
-          "open": 14.109999656677246,
+          "open": 14.11,
           "close": 13.68,
-          "high": 14.220000267028809,
-          "low": 13.609999656677246,
-          "volume": 2659200
+          "high": 14.22,
+          "low": 13.61,
+          "volume": 2659203.750459,
+          "vwap": 13.9123
         },
         {
           "date": "2026-07-27",
-          "open": 13.800000190734863,
+          "open": 13.8,
           "close": 13.72,
-          "high": 14.100000381469727,
-          "low": 13.050000190734863,
-          "volume": 1643000
+          "high": 14.1,
+          "low": 13.05,
+          "volume": 1652039.889618,
+          "vwap": 13.6145
         },
         {
           "date": "2026-07-28",
-          "open": 13.15999984741211,
+          "open": 13.16,
           "close": 14.52,
-          "high": 14.989999771118164,
-          "low": 12.699999809265137,
-          "volume": 5415300
+          "high": 14.99,
+          "low": 12.7,
+          "volume": 5415275.358432,
+          "vwap": 14.0306
         },
         {
           "date": "2026-07-29",
-          "open": 14.350000381469727,
+          "open": 14.35,
           "close": 13.52,
-          "high": 14.430000305175781,
-          "low": 13.050000190734863,
-          "volume": 2806300
+          "high": 14.43,
+          "low": 13.05,
+          "volume": 2806325.966886,
+          "vwap": 13.4969
         },
         {
           "date": "2026-07-30",
-          "open": 13.9399995803833,
+          "open": 13.94,
           "close": 14,
-          "high": 14.649999618530273,
-          "low": 13.539999961853027,
-          "volume": 2938500
+          "high": 14.65,
+          "low": 13.54,
+          "volume": 2938505.747312,
+          "vwap": 14.0677
         },
         {
           "date": "2026-07-31",
-          "open": 14.470000267028809,
+          "open": 14.47,
           "close": 13.86,
           "high": 14.5,
-          "low": 13.670000076293945,
-          "volume": 1012100
+          "low": 13.67,
+          "volume": 1012138.365825,
+          "vwap": 13.9269
         },
         {
           "date": "2026-08-03",
-          "open": 14.180000305175781,
+          "open": 14.18,
           "close": 15.47,
           "high": 15.75,
-          "low": 13.899999618530273,
-          "volume": 4453200
+          "low": 13.9,
+          "volume": 4453242.59513,
+          "vwap": 15.0984
         },
         {
           "date": "2026-08-04",
-          "open": 15.5600004196167,
+          "open": 15.56,
           "close": 15.4,
-          "high": 16.049999237060547,
-          "low": 15.050000190734863,
-          "volume": 3785400
+          "high": 16.05,
+          "low": 15.05,
+          "volume": 3785417.360851,
+          "vwap": 15.5769
         },
         {
           "date": "2026-08-05",
           "open": 15.5,
           "close": 15.93,
-          "high": 16.239999771118164,
-          "low": 14.600000381469727,
-          "volume": 3952500
+          "high": 16.24,
+          "low": 14.6,
+          "volume": 3952546.723687,
+          "vwap": 15.6923
         },
         {
           "date": "2026-08-06",
-          "open": 15.050000190734863,
+          "open": 15.05,
           "close": 16.4,
-          "high": 16.979999542236328,
-          "low": 15.010000228881836,
-          "volume": 3893400
+          "high": 16.98,
+          "low": 15.01,
+          "volume": 3893395.42725,
+          "vwap": 16.2256
         },
         {
           "date": "2026-08-07",
-          "open": 16.93000030517578,
-          "close": 16.62,
-          "high": 16.989999771118164,
-          "low": 16.360000610351562,
-          "volume": 1891300
+          "open": 16.925,
+          "close": 16.615,
+          "high": 16.99,
+          "low": 16.36,
+          "volume": 1891347.571837,
+          "vwap": 16.7672
         },
         {
           "date": "2026-08-10",
-          "open": 16.610000610351562,
+          "open": 16.61,
           "close": 16.1,
-          "high": 16.65999984741211,
-          "low": 15.90999984741211,
-          "volume": 1363000
+          "high": 16.6589,
+          "low": 15.91,
+          "volume": 1363011.727358,
+          "vwap": 16.346
         },
         {
           "date": "2026-08-11",
           "open": 17,
           "close": 16.37,
-          "high": 17.59000015258789,
-          "low": 16.239999771118164,
-          "volume": 3477000
+          "high": 17.59,
+          "low": 16.24,
+          "volume": 3476976.805981,
+          "vwap": 16.8954
         },
         {
           "date": "2026-08-12",
           "open": 16.75,
           "close": 16.19,
           "high": 16.75,
-          "low": 16.020000457763672,
-          "volume": 1790400
+          "low": 16.02,
+          "volume": 1790368.43731,
+          "vwap": 16.3217
         },
         {
           "date": "2026-08-13",
-          "open": 16.190000534057617,
+          "open": 16.19,
           "close": 16.19,
-          "high": 16.889999389648438,
-          "low": 15.539999961853027,
-          "volume": 2332600
+          "high": 16.89,
+          "low": 15.54,
+          "volume": 2332604.671382,
+          "vwap": 16.182
         },
         {
           "date": "2026-08-14",
-          "open": 16.6299991607666,
+          "open": 16.63,
           "close": 17.07,
-          "high": 17.06999969482422,
-          "low": 15.600000381469727,
-          "volume": 3260000
+          "high": 17.07,
+          "low": 15.6,
+          "volume": 3282580.103509,
+          "vwap": 16.3827
         }
       ],
       "shortVolume": {
-        "latest": null,
-        "history": [],
-        "avgShortVolumeRatio20": null,
-        "source": "none"
+        "latest": {
+          "date": "2026-08-14",
+          "totalVolume": 1722404,
+          "shortVolume": 559192,
+          "exemptVolume": 3291,
+          "nonExemptVolume": 555901,
+          "shortVolumeRatio": 32.47,
+          "source": "Massive"
+        },
+        "history": [
+          {
+            "date": "2026-08-14",
+            "totalVolume": 1722404,
+            "shortVolume": 559192,
+            "exemptVolume": 3291,
+            "nonExemptVolume": 555901,
+            "shortVolumeRatio": 32.47,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-08-13",
+            "totalVolume": 1398569,
+            "shortVolume": 365306,
+            "exemptVolume": 20143,
+            "nonExemptVolume": 345163,
+            "shortVolumeRatio": 26.12,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-08-12",
+            "totalVolume": 858152,
+            "shortVolume": 328034,
+            "exemptVolume": 0,
+            "nonExemptVolume": 328034,
+            "shortVolumeRatio": 38.23,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-08-11",
+            "totalVolume": 1651370,
+            "shortVolume": 750749,
+            "exemptVolume": 8257,
+            "nonExemptVolume": 742492,
+            "shortVolumeRatio": 45.46,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-08-10",
+            "totalVolume": 702212,
+            "shortVolume": 244916,
+            "exemptVolume": 4056,
+            "nonExemptVolume": 240860,
+            "shortVolumeRatio": 34.88,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-08-07",
+            "totalVolume": 929194,
+            "shortVolume": 330634,
+            "exemptVolume": 2634,
+            "nonExemptVolume": 328000,
+            "shortVolumeRatio": 35.58,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-08-06",
+            "totalVolume": 2005711,
+            "shortVolume": 752425,
+            "exemptVolume": 9075,
+            "nonExemptVolume": 743350,
+            "shortVolumeRatio": 37.51,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-08-05",
+            "totalVolume": 1822782,
+            "shortVolume": 717359,
+            "exemptVolume": 60,
+            "nonExemptVolume": 717299,
+            "shortVolumeRatio": 39.36,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-08-04",
+            "totalVolume": 2096114,
+            "shortVolume": 878451,
+            "exemptVolume": 5017,
+            "nonExemptVolume": 873434,
+            "shortVolumeRatio": 41.91,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-08-03",
+            "totalVolume": 2180409,
+            "shortVolume": 903305,
+            "exemptVolume": 1056,
+            "nonExemptVolume": 902249,
+            "shortVolumeRatio": 41.43,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-07-31",
+            "totalVolume": 506629,
+            "shortVolume": 155584,
+            "exemptVolume": 1100,
+            "nonExemptVolume": 154484,
+            "shortVolumeRatio": 30.71,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-07-30",
+            "totalVolume": 1482959,
+            "shortVolume": 607642,
+            "exemptVolume": 139105,
+            "nonExemptVolume": 468537,
+            "shortVolumeRatio": 40.97,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-07-29",
+            "totalVolume": 1435342,
+            "shortVolume": 395401,
+            "exemptVolume": 68279,
+            "nonExemptVolume": 327122,
+            "shortVolumeRatio": 27.55,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-07-28",
+            "totalVolume": 2654200,
+            "shortVolume": 957420,
+            "exemptVolume": 19786,
+            "nonExemptVolume": 937634,
+            "shortVolumeRatio": 36.07,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-07-27",
+            "totalVolume": 790726,
+            "shortVolume": 214086,
+            "exemptVolume": 6392,
+            "nonExemptVolume": 207694,
+            "shortVolumeRatio": 27.07,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-07-24",
+            "totalVolume": 1453329,
+            "shortVolume": 480829,
+            "exemptVolume": 1400,
+            "nonExemptVolume": 479429,
+            "shortVolumeRatio": 33.08,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-07-23",
+            "totalVolume": 1138447,
+            "shortVolume": 302258,
+            "exemptVolume": 800,
+            "nonExemptVolume": 301458,
+            "shortVolumeRatio": 26.55,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-07-22",
+            "totalVolume": 690460,
+            "shortVolume": 250058,
+            "exemptVolume": 1257,
+            "nonExemptVolume": 248801,
+            "shortVolumeRatio": 36.22,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-07-21",
+            "totalVolume": 1142494,
+            "shortVolume": 549134,
+            "exemptVolume": 9851,
+            "nonExemptVolume": 539283,
+            "shortVolumeRatio": 48.06,
+            "source": "Massive"
+          },
+          {
+            "date": "2026-07-20",
+            "totalVolume": 1357737,
+            "shortVolume": 420103,
+            "exemptVolume": 500,
+            "nonExemptVolume": 419603,
+            "shortVolumeRatio": 30.94,
+            "source": "Massive"
+          }
+        ],
+        "avgShortVolumeRatio20": 35.51,
+        "source": "Massive"
       },
       "unusualActivity": {
         "asOf": "2026-08-14",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 3260000,
-        "avgVolume20": 2698537,
+        "volume": 3282580,
+        "avgVolume20": 2719860,
         "volumeMultiple": 1.21,
         "dayRangePct": 8.61,
         "gapPct": 2.72,
-        "shortVolume": null,
-        "shortVolumeRatio": null,
+        "shortVolume": 559192,
+        "shortVolumeRatio": 32.47,
         "signals": [
           {
             "type": "wide_range",
@@ -53628,12 +53818,12 @@
       },
       "cik": "0002074973",
       "dataSources": {
-        "price": "Yahoo",
+        "price": "Massive",
         "financials": "Yahoo",
-        "insider": "SEC",
+        "insider": "Massive",
         "ratios": "none",
-        "profile": "none",
-        "shortVolume": "none",
+        "profile": "Massive",
+        "shortVolume": "Massive",
         "unusualActivity": "Massive aggregates + Massive short volume"
       },
       "financials": {
@@ -53685,72 +53875,595 @@
       "insider": [
         {
           "form": "4",
-          "reportDate": "2025-12-18",
-          "filingDate": "2025-12-19",
-          "owner": "Klein Michael Stuart",
-          "title": "See Remarks",
-          "accessionNumber": "0001213900-25-123947",
-          "description": "",
-          "url": "https://www.sec.gov/Archives/edgar/data/2074973/000121390025123947/ownership.xml",
+          "reportDate": "2022-10-20",
+          "filingDate": "2022-10-24",
+          "owner": "Tyree James L",
+          "title": "Director",
+          "accessionNumber": "0000899243-22-034077",
+          "description": "Stock Option",
+          "source": "Massive",
           "transactions": [
             {
-              "date": "2025-12-18",
-              "code": "P",
-              "type": "BUY",
-              "label": "Open-market purchase",
-              "shares": 500000,
-              "price": 10,
-              "value": 5000000,
-              "sign": 1
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 12287,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 8342,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
             }
           ],
-          "netShares": 500000,
-          "boughtValue": 5000000,
+          "netShares": 0,
+          "boughtValue": 0,
           "soldValue": 0,
-          "dominantType": "BUY",
-          "source": "SEC"
+          "dominantType": "OTHER"
+        },
+        {
+          "form": "4",
+          "reportDate": "2022-10-20",
+          "filingDate": "2022-10-24",
+          "owner": "Edwards Thomas A.",
+          "title": "Director",
+          "accessionNumber": "0000899243-22-034086",
+          "description": "Stock Option",
+          "source": "Massive",
+          "transactions": [
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 8342,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 4504,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 13352,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER"
+        },
+        {
+          "form": "4",
+          "reportDate": "2022-10-20",
+          "filingDate": "2022-10-24",
+          "owner": "Cappel Markus J.",
+          "title": "Chief Bus. Officer & Treasurer",
+          "accessionNumber": "0000899243-22-034071",
+          "description": "Stock Option",
+          "source": "Massive",
+          "transactions": [
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 15268,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 2137,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 33197,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 61467,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Restricted Stock Unit"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 5606,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 13963,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 9095,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 16250,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER"
+        },
+        {
+          "form": "4",
+          "reportDate": "2022-10-20",
+          "filingDate": "2022-10-24",
+          "owner": "Butt Tausif",
+          "title": "EVP, Chief Operating Officer",
+          "accessionNumber": "0000899243-22-034068",
+          "description": "Stock Option",
+          "source": "Massive",
+          "transactions": [
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 51112,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 10870,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Common Stock"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 41400,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Restricted Stock Unit"
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER"
+        },
+        {
+          "form": "4",
+          "reportDate": "2022-10-20",
+          "filingDate": "2022-10-24",
+          "owner": "Parker Geoffrey M.",
+          "title": "Director",
+          "accessionNumber": "0000899243-22-034084",
+          "description": "Common Stock",
+          "source": "Massive",
+          "transactions": [
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 5000,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Common Stock"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 107997,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Common Stock"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 8342,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER"
+        },
+        {
+          "form": "4",
+          "reportDate": "2022-10-20",
+          "filingDate": "2022-10-24",
+          "owner": "Jain Rita",
+          "title": "EVP, Chief Medical Officer",
+          "accessionNumber": "0000899243-22-034089",
+          "description": "Restricted Stock Unit",
+          "source": "Massive",
+          "transactions": [
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 11600,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Restricted Stock Unit"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 12287,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 23948,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 35863,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Common Stock"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 21052,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 14393,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER"
+        },
+        {
+          "form": "4",
+          "reportDate": "2022-10-20",
+          "filingDate": "2022-10-24",
+          "owner": "FECZKO JOSEPH M",
+          "title": "Director",
+          "accessionNumber": "0000899243-22-034076",
+          "description": "Stock Option",
+          "source": "Massive",
+          "transactions": [
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 4504,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 13352,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 12500,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER"
+        },
+        {
+          "form": "4",
+          "reportDate": "2022-10-20",
+          "filingDate": "2022-10-24",
+          "owner": "Schall Thomas J.",
+          "title": "President and CEO",
+          "accessionNumber": "0000899243-22-034075",
+          "description": "Stock Option",
+          "source": "Massive",
+          "transactions": [
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 27998,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 7002,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 17569,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 13825,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 406175,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 7912,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 239934,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Restricted Stock Unit"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 2502,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            },
+            {
+              "date": "2022-10-20",
+              "code": "D",
+              "type": "OTHER",
+              "label": "Code D",
+              "shares": 14188,
+              "price": null,
+              "value": null,
+              "sign": -1,
+              "tenB5One": false,
+              "securityTitle": "Stock Option"
+            }
+          ],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER"
         }
       ],
       "insiderSummary": {
-        "source": "SEC",
-        "sentiment": "BULLISH",
-        "score": 95,
-        "totalTransactions": 1,
-        "openMarketTransactions": 1,
-        "buyCount": 1,
+        "source": "Massive",
+        "sentiment": "NEUTRAL",
+        "score": 50,
+        "totalTransactions": 37,
+        "openMarketTransactions": 0,
+        "buyCount": 0,
         "sellCount": 0,
-        "buySellRatio": 99,
-        "netShares": 500000,
-        "totalBought": 5000000,
+        "buySellRatio": 0,
+        "netShares": 0,
+        "totalBought": 0,
         "totalSold": 0,
-        "keyInsiders": [
-          {
-            "owner": "Klein Michael Stuart",
-            "title": "See Remarks",
-            "boughtValue": 5000000,
-            "soldValue": 0,
-            "netShares": 500000,
-            "txCount": 1
-          }
-        ],
-        "largestTransactions": [
-          {
-            "owner": "Klein Michael Stuart",
-            "title": "See Remarks",
-            "date": "2025-12-18",
-            "type": "BUY",
-            "shares": 500000,
-            "price": 10,
-            "value": 5000000,
-            "filingUrl": "https://www.sec.gov/Archives/edgar/data/2074973/000121390025123947/ownership.xml"
-          }
-        ],
+        "keyInsiders": [],
+        "largestTransactions": [],
         "patterns": [
           "No strong open-market pattern detected"
         ],
-        "alerts": [
-          "Accumulation signal: $5,000,000 bought"
-        ]
+        "alerts": []
       }
     }
   ],
@@ -53759,85 +54472,85 @@
       "symbol": "RGTI",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-08-16T12:04:55.662Z"
+      "createdAt": "2026-08-16T12:09:33.722Z"
     },
     {
       "symbol": "RGTI",
       "severity": "warning",
       "message": "61.36% short-volume ratio",
-      "createdAt": "2026-08-16T11:04:55.662Z"
+      "createdAt": "2026-08-16T11:09:33.723Z"
     },
     {
       "symbol": "IONQ",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-08-16T10:04:55.662Z"
+      "createdAt": "2026-08-16T10:09:33.723Z"
     },
     {
       "symbol": "IONQ",
       "severity": "warning",
       "message": "57.31% short-volume ratio",
-      "createdAt": "2026-08-16T09:04:55.662Z"
+      "createdAt": "2026-08-16T09:09:33.723Z"
     },
     {
       "symbol": "LAC",
       "severity": "warning",
       "message": "RSI overbought: 71",
-      "createdAt": "2026-08-16T08:04:55.662Z"
+      "createdAt": "2026-08-16T08:09:33.723Z"
     },
     {
       "symbol": "LAC",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-08-16T07:04:55.662Z"
+      "createdAt": "2026-08-16T07:09:33.723Z"
     },
     {
       "symbol": "UAMY",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-08-16T06:04:55.662Z"
+      "createdAt": "2026-08-16T06:09:33.723Z"
     },
     {
       "symbol": "UAMY",
       "severity": "warning",
       "message": "55.42% short-volume ratio",
-      "createdAt": "2026-08-16T05:04:55.662Z"
+      "createdAt": "2026-08-16T05:09:33.723Z"
     },
     {
       "symbol": "SNPS",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-08-16T04:04:55.662Z"
+      "createdAt": "2026-08-16T04:09:33.723Z"
     },
     {
       "symbol": "QCOM",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-08-16T03:04:55.662Z"
+      "createdAt": "2026-08-16T03:09:33.723Z"
     },
     {
       "symbol": "QCOM",
       "severity": "warning",
       "message": "60.81% short-volume ratio",
-      "createdAt": "2026-08-16T02:04:55.662Z"
+      "createdAt": "2026-08-16T02:09:33.723Z"
     },
     {
       "symbol": "AAOI",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-08-16T01:04:55.662Z"
+      "createdAt": "2026-08-16T01:09:33.723Z"
     },
     {
       "symbol": "AAOI",
       "severity": "success",
       "message": "Strong YTD performer: +279.49%",
-      "createdAt": "2026-08-16T00:04:55.662Z"
+      "createdAt": "2026-08-16T00:09:33.723Z"
     },
     {
       "symbol": "AAOI",
       "severity": "danger",
       "message": "15.3% intraday range",
-      "createdAt": "2026-08-15T23:04:55.662Z"
+      "createdAt": "2026-08-15T23:09:33.723Z"
     }
   ],
   "errors": [],
@@ -53848,7 +54561,7 @@
     },
     {
       "symbol": "VST",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=VST&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=VST&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "RGTI",
@@ -53856,7 +54569,7 @@
     },
     {
       "symbol": "RGTI",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=RGTI&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=RGTI&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "IONQ",
@@ -53864,7 +54577,7 @@
     },
     {
       "symbol": "IONQ",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=IONQ&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=IONQ&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "LAC",
@@ -53872,7 +54585,7 @@
     },
     {
       "symbol": "LAC",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=LAC&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=LAC&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "UAMY",
@@ -53880,7 +54593,7 @@
     },
     {
       "symbol": "UAMY",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=UAMY&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=UAMY&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "SNPS",
@@ -53888,7 +54601,7 @@
     },
     {
       "symbol": "SNPS",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=SNPS&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=SNPS&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "QCOM",
@@ -53896,7 +54609,7 @@
     },
     {
       "symbol": "QCOM",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=QCOM&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=QCOM&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "RRX",
@@ -53904,7 +54617,7 @@
     },
     {
       "symbol": "RRX",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=RRX&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=RRX&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "AAOI",
@@ -53920,7 +54633,7 @@
     },
     {
       "symbol": "LITE",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=LITE&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=LITE&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "AXTI",
@@ -53928,7 +54641,7 @@
     },
     {
       "symbol": "AXTI",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=AXTI&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=AXTI&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "NVAX",
@@ -53944,7 +54657,7 @@
     },
     {
       "symbol": "NBIS",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=NBIS&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=NBIS&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "LRCX",
@@ -53952,7 +54665,15 @@
     },
     {
       "symbol": "LRCX",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=LRCX&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=LRCX&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+    },
+    {
+      "symbol": "CCXI",
+      "warning": "Massive ratios unavailable: https://api.massive.com/stocks/financials/v1/ratios?ticker=CCXI&limit=1&sort=date.desc HTTP 403"
+    },
+    {
+      "symbol": "CCXI",
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=CCXI&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     }
   ]
 }
