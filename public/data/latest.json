@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T23:41:16.269Z",
+  "generatedAt": "2026-09-07T23:57:17.772Z",
   "staleAfterMinutes": 1440,
   "source": "Massive.com OHLC aggregates + SEC companyfacts/submissions via scheduled Node refresh",
   "tickers": [
@@ -47,12 +47,12 @@
       "price": 149.3,
       "previousClose": 144.22,
       "ytdPct": -9.64,
-      "marketCap": 48405307822.9,
+      "marketCap": 50110334613.50001,
       "peRatio": null,
       "rsi14": 54.6,
       "week52Low": 132.66,
       "week52High": 219.82,
-      "avgVolume": 4601414,
+      "avgVolume": 4601794,
       "recommendation": "HOLD",
       "opportunityScore": 55,
       "company": {
@@ -2877,7 +2877,7 @@
           "close": 144.22,
           "high": 148.7759,
           "low": 142.81,
-          "volume": 4330982.865807,
+          "volume": 4330982.401625,
           "vwap": 144.5278
         },
         {
@@ -2886,8 +2886,8 @@
           "close": 149.3,
           "high": 149.45,
           "low": 143.16,
-          "volume": 4605314.181671,
-          "vwap": 148.0891
+          "volume": 4616712.794762,
+          "vwap": 148.0925
         }
       ],
       "shortVolume": {
@@ -3089,7 +3089,7 @@
         "asOf": "2026-09-04",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 4605314,
+        "volume": 4616713,
         "avgVolume20": 4106434,
         "volumeMultiple": 1.12,
         "dayRangePct": 4.21,
@@ -3737,12 +3737,12 @@
       "price": 15.2,
       "previousClose": 15.18,
       "ytdPct": -35.59,
-      "marketCap": 5066609579.46,
+      "marketCap": 5073284954.4,
       "peRatio": null,
       "rsi14": 32.8,
       "week52Low": 12.53,
       "week52High": 58.15,
-      "avgVolume": 18092968,
+      "avgVolume": 18093691,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -6567,7 +6567,7 @@
           "close": 15.18,
           "high": 15.32,
           "low": 14.83,
-          "volume": 14141334.895883,
+          "volume": 14141354.595781,
           "vwap": 15.1239
         },
         {
@@ -6576,7 +6576,7 @@
           "close": 15.2,
           "high": 15.4601,
           "low": 15.01,
-          "volume": 10636845.431897,
+          "volume": 10658501.674327,
           "vwap": 15.2094
         }
       ],
@@ -6779,8 +6779,8 @@
         "asOf": "2026-09-04",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 10636845,
-        "avgVolume20": 16707714,
+        "volume": 10658502,
+        "avgVolume20": 16707715,
         "volumeMultiple": 0.64,
         "dayRangePct": 2.96,
         "gapPct": 0.26,
@@ -6952,6 +6952,58 @@
         "basis": "quarterly"
       },
       "insider": [
+        {
+          "form": "4",
+          "reportDate": "2026-09-03",
+          "filingDate": "2026-09-04",
+          "owner": "Bertelsen Jeffrey A.",
+          "title": "CHIEF FINANCIAL OFFICER",
+          "accessionNumber": "0001123292-26-001228",
+          "description": "Employee Stock Option (Right to Buy)",
+          "source": "Massive",
+          "transactions": [
+            {
+              "date": "2026-09-03",
+              "code": "M",
+              "type": "OPTION",
+              "label": "Option exercise / conversion",
+              "shares": 25000,
+              "price": 0,
+              "value": 0,
+              "sign": 0,
+              "tenB5One": true,
+              "securityTitle": "Employee Stock Option (Right to Buy)"
+            },
+            {
+              "date": "2026-09-03",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 25000,
+              "price": 15,
+              "value": 375010,
+              "sign": -1,
+              "tenB5One": true,
+              "securityTitle": "Common Stock"
+            },
+            {
+              "date": "2026-09-03",
+              "code": "M",
+              "type": "OPTION",
+              "label": "Option exercise / conversion",
+              "shares": 25000,
+              "price": 0.6,
+              "value": 15000,
+              "sign": 0,
+              "tenB5One": true,
+              "securityTitle": "Common Stock"
+            }
+          ],
+          "netShares": -25000,
+          "boughtValue": 0,
+          "soldValue": 375010,
+          "dominantType": "SELL"
+        },
         {
           "form": "4",
           "reportDate": "2026-08-18",
@@ -7195,48 +7247,20 @@
           "boughtValue": 0,
           "soldValue": 0,
           "dominantType": "AWARD"
-        },
-        {
-          "form": "4",
-          "reportDate": "2026-06-09",
-          "filingDate": "2026-06-10",
-          "owner": "Clifton Michael S.",
-          "title": "Director",
-          "accessionNumber": "0001123292-26-000853",
-          "description": "Common Stock",
-          "source": "Massive",
-          "transactions": [
-            {
-              "date": "2026-06-09",
-              "code": "A",
-              "type": "AWARD",
-              "label": "Grant / award",
-              "shares": 9208,
-              "price": 0,
-              "value": 0,
-              "sign": 0,
-              "tenB5One": false,
-              "securityTitle": "Common Stock"
-            }
-          ],
-          "netShares": 0,
-          "boughtValue": 0,
-          "soldValue": 0,
-          "dominantType": "AWARD"
         }
       ],
       "insiderSummary": {
         "source": "Massive",
         "sentiment": "VERY_BEARISH",
         "score": 0,
-        "totalTransactions": 12,
-        "openMarketTransactions": 8,
+        "totalTransactions": 14,
+        "openMarketTransactions": 9,
         "buyCount": 0,
-        "sellCount": 8,
+        "sellCount": 9,
         "buySellRatio": 0,
-        "netShares": -324915,
+        "netShares": -349915,
         "totalBought": 0,
-        "totalSold": 5846680,
+        "totalSold": 6221690,
         "keyInsiders": [
           {
             "owner": "Johnson Ray O",
@@ -7255,6 +7279,14 @@
             "txCount": 2
           },
           {
+            "owner": "Bertelsen Jeffrey A.",
+            "title": "CHIEF FINANCIAL OFFICER",
+            "boughtValue": 0,
+            "soldValue": 440197,
+            "netShares": -28860,
+            "txCount": 2
+          },
+          {
             "owner": "Rivas David",
             "title": "CHIEF OPERATING OFFICER",
             "boughtValue": 0,
@@ -7268,14 +7300,6 @@
             "boughtValue": 0,
             "soldValue": 97319,
             "netShares": -5791,
-            "txCount": 1
-          },
-          {
-            "owner": "Bertelsen Jeffrey A.",
-            "title": "CHIEF FINANCIAL OFFICER",
-            "boughtValue": 0,
-            "soldValue": 65187,
-            "netShares": -3860,
             "txCount": 1
           }
         ],
@@ -7306,6 +7330,15 @@
             "shares": 94733,
             "price": 12,
             "value": 1136796
+          },
+          {
+            "owner": "Bertelsen Jeffrey A.",
+            "title": "CHIEF FINANCIAL OFFICER",
+            "date": "2026-09-03",
+            "type": "SELL",
+            "shares": 25000,
+            "price": 15,
+            "value": 375010
           },
           {
             "owner": "Rivas David",
@@ -7342,15 +7375,6 @@
             "shares": 3860,
             "price": 16.89,
             "value": 65187
-          },
-          {
-            "owner": "Clifton Michael S.",
-            "title": "Director",
-            "date": "2026-06-12",
-            "type": "SELL",
-            "shares": 4361,
-            "price": 10.91,
-            "value": 47560
           }
         ],
         "patterns": [
@@ -7358,8 +7382,8 @@
           "CFO selling activity"
         ],
         "alerts": [
-          "Selling value dominates buying: $5,846,680 sold",
-          "8 sale transactions in recent filings"
+          "Selling value dominates buying: $6,221,690 sold",
+          "9 sale transactions in recent filings"
         ]
       }
     },
@@ -7371,12 +7395,12 @@
       "price": 39.52,
       "previousClose": 39.02,
       "ytdPct": -15.5,
-      "marketCap": 15808393297.12,
+      "marketCap": 16010961125.12,
       "peRatio": null,
       "rsi14": 35.2,
       "week52Low": 25.89,
       "week52High": 84.64,
-      "avgVolume": 19790061,
+      "avgVolume": 19790812,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -10201,7 +10225,7 @@
           "close": 39.02,
           "high": 39.78,
           "low": 37.84,
-          "volume": 14009183.409075,
+          "volume": 14009182.259941,
           "vwap": 39.0506
         },
         {
@@ -10210,8 +10234,8 @@
           "close": 39.52,
           "high": 39.73,
           "low": 38.83,
-          "volume": 13089722.659171,
-          "vwap": 39.3563
+          "volume": 13112245.653477,
+          "vwap": 39.3569
         }
       ],
       "shortVolume": {
@@ -10413,7 +10437,7 @@
         "asOf": "2026-09-04",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 13089723,
+        "volume": 13112246,
         "avgVolume20": 18442109,
         "volumeMultiple": 0.71,
         "dayRangePct": 2.28,
@@ -10929,12 +10953,12 @@
       "price": 3,
       "previousClose": 2.97,
       "ytdPct": -37.11,
-      "marketCap": 1078237540.71,
+      "marketCap": 1089128829,
       "peRatio": null,
       "rsi14": 42.7,
       "week52Low": 2.67,
       "week52High": 10.52,
-      "avgVolume": 8841628,
+      "avgVolume": 8839990,
       "recommendation": "HOLD",
       "opportunityScore": 55,
       "company": {
@@ -13759,7 +13783,7 @@
           "close": 2.97,
           "high": 3.08,
           "low": 2.95,
-          "volume": 7006268.812831,
+          "volume": 7006267.916385,
           "vwap": 2.9811
         },
         {
@@ -13768,8 +13792,8 @@
           "close": 3,
           "high": 3.005,
           "low": 2.93,
-          "volume": 6073726.81674,
-          "vwap": 2.9734
+          "volume": 6024592.53641,
+          "vwap": 2.9733
         }
       ],
       "shortVolume": {
@@ -13971,9 +13995,9 @@
         "asOf": "2026-09-04",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 6073727,
+        "volume": 6024593,
         "avgVolume20": 9381046,
-        "volumeMultiple": 0.65,
+        "volumeMultiple": 0.64,
         "dayRangePct": 2.5,
         "gapPct": 0,
         "shortVolume": 1523981,
@@ -14391,12 +14415,12 @@
       "price": 5.2,
       "previousClose": 5.14,
       "ytdPct": -12.31,
-      "marketCap": 769300633.76,
+      "marketCap": 778280796.8000001,
       "peRatio": null,
       "rsi14": 44.3,
       "week52Low": 4.14,
       "week52High": 19.71,
-      "avgVolume": 7130097,
+      "avgVolume": 7130229,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -17230,8 +17254,8 @@
           "close": 5.2,
           "high": 5.43,
           "low": 5.14,
-          "volume": 4540862.189424,
-          "vwap": 5.2405
+          "volume": 4544838.79753,
+          "vwap": 5.2404
         }
       ],
       "shortVolume": {
@@ -17433,7 +17457,7 @@
         "asOf": "2026-09-04",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 4540862,
+        "volume": 4544839,
         "avgVolume20": 8236065,
         "volumeMultiple": 0.55,
         "dayRangePct": 5.58,
@@ -17942,12 +17966,12 @@
       "price": 393.84,
       "previousClose": 416.31,
       "ytdPct": -18.02,
-      "marketCap": 79780252096.26,
+      "marketCap": 75474176660.64,
       "peRatio": null,
       "rsi14": 44.1,
       "week52Low": 366,
       "week52High": 615.79,
-      "avgVolume": 1804773,
+      "avgVolume": 1804797,
       "recommendation": "HOLD",
       "opportunityScore": 55,
       "company": {
@@ -20772,7 +20796,7 @@
           "close": 416.31,
           "high": 419.84,
           "low": 413.11,
-          "volume": 1459328.295667,
+          "volume": 1459327.395999,
           "vwap": 416.2973
         },
         {
@@ -20781,8 +20805,8 @@
           "close": 393.84,
           "high": 418.12,
           "low": 380.325,
-          "volume": 2968655.2366,
-          "vwap": 392.6386
+          "volume": 2969369.40156,
+          "vwap": 392.6385
         }
       ],
       "shortVolume": {
@@ -20984,7 +21008,7 @@
         "asOf": "2026-09-04",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 2968655,
+        "volume": 2969369,
         "avgVolume20": 1664272,
         "volumeMultiple": 1.78,
         "dayRangePct": 9.6,
@@ -21689,12 +21713,12 @@
       "price": 168.74,
       "previousClose": 168.57,
       "ytdPct": -2.45,
-      "marketCap": 180042956293.59,
+      "marketCap": 180224526576.38,
       "peRatio": null,
       "rsi14": 61.3,
       "week52Low": 121.99,
       "week52High": 259.92,
-      "avgVolume": 10852736,
+      "avgVolume": 10852790,
       "recommendation": "HOLD",
       "opportunityScore": 55,
       "company": {
@@ -24519,7 +24543,7 @@
           "close": 168.57,
           "high": 170.03,
           "low": 164.8756,
-          "volume": 6994945.78232,
+          "volume": 6994984.353086,
           "vwap": 168.245
         },
         {
@@ -24528,7 +24552,7 @@
           "close": 168.74,
           "high": 170.63,
           "low": 167.04,
-          "volume": 8535542.285086,
+          "volume": 8537131.56908,
           "vwap": 168.7674
         }
       ],
@@ -24731,8 +24755,8 @@
         "asOf": "2026-09-04",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 8535542,
-        "avgVolume20": 9158086,
+        "volume": 8537132,
+        "avgVolume20": 9158088,
         "volumeMultiple": 0.93,
         "dayRangePct": 2.13,
         "gapPct": 0.84,
@@ -25636,12 +25660,12 @@
       "price": 162.86,
       "previousClose": 162.61,
       "ytdPct": 11.47,
-      "marketCap": 10828503492.87,
+      "marketCap": 10845151459.62,
       "peRatio": null,
       "rsi14": 31.9,
       "week52Low": 127.96,
       "week52High": 247.8,
-      "avgVolume": 1360769,
+      "avgVolume": 1360770,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -28475,7 +28499,7 @@
           "close": 162.86,
           "high": 165.405,
           "low": 161.5187,
-          "volume": 906242.533862,
+          "volume": 906252.026962,
           "vwap": 163.5217
         }
       ],
@@ -28678,7 +28702,7 @@
         "asOf": "2026-09-04",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 906243,
+        "volume": 906252,
         "avgVolume20": 1253909,
         "volumeMultiple": 0.72,
         "dayRangePct": 2.39,
@@ -29300,12 +29324,12 @@
       "price": 105.53,
       "previousClose": 100.38,
       "ytdPct": 166.49,
-      "marketCap": 8522893289.82,
+      "marketCap": 8960160678.17,
       "peRatio": null,
       "rsi14": 22.2,
       "week52Low": 18.5,
       "week52High": 233.67,
-      "avgVolume": 10997420,
+      "avgVolume": 10997824,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -32139,8 +32163,8 @@
           "close": 105.53,
           "high": 106.56,
           "low": 100.54,
-          "volume": 6828093.621176,
-          "vwap": 104.7559
+          "volume": 6840210.772589,
+          "vwap": 104.7573
         }
       ],
       "shortVolume": {
@@ -32342,9 +32366,9 @@
         "asOf": "2026-09-04",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 6828094,
+        "volume": 6840211,
         "avgVolume20": 10588592,
-        "volumeMultiple": 0.64,
+        "volumeMultiple": 0.65,
         "dayRangePct": 5.7,
         "gapPct": 1.52,
         "shortVolume": 1535732,
@@ -32997,12 +33021,12 @@
       "price": 881.25,
       "previousClose": 847.37,
       "ytdPct": 128.24,
-      "marketCap": 76009089000,
+      "marketCap": 79048573500,
       "peRatio": null,
       "rsi14": 42.1,
       "week52Low": 125,
       "week52High": 1085.68,
-      "avgVolume": 4755994,
+      "avgVolume": 4756069,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -35827,7 +35851,7 @@
           "close": 847.37,
           "high": 874,
           "low": 818.89,
-          "volume": 3305000.175978,
+          "volume": 3304999.074305,
           "vwap": 844.4767
         },
         {
@@ -35836,8 +35860,8 @@
           "close": 881.255,
           "high": 885.83,
           "low": 841.04,
-          "volume": 3561172.463725,
-          "vwap": 871.0745
+          "volume": 3563409.49063,
+          "vwap": 871.079
         }
       ],
       "shortVolume": {
@@ -36039,7 +36063,7 @@
         "asOf": "2026-09-04",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 3561172,
+        "volume": 3563409,
         "avgVolume20": 4738430,
         "volumeMultiple": 0.75,
         "dayRangePct": 5.08,
@@ -36206,6 +36230,58 @@
         "basis": "quarterly"
       },
       "insider": [
+        {
+          "form": "4",
+          "reportDate": "2026-09-02",
+          "filingDate": "2026-09-04",
+          "owner": "Wupen Yuen",
+          "title": "PRESIDENT, GLOBAL BUS. UNITS",
+          "accessionNumber": "0001489550-26-000009",
+          "description": "Common Stock",
+          "source": "Massive",
+          "transactions": [
+            {
+              "date": "2026-09-03",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 500,
+              "price": 870.01,
+              "value": 435005,
+              "sign": -1,
+              "tenB5One": true,
+              "securityTitle": "Common Stock"
+            },
+            {
+              "date": "2026-09-04",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 500,
+              "price": 860,
+              "value": 430000,
+              "sign": -1,
+              "tenB5One": true,
+              "securityTitle": "Common Stock"
+            },
+            {
+              "date": "2026-09-02",
+              "code": "S",
+              "type": "SELL",
+              "label": "Open-market sale",
+              "shares": 500,
+              "price": 864.49,
+              "value": 432245,
+              "sign": -1,
+              "tenB5One": true,
+              "securityTitle": "Common Stock"
+            }
+          ],
+          "netShares": -1500,
+          "boughtValue": 0,
+          "soldValue": 1297250,
+          "dominantType": "SELL"
+        },
         {
           "form": "4",
           "reportDate": "2026-08-28",
@@ -36411,23 +36487,11 @@
               "sign": -1,
               "tenB5One": true,
               "securityTitle": "Common Stock"
-            },
-            {
-              "date": "2026-08-25",
-              "code": "S",
-              "type": "SELL",
-              "label": "Open-market sale",
-              "shares": 851,
-              "price": 853.54,
-              "value": 726360,
-              "sign": -1,
-              "tenB5One": true,
-              "securityTitle": "Common Stock"
             }
           ],
-          "netShares": -9659,
+          "netShares": -8808,
           "boughtValue": 0,
-          "soldValue": 8238599,
+          "soldValue": 7512239,
           "dominantType": "SELL"
         },
         {
@@ -36607,23 +36671,11 @@
               "sign": -1,
               "tenB5One": true,
               "securityTitle": "Common Stock"
-            },
-            {
-              "date": "2026-08-25",
-              "code": "S",
-              "type": "SELL",
-              "label": "Open-market sale",
-              "shares": 2302,
-              "price": 860.05,
-              "value": 1979840,
-              "sign": -1,
-              "tenB5One": true,
-              "securityTitle": "Common Stock"
             }
           ],
-          "netShares": -32524,
+          "netShares": -30222,
           "boughtValue": 0,
-          "soldValue": 27717975,
+          "soldValue": 25738135,
           "dominantType": "SELL"
         },
         {
@@ -36749,84 +36801,44 @@
           "boughtValue": 0,
           "soldValue": 0,
           "dominantType": "AWARD"
-        },
-        {
-          "form": "4",
-          "reportDate": "2026-08-25",
-          "filingDate": "2026-08-27",
-          "owner": "Wupen Yuen",
-          "title": "PRESIDENT, GLOBAL BUS. UNITS",
-          "accessionNumber": "0001489550-26-000007",
-          "description": "Common Stock",
-          "source": "Massive",
-          "transactions": [
-            {
-              "date": "2026-08-27",
-              "code": "S",
-              "type": "SELL",
-              "label": "Open-market sale",
-              "shares": 500,
-              "price": 958.66,
-              "value": 479330,
-              "sign": -1,
-              "tenB5One": true,
-              "securityTitle": "Common Stock"
-            },
-            {
-              "date": "2026-08-25",
-              "code": "A",
-              "type": "AWARD",
-              "label": "Grant / award",
-              "shares": 5138,
-              "price": 0,
-              "value": 0,
-              "sign": 0,
-              "tenB5One": true,
-              "securityTitle": "Common Stock"
-            }
-          ],
-          "netShares": -500,
-          "boughtValue": 0,
-          "soldValue": 479330,
-          "dominantType": "SELL"
         }
       ],
       "insiderSummary": {
         "source": "Massive",
         "sentiment": "VERY_BEARISH",
         "score": 0,
-        "totalTransactions": 38,
+        "totalTransactions": 37,
         "openMarketTransactions": 33,
         "buyCount": 0,
         "sellCount": 33,
         "buySellRatio": 0,
-        "netShares": -44731,
+        "netShares": -42578,
         "totalBought": 0,
-        "totalSold": 38329745,
+        "totalSold": 36441465,
         "keyInsiders": [
           {
             "owner": "Retort Vincent",
             "title": "SEE REMARKS",
             "boughtValue": 0,
-            "soldValue": 27717975,
-            "netShares": -32524,
-            "txCount": 15
+            "soldValue": 25738135,
+            "netShares": -30222,
+            "txCount": 14
           },
           {
             "owner": "Kim Jae",
             "title": "SVP, GENERAL COUNSEL",
             "boughtValue": 0,
-            "soldValue": 8238599,
-            "netShares": -9659,
-            "txCount": 13
+            "soldValue": 7512239,
+            "netShares": -8808,
+            "txCount": 12
           },
           {
             "owner": "Wupen Yuen",
             "title": "PRESIDENT, GLOBAL BUS. UNITS",
             "boughtValue": 0,
-            "soldValue": 1847825,
-            "netShares": -2000,
-            "txCount": 4
+            "soldValue": 2665745,
+            "netShares": -3000,
+            "txCount": 6
           },
           {
             "owner": "HURLSTON MICHAEL E.",
@@ -36888,15 +36900,6 @@
             "title": "SEE REMARKS",
             "date": "2026-08-25",
             "type": "SELL",
-            "shares": 2302,
-            "price": 860.05,
-            "value": 1979840
-          },
-          {
-            "owner": "Retort Vincent",
-            "title": "SEE REMARKS",
-            "date": "2026-08-25",
-            "type": "SELL",
             "shares": 2121,
             "price": 847.52,
             "value": 1797581
@@ -36909,6 +36912,15 @@
             "shares": 2073,
             "price": 846.44,
             "value": 1754680
+          },
+          {
+            "owner": "Kim Jae",
+            "title": "SVP, GENERAL COUNSEL",
+            "date": "2026-08-25",
+            "type": "SELL",
+            "shares": 1998,
+            "price": 852.33,
+            "value": 1702952
           }
         ],
         "patterns": [
@@ -36916,7 +36928,7 @@
           "CEO selling activity"
         ],
         "alerts": [
-          "Selling value dominates buying: $38,329,745 sold",
+          "Selling value dominates buying: $36,441,465 sold",
           "33 sale transactions in recent filings"
         ]
       }
@@ -36929,12 +36941,12 @@
       "price": 61.64,
       "previousClose": 56.2,
       "ytdPct": 267.78,
-      "marketCap": 3685214514.4,
+      "marketCap": 4041932787.68,
       "peRatio": null,
       "rsi14": 20.6,
       "week52Low": 2.83,
       "week52High": 143.16,
-      "avgVolume": 11569659,
+      "avgVolume": 11570642,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -39768,8 +39780,8 @@
           "close": 61.64,
           "high": 62.5,
           "low": 56.01,
-          "volume": 10869797.640747,
-          "vwap": 60.5154
+          "volume": 10899283.975244,
+          "vwap": 60.5226
         }
       ],
       "shortVolume": {
@@ -39971,7 +39983,7 @@
         "asOf": "2026-09-04",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 10869798,
+        "volume": 10899284,
         "avgVolume20": 9991251,
         "volumeMultiple": 1.09,
         "dayRangePct": 10.53,
@@ -40570,12 +40582,12 @@
       "price": 10.22,
       "previousClose": 10.34,
       "ytdPct": 43.34,
-      "marketCap": 1705538806.84,
+      "marketCap": 1685745319.72,
       "peRatio": null,
       "rsi14": 74.7,
       "week52Low": 6.2,
       "week52High": 11.97,
-      "avgVolume": 4634493,
+      "avgVolume": 4634550,
       "recommendation": "HOLD",
       "opportunityScore": 55,
       "company": {
@@ -43400,7 +43412,7 @@
           "close": 10.34,
           "high": 10.48,
           "low": 9.9001,
-          "volume": 6226631.080107,
+          "volume": 6226630.762211,
           "vwap": 10.2267
         },
         {
@@ -43409,8 +43421,8 @@
           "close": 10.22,
           "high": 10.7496,
           "low": 10.045,
-          "volume": 5123308.764465,
-          "vwap": 10.2896
+          "volume": 5125027.759006,
+          "vwap": 10.2895
         }
       ],
       "shortVolume": {
@@ -43612,7 +43624,7 @@
         "asOf": "2026-09-04",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 5123309,
+        "volume": 5125028,
         "avgVolume20": 5234942,
         "volumeMultiple": 0.98,
         "dayRangePct": 6.89,
@@ -44278,12 +44290,12 @@
       "price": 226.39,
       "previousClose": 210.63,
       "ytdPct": 151.68,
-      "marketCap": 57260864567.34,
+      "marketCap": 61545302803.02,
       "peRatio": null,
       "rsi14": 33.3,
       "week52Low": 63.26,
       "week52High": 299.86,
-      "avgVolume": 23593127,
+      "avgVolume": 23593274,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -47108,8 +47120,8 @@
           "close": 210.63,
           "high": 211.67,
           "low": 196.63,
-          "volume": 10695215.982948,
-          "vwap": 207.082
+          "volume": 10679565.343749,
+          "vwap": 207.0795
         },
         {
           "date": "2026-09-04",
@@ -47117,8 +47129,8 @@
           "close": 226.39,
           "high": 226.58,
           "low": 209.405,
-          "volume": 14950607.303206,
-          "vwap": 218.9367
+          "volume": 14970670.606039,
+          "vwap": 218.9533
         }
       ],
       "shortVolume": {
@@ -47320,8 +47332,8 @@
         "asOf": "2026-09-04",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 14950607,
-        "avgVolume20": 22256496,
+        "volume": 14970671,
+        "avgVolume20": 22255714,
         "volumeMultiple": 0.67,
         "dayRangePct": 7.59,
         "gapPct": -0.21,
@@ -47349,27 +47361,13 @@
       "financials": {
         "quarters": [
           {
-            "period": "2025 Q1",
-            "end": "2025-03-31",
-            "form": "Yahoo",
-            "source": "Yahoo",
-            "value": 50900000,
-            "revenue": 50900000,
-            "netIncome": -113500000,
-            "operatingCashFlow": -197500000,
-            "capex": -543900000,
-            "freeCashFlow": -741400000,
-            "assets": 3436500000,
-            "equity": 3161300000
-          },
-          {
             "period": "2025 Q2",
             "end": "2025-06-30",
             "form": "Yahoo",
             "source": "Yahoo",
-            "value": 100700000,
-            "revenue": 100700000,
-            "netIncome": 584500000,
+            "value": 105100000,
+            "revenue": 105100000,
+            "netIncome": 584400000,
             "operatingCashFlow": -171600000,
             "capex": -510600000,
             "freeCashFlow": -682200000,
@@ -47417,17 +47415,31 @@
             "freeCashFlow": -214900000,
             "assets": 22303300000,
             "equity": 7240900000
+          },
+          {
+            "period": "2026 Q2",
+            "end": "2026-06-30",
+            "form": "Yahoo",
+            "source": "Yahoo",
+            "value": 582300000,
+            "revenue": 582300000,
+            "netIncome": -190400000,
+            "operatingCashFlow": 2246100000,
+            "capex": -5657400000,
+            "freeCashFlow": -3411300000,
+            "assets": 27961500000,
+            "equity": 10339500000
           }
         ],
         "forecast": [
           {
             "period": "Forecast Q+1",
-            "value": 498750000,
+            "value": 727875000,
             "basis": "simple trend forecast"
           },
           {
             "period": "Forecast Q+2",
-            "value": 623437500,
+            "value": 909843750,
             "basis": "simple trend forecast"
           }
         ],
@@ -47688,12 +47700,12 @@
       "price": 307.65,
       "previousClose": 292.66,
       "ytdPct": 66.24,
-      "marketCap": 366211603860.00006,
+      "marketCap": 384968905650,
       "peRatio": null,
       "rsi14": 33.4,
       "week52Low": 94.11,
       "week52High": 438.5,
-      "avgVolume": 9320997,
+      "avgVolume": 9321068,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -50518,7 +50530,7 @@
           "close": 292.66,
           "high": 292.78,
           "low": 278.04,
-          "volume": 7211728.130655,
+          "volume": 7211727.245639,
           "vwap": 288.4
         },
         {
@@ -50527,8 +50539,8 @@
           "close": 307.65,
           "high": 310.3,
           "low": 297.38,
-          "volume": 8357255.295229,
-          "vwap": 305.6039
+          "volume": 8359371.251737,
+          "vwap": 305.6044
         }
       ],
       "shortVolume": {
@@ -50730,7 +50742,7 @@
         "asOf": "2026-09-04",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 8357255,
+        "volume": 8359371,
         "avgVolume20": 7388362,
         "volumeMultiple": 1.13,
         "dayRangePct": 4.2,
@@ -51653,12 +51665,12 @@
       "price": 13.4,
       "previousClose": 13.82,
       "ytdPct": 30.6,
-      "marketCap": 769774000,
+      "marketCap": 746380000,
       "peRatio": null,
       "rsi14": 25.6,
       "week52Low": 10.07,
       "week52High": 19.69,
-      "avgVolume": 2601515,
+      "avgVolume": 2601548,
       "recommendation": "BUY",
       "opportunityScore": 78,
       "company": {
@@ -53709,7 +53721,7 @@
           "close": 13.4,
           "high": 13.9,
           "low": 13.33,
-          "volume": 944883.218371,
+          "volume": 945861.857839,
           "vwap": 13.5679
         }
       ],
@@ -53912,7 +53924,7 @@
         "asOf": "2026-09-04",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 944883,
+        "volume": 945862,
         "avgVolume20": 2359584,
         "volumeMultiple": 0.4,
         "dayRangePct": 4.25,
@@ -53961,6 +53973,20 @@
             "freeCashFlow": -326107,
             "assets": 419105843,
             "equity": 402960238
+          },
+          {
+            "period": "2026 Q2",
+            "end": "2026-06-30",
+            "form": "Yahoo",
+            "source": "Yahoo",
+            "value": 0,
+            "revenue": 0,
+            "netIncome": -134680744,
+            "operatingCashFlow": -157581,
+            "capex": null,
+            "freeCashFlow": -157581,
+            "assets": 422637049,
+            "equity": 268279494
           }
         ],
         "forecast": [
@@ -54578,85 +54604,85 @@
       "symbol": "VST",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-09-04T23:41:16.269Z"
+      "createdAt": "2026-09-07T23:57:17.772Z"
     },
     {
       "symbol": "RGTI",
       "severity": "warning",
       "message": "60.04% short-volume ratio",
-      "createdAt": "2026-09-04T22:41:16.269Z"
+      "createdAt": "2026-09-07T22:57:17.772Z"
     },
     {
       "symbol": "IONQ",
       "severity": "warning",
       "message": "61.68% short-volume ratio",
-      "createdAt": "2026-09-04T21:41:16.269Z"
+      "createdAt": "2026-09-07T21:57:17.772Z"
     },
     {
       "symbol": "UAMY",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-09-04T20:41:16.269Z"
+      "createdAt": "2026-09-07T20:57:17.772Z"
     },
     {
       "symbol": "SNPS",
       "severity": "warning",
       "message": "9.6% intraday range",
-      "createdAt": "2026-09-04T19:41:16.269Z"
+      "createdAt": "2026-09-07T19:57:17.772Z"
     },
     {
       "symbol": "SNPS",
       "severity": "warning",
       "message": "52.78% short-volume ratio",
-      "createdAt": "2026-09-04T18:41:16.269Z"
+      "createdAt": "2026-09-07T18:57:17.772Z"
     },
     {
       "symbol": "QCOM",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-09-04T17:41:16.269Z"
+      "createdAt": "2026-09-07T17:57:17.772Z"
     },
     {
       "symbol": "RRX",
       "severity": "success",
       "message": "MACD above signal line",
-      "createdAt": "2026-09-04T16:41:16.269Z"
+      "createdAt": "2026-09-07T16:57:17.772Z"
     },
     {
       "symbol": "RRX",
       "severity": "warning",
       "message": "54.87% short-volume ratio",
-      "createdAt": "2026-09-04T15:41:16.269Z"
+      "createdAt": "2026-09-07T15:57:17.772Z"
     },
     {
       "symbol": "AAOI",
       "severity": "info",
       "message": "RSI oversold: 22.2",
-      "createdAt": "2026-09-04T14:41:16.269Z"
+      "createdAt": "2026-09-07T14:57:17.772Z"
     },
     {
       "symbol": "AAOI",
       "severity": "success",
       "message": "Strong YTD performer: +166.49%",
-      "createdAt": "2026-09-04T13:41:16.269Z"
+      "createdAt": "2026-09-07T13:57:17.772Z"
     },
     {
       "symbol": "LITE",
       "severity": "success",
       "message": "Strong YTD performer: +128.24%",
-      "createdAt": "2026-09-04T12:41:16.269Z"
+      "createdAt": "2026-09-07T12:57:17.772Z"
     },
     {
       "symbol": "AXTI",
       "severity": "info",
       "message": "RSI oversold: 20.6",
-      "createdAt": "2026-09-04T11:41:16.269Z"
+      "createdAt": "2026-09-07T11:57:17.772Z"
     },
     {
       "symbol": "AXTI",
       "severity": "success",
       "message": "Strong YTD performer: +267.78%",
-      "createdAt": "2026-09-04T10:41:16.269Z"
+      "createdAt": "2026-09-07T10:57:17.772Z"
     }
   ],
   "errors": [],
@@ -54667,7 +54693,7 @@
     },
     {
       "symbol": "VST",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=VST&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=VST&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "RGTI",
@@ -54675,7 +54701,7 @@
     },
     {
       "symbol": "RGTI",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=RGTI&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=RGTI&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "IONQ",
@@ -54699,7 +54725,7 @@
     },
     {
       "symbol": "UAMY",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=UAMY&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=UAMY&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "SNPS",
@@ -54715,7 +54741,7 @@
     },
     {
       "symbol": "QCOM",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=QCOM&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=QCOM&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "RRX",
@@ -54723,7 +54749,7 @@
     },
     {
       "symbol": "RRX",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=RRX&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=RRX&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "AAOI",
@@ -54739,7 +54765,7 @@
     },
     {
       "symbol": "LITE",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=LITE&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=LITE&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "AXTI",
@@ -54771,7 +54797,7 @@
     },
     {
       "symbol": "LRCX",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=LRCX&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=LRCX&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
       "symbol": "CCXI",
@@ -54779,7 +54805,7 @@
     },
     {
       "symbol": "CCXI",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=CCXI&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=CCXI&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     }
   ]
 }
