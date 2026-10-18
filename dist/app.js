@@ -48,17 +48,30 @@ async function fetchJson(url) {
 }
 
 async function load({ manual = false } = {}) {
+  const btn = $('#btn-refresh');
+  if (manual && btn) { btn.disabled = true; btn.classList.add('loading'); btn.textContent = '⟳ Refreshing…'; }
+  const prevGeneratedAt = state.data?.generatedAt;
   try {
     const [data, bubble] = await Promise.all([fetchJson(DATA_URL), fetchJson(BUBBLE_URL).catch(() => null)]);
     if (!data || !Array.isArray(data.symbols) || !data.symbols.length) throw new Error('No symbols in payload');
     state.data = data; state.bubble = bubble;
     $('#error-banner').hidden = true;
     renderAll();
+    if (manual) {
+      const changed = prevGeneratedAt !== data.generatedAt;
+      const flash = $('#refresh-flash');
+      flash.textContent = changed
+        ? `✓ Data updated — session ${sessionDate(data)}`
+        : `• Snapshot current — session ${sessionDate(data)} (EOD, next refresh 05:00 ICT after next close)`;
+      flash.className = 'refresh-flash show ' + (changed ? 'ok' : 'same');
+      clearTimeout(flash._t); flash._t = setTimeout(() => flash.classList.remove('show'), 6000);
+    }
   } catch (e) {
     const b = $('#error-banner'); b.hidden = false;
-    b.textContent = `Data load failed: ${e.message}. Showing nothing — retry with Refresh. ${state.data ? '(Previous snapshot was rendered.)' : ''}`;
+    b.textContent = `Data load failed: ${e.message}. ${state.data ? '(Previous snapshot remains rendered.)' : 'Retry with Refresh.'}`;
   } finally {
-    if (manual) $('#refreshed-at').textContent = `refreshed ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+    if (manual && btn) { btn.disabled = false; btn.classList.remove('loading'); btn.textContent = '↻ Refresh'; }
+    $('#refreshed-at').textContent = `checked ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
   }
 }
 
@@ -81,8 +94,13 @@ function renderHeader() {
   $('#session-date').textContent = `session ${sessionDate(d)}`;
   $('#refreshed-at').textContent = `updated ${new Date(d.generatedAt).toLocaleString([], { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}`;
   const st = $('#data-status');
-  if (d.dataStatus === 'partial') { st.hidden = false; st.textContent = `PARTIAL · ${d.errors?.length ?? '?'} err`; }
-  else if (d.dataStatus === 'fallback') { st.hidden = false; st.textContent = 'FALLBACK DATA'; }
+  if (d.dataStatus === 'partial') {
+    st.hidden = false;
+    const detail = (d.errors || []).map(e => typeof e === 'string' ? e : `${e.symbol}: ${e.error}`).join(' · ')
+      || 'some symbols lag the latest session';
+    st.textContent = 'PARTIAL DATA';
+    st.title = detail;
+  } else if (d.dataStatus === 'fallback') { st.hidden = false; st.textContent = 'FALLBACK DATA'; st.title = 'serving last known good snapshot'; }
   else st.hidden = true;
   $('#foot-meta').textContent = `${d.symbols.length} tickers · src ${d.source} · overlays ${d.overlayRefreshedAt ? new Date(d.overlayRefreshedAt).toLocaleDateString() : '—'}`;
 }

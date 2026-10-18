@@ -628,7 +628,17 @@ try {
 const payload = {
   generatedAt: new Date().toISOString(), staleAfterMinutes: 1440,
   source: `${MASSIVE_API_KEY ? 'Massive.com OHLC aggregates' : 'Yahoo Finance chart endpoint'} + SEC companyfacts/submissions via scheduled Node refresh`,
-  tickers: SYMBOLS, dataStatus: results.length ? (errors.length ? 'partial' : 'fresh') : 'fallback',
+  tickers: SYMBOLS, dataStatus: (() => {
+    // 'partial' only when real data is missing: a symbol absent, or its
+    // latest bar lagging the newest session across the universe. Recovered
+    // sub-fetch errors (e.g. Massive→Yahoo fallback) stay listed in
+    // `errors` for transparency but don't degrade the status.
+    if (!results.length) return 'fallback';
+    const dates = results.map(s => s.technical?.at(-1)?.date || '').sort();
+    const maxDate = dates[dates.length - 1];
+    const lagging = results.filter(s => (s.technical?.at(-1)?.date || '') < maxDate).length;
+    return (results.length === SYMBOLS.length && !lagging) ? 'fresh' : 'partial';
+  })(),
   marketStatus: new Date().getUTCDay() >= 1 && new Date().getUTCDay() <= 5 ? 'weekday' : 'closed_or_weekend',
   summary: { totalMarketCap: null, avgPeRatio: null, avgRsi14: round(avgRsi, 1), sentimentScore, bullPct: round((bull / Math.max(1, results.length)) * 100, 0), neutralPct: round((neutral / Math.max(1, results.length)) * 100, 0), bearPct: round((bear / Math.max(1, results.length)) * 100, 0), bestPerformer: best ? { symbol: best.symbol, ytdPct: best.ytdPct } : null, worstPerformer: worst ? { symbol: worst.symbol, ytdPct: worst.ytdPct } : null },
   symbols: results, alerts, errors, warnings,

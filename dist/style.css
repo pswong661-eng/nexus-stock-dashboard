@@ -68,6 +68,16 @@ body {
   padding: 6px 12px; cursor: pointer; transition: border-color .15s, background .15s;
 }
 .btn:hover { border-color: var(--accent); background: #16233a; }
+.btn:disabled { opacity: .6; cursor: wait; }
+.btn.loading { color: var(--accent); }
+.refresh-flash {
+  font: 500 11.5px var(--sans); color: var(--muted); opacity: 0;
+  max-width: 420px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  transition: opacity .3s;
+}
+.refresh-flash.show { opacity: 1; }
+.refresh-flash.ok { color: var(--up); }
+.refresh-flash.same { color: var(--muted); }
 
 /* ── Layout ─────────────────────────────────────────── */
 .wrap { max-width: 1440px; margin: 0 auto; padding: 20px 22px 40px; display: flex; flex-direction: column; gap: 18px; }
