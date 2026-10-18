@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>NANO</title>
+  <title>Nanolaos Market Intelligence</title>
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
   <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
   <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
@@ -13,190 +13,132 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./style.css?v=desk-20260816h" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
-  <script src="./app.js?v=desk-20260816h" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css?v=v2-20261018" />
+  <script src="./chart.umd.min.js?v=4.4.7" defer></script>
+  <script src="./app.js?v=v2-20261018" defer></script>
 </head>
 <body>
-  <a class="skip" href="#stage">Skip to desk</a>
-
-  <header class="quote">
-    <div class="quote-brand">
-      <span class="live-dot" aria-hidden="true"></span>
-      <a href="#/" class="wordmark">NANO</a>
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">◈</span>
+        <span class="brand-text">NANOLAOS <em>Market Intelligence</em></span>
+      </div>
+      <span id="session-badge" class="badge badge-eod" title="Data refreshes once per trading day after the US close">EOD</span>
+      <span id="data-status" class="badge badge-warn" hidden></span>
     </div>
-    <div class="quote-id">
-      <div class="ticker" id="q-symbol">—</div>
-      <div class="name" id="q-name">Loading desk…</div>
-    </div>
-    <dl class="quote-metrics" id="quote-metrics"></dl>
-    <div class="quote-meta">
-      <div class="status" id="status-pill">Loading</div>
-      <div class="asof" id="asof">As of —</div>
-      <button id="refresh-btn" type="button">Refresh</button>
+    <div class="topbar-right">
+      <span id="session-date" class="mono muted"></span>
+      <span class="sep" aria-hidden="true"></span>
+      <span id="refreshed-at" class="mono muted"></span>
+      <button id="btn-refresh" class="btn" type="button" title="Reload EOD snapshot">↻ Refresh</button>
     </div>
   </header>
 
-  <div class="desk">
-    <aside class="book" aria-label="Watchlist">
-      <div class="book-head">
-        <h1>Watchlist</h1>
-        <span class="hint" id="book-count">—</span>
+  <main class="wrap">
+    <section id="error-banner" class="banner" hidden></section>
+
+    <section class="stats" id="stats" aria-label="Summary statistics"></section>
+
+    <section class="card panel-table">
+      <div class="card-head">
+        <h2>Watchlist <span id="wl-count" class="count"></span></h2>
+        <input id="wl-filter" class="input" type="search" placeholder="Filter symbol / name / sector…" autocomplete="off" />
       </div>
-      <div class="table-wrap">
-        <table class="book-table">
+      <div class="table-scroll">
+        <table id="watch-table" class="grid" aria-label="Watchlist">
           <thead>
             <tr>
-              <th>Name</th>
-              <th class="num">Last</th>
-              <th class="num">Day</th>
-              <th class="num">YTD</th>
-              <th class="num">Shrt</th>
-              <th class="spark-h">Trend</th>
+              <th data-key="symbol" class="sortable">SYM</th>
+              <th data-key="name" class="sortable">Name</th>
+              <th data-key="sector" class="sortable">Sector</th>
+              <th data-key="price" class="sortable num">Last</th>
+              <th data-key="changePct" class="sortable num">Δ Day</th>
+              <th data-key="ytdPct" class="sortable num">YTD</th>
+              <th data-key="signal" class="sortable">Trend</th>
+              <th data-key="score" class="sortable num">Score</th>
+              <th data-key="bias" class="sortable">Bias</th>
+              <th data-key="rsi" class="sortable num">RSI</th>
+              <th data-key="macdStatus" class="sortable">MACD</th>
+              <th data-key="pos52w" class="sortable num">52w Pos</th>
+              <th class="num">S / R</th>
+              <th data-key="volRatio" class="sortable num">Vol×</th>
+              <th data-key="shortVol" class="sortable num">Shrt Vol</th>
+              <th data-key="peRatio" class="sortable num">P/E</th>
+              <th data-key="lynch" class="sortable">Lynch</th>
             </tr>
           </thead>
           <tbody id="watch-body"></tbody>
         </table>
       </div>
-      <p class="kbd-hint">j / k move · 1–5 panes · click a row</p>
-    </aside>
+      <p class="card-foot muted" id="wl-foot"></p>
+    </section>
 
-    <main class="stage" id="stage">
-      <nav class="panes" aria-label="Desk panes">
-        <a href="#chart" data-pane="chart">Chart</a>
-        <a href="#flow" data-pane="flow">Flow</a>
-        <a href="#financial" data-pane="financial">Financial</a>
-        <a href="#insider" data-pane="insider">Insider</a>
-        <a href="#alerts" data-pane="alerts">Alerts</a>
+    <section class="grid-2">
+      <div class="card">
+        <div class="card-head"><h2>Sector Performance</h2><span class="muted small">Δ day, equal-weight</span></div>
+        <div id="sector-list" class="vlist"></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><h2>Short Volume — Top 10</h2><span class="muted small">FINRA daily ratio</span></div>
+        <div id="shortvol-list" class="vlist"></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <h2>Lynch Screen</h2>
+        <span class="muted small">PEGY = (growth + yield) ÷ P/E · pass ≥ 2 · hover a chip for the note</span>
+      </div>
+      <div id="lynch-groups" class="lynch-groups"></div>
+      <p class="card-foot muted">Fundamentals are web-referenced snapshots from the internal screen — not live API fields.</p>
+    </section>
+
+    <section class="grid-2">
+      <div class="card" id="bubble-card">
+        <div class="card-head"><h2>Bubble Fragility</h2><span class="muted small" id="bubble-date"></span></div>
+        <div id="bubble-body"></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><h2>Alerts · Unusual Activity</h2></div>
+        <ul id="alerts-list" class="alerts"></ul>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <span>Sources: Massive.com · SEC EDGAR · Yahoo Finance (fallback) — EOD data, previous session close.</span>
+      <span class="mono" id="foot-meta"></span>
+    </footer>
+  </main>
+
+  <aside id="drawer" class="drawer" hidden aria-label="Ticker detail">
+    <div class="drawer-scrim" data-close="1"></div>
+    <div class="drawer-panel" role="dialog" aria-modal="true">
+      <header class="drawer-head">
+        <div>
+          <h3 id="dw-sym"></h3>
+          <p id="dw-sub" class="muted small"></p>
+        </div>
+        <button class="btn" data-close="1" type="button">✕ Close</button>
+      </header>
+      <nav class="dw-tabs" id="dw-tabs">
+        <button data-tab="quote" class="on" type="button">Quote</button>
+        <button data-tab="technical" type="button">Technical</button>
+        <button data-tab="financials" type="button">Financials</button>
+        <button data-tab="insider" type="button">Insider</button>
       </nav>
-
-      <section class="pane" id="pane-chart" hidden>
-        <div class="pane-toolbar">
-          <div class="ranges" role="group" aria-label="Chart range">
-            <button type="button" data-range="66">3M</button>
-            <button type="button" data-range="132">6M</button>
-            <button type="button" data-range="260" class="on">1Y</button>
-          </div>
-          <p class="pane-note" id="chart-readout">Price vs EMA50 · MACD · RSI(14)</p>
+      <div class="drawer-body">
+        <div id="dw-quote"></div>
+        <div id="dw-technical" hidden>
+          <div class="chart-box"><canvas id="ch-price" height="190" aria-label="Price chart"></canvas></div>
+          <div class="chart-box"><canvas id="ch-macd" height="110" aria-label="MACD chart"></canvas></div>
+          <div class="chart-box"><canvas id="ch-rsi" height="110" aria-label="RSI chart"></canvas></div>
         </div>
-        <article class="panel">
-          <h2>Price + EMA50</h2>
-          <canvas id="ema-chart" height="150"></canvas>
-        </article>
-        <div class="split">
-          <article class="panel">
-            <h2>MACD (12, 26, 9)</h2>
-            <canvas id="macd-chart" height="110"></canvas>
-          </article>
-          <article class="panel">
-            <h2>RSI (14)</h2>
-            <canvas id="rsi-chart" height="110"></canvas>
-          </article>
-        </div>
-        <article class="panel peer-only-mobile">
-          <h2>Peer tape</h2>
-          <div class="table-wrap">
-            <table class="data" id="peer-table"></table>
-          </div>
-        </article>
-      </section>
-
-      <section class="pane" id="pane-flow" hidden>
-        <div class="stat-row" id="flow-metrics"></div>
-        <div class="split">
-          <article class="panel">
-            <h2>Activity</h2>
-            <p class="lede" id="flow-summary"></p>
-          </article>
-          <article class="panel">
-            <h2>Signals</h2>
-            <div id="flow-signals"></div>
-          </article>
-        </div>
-        <article class="panel">
-          <h2>Short volume</h2>
-          <div class="table-wrap">
-            <table class="data" id="short-volume-table"></table>
-          </div>
-        </article>
-      </section>
-
-      <section class="pane" id="pane-financial" hidden>
-        <article class="panel profile">
-          <div>
-            <p class="kicker" id="fin-kicker">Profile</p>
-            <h2 id="fin-name">—</h2>
-            <p class="lede" id="fin-desc" data-pretext></p>
-          </div>
-          <dl class="mini" id="fin-meta"></dl>
-        </article>
-        <div class="stat-row" id="ratio-grid"></div>
-        <div class="split">
-          <article class="panel">
-            <h2 id="fin-table-title">Statements</h2>
-            <div class="table-wrap">
-              <table class="data" id="financial-table"></table>
-            </div>
-          </article>
-          <article class="panel">
-            <h2>Revenue</h2>
-            <canvas id="financial-chart" height="180"></canvas>
-          </article>
-        </div>
-      </section>
-
-      <section class="pane" id="pane-insider" hidden>
-        <div class="stat-row" id="insider-strip"></div>
-        <div class="split">
-          <article class="panel">
-            <h2>Key holders</h2>
-            <div id="key-insiders"></div>
-          </article>
-          <article class="panel">
-            <h2>Largest prints</h2>
-            <div id="largest-transactions"></div>
-          </article>
-        </div>
-        <div class="split">
-          <article class="panel">
-            <h2>Patterns</h2>
-            <ul class="flags" id="insider-patterns"></ul>
-          </article>
-          <article class="panel">
-            <h2>Flags</h2>
-            <ul class="flags" id="insider-alerts"></ul>
-          </article>
-        </div>
-        <article class="panel">
-          <h2>Form 4</h2>
-          <div class="table-wrap">
-            <table class="data" id="insider-table"></table>
-          </div>
-        </article>
-      </section>
-
-      <section class="pane" id="pane-alerts" hidden>
-        <div class="split">
-          <article class="panel">
-            <h2>Book snapshot</h2>
-            <dl class="mini" id="portfolio-metrics"></dl>
-          </article>
-          <article class="panel">
-            <h2>Last event by name <span class="count" id="alert-count"></span></h2>
-            <div id="alerts-list"></div>
-          </article>
-        </div>
-      </section>
-    </main>
-  </div>
-
-  <nav class="dock" aria-label="Mobile panes">
-    <a href="#chart" data-pane="chart">Chart</a>
-    <a href="#flow" data-pane="flow">Flow</a>
-    <a href="#financial" data-pane="financial">Fin</a>
-    <a href="#insider" data-pane="insider">Insider</a>
-    <a href="#alerts" data-pane="alerts">Alerts</a>
-  </nav>
+        <div id="dw-financials" hidden></div>
+        <div id="dw-insider" hidden></div>
+      </div>
+    </div>
+  </aside>
 </body>
 </html>
