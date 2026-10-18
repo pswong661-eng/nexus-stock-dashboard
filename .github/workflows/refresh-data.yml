@@ -28,6 +28,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Pull latest before refresh
+        run: git pull origin ${{ github.ref_name }} --ff-only
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -38,6 +40,8 @@ jobs:
         env:
           STOCK_SYMBOLS: ${{ vars.STOCK_SYMBOLS || 'NVDA,MRVL,QCOM,ARM,INTC,TSM,AXTI,AAOI,LITE,COHR,APH,LRCX,SNPS,SNDK,SKHY,IONQ,RGTI,CBRS,TSLA,RRX,PH,UAMY,VST,TLN,LLY,NVAX,AMD,CCXI,FN,GOOGL,NBIS,SPCX,ASML,ORCL,MU,LAC' }}
           MASSIVE_API_KEY: ${{ secrets.MASSIVE_API_KEY }}
+          MERGE_EXISTING: '1'
+          SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
       - run: npm run validate:data
       - name: Trading-day gate (skip weekends/holidays)
         id: gate
@@ -46,9 +50,6 @@ jobs:
           VERDICT=$(node scripts/trading-day-gate.mjs public/data/latest.json /tmp/head-latest.json)
           echo "verdict=$VERDICT"
           echo "changed=$([ "$VERDICT" = "changed" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
-      - name: Pull latest changes
-        if: steps.gate.outputs.changed == 'true'
-        run: git pull origin ${{ github.ref_name }} --ff-only
       - name: Commit refreshed data
         if: steps.gate.outputs.changed == 'true'
         uses: stefanzweifel/git-auto-commit-action@v5

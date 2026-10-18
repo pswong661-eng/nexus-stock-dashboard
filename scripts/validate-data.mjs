@@ -5,22 +5,33 @@ const data = JSON.parse(fs.readFileSync(path, 'utf8'));
 for (const key of ['generatedAt', 'symbols', 'summary']) if (!(key in data)) throw new Error(`Missing ${key}`);
 if (!Array.isArray(data.symbols) || data.symbols.length === 0) throw new Error('symbols must be non-empty');
 if (Number.isNaN(Date.parse(data.generatedAt))) throw new Error('generatedAt invalid');
+
+const BANNED_PRIVACY = /^(entry[_-]?low|entry[_-]?high|target[_-]?low|target[_-]?high|stop[_-]?loss)$/i;
+function assertNoTradeLevels(obj, pathPrefix) {
+  if (!obj || typeof obj !== 'object') return;
+  for (const [key, value] of Object.entries(obj)) {
+    if (BANNED_PRIVACY.test(key)) throw new Error(`${pathPrefix}.${key} must not appear in public data`);
+    if (value && typeof value === 'object' && !Array.isArray(value)) assertNoTradeLevels(value, `${pathPrefix}.${key}`);
+  }
+}
+
 for (const s of data.symbols) {
   if (!s.symbol || typeof s.symbol !== 'string') throw new Error('symbol missing');
   for (const field of ['price', 'rsi14', 'ytdPct']) if (s[field] !== null && !Number.isFinite(s[field])) throw new Error(`${s.symbol}.${field} invalid`);
   // Mission Control indicator set (merge 2026-10-18): present, finite-or-null.
-  for (const field of ['sma50', 'sma200', 'ema50', 'macdDiff', 'support', 'resistance', 'pos52w', 'volRatio']) {
-    if (!(field in s)) throw new Error(`${s.symbol}.local.${field} missing (schema v2)`);
+  for (const field of ['sma50', 'sma200', 'ema50', 'macdDiff', 'support', 'resistance', 'pos52w', 'volRatio', 'rsi', 'changePct', 'high52', 'low52', 'avgVol20']) {
+    if (!(field in s)) throw new Error(`${s.symbol}.${field} missing (schema v2)`);
     if (s[field] !== null && !Number.isFinite(s[field])) throw new Error(`${s.symbol}.${field} invalid`);
+  }
+  if (!('dataRows' in s) || !Number.isInteger(s.dataRows) || s.dataRows < 0) {
+    throw new Error(`${s.symbol}.dataRows missing or invalid (schema v2)`);
   }
   for (const field of ['bias', 'signal', 'macdStatus']) {
     if (!(field in s) || typeof s[field] !== 'string' || !s[field]) throw new Error(`${s.symbol}.${field} missing (schema v2)`);
   }
   if (!Number.isInteger(s.score) || s.score < 0 || s.score > 4) throw new Error(`${s.symbol}.score invalid (schema v2, 0-4)`);
-  // Privacy invariant (Eric 2026-10-18): trade-plan levels never ship publicly.
-  for (const banned of ['entryLow', 'entryHigh', 'targetLow', 'targetHigh', 'stopLoss', 'entry_low', 'entry_high', 'target_low', 'target_high', 'stop_loss']) {
-    if (banned in s) throw new Error(`${s.symbol}.${banned} must not appear in public data`);
-  }
+  // Privacy invariant (Eric 2026-10-18): trade-plan levels never ship publicly (any casing).
+  assertNoTradeLevels(s, s.symbol);
   if (!Array.isArray(s.series) || s.series.length < 30) throw new Error(`${s.symbol}.series too short`);
   if (!Array.isArray(s.technical) || s.technical.length < 30) throw new Error(`${s.symbol}.technical too short`);
   const last = s.technical.at(-1);

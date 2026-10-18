@@ -187,7 +187,9 @@ async function fetchMassiveFinancials(symbol) {
   const quarters = [...byEnd.values()]
     .sort((a, b) => new Date(a.end) - new Date(b.end))
     .slice(-6);
-  return quarters.length ? { quarters, forecast: forecastTwo(quarters.map(q => ({ ...q, value: q.revenue }))), source: 'Massive' } : null;
+  return quarters.length
+    ? { quarters, forecast: forecastTwo(quarters.map(q => ({ ...q, value: q.revenue }))), source: 'Massive', basis: 'quarterly' }
+    : null;
 }
 async function fetchMassiveInsider(symbol) {
   const data = await fetchMassiveJson(massiveUrl('/stocks/filings/vX/form-4', { tickers: symbol, limit: 40, sort: 'filing_date.desc' }));
@@ -326,7 +328,7 @@ function normalizeChart(symbol, result) {
     price: round(last, 2), previousClose: round(points.at(-2)?.close ?? finite(meta.regularMarketPreviousClose), 2), ytdPct: round(ytdPct, 2),
     marketCap: null, peRatio: null, rsi14: round(rsi14, 1), week52Low: round(week52Low, 2), week52High: round(week52High, 2), avgVolume: round(avgVolume, 0),
     recommendation: rec, opportunityScore: rec === 'BUY' ? 78 : rec === 'HOLD' ? 55 : 32,
-    series: normalized, technical, rawPoints: points.slice(-20),
+    series: normalized, technical, rawPoints: points.slice(-40),
     ...computeLocalIndicators(points).local
   };
 }
@@ -340,7 +342,7 @@ function summarizeShortVolume(rows = []) {
     source: latest ? 'Massive' : 'none'
   };
 }
-function detectUnusualActivity(stock, shortVolumeRows = []) {
+function detectUnusualActivity(stock, shortVolumeRows = [], priceSource = 'Yahoo') {
   const points = stock.rawPoints || [];
   const latest = points.at(-1) || {};
   const prev = points.at(-2) || {};
@@ -356,9 +358,13 @@ function detectUnusualActivity(stock, shortVolumeRows = []) {
   if (Number.isFinite(dayRangePct) && dayRangePct >= 8) signals.push({ type: 'wide_range', severity: dayRangePct >= 15 ? 'danger' : 'warning', label: `${round(dayRangePct, 1)}% intraday range` });
   if (Number.isFinite(gapPct) && Math.abs(gapPct) >= 5) signals.push({ type: 'price_gap', severity: Math.abs(gapPct) >= 10 ? 'danger' : 'warning', label: `${gapPct > 0 ? '+' : ''}${round(gapPct, 1)}% opening gap` });
   if (Number.isFinite(latestShort.shortVolumeRatio) && latestShort.shortVolumeRatio >= 50) signals.push({ type: 'short_ratio', severity: latestShort.shortVolumeRatio >= 65 ? 'danger' : 'warning', label: `${latestShort.shortVolumeRatio}% short-volume ratio` });
+  const shortSrc = shortSummary.source && shortSummary.source !== 'none' ? shortSummary.source : null;
+  const source = shortSrc
+    ? `${priceSource} aggregates + ${shortSrc} short volume`
+    : `${priceSource} aggregates`;
   return {
     asOf: latest.date || latestShort.date || null,
-    source: 'Massive aggregates + Massive short volume',
+    source,
     tickTradesAvailable: false,
     volume: round(latest.volume, 0),
     avgVolume20: round(avgVolume20, 0),
@@ -551,16 +557,18 @@ for (const symbol of SYMBOLS) {
           return null;
         });
       } catch (massiveErr) {
-        errors.push({ symbol, error: `Massive fallback to Yahoo: ${redact(massiveErr.message || massiveErr)}` });
+        // Soft degradation — Yahoo still produces a usable row.
+        warnings.push({ symbol, warning: `Massive fallback to Yahoo: ${redact(massiveErr.message || massiveErr)}` });
       }
     }
     if (!base) {
       const chart = await fetchChart(symbol);
       if (!chart) throw new Error('empty chart result');
       base = normalizeChart(symbol, chart);
+      priceSource = 'Yahoo';
     }
     const shortVolumeSummary = summarizeShortVolume(shortVolume);
-    const unusualActivity = detectUnusualActivity(base, shortVolume);
+    const unusualActivity = detectUnusualActivity(base, shortVolume, priceSource);
     base.shortVolume = shortVolumeSummary;
     base.unusualActivity = unusualActivity;
     if (ratios) {
@@ -573,24 +581,38 @@ for (const symbol of SYMBOLS) {
   } catch (err) { errors.push({ symbol, error: redact(err.message || err) }); }
   await sleep(MASSIVE_API_KEY ? 13_000 : 350);
 }
-if (MERGE_EXISTING) {
+// Carry forward missing tickers from prior snapshot (schema: Massive → Yahoo → fallback).
+// MERGE_EXISTING=1 also preserves tickers that left STOCK_SYMBOLS.
+{
   const fs = await import('node:fs/promises');
-  const old = JSON.parse(await fs.readFile(OUT, 'utf8'));
-  const refreshed = new Set(results.map(s => s.symbol));
-  const bySymbol = new Map((old.symbols || []).map(s => [s.symbol, s]));
-  for (const row of results) bySymbol.set(row.symbol, row);
-  const mergedTickers = [...(old.tickers || [])];
-  for (const ticker of SYMBOLS) {
-    if (!mergedTickers.includes(ticker)) mergedTickers.push(ticker);
+  const readJson = async (url) => {
+    try { return JSON.parse(await fs.readFile(url, 'utf8')); } catch { return null; }
+  };
+  const prior = (await readJson(OUT)) || (await readJson(FALLBACK));
+  if (prior?.symbols?.length) {
+    const refreshed = new Set(results.map(s => s.symbol));
+    const bySymbol = new Map((prior.symbols || []).map(s => [s.symbol, s]));
+    for (const row of results) bySymbol.set(row.symbol, row);
+    const mergedTickers = MERGE_EXISTING
+      ? [...new Set([...(prior.tickers || []), ...SYMBOLS])]
+      : [...SYMBOLS];
+    if (MERGE_EXISTING) {
+      SYMBOLS.length = 0;
+      SYMBOLS.push(...mergedTickers);
+    }
+    const carried = [];
+    results.length = 0;
+    for (const ticker of mergedTickers) {
+      const row = bySymbol.get(ticker);
+      if (!row) continue;
+      if (!refreshed.has(ticker)) {
+        carried.push(ticker);
+        warnings.push({ symbol: ticker, warning: 'Carried forward from previous snapshot (refresh failed)' });
+      }
+      results.push(row);
+    }
+    if (carried.length) console.warn(`Carried forward ${carried.length} ticker(s): ${carried.join(', ')}`);
   }
-  SYMBOLS.length = 0;
-  SYMBOLS.push(...mergedTickers);
-  results.length = 0;
-  for (const ticker of mergedTickers) {
-    const row = bySymbol.get(ticker);
-    if (row) results.push(row);
-  }
-  warnings.unshift(...(old.warnings || []).filter(w => w?.symbol && !refreshed.has(w.symbol)));
 }
 const bull = results.filter(s => s.recommendation === 'BUY').length;
 const bear = results.filter(s => s.recommendation === 'SELL').length;
@@ -646,7 +668,14 @@ const payload = {
 };
 if (!results.length) {
   const old = await import('node:fs/promises').then(fs => fs.readFile(FALLBACK, 'utf8').catch(() => null));
-  if (old) { const fallback = JSON.parse(old); fallback.generatedAt = new Date().toISOString(); fallback.dataStatus = 'fallback'; await import('node:fs/promises').then(fs => fs.writeFile(OUT, JSON.stringify(fallback, null, 2))); process.exit(0); }
+  if (old) {
+    const fallback = JSON.parse(old);
+    // Keep original generatedAt so staleness stays honest; stamp when we loaded it.
+    fallback.fallbackLoadedAt = new Date().toISOString();
+    fallback.dataStatus = 'fallback';
+    await import('node:fs/promises').then(fs => fs.writeFile(OUT, JSON.stringify(fallback, null, 2)));
+    process.exit(0);
+  }
   throw new Error('No symbols refreshed and no fallback data exists');
 }
 await import('node:fs/promises').then(fs => fs.writeFile(OUT, JSON.stringify(payload, null, 2)));
