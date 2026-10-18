@@ -1,0 +1,123 @@
+{
+ "generated_at": "2026-10-18T02:40:01+07:00",
+ "latest": {
+  "date": "2026-10-18",
+  "score": 44,
+  "label": "LOW",
+  "components": [
+   {
+    "name": "Trend Extension",
+    "block": "Euphoria",
+    "pts": 5,
+    "max": 15
+   },
+   {
+    "name": "Breadth",
+    "block": "Euphoria",
+    "pts": 0,
+    "max": 10
+   },
+   {
+    "name": "Volatility",
+    "block": "Stress",
+    "pts": 8,
+    "max": 15
+   },
+   {
+    "name": "Internals",
+    "block": "Stress",
+    "pts": 5,
+    "max": 10
+   },
+   {
+    "name": "Minsky Echo",
+    "block": "Euphoria",
+    "pts": 0,
+    "max": 10
+   },
+   {
+    "name": "Macro Funding",
+    "block": "Stress",
+    "pts": 6,
+    "max": 15
+   },
+   {
+    "name": "Private Credit",
+    "block": "Stress",
+    "pts": 4,
+    "max": 15
+   },
+   {
+    "name": "Fear Greed",
+    "block": "Euphoria",
+    "pts": 10,
+    "max": 10
+   },
+   {
+    "name": "Circular Financing",
+    "block": "Structure",
+    "pts": 6,
+    "max": 10
+   }
+  ],
+  "flags": []
+ },
+ "blocks": {
+  "Euphoria": {
+   "pts": 15,
+   "max": 45
+  },
+  "Stress": {
+   "pts": 23,
+   "max": 55
+  },
+  "Structure": {
+   "pts": 6,
+   "max": 10
+  }
+ },
+ "wow_delta": 3,
+ "history": [
+  {
+   "date": "2026-08-18",
+   "score": 43
+  },
+  {
+   "date": "2026-08-23",
+   "score": 44
+  },
+  {
+   "date": "2026-08-30",
+   "score": 38
+  },
+  {
+   "date": "2026-09-06",
+   "score": 47
+  },
+  {
+   "date": "2026-09-13",
+   "score": 45
+  },
+  {
+   "date": "2026-09-20",
+   "score": 43
+  },
+  {
+   "date": "2026-09-27",
+   "score": 42
+  },
+  {
+   "date": "2026-10-04",
+   "score": 46
+  },
+  {
+   "date": "2026-10-11",
+   "score": 41
+  },
+  {
+   "date": "2026-10-18",
+   "score": 44
+  }
+ ],
+ "note_path": "Research/Bubble Dashboard/2026-10-18-bubble-fragility.md"
+}

@@ -1,0 +1,466 @@
+{
+  "_refreshedAt": "2026-10-18T16:20:05+00:00",
+  "NVAX": {
+    "company": "Novavax",
+    "sector": "Healthcare",
+    "lynch": {
+      "category": "Turnaround",
+      "peTtm": null,
+      "peFwd": null,
+      "pegy": null,
+      "verdict": "fail",
+      "note": "Revenue -62%",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "VST": {
+    "company": "Vistra",
+    "sector": "Energy",
+    "lynch": {
+      "category": "Stalwart",
+      "peTtm": 24.6,
+      "peFwd": 14.0,
+      "pegy": 5.5,
+      "verdict": "pass",
+      "note": "Nuclear/data-center repricing",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "LLY": {
+    "company": "Eli Lilly",
+    "sector": "Healthcare",
+    "lynch": {
+      "category": "Fast grower",
+      "peTtm": 38.9,
+      "peFwd": 28.4,
+      "pegy": 1.3,
+      "verdict": "borderline",
+      "note": "Expensive but best-in-class",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "RGTI": {
+    "company": "Rigetti Computing",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Pre-profit",
+      "peTtm": null,
+      "peFwd": null,
+      "pegy": null,
+      "verdict": "fail",
+      "note": "",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "IONQ": {
+    "company": "IonQ",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Pre-profit",
+      "peTtm": null,
+      "peFwd": null,
+      "pegy": null,
+      "verdict": "fail",
+      "note": "",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "SNDK": {
+    "company": "Sandisk",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Cyclical",
+      "peTtm": 20.8,
+      "peFwd": 7.2,
+      "pegy": null,
+      "verdict": "special",
+      "note": "Peak-earnings trap setup; cycle discipline",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "COHR": {
+    "company": "Coherent",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Fast grower",
+      "peTtm": 62.9,
+      "peFwd": 27.5,
+      "pegy": 4.7,
+      "verdict": "pass",
+      "note": "Recovery-quality dependent",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "TLN": {
+    "company": "Talen Energy",
+    "sector": "Energy",
+    "lynch": {
+      "category": "Turnaround",
+      "peTtm": null,
+      "peFwd": 10.5,
+      "pegy": null,
+      "verdict": "special",
+      "note": "Post-bankruptcy; nuclear DC contracts",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "AXTI": {
+    "company": "AXT",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Asset/story",
+      "peTtm": 970.8,
+      "peFwd": 37.0,
+      "pegy": null,
+      "verdict": "fail",
+      "note": "Late-cycle flicker; -64% off high",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "TSM": {
+    "company": "TSMC",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Fast grower",
+      "peTtm": 28.0,
+      "peFwd": 19.2,
+      "pegy": 3.2,
+      "verdict": "pass",
+      "note": "Cleanest large-cap pass",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "TSLA": {
+    "company": "Tesla",
+    "sector": "Consumer",
+    "lynch": {
+      "category": "Story",
+      "peTtm": 370.5,
+      "peFwd": 187.5,
+      "pegy": null,
+      "verdict": "fail",
+      "note": "Robotaxi story priced to perfection",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "UAMY": {
+    "company": "U.S. Antimony",
+    "sector": "Materials",
+    "lynch": {
+      "category": "Asset play",
+      "peTtm": null,
+      "peFwd": null,
+      "pegy": null,
+      "verdict": "special",
+      "note": "Mine resumed + $100M buyback; asset test",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "LRCX": {
+    "company": "Lam Research",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Fast grower",
+      "peTtm": 55.2,
+      "peFwd": 33.6,
+      "pegy": 1.9,
+      "verdict": "borderline",
+      "note": "Just under 2; +64% fwd EPS ramp",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "QCOM": {
+    "company": "Qualcomm",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Stalwart",
+      "peTtm": 18.5,
+      "peFwd": 17.1,
+      "pegy": null,
+      "verdict": "fail",
+      "note": "Earnings -17% TTM; rotate candidate",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "SNPS": {
+    "company": "Synopsys",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Fast grower",
+      "peTtm": 107.9,
+      "peFwd": 28.7,
+      "pegy": null,
+      "verdict": "fail",
+      "note": "EPS -70% TTM; story risk",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "RRX": {
+    "company": "Regal Rexnord",
+    "sector": "Industrials",
+    "lynch": {
+      "category": "Stalwart",
+      "peTtm": 50.8,
+      "peFwd": 19.2,
+      "pegy": null,
+      "verdict": "borderline",
+      "note": "Fwd EPS looks anomalous; verify",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "APH": {
+    "company": "Amphenol",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Stalwart",
+      "peTtm": 36.0,
+      "peFwd": 27.4,
+      "pegy": 1.4,
+      "verdict": "borderline",
+      "note": "API tape broken (2x) - web data used",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "MRVL": {
+    "company": "Marvell",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Fast grower",
+      "peTtm": 69.0,
+      "peFwd": 37.7,
+      "pegy": 2.2,
+      "verdict": "pass",
+      "note": "Consensus-dependent ramp",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "LITE": {
+    "company": "Lumentum",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Turnaround/story",
+      "peTtm": null,
+      "peFwd": 40.7,
+      "pegy": null,
+      "verdict": "special",
+      "note": "EPS -93 TTM; asset test",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "AAOI": {
+    "company": "Applied Optoelectronics",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Speculative",
+      "peTtm": null,
+      "peFwd": 46.8,
+      "pegy": null,
+      "verdict": "fail",
+      "note": "Loss-making; $600M diluting ATM",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "NVDA": {
+    "company": "NVIDIA",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Fast grower",
+      "peTtm": 28.4,
+      "peFwd": 18.6,
+      "pegy": 2.4,
+      "verdict": "pass",
+      "note": "Mega-cap; digest valuation caution",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "ARM": {
+    "company": "Arm Holdings",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Fast grower",
+      "peTtm": 239.7,
+      "peFwd": 98.4,
+      "pegy": 1.5,
+      "verdict": "borderline",
+      "note": "Ramp priced in; fwd +148%",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "SKHY": {
+    "company": "SK hynix",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Cyclical",
+      "peTtm": 18.2,
+      "peFwd": 4.9,
+      "pegy": null,
+      "verdict": "special",
+      "note": "HBM leader; same setup as MU",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "CBRS": {
+    "company": "Cerebras Systems",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Pre-profit",
+      "peTtm": null,
+      "peFwd": null,
+      "pegy": null,
+      "verdict": "fail",
+      "note": "",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "PH": {
+    "company": "Parker-Hannifin",
+    "sector": "Industrials",
+    "lynch": {
+      "category": "Stalwart",
+      "peTtm": 35.7,
+      "peFwd": 29.1,
+      "pegy": 0.8,
+      "verdict": "fail",
+      "note": "Fully priced stalwart",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "MOG.A": {
+    "company": "Moog",
+    "sector": "Industrials"
+  },
+  "AMD": {
+    "company": "Advanced Micro Devices",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Fast grower",
+      "peTtm": 116.7,
+      "peFwd": 41.2,
+      "pegy": 4.5,
+      "verdict": "pass",
+      "note": "Consensus ramp; verify story",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "INTC": {
+    "company": "Intel",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Turnaround",
+      "peTtm": null,
+      "peFwd": 54.2,
+      "pegy": null,
+      "verdict": "special",
+      "note": "Foundry bet; earnings 10/22 inside hold",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "SPCX": {
+    "company": "Astra Space",
+    "sector": "Aerospace/Defense",
+    "lynch": {
+      "category": "Asset/story",
+      "peTtm": null,
+      "peFwd": 111.5,
+      "pegy": null,
+      "verdict": "fail",
+      "note": "44% daily vol",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "NBIS": {
+    "company": "Nebius Group",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Asset play",
+      "peTtm": null,
+      "peFwd": null,
+      "pegy": null,
+      "verdict": "fail",
+      "note": "No earnings yet",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "GOOGL": {
+    "company": "Alphabet",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Stalwart",
+      "peTtm": 16.9,
+      "peFwd": 25.3,
+      "pegy": null,
+      "verdict": "mixed",
+      "note": "Fwd P/E > TTM: market pricing EPS decline",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "FN": {
+    "company": "Fabrinet",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Fast grower",
+      "peTtm": 30.3,
+      "peFwd": 21.7,
+      "pegy": 1.8,
+      "verdict": "borderline",
+      "note": "Optical EMS ramp",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "CCXI": {
+    "company": "Churchill Capital XI (SPAC)",
+    "sector": "SPAC",
+    "lynch": {
+      "category": "SPAC",
+      "peTtm": null,
+      "peFwd": null,
+      "pegy": null,
+      "verdict": "n/a",
+      "note": "Event-driven (Agility merger)",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "MU": {
+    "company": "Micron Technology",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Cyclical",
+      "peTtm": 11.8,
+      "peFwd": 5.0,
+      "pegy": null,
+      "verdict": "special",
+      "note": "Cycle late; exits before the turn",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "ASML": {
+    "company": "ASML Holding",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Fast grower",
+      "peTtm": 53.1,
+      "peFwd": 29.6,
+      "pegy": 2.6,
+      "verdict": "pass",
+      "note": "AI capex + China overlay",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "ORCL": {
+    "company": "Oracle Corporation",
+    "sector": "Technology",
+    "lynch": {
+      "category": "Fast grower",
+      "peTtm": 20.1,
+      "peFwd": 15.1,
+      "pegy": 2.3,
+      "verdict": "pass",
+      "note": "Debt fails category check; see coverage",
+      "screenedAt": "2026-10-18T14:55:55+00:00"
+    }
+  },
+  "LAC": {
+    "company": "Lithium Americas",
+    "sector": "Materials"
+  }
+}
