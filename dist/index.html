@@ -44,15 +44,21 @@
     <section class="card panel-table">
       <div class="card-head">
         <h2>Watchlist <span id="wl-count" class="count"></span></h2>
-        <input id="wl-filter" class="input" type="search" placeholder="Filter symbol / name / sector…" autocomplete="off" />
+        <div class="head-tools">
+          <div class="seg" id="view-toggle" role="group" aria-label="Table density">
+            <button data-view="fit" class="on" type="button" title="Compact — no horizontal scroll">Fit</button>
+            <button data-view="full" type="button" title="All columns — may scroll horizontally">Full</button>
+          </div>
+          <input id="wl-filter" class="input" type="search" placeholder="Filter symbol / name / sector…" autocomplete="off" />
+        </div>
       </div>
       <div class="table-scroll">
         <table id="watch-table" class="grid" aria-label="Watchlist">
           <thead>
             <tr>
-              <th data-key="symbol" class="sortable">SYM</th>
-              <th data-key="name" class="sortable">Name</th>
-              <th data-key="sector" class="sortable">Sector</th>
+              <th data-key="symbol" class="sortable col-sym">SYM</th>
+              <th data-key="name" class="sortable col-name">Name</th>
+              <th data-key="sector" class="sortable col-sector">Sector</th>
               <th data-key="price" class="sortable num">Last</th>
               <th data-key="changePct" class="sortable num">Δ Day</th>
               <th data-key="ytdPct" class="sortable num">YTD</th>
@@ -60,9 +66,9 @@
               <th data-key="score" class="sortable num">Score</th>
               <th data-key="bias" class="sortable">Bias</th>
               <th data-key="rsi" class="sortable num">RSI</th>
-              <th data-key="macdStatus" class="sortable">MACD</th>
+              <th data-key="macdStatus" class="sortable col-macd">MACD</th>
               <th data-key="pos52w" class="sortable num">52w Pos</th>
-              <th class="num">S / R</th>
+              <th class="num col-sr">S / R</th>
               <th data-key="volRatio" class="sortable num">Vol×</th>
               <th data-key="shortVol" class="sortable num">Shrt Vol</th>
               <th data-key="peRatio" class="sortable num">P/E</th>

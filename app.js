@@ -157,13 +157,14 @@ function renderTable() {
   body.innerHTML = '';
   for (const s of rows) {
     const tr = el('tr'); tr.dataset.sym = s.symbol; tr.tabIndex = 0;
+    tr.title = `${s.name || s.symbol}${s.sector ? ' · ' + s.sector : ''}${s.macdStatus ? ' · MACD ' + s.macdStatus : ''}${s.support != null ? ` · S/R ${num(s.support, 1)}/${num(s.resistance, 1)}` : ''}`;
     const t = TREND[s.signal] || { t: '·', c: '' };
     const sv = shortVolRatio(s);
     const macdCls = /bull/.test(s.macdStatus) ? 'pos' : /bear/.test(s.macdStatus) ? 'neg' : 'flat';
     tr.innerHTML = `
-      <td><span class="sym">${s.symbol}</span></td>
-      <td class="tname" title="${(s.name || '').replace(/"/g, '&quot;')}">${dash(s.name)}</td>
-      <td class="sector-cell">${dash(s.sector)}</td>
+      <td class="col-sym"><span class="sym">${s.symbol}</span></td>
+      <td class="col-name tname" title="${(s.name || '').replace(/"/g, '&quot;')}">${dash(s.name)}</td>
+      <td class="col-sector sector-cell">${dash(s.sector)}</td>
       <td class="num mono">${price(s.price)}</td>
       <td class="num mono ${pctCls(s.changePct)}">${sign(s.changePct)}</td>
       <td class="num mono ${pctCls(s.ytdPct)}">${sign(s.ytdPct, 1)}</td>
@@ -171,9 +172,9 @@ function renderTable() {
       <td class="num">${scoreDots(s.score)}</td>
       <td><span class="chip ${BIAS_CLS[s.bias] || 'flat'}">${dash(s.bias)}</span></td>
       <td class="num">${rsiCell(s.rsi ?? s.rsi14)}</td>
-      <td><span class="${macdCls} small">${dash(s.macdStatus)}</span></td>
+      <td class="col-macd"><span class="${macdCls} small">${dash(s.macdStatus)}</span></td>
       <td class="num">${bar52(s.pos52w)}</td>
-      <td class="num mono muted">${num(s.support, 1)} / ${num(s.resistance, 1)}</td>
+      <td class="num mono muted col-sr">${num(s.support, 1)} / ${num(s.resistance, 1)}</td>
       <td class="num mono ${s.volRatio > 1.5 ? 'pos' : ''}">${num(s.volRatio, 1)}×</td>
       <td class="num mono">${sv != null ? (sv * 100).toFixed(0) + '%' : '—'}</td>
       <td class="num mono">${s.peRatio != null ? s.peRatio.toFixed(1) : s.lynch?.peTtm != null ? Number(s.lynch.peTtm).toFixed(1) : '—'}</td>
@@ -418,6 +419,16 @@ function renderInsider(s) {
 }
 
 /* ── wiring ─────────────────────────────────────────── */
+const savedView = localStorage.getItem('wl-view');
+const initView = savedView === 'full' || savedView === 'fit' ? savedView : (window.innerWidth < 1280 ? 'fit' : 'fit');
+function setView(v) {
+  document.body.classList.toggle('view-fit', v === 'fit');
+  document.querySelectorAll('#view-toggle button').forEach(b => b.classList.toggle('on', b.dataset.view === v));
+  localStorage.setItem('wl-view', v);
+}
+document.querySelectorAll('#view-toggle button').forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
+setView(initView);
+
 $('#btn-refresh').addEventListener('click', () => load({ manual: true }));
 $('#wl-filter').addEventListener('input', e => { state.filter = e.target.value; renderTable(); });
 $('#drawer').addEventListener('click', e => { if (e.target.closest('[data-close]')) closeDrawer(); });

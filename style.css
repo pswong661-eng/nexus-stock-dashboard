@@ -179,6 +179,26 @@ table.grid th:last-child, table.grid td:last-child { padding-right: 18px; }
 .lynch-chip { display: inline-flex; align-items: center; gap: 6px; cursor: help; }
 .lynch-chip .peg { font: 600 11px var(--mono); }
 
+.head-tools { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
+.seg button {
+  font: 600 11.5px var(--sans); color: var(--muted); background: var(--panel);
+  border: none; padding: 6px 14px; cursor: pointer; transition: background .15s, color .15s;
+}
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button.on { color: var(--text); background: var(--panel-2); box-shadow: inset 0 -2px 0 var(--accent); }
+.seg button:hover { color: var(--text); }
+
+/* Fit view: compact table, no horizontal scroll. Hidden columns live in
+   the row tooltip + drawer (nothing is removed from the data). */
+body.view-fit table.grid { min-width: 0; font-size: 12px; }
+body.view-fit table.grid thead th { padding: 8px 7px; font-size: 10px; }
+body.view-fit table.grid tbody td { padding: 6px 7px; }
+body.view-fit .col-name, body.view-fit .col-sector,
+body.view-fit .col-macd, body.view-fit .col-sr { display: none; }
+body.view-fit .rangebar { width: 64px; }
+body.view-fit .lynch-chip .peg { display: none; }
+
 /* ── Vertical lists (sector / shortvol) ─────────────── */
 .vlist { display: flex; flex-direction: column; padding: 4px 18px 14px; gap: 0; }
 .vrow { display: grid; grid-template-columns: 216px 1fr 92px; align-items: center; gap: 12px; padding: 6.5px 0; border-bottom: 1px dashed var(--line-soft); font-size: 12.5px; }
