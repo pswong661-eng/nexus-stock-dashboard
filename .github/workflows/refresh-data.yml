@@ -4,6 +4,7 @@ on:
   schedule:
     # 5:00 AM ICT Tuesday-Saturday (22:00 UTC Monday-Friday),
     # after the US regular market close for the trading day.
+    # The trading-day gate below skips weekends AND US market holidays.
     - cron: '0 22 * * 1-5'
   workflow_dispatch:
 
@@ -26,8 +27,7 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -36,20 +36,40 @@ jobs:
       - name: Refresh data snapshot
         run: npm run refresh:data
         env:
-          STOCK_SYMBOLS: ${{ vars.STOCK_SYMBOLS || 'VST,RGTI,IONQ,LAC,UAMY,SNPS,QCOM,RRX,AAOI,LITE,AXTI,NVAX,NBIS,LRCX,CCXI' }}
+          STOCK_SYMBOLS: ${{ vars.STOCK_SYMBOLS || 'NVDA,MRVL,QCOM,ARM,INTC,TSM,AXTI,AAOI,LITE,COHR,APH,LRCX,SNPS,SNDK,SKHY,IONQ,RGTI,CBRS,TSLA,RRX,PH,UAMY,VST,TLN,LLY,NVAX,AMD,CCXI,FN,GOOGL,NBIS,SPCX,ASML,ORCL,MU,LAC' }}
           MASSIVE_API_KEY: ${{ secrets.MASSIVE_API_KEY }}
       - run: npm run validate:data
+      - name: Trading-day gate (skip weekends/holidays)
+        id: gate
+        run: |
+          git show HEAD:public/data/latest.json > /tmp/head-latest.json 2>/dev/null || true
+          VERDICT=$(node scripts/trading-day-gate.mjs public/data/latest.json /tmp/head-latest.json)
+          echo "verdict=$VERDICT"
+          echo "changed=$([ "$VERDICT" = "changed" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
       - name: Pull latest changes
+        if: steps.gate.outputs.changed == 'true'
         run: git pull origin ${{ github.ref_name }} --ff-only
       - name: Commit refreshed data
+        if: steps.gate.outputs.changed == 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'chore(data): refresh market dashboard data'
           file_pattern: public/data/*.json
-      - run: npm run build
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - name: Build site
+        if: steps.gate.outputs.changed == 'true'
+        run: npm run build
+      - name: Configure Pages
+        if: steps.gate.outputs.changed == 'true'
+        uses: actions/configure-pages@v5
+      - name: Upload Pages artifact
+        if: steps.gate.outputs.changed == 'true'
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dist
-      - id: deployment
+      - name: Deploy to GitHub Pages
+        id: deployment
+        if: steps.gate.outputs.changed == 'true'
         uses: actions/deploy-pages@v4
+      - name: Skipped (no new trading day)
+        if: steps.gate.outputs.changed != 'true'
+        run: echo "No new trading-session bars — deploy skipped."

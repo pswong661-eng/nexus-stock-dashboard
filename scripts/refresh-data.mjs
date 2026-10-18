@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 import { buildFinancialsFromFacts, forecastTwo } from './sec-financials.mjs';
 import { fetchYahooQuarterlies } from './yahoo-financials.mjs';
-const SYMBOLS = (process.env.STOCK_SYMBOLS || 'VST,RGTI,IONQ,LAC,UAMY,SNPS,QCOM,RRX,AAOI,LITE,AXTI,NVAX,NBIS,LRCX,CCXI')
+import { computeLocalIndicators } from './local-indicators.mjs';
+const SYMBOLS = (process.env.STOCK_SYMBOLS || 'NVDA,MRVL,QCOM,ARM,INTC,TSM,AXTI,AAOI,LITE,COHR,APH,LRCX,SNPS,SNDK,SKHY,IONQ,RGTI,CBRS,TSLA,RRX,PH,UAMY,VST,TLN,LLY,NVAX,AMD,CCXI,FN,GOOGL,NBIS,SPCX,ASML,ORCL,MU,LAC')
   .split(',').map(s => s.trim().toUpperCase()).filter(Boolean);
 const MERGE_EXISTING = process.env.MERGE_EXISTING === '1';
 
@@ -282,7 +283,8 @@ function normalizeMassiveChart(symbol, bars, details = {}) {
       icon: details.branding?.icon_url || '',
       logo: details.branding?.logo_url || ''
     },
-    series: normalized, technical, rawPoints: points.slice(-40)
+    series: normalized, technical, rawPoints: points.slice(-40),
+    ...computeLocalIndicators(points).local
   };
 }
 function normalizeChart(symbol, result) {
@@ -324,7 +326,8 @@ function normalizeChart(symbol, result) {
     price: round(last, 2), previousClose: round(points.at(-2)?.close ?? finite(meta.regularMarketPreviousClose), 2), ytdPct: round(ytdPct, 2),
     marketCap: null, peRatio: null, rsi14: round(rsi14, 1), week52Low: round(week52Low, 2), week52High: round(week52High, 2), avgVolume: round(avgVolume, 0),
     recommendation: rec, opportunityScore: rec === 'BUY' ? 78 : rec === 'HOLD' ? 55 : 32,
-    series: normalized, technical, rawPoints: points.slice(-20)
+    series: normalized, technical, rawPoints: points.slice(-20),
+    ...computeLocalIndicators(points).local
   };
 }
 function summarizeShortVolume(rows = []) {
@@ -606,13 +609,30 @@ const alerts = results.flatMap(s => {
   for (const signal of s.unusualActivity?.signals || []) arr.push({ symbol: s.symbol, severity: signal.severity, message: signal.label });
   return arr;
 }).slice(0, 14).map((a, i) => ({ ...a, createdAt: new Date(Date.now() - i * 3600_000).toISOString() }));
+// Curated overlays: sector/company (local canonical watchlist) + Lynch screen.
+// Maintained by the local lynch skill; committed to public/data/overlays/.
+try {
+  const fs = await import('node:fs/promises');
+  const overlayPath = new URL('../public/data/overlays/watchlist-overlay.json', import.meta.url);
+  const overlay = JSON.parse(await fs.readFile(overlayPath, 'utf8'));
+  for (const row of results) {
+    const o = overlay[row.symbol];
+    if (!o) continue;
+    row.sector = o.sector || row.sector || null;
+    if (o.company && !row.name?.trim()) row.name = o.company;
+    row.lynch = o.lynch || null;
+  }
+  globalThis.__overlayRefreshedAt = overlay._refreshedAt || null;
+} catch { /* overlay is optional — dashboards render without it */ }
+
 const payload = {
   generatedAt: new Date().toISOString(), staleAfterMinutes: 1440,
   source: `${MASSIVE_API_KEY ? 'Massive.com OHLC aggregates' : 'Yahoo Finance chart endpoint'} + SEC companyfacts/submissions via scheduled Node refresh`,
   tickers: SYMBOLS, dataStatus: results.length ? (errors.length ? 'partial' : 'fresh') : 'fallback',
   marketStatus: new Date().getUTCDay() >= 1 && new Date().getUTCDay() <= 5 ? 'weekday' : 'closed_or_weekend',
   summary: { totalMarketCap: null, avgPeRatio: null, avgRsi14: round(avgRsi, 1), sentimentScore, bullPct: round((bull / Math.max(1, results.length)) * 100, 0), neutralPct: round((neutral / Math.max(1, results.length)) * 100, 0), bearPct: round((bear / Math.max(1, results.length)) * 100, 0), bestPerformer: best ? { symbol: best.symbol, ytdPct: best.ytdPct } : null, worstPerformer: worst ? { symbol: worst.symbol, ytdPct: worst.ytdPct } : null },
-  symbols: results, alerts, errors, warnings
+  symbols: results, alerts, errors, warnings,
+  overlayRefreshedAt: globalThis.__overlayRefreshedAt || null
 };
 if (!results.length) {
   const old = await import('node:fs/promises').then(fs => fs.readFile(FALLBACK, 'utf8').catch(() => null));
