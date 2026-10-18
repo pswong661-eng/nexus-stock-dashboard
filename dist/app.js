@@ -435,6 +435,10 @@ function renderInsider(s) {
   $('#dw-insider').innerHTML = ins.slice(0, 10).map(f => {
     const seen = new Set();
     const txs = (f.transactions || [])
+      .filter(t => { // skip empty holdings rows (no code and no shares)
+        if (!t.code && t.shares == null) return false;
+        return true;
+      })
       .filter(t => { // 4/A amendments restate the original transactions — dedupe
         const k = [t.date, t.code, t.shares, t.price].join('|');
         if (seen.has(k)) return false; seen.add(k); return true;
