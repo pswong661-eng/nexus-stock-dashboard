@@ -84,14 +84,17 @@ function renderStats() {
   const d = state.data, syms = d.symbols;
   const rsiVals = syms.map(s => s.rsi ?? s.rsi14).filter(Number.isFinite);
   const avgRsi = rsiVals.reduce((a, b) => a + b, 0) / (rsiVals.length || 1);
-  const sum = d.summary || {};
+  const biasCount = k => syms.filter(s => Array.isArray(k) ? k.includes(s.bias) : s.bias === k).length;
+  const bullN = biasCount('BULLISH'), bearN = biasCount(['BEARISH', 'OVERBOUGHT']);
+  const neutralN = syms.length - bullN - bearN;
+  const pctOf = n => Math.round(n / (syms.length || 1) * 100);
   const best = [...syms].sort((a, b) => (b.changePct ?? -1e9) - (a.changePct ?? -1e9))[0];
   const worst = [...syms].sort((a, b) => (a.changePct ?? 1e9) - (b.changePct ?? 1e9))[0];
   const hiShort = [...syms].sort((a, b) => (shortVolRatio(b) ?? -1) - (shortVolRatio(a) ?? -1))[0];
   const cards = [
     { k: 'Universe', v: `${syms.length}`, s: 'EOD coverage', cls: '' },
     { k: 'Avg RSI-14', v: avgRsi.toFixed(1), s: 'watchlist mean', cls: avgRsi > 60 ? 'up' : avgRsi < 40 ? 'down' : '' },
-    { k: 'Bull / Bear', v: `${sum.bullPct ?? '—'}%`, s: `bear ${sum.bearPct ?? '—'}% · neutral ${sum.neutralPct ?? '—'}%`, cls: (sum.bullPct ?? 0) >= (sum.bearPct ?? 0) ? 'up' : 'down' },
+    { k: 'Bias Split', v: `${pctOf(bullN)}%`, s: `bull ${bullN} · bear ${bearN} · neutral ${neutralN}`, cls: bullN >= bearN ? 'up' : 'down' },
     { k: 'Best Δ Day', v: best ? `${best.symbol} ${sign(best.changePct, 1)}` : '—', s: best?.name ?? '', cls: 'up' },
     { k: 'Worst Δ Day', v: worst ? `${worst.symbol} ${sign(worst.changePct, 1)}` : '—', s: worst?.name ?? '', cls: 'down' },
     { k: 'Heaviest Short', v: hiShort ? `${(shortVolRatio(hiShort) * 100).toFixed(0)}%` : '—', s: hiShort ? `${hiShort.symbol} FINRA ratio` : '', cls: '' }
@@ -224,7 +227,7 @@ function renderShortVol() {
     const tag = r > 0.65 ? 'chip bear' : r > 0.55 ? 'chip warn' : 'chip flat';
     const avg = svNorm(s.shortVolume?.avgShortVolumeRatio20);
     const n = el('div', 'vrow');
-    n.innerHTML = `<span class="lab">${s.symbol}<span class="sub">${(s.name || '').slice(0, 18)}</span></span>
+    n.innerHTML = `<span class="lab">${s.symbol}<span class="sub">${s.name || ''}</span></span>
       <span class="hbar"><span class="r" style="width:${Math.min(100, r * 100)}%; background:${r > 0.65 ? 'var(--down)' : r > 0.55 ? 'var(--warn)' : 'var(--accent)'}"></span></span>
       <span class="val"><span class="${tag}" style="margin-left:6px">${(r * 100).toFixed(0)}%</span>${avg != null ? `<span class="muted small"> a20 ${(avg * 100).toFixed(0)}%</span>` : ''}</span>`;
     host.append(n);

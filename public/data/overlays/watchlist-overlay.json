@@ -1,5 +1,5 @@
 {
-  "_refreshedAt": "2026-10-18T15:28:26+00:00",
+  "_refreshedAt": "2026-10-18T16:20:05+00:00",
   "NVAX": {
     "company": "Novavax",
     "sector": "Healthcare",
@@ -447,8 +447,8 @@
     }
   },
   "ORCL": {
-    "company": "",
-    "sector": "",
+    "company": "Oracle Corporation",
+    "sector": "Technology",
     "lynch": {
       "category": "Fast grower",
       "peTtm": 20.1,
