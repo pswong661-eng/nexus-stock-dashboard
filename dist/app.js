@@ -58,20 +58,22 @@ async function load({ manual = false } = {}) {
     $('#error-banner').hidden = true;
     renderAll();
     if (manual) {
-      const changed = prevGeneratedAt !== data.generatedAt;
       const flash = $('#refresh-flash');
-      flash.textContent = changed
-        ? `✓ Data updated — session ${sessionDate(data)}`
-        : `• Snapshot current — session ${sessionDate(data)} (EOD, next refresh 05:00 ICT after next close)`;
-      flash.className = 'refresh-flash show ' + (changed ? 'ok' : 'same');
-      clearTimeout(flash._t); flash._t = setTimeout(() => flash.classList.remove('show'), 6000);
+      const changed = prevGeneratedAt !== data.generatedAt;
+      if (flash) {
+        flash.textContent = changed
+          ? `✓ Data updated — session ${sessionDate(data)}`
+          : `• Snapshot current — session ${sessionDate(data)} (EOD, next refresh 05:00 ICT after next close)`;
+        flash.className = 'refresh-flash show ' + (changed ? 'ok' : 'same');
+        clearTimeout(flash._t); flash._t = setTimeout(() => flash.classList.remove('show'), 6000);
+      }
     }
   } catch (e) {
-    const b = $('#error-banner'); b.hidden = false;
-    b.textContent = `Data load failed: ${e.message}. ${state.data ? '(Previous snapshot remains rendered.)' : 'Retry with Refresh.'}`;
+    const b = $('#error-banner'); if (b) { b.hidden = false;
+    b.textContent = `Data load failed: ${e.message}. ${state.data ? '(Previous snapshot remains rendered.)' : 'Retry with Refresh.'}`; }
   } finally {
     if (manual && btn) { btn.disabled = false; btn.classList.remove('loading'); btn.textContent = '↻ Refresh'; }
-    $('#refreshed-at').textContent = `checked ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+    const ra = $('#refreshed-at'); if (ra) ra.textContent = `checked ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
   }
 }
 
@@ -484,6 +486,11 @@ function renderInsider(s) {
 }
 
 /* ── wiring ─────────────────────────────────────────── */
+// Null-safe binder: a stale cached index.html (older shell + newer JS) must
+// never kill the boot script — one missing element would abort everything
+// below it, leaving empty panels until a manual re-render.
+const on = (sel, ev, fn) => { const n = $(sel); if (n) n.addEventListener(ev, fn); };
+
 const savedView = localStorage.getItem('wl-view');
 const initView = savedView === 'full' || savedView === 'fit' ? savedView : (window.innerWidth < 1280 ? 'fit' : 'fit');
 function setView(v) {
@@ -494,9 +501,9 @@ function setView(v) {
 document.querySelectorAll('#view-toggle button').forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
 setView(initView);
 
-$('#btn-refresh').addEventListener('click', () => load({ manual: true }));
-$('#wl-filter').addEventListener('input', e => { state.filter = e.target.value; renderTable(); });
-$('#drawer').addEventListener('click', e => { if (e.target.closest('[data-close]')) closeDrawer(); });
+on('#btn-refresh', 'click', () => load({ manual: true }));
+on('#wl-filter', 'input', e => { state.filter = e.target.value; renderTable(); });
+on('#drawer', 'click', e => { if (e.target.closest('[data-close]')) closeDrawer(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 window.addEventListener('hashchange', () => {
   const sym = location.hash.replace(/^#\/?/, '').toUpperCase();
