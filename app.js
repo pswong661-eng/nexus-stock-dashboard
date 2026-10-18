@@ -416,14 +416,49 @@ function renderFinancials(s) {
     <p class="muted small" style="margin-top:8px">SEC EDGAR company facts + Yahoo quarterlies (fallback). ${s.financials?.note || ''}</p>`;
 }
 
+/* SEC Form 4 transaction codes — color by signal quality. */
+const TX_CODES = {
+  P: { label: 'Buy', cls: 'bull', hint: 'Open-market purchase (discretionary buy)' },
+  S: { label: 'Sell', cls: 'bear', hint: 'Open-market sale (discretionary sell)' },
+  M: { label: 'Exercise', cls: 'warn', hint: 'Option exercise / derivative converted to shares' },
+  F: { label: 'Tax w/h', cls: 'flat', hint: 'Shares withheld to cover exercise price or taxes' },
+  A: { label: 'Award', cls: 'info', hint: 'Grant/award of securities (RSUs, options)' },
+  G: { label: 'Gift', cls: 'flat', hint: 'Bona fide gift' },
+  D: { label: 'To issuer', cls: 'flat', hint: 'Disposition back to the issuer' },
+  U: { label: '10b5-1', cls: 'flat', hint: 'Discretionary trade under a 10b5-1 plan' },
+  I: { label: 'Discret.', cls: 'flat', hint: 'Discretionary transaction (not open-market)' }
+};
+
 function renderInsider(s) {
   const ins = s.insider || [];
   if (!ins.length) { $('#dw-insider').innerHTML = '<p class="muted">No insider filings found.</p>'; return; }
   $('#dw-insider').innerHTML = ins.slice(0, 10).map(f => {
-    const tx = (f.transactions || []).map(t => `<span class="mono small">${t.date || ''} ${t.code || ''} ${t.shares != null ? Number(t.shares).toLocaleString() : ''} ${t.price != null ? '@ $' + Number(t.price).toFixed(2) : ''}</span>`).join(' · ');
-    return `<div class="ins-row"><div class="hd"><span>${f.owner || '—'} · ${f.title || ''}</span><span>${f.form} · filed ${f.filingDate || '?'}</span></div>
-      <div>${tx || f.description || ''}</div></div>`;
-  }).join('') + `<p class="muted small">SEC Form 4 via Massive — latest 10 filings.</p>`;
+    const seen = new Set();
+    const txs = (f.transactions || [])
+      .filter(t => { // 4/A amendments restate the original transactions — dedupe
+        const k = [t.date, t.code, t.shares, t.price].join('|');
+        if (seen.has(k)) return false; seen.add(k); return true;
+      })
+      .sort((a, b) => String(b.date).localeCompare(String(a.date)))
+      .map(t => {
+        const meta = TX_CODES[t.code] || { label: t.code || '—', cls: 'flat', hint: `Form 4 code ${t.code}` };
+        const val = Number.isFinite(t.shares) && Number.isFinite(t.price) && t.price > 0 ? t.shares * t.price : null;
+        return `<tr>
+          <td class="mono">${t.date || '—'}</td>
+          <td><span class="chip ${meta.cls}" title="${meta.hint}">${t.code || '—'}</span></td>
+          <td class="muted small">${meta.label}</td>
+          <td class="mono num">${t.shares != null ? Number(t.shares).toLocaleString() : '—'}</td>
+          <td class="mono num">${t.price != null ? '$' + Number(t.price).toFixed(2) : '—'}</td>
+          <td class="mono num">${val != null ? '$' + Math.round(val).toLocaleString() : '—'}</td></tr>`;
+      }).join('');
+    return `<div class="ins-row">
+      <div class="hd"><span>${f.owner || '—'} · ${f.title || ''}</span><span>${f.form} · filed ${f.filingDate || '?'}</span></div>
+      <table class="mini ins-tbl">
+        <thead><tr><th>Date</th><th>Code</th><th>Action</th><th class="num">Shares</th><th class="num">Price</th><th class="num">Value</th></tr></thead>
+        <tbody>${txs}</tbody>
+      </table>
+    </div>`;
+  }).join('') + `<p class="muted small">SEC Form 4 via Massive — latest 10 filings · codes: <b>P</b> open-market buy · <b>S</b> open-market sell · <b>M</b> option exercise · <b>F</b> tax withholding · <b>A</b> award · <b>G</b> gift. F/M are mechanical (not discretionary) — read P/S as the signal.</p>`;
 }
 
 /* ── wiring ─────────────────────────────────────────── */
