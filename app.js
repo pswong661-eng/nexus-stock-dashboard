@@ -29,6 +29,14 @@ const LYNCH_CLS = { PASS: 'bull', BORDERLINE: 'warn', MIXED: 'warn', FAIL: 'bear
 const LYNCH_ORDER = ['PASS', 'BORDERLINE', 'MIXED', 'SPECIAL SITUATION', 'SPECIAL', 'ASSET PLAY', 'CYCLICAL', 'N/M', 'FAIL'];
 const BIAS_CLS = { BULLISH: 'bull', BEARISH: 'bear', OVERBOUGHT: 'bear', OVERSOLD: 'bull' };
 
+function fmtSources(s) {
+  const d = s?.dataSources;
+  if (!d) return 'Massive';
+  if (typeof d === 'string') return d;
+  if (Array.isArray(d)) return d.join(' · ');
+  // per-dataset source map: { price: 'Massive', financials: 'SEC', ... }
+  return Object.entries(d).filter(([, v]) => v && v !== 'none').map(([k, v]) => `${k}: ${v}`).join(' · ');
+}
 const svNorm = r => (r == null || !Number.isFinite(r)) ? null : (r > 1.5 ? r / 100 : r);
 const shortVolRatio = s => svNorm(s?.shortVolume?.latest?.shortVolumeRatio ?? s?.shortVolume?.avgShortVolumeRatio20);
 
@@ -352,7 +360,7 @@ function renderQuote(s) {
     ${row('Score', `${s.score ?? '—'} / 4`)}
     ${row('Bias', dash(s.bias))}
     ${l ? row('Lynch', `${dash(l.verdict)} · PEGY ${num(l.pegy, 1)} · ${dash(l.category)}`) : row('Lynch', '—')}
-    ${row('Sources', Array.isArray(s.dataSources) ? s.dataSources.join(' · ') : dash(s.dataSources) || 'Massive')}
+    ${row('Sources', fmtSources(s))}
   </div>
   ${l?.note ? `<p class="muted small" style="margin-top:10px">Lynch note: ${l.note}</p>` : ''}`;
 }
