@@ -21,12 +21,12 @@ either dashboard is dropped except trade-plan levels (see Privacy).
 | `ema50` | float\|null | EMA(50), pandas-style adjust=False |
 | `rsi` | float\|null | RSI(14), simple rolling (matches local, not Wilder) |
 | `macdDiff`, `macdStatus` | float\|null, string | MACD(12,26,9) hist + cross status |
-| `high52`, `low52`, `pos52w` | float | 52-week window (252 bars) + position % |
-| `support`, `resistance` | float | 20-day low/high |
+| `high52`, `low52`, `pos52w` | float\|null | 52-week window (252 bars) + position % (`pos52w` null when range unknown/flat) |
+| `support`, `resistance` | float\|null | 20-day low/high |
 | `bias` | string | OVERBOUGHT/OVERSOLD/BULLISH/BEARISH/NEUTRAL |
 | `score` | int 0–4 | >sma50, >sma200, macd>0, 40<rsi<70 |
 | `signal` | string | 🟢 >both / 🔴 <both / 🟡 variants |
-| `volRatio`, `avgVol20`, `dataRows` | float/int | volume vs 20-day average |
+| `volRatio`, `avgVol20`, `dataRows` | float\|null / int | volume vs prior 20-day average (excludes today) |
 
 ## Curated overlay (`public/data/overlays/watchlist-overlay.json`)
 Pushed by the local lynch skill / watchlist crons (not fetched at build):

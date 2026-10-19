@@ -80,7 +80,8 @@ export function computeLocalIndicators(points) {
   const latest = finite(points.at(-1)?.close);
   const prev = finite(points.at(-2)?.close);
 
-  const changePct = (latest != null && prev) ? round((latest - prev) / prev * 100, 2) : null;
+  const changePct = (latest != null && prev != null && prev !== 0)
+    ? round((latest - prev) / prev * 100, 2) : null;
   const sma50 = round(smaLast(closes, 50));
   const sma200 = round(smaLast(closes, 200));
   const ema50 = n >= 50 ? round(emaLast(closes, 50)) : null;
@@ -91,7 +92,7 @@ export function computeLocalIndicators(points) {
   const high52 = winH.length ? Math.max(...winH) : null;
   const low52 = winL.length ? Math.min(...winL) : null;
   const pos52w = (latest != null && high52 != null && low52 != null && high52 !== low52)
-    ? round((latest - low52) / (high52 - low52) * 100, 1) : 50.0;
+    ? round((latest - low52) / (high52 - low52) * 100, 1) : null;
 
   const rsi = round(rsiLast(closes, 14));
   const { macdDiff, macdStatus } = macdCross(closes);
@@ -99,8 +100,9 @@ export function computeLocalIndicators(points) {
   const support = round(Math.min(...lows.filter(Number.isFinite).slice(-Math.min(20, n))));
   const resistance = round(Math.max(...highs.filter(Number.isFinite).slice(-Math.min(20, n))));
 
-  const volWin = volumes.filter(Number.isFinite).slice(-Math.min(20, n));
-  const avgVol20 = volWin.length ? volWin.reduce((a, b) => a + b, 0) / volWin.length : 0;
+  // Exclude today from the 20-day average (matches unusual-activity volumeMultiple).
+  const priorVols = volumes.filter(Number.isFinite).slice(0, -1).slice(-20);
+  const avgVol20 = priorVols.length ? priorVols.reduce((a, b) => a + b, 0) / priorVols.length : 0;
   const todayVol = finite(points.at(-1)?.volume);
   const volRatio = avgVol20 > 0 && todayVol != null ? round(todayVol / avgVol20, 1) : null;
 

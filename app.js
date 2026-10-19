@@ -20,6 +20,7 @@ const money = v => v == null || !Number.isFinite(v) ? '—' : v >= 1e12 ? `$${(v
 const price = v => v == null || !Number.isFinite(v) ? '—' : v >= 1000 ? v.toLocaleString('en-US', { maximumFractionDigits: 0 }) : v.toFixed(2);
 const num = (v, d = 2) => v == null || !Number.isFinite(v) ? '—' : v.toFixed(d);
 const dash = v => v == null || v === '' ? '—' : v;
+const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 const TREND = {
   '🟢 >both': { t: '▲▲', c: 'up' }, '🟡 >50 <200': { t: '▲', c: 'mid-up' },
@@ -118,14 +119,15 @@ function renderStats() {
   const pctOf = n => Math.round(n / (syms.length || 1) * 100);
   const best = [...syms].sort((a, b) => (b.changePct ?? -1e9) - (a.changePct ?? -1e9))[0];
   const worst = [...syms].sort((a, b) => (a.changePct ?? 1e9) - (b.changePct ?? 1e9))[0];
-  const hiShort = [...syms].sort((a, b) => (shortVolRatio(b) ?? -1) - (shortVolRatio(a) ?? -1))[0];
+  const withShort = syms.map(s => ({ s, r: shortVolRatio(s) })).filter(x => x.r != null);
+  const hiShort = withShort.sort((a, b) => b.r - a.r)[0] || null;
   const cards = [
     { k: 'Universe', v: `${syms.length}`, s: 'EOD coverage', cls: '' },
     { k: 'Avg RSI-14', v: avgRsi.toFixed(1), s: 'watchlist mean', cls: avgRsi > 60 ? 'up' : avgRsi < 40 ? 'down' : '' },
     { k: 'Bias Split', v: `${pctOf(bullN)}%`, s: `bull ${bullN} · bear ${bearN} · neutral ${neutralN}`, cls: bullN >= bearN ? 'up' : 'down' },
     { k: 'Best Δ Day', v: best ? `${best.symbol} ${sign(best.changePct, 1)}` : '—', s: best?.name ?? '', cls: 'up' },
     { k: 'Worst Δ Day', v: worst ? `${worst.symbol} ${sign(worst.changePct, 1)}` : '—', s: worst?.name ?? '', cls: 'down' },
-    { k: 'Heaviest Short', v: hiShort ? `${(shortVolRatio(hiShort) * 100).toFixed(0)}%` : '—', s: hiShort ? `${hiShort.symbol} FINRA ratio` : '', cls: '' }
+    { k: 'Heaviest Short', v: hiShort ? `${(hiShort.r * 100).toFixed(0)}%` : '—', s: hiShort ? `${hiShort.s.symbol} FINRA ratio` : 'no short-vol data', cls: '' }
   ];
   const host = $('#stats'); host.innerHTML = '';
   for (const c of cards) {
@@ -177,7 +179,7 @@ function lynchCell(s) {
   const v = (l.verdict || 'N/M').toUpperCase();
   const cls = LYNCH_CLS[v] || 'flat';
   const peg = Number.isFinite(l.pegy) ? `PEGY ${Number(l.pegy).toFixed(1)}` : (l.category || '');
-  return `<span class="lynch-chip" title="${(l.note || '').replace(/"/g, '&quot;')}"><span class="chip ${cls}">${v}</span><span class="peg muted">${peg}</span></span>`;
+  return `<span class="lynch-chip" title="${esc(l.note || '')}"><span class="chip ${cls}">${esc(v)}</span><span class="peg muted">${esc(peg)}</span></span>`;
 }
 
 function renderTable() {
@@ -379,10 +381,10 @@ function renderQuote(s) {
     ${row('P/E', s.peRatio != null ? s.peRatio.toFixed(1) : l?.peTtm != null ? Number(l.peTtm).toFixed(1) + ' (screen)' : '—')}
     ${row('Score', `${s.score ?? '—'} / 4`)}
     ${row('Bias', dash(s.bias))}
-    ${l ? row('Lynch', `${dash(l.verdict)} · PEGY ${num(l.pegy, 1)} · ${dash(l.category)}`) : row('Lynch', '—')}
-    ${row('Sources', fmtSources(s))}
+    ${l ? row('Lynch', `${esc(dash(l.verdict))} · PEGY ${num(l.pegy, 1)} · ${esc(dash(l.category))}`) : row('Lynch', '—')}
+    ${row('Sources', esc(fmtSources(s)))}
   </div>
-  ${l?.note ? `<p class="muted small" style="margin-top:10px">Lynch note: ${l.note}</p>` : ''}`;
+  ${l?.note ? `<p class="muted small" style="margin-top:10px">Lynch note: ${esc(l.note)}</p>` : ''}`;
 }
 
 function chartBase(extra = {}) {
@@ -445,7 +447,7 @@ const TX_CODES = {
   A: { label: 'Award', cls: 'info', hint: 'Grant/award of securities (RSUs, options)' },
   G: { label: 'Gift', cls: 'flat', hint: 'Bona fide gift' },
   D: { label: 'To issuer', cls: 'flat', hint: 'Disposition back to the issuer' },
-  U: { label: '10b5-1', cls: 'flat', hint: 'Discretionary trade under a 10b5-1 plan' },
+  U: { label: 'Tender', cls: 'flat', hint: 'Disposition pursuant to a tender of shares in a change of control' },
   I: { label: 'Discret.', cls: 'flat', hint: 'Discretionary transaction (not open-market)' }
 };
 

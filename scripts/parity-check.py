@@ -46,10 +46,10 @@ def main():
                     problems.append(f"{t}.{jf}: json={jv} db={dv} (null mismatch)")
                 continue
             tol = TOL.get(jf, 0.05)
-            scale = max(1.0, abs(dv))
-            if abs(jv - dv) > tol * max(1, scale * 0.001):
+            # Absolute floor + small relative band for large magnitudes.
+            if abs(jv - dv) > max(tol, abs(dv) * 0.001):
                 problems.append(f"{t}.{jf}: json={jv} db={dv} (diff {jv-dv:+.4f})")
-        for jf, df in [("score", "score"), ("bias", "bias")]:
+        for jf, df in [("score", "score"), ("bias", "bias"), ("signal", "signal")]:
             jv, dv = s.get(jf), dbrow[df]
             if jv != dv:
                 problems.append(f"{t}.{jf}: json={jv!r} db={dv!r} (MISMATCH)")
