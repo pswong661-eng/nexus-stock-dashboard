@@ -2,17 +2,26 @@ name: Refresh Market Data
 
 on:
   schedule:
-    # 5:00 AM ICT Tuesday-Saturday (22:00 UTC Monday-Friday),
-    # after the US regular market close for the trading day.
-    # The trading-day gate below skips weekends AND US market holidays.
+    # After the US regular close (Mon–Fri). Primary + backup because GitHub
+    # cron can skip under load; trading-day gate no-ops when bars are unchanged.
+    # 22:00 UTC = 05:00 ICT Tue–Sat; 23:30 UTC catch-up same nights.
     - cron: '0 22 * * 1-5'
+    - cron: '30 23 * * 1-5'
   workflow_dispatch:
+    inputs:
+      force_deploy:
+        description: 'Commit/deploy even if newest bar date is unchanged'
+        type: boolean
+        default: false
 
 permissions:
   contents: read
 
+# Must NOT share a concurrency group with Deploy GitHub Pages.
+# That workflow used group "pages" + cancel-in-progress, which cancelled
+# in-flight scheduled refreshes and left nanolaos.com stuck on old sessions.
 concurrency:
-  group: pages
+  group: refresh-data
   cancel-in-progress: false
 
 jobs:
@@ -27,50 +36,71 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v4
-        token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Pull latest before refresh
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Sync with remote tip
         run: git pull origin ${{ github.ref_name }} --ff-only
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
+
       - run: npm ci
+
       - name: Refresh data snapshot
         run: npm run refresh:data
         env:
-          STOCK_SYMBOLS: ${{ vars.STOCK_SYMBOLS || 'NVDA,MRVL,QCOM,ARM,INTC,TSM,AXTI,AAOI,LITE,COHR,APH,LRCX,SNPS,SNDK,SKHY,IONQ,RGTI,CBRS,TSLA,RRX,PH,UAMY,VST,TLN,LLY,NVAX,AMD,CCXI,FN,GOOGL,NBIS,SPCX,ASML,ORCL,MU,LAC' }}
+          # Use script default (36-ticker Mission Control set). A stale
+          # repository variable previously overrode this to 15 names.
           MASSIVE_API_KEY: ${{ secrets.MASSIVE_API_KEY }}
           MERGE_EXISTING: '1'
           SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
+
       - run: npm run validate:data
+
       - name: Trading-day gate (skip weekends/holidays)
         id: gate
+        env:
+          FORCE_DEPLOY: ${{ github.event_name == 'workflow_dispatch' && inputs.force_deploy }}
         run: |
           git show HEAD:public/data/latest.json > /tmp/head-latest.json 2>/dev/null || true
           VERDICT=$(node scripts/trading-day-gate.mjs public/data/latest.json /tmp/head-latest.json)
-          echo "verdict=$VERDICT"
-          echo "changed=$([ "$VERDICT" = "changed" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+          echo "verdict=$VERDICT force=${FORCE_DEPLOY}"
+          if [ "$VERDICT" = "changed" ] || [ "$FORCE_DEPLOY" = "true" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Commit refreshed data
         if: steps.gate.outputs.changed == 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'chore(data): refresh market dashboard data'
-          file_pattern: public/data/*.json
+          file_pattern: public/data/*.json public/data/**/*.json
+
       - name: Build site
         if: steps.gate.outputs.changed == 'true'
         run: npm run build
+
       - name: Configure Pages
         if: steps.gate.outputs.changed == 'true'
         uses: actions/configure-pages@v5
+
       - name: Upload Pages artifact
         if: steps.gate.outputs.changed == 'true'
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
+
       - name: Deploy to GitHub Pages
         id: deployment
         if: steps.gate.outputs.changed == 'true'
         uses: actions/deploy-pages@v4
+
       - name: Skipped (no new trading day)
         if: steps.gate.outputs.changed != 'true'
-        run: echo "No new trading-session bars — deploy skipped."
+        run: echo "No new trading-session bars — deploy skipped. Use workflow_dispatch with force_deploy to publish anyway."
