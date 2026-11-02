@@ -14,9 +14,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./style.css?v=1228aaa" />
-  <script src="./chart.umd.min.js?v=1228aaa" defer></script>
-  <script src="./app.js?v=1228aaa" defer></script>
+  <link rel="stylesheet" href="./style.css?v=e5f697e" />
+  <script src="./chart.umd.min.js?v=e5f697e" defer></script>
+  <script src="./app.js?v=e5f697e" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -50,6 +50,12 @@
             <button data-view="fit" class="on" type="button" title="Compact — no horizontal scroll">Fit</button>
             <button data-view="full" type="button" title="All columns — may scroll horizontally">Full</button>
           </div>
+          <div class="seg" id="mm-filter" role="group" aria-label="Market-maker tier">
+            <button data-mm="all" class="on" type="button" title="All names">All</button>
+            <button data-mm="dual" type="button" title="Dual MM monitored — Jane Street + SIG both hold material options books (pinning-prone)">Dual MM</button>
+            <button data-mm="single" type="button" title="Only one of the two pillars">Single</button>
+            <button data-mm="none" type="button" title="Unpinned / clean flow — no material MM options book">Clean flow</button>
+          </div>
           <input id="wl-filter" class="input" type="search" placeholder="Filter symbol / name / sector…" autocomplete="off" />
         </div>
       </div>
@@ -60,6 +66,7 @@
               <th data-key="symbol" class="sortable col-sym">SYM</th>
               <th data-key="name" class="sortable col-name">Name</th>
               <th data-key="sector" class="sortable col-sector">Sector</th>
+              <th data-key="mm" class="sortable" title="Jane Street + Susquehanna market-maker presence (13F options books)">Pillars</th>
               <th data-key="price" class="sortable num">Last</th>
               <th data-key="changePct" class="sortable num">Δ Day</th>
               <th data-key="ytdPct" class="sortable num">YTD</th>

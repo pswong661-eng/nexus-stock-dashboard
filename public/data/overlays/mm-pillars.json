@@ -1,0 +1,659 @@
+{
+ "AAOI": {
+  "jane": {
+   "calls": 205823872,
+   "puts": 421944864,
+   "shares": 83496605
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $628M (C $206M/P $422M) \u00b7 SIG $799M (C $395M/P $404M) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 394624160,
+   "puts": 404432352,
+   "shares": 96153766
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "AMD": {
+  "jane": {
+   "calls": 14613430051,
+   "puts": 19842491416,
+   "shares": 944782730
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $34.5B (C $14.6B/P $19.8B) \u00b7 SIG $29.0B (C $14.3B/P $14.7B) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 14307348572,
+   "puts": 14701670280,
+   "shares": 1107887154
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "APH": {
+  "jane": {
+   "calls": 270598304,
+   "puts": 280648544,
+   "shares": 15120146
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $551M (C $271M/P $281M) \u00b7 SIG $537M (C $276M/P $262M) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 275817376,
+   "puts": 261535456,
+   "shares": 91849319
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "ARM": {
+  "jane": {
+   "calls": 1528834926,
+   "puts": 2510213772,
+   "shares": 29595958
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $4.0B (C $1.5B/P $2.5B) \u00b7 SIG $6.2B (C $3.0B/P $3.2B) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 2994414564,
+   "puts": 3226374258,
+   "shares": 576928293
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "ASML": {
+  "jane": {
+   "calls": 927079040,
+   "puts": 2223398144,
+   "shares": 2755374
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $3.2B (C $927M/P $2.2B) \u00b7 SIG $6.8B (C $3.1B/P $3.7B) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 3141524704,
+   "puts": 3654402336,
+   "shares": 324151396
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "AXTI": {
+  "jane": {
+   "calls": 61628400,
+   "puts": 81745928,
+   "shares": 254234448
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $143M (C $62M/P $82M) \u00b7 SIG $344M (C $161M/P $183M) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 161199712,
+   "puts": 182679552,
+   "shares": 27231464
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "CBRS": {
+  "jane": {
+   "calls": 1098900400,
+   "puts": 638424800,
+   "shares": 55276962
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $1.7B (C $1.1B/P $638M) \u00b7 SIG $1.0B (C $463M/P $543M) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 462774000,
+   "puts": 543085400,
+   "shares": 32402578
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "CCXI": {
+  "jane": {
+   "calls": 0,
+   "puts": 0,
+   "shares": 2925161
+  },
+  "notes": "No material MM options book \u2014 cleaner, unpinned flow. Options notional JS $0M (C $0M/P $0M) \u00b7 SIG $0M (C $0M/P $0M) (13F).",
+  "pillars": [],
+  "sig": {
+   "calls": 0,
+   "puts": 0,
+   "shares": 0
+  },
+  "source": "13F",
+  "status": "none"
+ },
+ "COHR": {
+  "jane": {
+   "calls": 636201216,
+   "puts": 998285229,
+   "shares": 153651194
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $1.6B (C $636M/P $998M) \u00b7 SIG $1.9B (C $877M/P $1.0B) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 876512340,
+   "puts": 1021164489,
+   "shares": 125034367
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "FN": {
+  "jane": {
+   "calls": 85211328,
+   "puts": 183069456,
+   "shares": 264721132
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $268M (C $85M/P $183M) \u00b7 SIG $183M (C $77M/P $106M) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 77004960,
+   "puts": 106401744,
+   "shares": 139637534
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "GOOGL": {
+  "jane": {
+   "calls": 9048715611,
+   "puts": 6304149748,
+   "shares": 392361169
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $15.4B (C $9.0B/P $6.3B) \u00b7 SIG $16.7B (C $10.6B/P $6.0B) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 10632722399,
+   "puts": 6029725325,
+   "shares": 1435512406
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "INTC": {
+  "jane": {
+   "calls": 5111128224,
+   "puts": 5819764437,
+   "shares": 1021105812
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $10.9B (C $5.1B/P $5.8B) \u00b7 SIG $14.0B (C $6.9B/P $7.2B) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 6870927003,
+   "puts": 7153761531,
+   "shares": 1038185214
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "IONQ": {
+  "jane": {
+   "calls": 294474540,
+   "puts": 132723920,
+   "shares": 109543197
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $427M (C $294M/P $133M) \u00b7 SIG $838M (C $476M/P $363M) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 475585170,
+   "puts": 362769838,
+   "shares": 56033035
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "LAC": {
+  "jane": {
+   "calls": 1431045,
+   "puts": 2097095,
+   "shares": 412955
+  },
+  "notes": "No material MM options book \u2014 cleaner, unpinned flow (token option books, < $50M each). Options notional JS $4M (C $1M/P $2M) \u00b7 SIG $13M (C $5M/P $8M) (13F).",
+  "pillars": [],
+  "sig": {
+   "calls": 4968040,
+   "puts": 8351420,
+   "shares": 9844997
+  },
+  "source": "13F",
+  "status": "none"
+ },
+ "LITE": {
+  "jane": {
+   "calls": 1827753606,
+   "puts": 2654065386,
+   "shares": 251270000
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $4.5B (C $1.8B/P $2.7B) \u00b7 SIG $6.3B (C $3.4B/P $2.9B) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 3361021020,
+   "puts": 2936109708,
+   "shares": 218320496
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "LLY": {
+  "jane": {
+   "calls": 2536674507,
+   "puts": 3018245652,
+   "shares": 549720358
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $5.6B (C $2.5B/P $3.0B) \u00b7 SIG $8.4B (C $4.5B/P $3.9B) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 4521251385,
+   "puts": 3853408761,
+   "shares": 354415973
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "LRCX": {
+  "jane": {
+   "calls": 1423272385,
+   "puts": 2652716261,
+   "shares": 484723805
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $4.1B (C $1.4B/P $2.7B) \u00b7 SIG $5.8B (C $2.4B/P $3.4B) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 2350598585,
+   "puts": 3410957095,
+   "shares": 582180155
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "MRVL": {
+  "jane": {
+   "calls": 3205862391,
+   "puts": 5425530148,
+   "shares": 365995697
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $8.6B (C $3.2B/P $5.4B) \u00b7 SIG $9.1B (C $5.2B/P $3.9B) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 5151590504,
+   "puts": 3937122763,
+   "shares": 598922442
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "MU": {
+  "jane": {
+   "calls": 18910848499,
+   "puts": 42040280661,
+   "shares": 806848710
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $61.0B (C $18.9B/P $42.0B) \u00b7 SIG $70.8B (C $37.4B/P $33.4B) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 37372216472,
+   "puts": 33395687422,
+   "shares": 3284950048
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "NBIS": {
+  "jane": {
+   "calls": 1810984775,
+   "puts": 1815458729,
+   "shares": 12927241
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $3.6B (C $1.8B/P $1.8B) \u00b7 SIG $5.2B (C $2.7B/P $2.5B) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 2729443344,
+   "puts": 2512567043,
+   "shares": 99738795
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "NVAX": {
+  "jane": {
+   "calls": 2700714,
+   "puts": 1170906,
+   "shares": 185225
+  },
+  "notes": "No material MM options book \u2014 cleaner, unpinned flow (token option books, < $50M each). Options notional JS $4M (C $3M/P $1M) \u00b7 SIG $27M (C $19M/P $9M) (13F).",
+  "pillars": [],
+  "sig": {
+   "calls": 18572472,
+   "puts": 8604228,
+   "shares": 4767302
+  },
+  "source": "13F",
+  "status": "none"
+ },
+ "NVDA": {
+  "jane": {
+   "calls": 19404788227,
+   "puts": 17698840896,
+   "shares": 2362184506
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $37.1B (C $19.4B/P $17.7B) \u00b7 SIG $33.9B (C $22.1B/P $11.8B) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 22103622156,
+   "puts": 11812053033,
+   "shares": 4164972194
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "ORCL": {
+  "jane": {
+   "calls": 2132580945,
+   "puts": 2954169555,
+   "shares": 919572379
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $5.1B (C $2.1B/P $3.0B) \u00b7 SIG $5.5B (C $2.7B/P $2.8B) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 2704067325,
+   "puts": 2812103985,
+   "shares": 773168051
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "PH": {
+  "jane": {
+   "calls": 72380880,
+   "puts": 61132500,
+   "shares": 8382489
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $134M (C $72M/P $61M) \u00b7 SIG $225M (C $138M/P $87M) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 137817108,
+   "puts": 87150492,
+   "shares": 22524147
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "QCOM": {
+  "jane": {
+   "calls": 802432096,
+   "puts": 1278377220,
+   "shares": 552259698
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $2.1B (C $802M/P $1.3B) \u00b7 SIG $3.6B (C $2.0B/P $1.6B) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 2007521602,
+   "puts": 1564136476,
+   "shares": 495014898
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "RGTI": {
+  "jane": {
+   "calls": 91576800,
+   "puts": 72030756,
+   "shares": 18624558
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $164M (C $92M/P $72M) \u00b7 SIG $269M (C $132M/P $137M) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 131899572,
+   "puts": 137481120,
+   "shares": 25845678
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "RRX": {
+  "jane": {
+   "calls": 4906714,
+   "puts": 15887273,
+   "shares": 966575
+  },
+  "notes": "No material MM options book \u2014 cleaner, unpinned flow (equity inventory only). Options notional JS $21M (C $5M/P $16M) \u00b7 SIG $34M (C $12M/P $22M) (13F).",
+  "pillars": [],
+  "sig": {
+   "calls": 11576034,
+   "puts": 22366041,
+   "shares": 10796438
+  },
+  "source": "13F",
+  "status": "none"
+ },
+ "SKHY": {
+  "notes": "No 13F coverage yet (post-quarter listing/foreign) \u2014 human baseline. Korean-native (KRX:000660); US OTC ADR, no exchange-cleared US options book.",
+  "pillars": [],
+  "source": "baseline",
+  "status": "none"
+ },
+ "SNDK": {
+  "jane": {
+   "calls": 8076971079,
+   "puts": 14633269260,
+   "shares": 2632513225
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $22.7B (C $8.1B/P $14.6B) \u00b7 SIG $39.6B (C $14.6B/P $25.0B) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 14629860939,
+   "puts": 25003071945,
+   "shares": 731624923
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "SNPS": {
+  "jane": {
+   "calls": 82924413,
+   "puts": 211794036,
+   "shares": 360905869
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $295M (C $83M/P $212M) \u00b7 SIG $678M (C $352M/P $325M) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 352484514,
+   "puts": 325051209,
+   "shares": 85336314
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "SPCX": {
+  "notes": "No 13F coverage yet (post-quarter listing/foreign) \u2014 human baseline. Assumed dual MM book.",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "source": "baseline",
+  "status": "dual"
+ },
+ "TLN": {
+  "jane": {
+   "calls": 240124074,
+   "puts": 455540230,
+   "shares": 175239083
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $696M (C $240M/P $456M) \u00b7 SIG $852M (C $504M/P $347M) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 504302824,
+   "puts": 347217336,
+   "shares": 52284721
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "TSLA": {
+  "jane": {
+   "calls": 12805755840,
+   "puts": 14374089120,
+   "shares": 218483615
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $27.2B (C $12.8B/P $14.4B) \u00b7 SIG $32.4B (C $19.3B/P $13.2B) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 19252544400,
+   "puts": 13177986840,
+   "shares": 1503868759
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "TSM": {
+  "jane": {
+   "calls": 2999330628,
+   "puts": 6731635692,
+   "shares": 287830007
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $9.7B (C $3.0B/P $6.7B) \u00b7 SIG $16.3B (C $8.2B/P $8.0B) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 8237509416,
+   "puts": 8043807024,
+   "shares": 2356978443
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "UAMY": {
+  "jane": {
+   "calls": 16591278,
+   "puts": 7060350,
+   "shares": 0
+  },
+  "notes": "No material MM options book \u2014 cleaner, unpinned flow (token option books, < $50M each). Options notional JS $24M (C $17M/P $7M) \u00b7 SIG $29M (C $21M/P $8M) (13F).",
+  "pillars": [],
+  "sig": {
+   "calls": 20757066,
+   "puts": 7802322,
+   "shares": 4793241
+  },
+  "source": "13F",
+  "status": "none"
+ },
+ "VST": {
+  "jane": {
+   "calls": 397399876,
+   "puts": 1279493717,
+   "shares": 140966867
+  },
+  "notes": "Dual options book \u2014 gamma-pinning / OpEx max-pain prone. Options notional JS $1.7B (C $397M/P $1.3B) \u00b7 SIG $1.3B (C $816M/P $509M) (13F).",
+  "pillars": [
+   "JANE",
+   "SIG"
+  ],
+  "sig": {
+   "calls": 816119624,
+   "puts": 509027807,
+   "shares": 160463287
+  },
+  "source": "13F",
+  "status": "dual"
+ },
+ "_asOf": {
+  "jane": {
+   "filed": "2026-08-14",
+   "period": "2026-06-30"
+  },
+  "sig": {
+   "filed": "2026-08-14",
+   "period": "2026-06-30"
+  }
+ },
+ "_refreshedAt": "2026-11-02T16:27:04+00:00"
+}

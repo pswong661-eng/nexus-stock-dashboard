@@ -646,6 +646,14 @@ try {
   }
   globalThis.__overlayRefreshedAt = overlay._refreshedAt || null;
 } catch { /* overlay is optional — dashboards render without it */ }
+// Market-maker "Twin Pillars" overlay (Jane Street + SIG, from 13F). Maintained weekly by
+// ~/.hermes/scripts/mm_pillars.py --publish; optional like the other overlays.
+try {
+  const fs = await import('node:fs/promises');
+  const mm = JSON.parse(await fs.readFile(new URL('../public/data/overlays/mm-pillars.json', import.meta.url), 'utf8'));
+  for (const row of results) row.mm = mm[row.symbol] || null;
+  globalThis.__mmAsOf = mm._asOf || null;
+} catch { /* optional */ }
 
 const payload = {
   generatedAt: new Date().toISOString(), staleAfterMinutes: 1440,
@@ -664,7 +672,8 @@ const payload = {
   marketStatus: new Date().getUTCDay() >= 1 && new Date().getUTCDay() <= 5 ? 'weekday' : 'closed_or_weekend',
   summary: { totalMarketCap: null, avgPeRatio: null, avgRsi14: round(avgRsi, 1), sentimentScore, bullPct: round((bull / Math.max(1, results.length)) * 100, 0), neutralPct: round((neutral / Math.max(1, results.length)) * 100, 0), bearPct: round((bear / Math.max(1, results.length)) * 100, 0), bestPerformer: best ? { symbol: best.symbol, ytdPct: best.ytdPct } : null, worstPerformer: worst ? { symbol: worst.symbol, ytdPct: worst.ytdPct } : null },
   symbols: results, alerts, errors, warnings,
-  overlayRefreshedAt: globalThis.__overlayRefreshedAt || null
+  overlayRefreshedAt: globalThis.__overlayRefreshedAt || null,
+  mmAsOf: globalThis.__mmAsOf || null
 };
 if (!results.length) {
   const old = await import('node:fs/promises').then(fs => fs.readFile(FALLBACK, 'utf8').catch(() => null));

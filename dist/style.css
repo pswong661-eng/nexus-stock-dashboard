@@ -303,3 +303,12 @@ table.mini td { text-align: right; padding: 6px 8px; border-bottom: 1px solid va
   .input { width: 100%; }
   .vrow { grid-template-columns: 140px 1fr 78px; }
 }
+
+/* Market-maker pillars */
+.mm-badge { display: inline-block; padding: 2px 7px; border-radius: 999px; border: 1px solid var(--line); font: 600 11px var(--mono); letter-spacing: .02em; white-space: nowrap; cursor: help; min-width: 44px; text-align: center; color: var(--muted); background: rgba(133, 149, 168, .08); }
+.mm-badge.dual { color: var(--info); background: var(--info-dim); border-color: rgba(109, 178, 255, .3); }
+.mm-badge.sig_only, .mm-badge.jane_only { color: var(--accent); border-color: rgba(109, 178, 255, .18); }
+.mm-badge.none { color: var(--muted); }
+.mm-badge.pin { color: var(--warn); background: var(--warn-dim); border-color: rgba(232, 196, 104, .35); }
+.mm-panel { margin-top: 12px; padding: 10px 12px; border: 1px solid var(--line); border-radius: var(--r); background: rgba(109, 178, 255, .04); }
+.warn-txt { color: var(--warn); }

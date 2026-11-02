@@ -9,7 +9,7 @@ const INK = {
   blue: '#6db2ff', green: '#34d399', gold: '#e8c468', red: '#f87171', purple: '#b48cff'
 };
 
-const state = { data: null, bubble: null, sort: { key: 'score', dir: -1 }, filter: '', drawer: null, tab: 'quote', charts: {} };
+const state = { data: null, bubble: null, sort: { key: 'score', dir: -1 }, filter: '', mm: 'all', drawer: null, tab: 'quote', charts: {} };
 
 /* ── formatting ─────────────────────────────────────── */
 const $ = s => document.querySelector(s);
@@ -138,8 +138,35 @@ function renderStats() {
 }
 
 /* ── watchlist table ────────────────────────────────── */
+/* ── market-maker pillars (Jane Street + SIG) ───────── */
+const MM_BADGE = { dual: 'JS+SIG', sig_only: 'SIG', jane_only: 'JS', none: '—' };
+const MM_ORDER = { dual: 3, sig_only: 2, jane_only: 2, none: 1 };
+function nextOpex(now = new Date()) {
+  // third Friday of the month (UTC dates), rolling to next month once passed
+  const mk = (y, m) => { const d = new Date(Date.UTC(y, m, 1)); d.setUTCDate(1 + ((5 - d.getUTCDay() + 7) % 7) + 14); return d; };
+  const today = new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()));
+  let d = mk(today.getUTCFullYear(), today.getUTCMonth());
+  if (d < today) d = mk(today.getUTCFullYear(), today.getUTCMonth() + 1);
+  const days = Math.round((d - today) / 86400000), m = d.getUTCMonth();
+  return { date: d.toISOString().slice(0, 10), days, label: [2, 5, 8, 11].includes(m) ? 'Quad witching' : 'Monthly OpEx' };
+}
+function mmOpexWindow() { const o = nextOpex(); return o.days <= 5 ? o : null; }
+function mmFmt(n) { return n >= 1e9 ? `$${(n / 1e9).toFixed(1)}B` : `$${(n / 1e6).toFixed(0)}M`; }
+function mmCell(s) {
+  const m = s.mm; if (!m) return '<span class="muted">—</span>';
+  const pin = m.status === 'dual' && mmOpexWindow();
+  const tip = `${m.notes || ''}${pin ? ` ⚠ ${mmOpexWindow().label} in ${mmOpexWindow().days}d — max-pain pin risk.` : ''}`;
+  return `<span class="mm-badge ${m.status}${pin ? ' pin' : ''}" title="${esc(tip)}">${MM_BADGE[m.status] || '—'}${pin ? ' ⚠' : ''}</span>`;
+}
+function mmMatches(s) {
+  const st = s.mm?.status || 'none';
+  return state.mm === 'all' || (state.mm === 'dual' && st === 'dual') ||
+    (state.mm === 'single' && (st === 'sig_only' || st === 'jane_only')) || (state.mm === 'none' && st === 'none');
+}
+
 function sortVal(s, key) {
   switch (key) {
+    case 'mm': return MM_ORDER[s.mm?.status] ?? 0;
     case 'shortVol': return shortVolRatio(s) ?? -1;
     case 'lynch': return LYNCH_ORDER.indexOf((s.lynch?.verdict || 'N/M').toUpperCase());
     case 'signal': return { '🟢 >both': 4, '🟡 >50 <200': 3, '🟡 <50 >200': 2, '🔴 <both': 1 }[s.signal] ?? 0;
@@ -149,9 +176,9 @@ function sortVal(s, key) {
 }
 function visible() {
   const f = state.filter.trim().toLowerCase();
-  const rows = state.data.symbols.filter(s => !f ||
+  const rows = state.data.symbols.filter(s => mmMatches(s) && (!f ||
     s.symbol.toLowerCase().includes(f) || (s.name || '').toLowerCase().includes(f) ||
-    (s.sector || '').toLowerCase().includes(f));
+    (s.sector || '').toLowerCase().includes(f)));
   const { key, dir } = state.sort;
   return rows.sort((a, b) => {
     const va = sortVal(a, key), vb = sortVal(b, key);
@@ -182,12 +209,19 @@ function lynchCell(s) {
   return `<span class="lynch-chip" title="${esc(l.note || '')}"><span class="chip ${cls}">${esc(v)}</span><span class="peg muted">${esc(peg)}</span></span>`;
 }
 
+function mmFoot() {
+  const syms = state.data.symbols, dual = syms.filter(s => s.mm?.status === 'dual').length;
+  if (!dual) return '';
+  const o = nextOpex(), asOf = state.data.mmAsOf?.jane?.period;
+  return ` · Pillars = Jane Street + SIG options books (13F${asOf ? ' ' + asOf : ''}) · ${dual} dual · next ${o.label} ${o.date} (${o.days}d)`;
+}
+
 function renderTable() {
   const rows = visible(), body = $('#watch-body');
   body.innerHTML = '';
   for (const s of rows) {
     const tr = el('tr'); tr.dataset.sym = s.symbol; tr.tabIndex = 0;
-    tr.title = `${s.name || s.symbol}${s.sector ? ' · ' + s.sector : ''}${s.macdStatus ? ' · MACD ' + s.macdStatus : ''}${s.support != null ? ` · S/R ${num(s.support, 1)}/${num(s.resistance, 1)}` : ''}`;
+    tr.title = `${s.name || s.symbol}${s.sector ? ' · ' + s.sector : ''}${s.macdStatus ? ' · MACD ' + s.macdStatus : ''}${s.support != null ? ` · S/R ${num(s.support, 1)}/${num(s.resistance, 1)}` : ''}${s.mm ? ` · MM ${MM_BADGE[s.mm.status]}` : ''}`;
     const t = TREND[s.signal] || { t: '·', c: '' };
     const sv = shortVolRatio(s);
     const macdCls = /bull/.test(s.macdStatus) ? 'pos' : /bear/.test(s.macdStatus) ? 'neg' : 'flat';
@@ -195,6 +229,7 @@ function renderTable() {
       <td class="col-sym"><span class="sym">${s.symbol}</span></td>
       <td class="col-name tname" title="${(s.name || '').replace(/"/g, '&quot;')}">${dash(s.name)}</td>
       <td class="col-sector sector-cell">${dash(s.sector)}</td>
+      <td>${mmCell(s)}</td>
       <td class="num mono">${price(s.price)}</td>
       <td class="num mono ${pctCls(s.changePct)}">${sign(s.changePct)}</td>
       <td class="num mono ${pctCls(s.ytdPct)}">${sign(s.ytdPct, 1)}</td>
@@ -215,7 +250,7 @@ function renderTable() {
   }
   $('#wl-count').textContent = `· ${rows.length}`;
   const sr = rows.filter(r => r.support != null).length;
-  $('#wl-foot').textContent = `EOD snapshot · ${rows.length} names · ${sr} with S/R bands · score = SMA50+SMA200+MACD+RSI filters (0–4) · PEGY from internal screen overlay`;
+  $('#wl-foot').textContent = `EOD snapshot · ${rows.length} names · ${sr} with S/R bands · score = SMA50+SMA200+MACD+RSI filters (0–4) · PEGY from internal screen overlay${mmFoot()}`;
   document.querySelectorAll('#watch-table th.sortable').forEach(th => {
     th.classList.toggle('sorted-asc', th.dataset.key === state.sort.key && state.sort.dir === 1);
     th.classList.toggle('sorted-desc', th.dataset.key === state.sort.key && state.sort.dir === -1);
@@ -362,6 +397,16 @@ function closeDrawer() {
 }
 function row(k, v, cls = '') { return `<div class="row"><span class="muted">${k}</span><b class="${cls}">${v}</b></div>`; }
 
+function mmDrawer(s) {
+  const m = s.mm; if (!m) return '';
+  const o = mmOpexWindow();
+  const bk = (k, lbl) => m[k] ? `${lbl}: calls ${mmFmt(m[k].calls)} / puts ${mmFmt(m[k].puts)} / equity ${mmFmt(m[k].shares)}` : null;
+  const lines = [bk('jane', 'Jane Street'), bk('sig', 'SIG')].filter(Boolean).map(esc).join('<br>');
+  const pin = m.status === 'dual'
+    ? `<p class="small" style="margin-top:8px">Why price may stall: two market makers hold large offsetting call/put books and delta-hedge dynamically — expect strike gravity into Friday expiries, intraday gamma-driven mean reversion, and volume clustering near heavy strikes.${o ? ` <b class="warn-txt">⚠ ${esc(o.label)} ${o.date} (${o.days}d).</b>` : ''}</p>` : '';
+  return `<div class="mm-panel"><p class="small">${esc(m.notes)}</p>${lines ? `<p class="muted small" style="margin-top:6px">${lines}</p>` : ''}${pin}<p class="muted small" style="margin-top:6px">13F is a quarterly, lagged, long-side snapshot — a structural proxy, not live positioning.</p></div>`;
+}
+
 function renderQuote(s) {
   const l = s.lynch, sv = shortVolRatio(s);
   $('#dw-quote').innerHTML = `<div class="kv">
@@ -382,8 +427,10 @@ function renderQuote(s) {
     ${row('Score', `${s.score ?? '—'} / 4`)}
     ${row('Bias', dash(s.bias))}
     ${l ? row('Lynch', `${esc(dash(l.verdict))} · PEGY ${num(l.pegy, 1)} · ${esc(dash(l.category))}`) : row('Lynch', '—')}
+    ${s.mm ? row('MM Pillars', `${MM_BADGE[s.mm.status]} · ${s.mm.source === '13F' ? '13F' : 'baseline'}`) : ''}
     ${row('Sources', esc(fmtSources(s)))}
   </div>
+  ${mmDrawer(s)}
   ${l?.note ? `<p class="muted small" style="margin-top:10px">Lynch note: ${esc(l.note)}</p>` : ''}`;
 }
 
@@ -504,6 +551,12 @@ document.querySelectorAll('#view-toggle button').forEach(b => b.addEventListener
 setView(initView);
 
 on('#btn-refresh', 'click', () => load({ manual: true }));
+on('#mm-filter', 'click', e => {
+  const b = e.target.closest('button[data-mm]'); if (!b) return;
+  state.mm = b.dataset.mm;
+  document.querySelectorAll('#mm-filter button').forEach(x => x.classList.toggle('on', x === b));
+  renderTable();
+});
 on('#wl-filter', 'input', e => { state.filter = e.target.value; renderTable(); });
 on('#drawer', 'click', e => { if (e.target.closest('[data-close]')) closeDrawer(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
