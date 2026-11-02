@@ -151,6 +151,20 @@ function nextOpex(now = new Date()) {
   return { date: d.toISOString().slice(0, 10), days, label: [2, 5, 8, 11].includes(m) ? 'Quad witching' : 'Monthly OpEx' };
 }
 function mmOpexWindow() { const o = nextOpex(); return o.days <= 5 ? o : null; }
+// Combined Jane+SIG put/call notional (13F long options). >1.25 put-heavy, <0.8 call-heavy.
+function mmPC(s) {
+  const m = s.mm; if (!m) return null;
+  let c = 0, p = 0; for (const k of ['jane', 'sig']) if (m[k]) { c += m[k].calls || 0; p += m[k].puts || 0; }
+  if (c + p < 5e6) return null;
+  const r = c > 0 ? p / c : 99;
+  return { r, lean: r > 1.25 ? 'put' : r < 0.8 ? 'call' : 'bal', c, p };
+}
+function mmPCfirm(m, k) { const x = m?.[k]; return x && (x.calls + x.puts) > 0 ? `${(x.calls ? x.puts / x.calls : 99).toFixed(2)} (C ${mmFmt(x.calls)} / P ${mmFmt(x.puts)})` : 'n/a'; }
+function mmPCcell(s) {
+  const q = mmPC(s); if (!q) return '<span class="muted">—</span>';
+  const lbl = q.lean === 'put' ? 'Put-heavy' : q.lean === 'call' ? 'Call-heavy' : 'Balanced';
+  return `<span class="mm-pc ${q.lean}" title="${esc(`${lbl}: P/C ${q.r.toFixed(2)} · Jane ${mmPCfirm(s.mm, 'jane')} · SIG ${mmPCfirm(s.mm, 'sig')} — 13F long options only; a hedge/inventory mix, not a directional bet.`)}">${q.r >= 10 ? '10+' : q.r.toFixed(2)}</span>`;
+}
 function mmFmt(n) { return n >= 1e9 ? `$${(n / 1e9).toFixed(1)}B` : `$${(n / 1e6).toFixed(0)}M`; }
 function mmCell(s) {
   const m = s.mm; if (!m) return '<span class="muted">—</span>';
@@ -167,6 +181,7 @@ function mmMatches(s) {
 function sortVal(s, key) {
   switch (key) {
     case 'mm': return MM_ORDER[s.mm?.status] ?? 0;
+    case 'mmpc': return mmPC(s)?.r ?? -1;
     case 'shortVol': return shortVolRatio(s) ?? -1;
     case 'lynch': return LYNCH_ORDER.indexOf((s.lynch?.verdict || 'N/M').toUpperCase());
     case 'signal': return { '🟢 >both': 4, '🟡 >50 <200': 3, '🟡 <50 >200': 2, '🔴 <both': 1 }[s.signal] ?? 0;
@@ -230,6 +245,7 @@ function renderTable() {
       <td class="col-name tname" title="${(s.name || '').replace(/"/g, '&quot;')}">${dash(s.name)}</td>
       <td class="col-sector sector-cell">${dash(s.sector)}</td>
       <td>${mmCell(s)}</td>
+      <td class="num mono">${mmPCcell(s)}</td>
       <td class="num mono">${price(s.price)}</td>
       <td class="num mono ${pctCls(s.changePct)}">${sign(s.changePct)}</td>
       <td class="num mono ${pctCls(s.ytdPct)}">${sign(s.ytdPct, 1)}</td>
@@ -404,7 +420,9 @@ function mmDrawer(s) {
   const lines = [bk('jane', 'Jane Street'), bk('sig', 'SIG')].filter(Boolean).map(esc).join('<br>');
   const pin = m.status === 'dual'
     ? `<p class="small" style="margin-top:8px">Why price may stall: two market makers hold large offsetting call/put books and delta-hedge dynamically — expect strike gravity into Friday expiries, intraday gamma-driven mean reversion, and volume clustering near heavy strikes.${o ? ` <b class="warn-txt">⚠ ${esc(o.label)} ${o.date} (${o.days}d).</b>` : ''}</p>` : '';
-  return `<div class="mm-panel"><p class="small">${esc(m.notes)}</p>${lines ? `<p class="muted small" style="margin-top:6px">${lines}</p>` : ''}${pin}<p class="muted small" style="margin-top:6px">13F is a quarterly, lagged, long-side snapshot — a structural proxy, not live positioning.</p></div>`;
+  const q = mmPC(s);
+  const pc = q ? `<p class="small" style="margin-top:8px"><b class="mm-pc ${q.lean}">${q.lean === 'put' ? 'Put-heavy' : q.lean === 'call' ? 'Call-heavy' : 'Balanced'}</b> · combined P/C ${q.r.toFixed(2)} (calls ${mmFmt(q.c)} / puts ${mmFmt(q.p)})<br><span class="muted">Jane ${esc(mmPCfirm(m, 'jane'))} · SIG ${esc(mmPCfirm(m, 'sig'))}</span><br><span class="muted">${q.lean === 'put' ? 'Likely hedges/protection against long stock or call books; if price falls, dealer hedging can add selling pressure.' : q.lean === 'call' ? 'Call-skewed books; a rally can force dealer buying (upside gamma), and a drop leaves less put support.' : 'Roughly offsetting call and put books.'} Not a directional view.</span></p>` : '';
+  return `<div class="mm-panel"><p class="small">${esc(m.notes)}</p>${pc}${lines ? `<p class="muted small" style="margin-top:6px">${lines}</p>` : ''}${pin}<p class="muted small" style="margin-top:6px">13F is a quarterly, lagged, long-side snapshot — a structural proxy, not live positioning.</p></div>`;
 }
 
 function renderQuote(s) {

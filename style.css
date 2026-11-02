@@ -310,5 +310,9 @@ table.mini td { text-align: right; padding: 6px 8px; border-bottom: 1px solid va
 .mm-badge.sig_only, .mm-badge.jane_only { color: var(--accent); border-color: rgba(109, 178, 255, .18); }
 .mm-badge.none { color: var(--muted); }
 .mm-badge.pin { color: var(--warn); background: var(--warn-dim); border-color: rgba(232, 196, 104, .35); }
+.mm-pc { font-weight: 600; cursor: help; }
+.mm-pc.put { color: var(--down); }
+.mm-pc.call { color: var(--up); }
+.mm-pc.bal { color: var(--muted); }
 .mm-panel { margin-top: 12px; padding: 10px 12px; border: 1px solid var(--line); border-radius: var(--r); background: rgba(109, 178, 255, .04); }
 .warn-txt { color: var(--warn); }
