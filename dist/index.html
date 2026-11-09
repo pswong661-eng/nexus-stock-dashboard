@@ -14,9 +14,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./style.css?v=c06ada2" />
-  <script src="./chart.umd.min.js?v=c06ada2" defer></script>
-  <script src="./app.js?v=c06ada2" defer></script>
+  <link rel="stylesheet" href="./style.css?v=8722277" />
+  <script src="./chart.umd.min.js?v=8722277" defer></script>
+  <script src="./app.js?v=8722277" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -168,8 +168,8 @@
         <div id="dw-quote"></div>
         <div id="dw-technical" hidden>
           <div class="chart-box"><canvas id="ch-price" height="190" aria-label="Price chart"></canvas></div>
-          <div class="chart-box"><canvas id="ch-macd" height="110" aria-label="MACD chart"></canvas></div>
-          <div class="chart-box"><canvas id="ch-rsi" height="110" aria-label="RSI chart"></canvas></div>
+          <div class="chart-box"><canvas id="ch-macd" height="110" aria-label="MACD chart"></canvas><div class="chart-empty" data-empty-for="ch-macd" hidden>MACD needs 35 sessions — not enough history yet</div></div>
+          <div class="chart-box"><canvas id="ch-rsi" height="110" aria-label="RSI chart"></canvas><div class="chart-empty" data-empty-for="ch-rsi" hidden>RSI-14 needs 15 sessions — not enough history yet</div></div>
         </div>
         <div id="dw-financials" hidden></div>
         <div id="dw-insider" hidden></div>
