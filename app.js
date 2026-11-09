@@ -552,6 +552,15 @@ function renderCharts(s) {
     data: { labels, datasets: [{ label: 'RSI-14', data: t.map(p => p.rsi14), borderColor: INK.purple, borderWidth: 1.2, pointRadius: 0, tension: .25 }] },
     options: chartBase({ y: { min: 0, max: 100, ticks: { color: INK.tick, stepSize: 25, font: { size: 9, family: 'IBM Plex Mono' } }, grid: { color: INK.grid } } })
   });
+  // New listings: state the missing history instead of rendering a blank panel.
+  const hasData = arr => arr.some(Number.isFinite);
+  for (const id of ['ch-macd', 'ch-rsi']) {
+    const canvas = $('#' + id), box = canvas?.closest('.chart-box'), empty = box?.querySelector('.chart-empty');
+    const series = id === 'ch-macd' ? t.map(p => p.macd) : t.map(p => p.rsi14);
+    const emptyNow = !hasData(series);
+    if (empty) empty.hidden = !emptyNow;
+    box?.classList.toggle('show-empty', emptyNow);
+  }
 }
 
 function renderFinancials(s) {
