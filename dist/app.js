@@ -76,7 +76,8 @@ async function load({ manual = false } = {}) {
     if (manual && btn) { btn.disabled = false; btn.classList.remove('loading'); btn.textContent = '↻ Refresh'; }
     const ra = $('#refreshed-at'); if (ra) {
       const now = new Date(), pad = n => String(n).padStart(2, '0');
-      ra.textContent = `checked ${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())} ICT`;
+      const ict = new Date(now.getTime() + (now.getTimezoneOffset() + 7 * 60) * 60000);
+      ra.textContent = `checked ${ict.getFullYear()}-${pad(ict.getMonth() + 1)}-${pad(ict.getDate())} ${pad(ict.getHours())}:${pad(ict.getMinutes())} ICT`;
     }
   }
 }
@@ -89,10 +90,15 @@ function renderAll() {
 }
 
 function sessionDate(data) {
+  // Newest bar across the whole universe — a partial payload's first symbol
+  // can lag and must not define "current" for every other row.
+  let max = '';
   for (const s of data.symbols) {
-    const t = s.technical || []; if (t.length) return t[t.length - 1].date;
+    const t = s.technical || [];
+    const d = t.length ? t[t.length - 1].date : '';
+    if (d > max) max = d;
   }
-  return data.generatedAt?.slice(0, 10) ?? '—';
+  return max || (data.generatedAt?.slice(0, 10) ?? '—');
 }
 
 function renderHeader() {
