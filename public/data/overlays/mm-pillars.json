@@ -132,20 +132,10 @@
   "source": "13F",
   "status": "dual"
  },
- "CCXI": {
-  "jane": {
-   "calls": 0,
-   "puts": 0,
-   "shares": 2925161
-  },
-  "notes": "No material MM options book \u2014 cleaner, unpinned flow. Options notional JS $0M (C $0M/P $0M) \u00b7 SIG $0M (C $0M/P $0M) (13F).",
+ "AGLT": {
+  "notes": "No 13F coverage yet (post-quarter listing/foreign) — human baseline. No MM book assumed.",
   "pillars": [],
-  "sig": {
-   "calls": 0,
-   "puts": 0,
-   "shares": 0
-  },
-  "source": "13F",
+  "source": "baseline",
   "status": "none"
  },
  "COHR": {

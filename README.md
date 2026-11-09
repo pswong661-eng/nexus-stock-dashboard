@@ -20,7 +20,7 @@ Default watchlist:
 - `NVAX`
 - `NBIS`
 - `LRCX`
-- `CCXI`
+- `AGLT`
 
 Override in GitHub Actions with:
 

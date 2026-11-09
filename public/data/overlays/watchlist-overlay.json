@@ -407,18 +407,9 @@
       "screenedAt": "2026-10-18T14:55:55+00:00"
     }
   },
-  "CCXI": {
-    "company": "Churchill Capital XI (SPAC)",
-    "sector": "SPAC",
-    "lynch": {
-      "category": "SPAC",
-      "peTtm": null,
-      "peFwd": null,
-      "pegy": null,
-      "verdict": "n/a",
-      "note": "Event-driven (Agility merger)",
-      "screenedAt": "2026-10-18T14:55:55+00:00"
-    }
+  "AGLT": {
+    "company": "Agility Robotics",
+    "sector": "Robotics"
   },
   "MU": {
     "company": "Micron Technology",
