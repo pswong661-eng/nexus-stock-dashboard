@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-25T02:40:01+07:00",
+ "generated_at": "2026-11-09T10:06:53+07:00",
  "latest": {
-  "date": "2026-10-25",
-  "score": 37,
+  "date": "2026-11-08",
+  "score": 50,
   "label": "LOW",
   "components": [
    {
@@ -14,19 +14,19 @@
    {
     "name": "Breadth",
     "block": "Euphoria",
-    "pts": 2,
+    "pts": 8,
     "max": 10
    },
    {
     "name": "Volatility",
     "block": "Stress",
-    "pts": 7,
+    "pts": 13,
     "max": 15
    },
    {
     "name": "Internals",
     "block": "Stress",
-    "pts": 6,
+    "pts": 8,
     "max": 10
    },
    {
@@ -38,13 +38,13 @@
    {
     "name": "Macro Funding",
     "block": "Stress",
-    "pts": 5,
+    "pts": 3,
     "max": 15
    },
    {
     "name": "Private Credit",
     "block": "Stress",
-    "pts": 5,
+    "pts": 4,
     "max": 15
    },
    {
@@ -64,11 +64,11 @@
  },
  "blocks": {
   "Euphoria": {
-   "pts": 9,
+   "pts": 15,
    "max": 45
   },
   "Stress": {
-   "pts": 23,
+   "pts": 28,
    "max": 55
   },
   "Structure": {
@@ -76,7 +76,7 @@
    "max": 10
   }
  },
- "wow_delta": -7,
+ "wow_delta": 11,
  "history": [
   {
    "date": "2026-08-18",
@@ -121,7 +121,19 @@
   {
    "date": "2026-10-25",
    "score": 37
+  },
+  {
+   "date": "2026-11-01",
+   "score": 30
+  },
+  {
+   "date": "2026-11-05",
+   "score": 39
+  },
+  {
+   "date": "2026-11-08",
+   "score": 50
   }
  ],
- "note_path": "Research/Bubble Dashboard/2026-10-25-bubble-fragility.md"
+ "note_path": "Research/Bubble Dashboard/2026-11-08-bubble-fragility.md"
 }
