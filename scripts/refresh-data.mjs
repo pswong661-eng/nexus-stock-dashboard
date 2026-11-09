@@ -2,7 +2,7 @@
 import { buildFinancialsFromFacts, forecastTwo } from './sec-financials.mjs';
 import { fetchYahooQuarterlies } from './yahoo-financials.mjs';
 import { computeLocalIndicators } from './local-indicators.mjs';
-const SYMBOLS = (process.env.STOCK_SYMBOLS || 'NVDA,MRVL,QCOM,ARM,INTC,TSM,AXTI,AAOI,LITE,COHR,APH,LRCX,SNPS,SNDK,SKHY,IONQ,RGTI,CBRS,TSLA,RRX,PH,UAMY,VST,TLN,LLY,NVAX,AMD,CCXI,FN,GOOGL,NBIS,SPCX,ASML,ORCL,MU,LAC')
+const SYMBOLS = (process.env.STOCK_SYMBOLS || 'NVDA,MRVL,QCOM,ARM,INTC,TSM,AXTI,AAOI,LITE,COHR,APH,LRCX,SNPS,SNDK,SKHY,IONQ,RGTI,CBRS,TSLA,RRX,PH,UAMY,VST,TLN,LLY,NVAX,AMD,AGLT,FN,GOOGL,NBIS,SPCX,ASML,ORCL,MU,LAC')
   .split(',').map(s => s.trim().toUpperCase()).filter(Boolean);
 const MERGE_EXISTING = process.env.MERGE_EXISTING === '1';
 
@@ -47,6 +47,8 @@ function rsiSeries(values, period = 14) {
   return out;
 }
 function macd(values) {
+  const empty = values.map(() => null);
+  if (values.filter(Number.isFinite).length < 35) return { line: empty, signal: [...empty], hist: [...empty] };
   const e12 = ema(values, 12), e26 = ema(values, 26);
   const line = values.map((_, i) => Number.isFinite(e12[i]) && Number.isFinite(e26[i]) ? round(e12[i] - e26[i], 4) : null);
   const signal = ema(line, 9);
@@ -265,7 +267,7 @@ function normalizeMassiveChart(symbol, bars, details = {}) {
   const technical = points.map((p, i) => ({
     date: p.date,
     close: p.close,
-    ema50: ema50Arr[i],
+    ema50: i >= 49 ? ema50Arr[i] : null,
     rsi14: rsiArr[i],
     macd: macdObj.line[i],
     macdSignal: macdObj.signal[i],
@@ -317,7 +319,7 @@ function normalizeChart(symbol, result) {
   const technical = points.map((p, i) => ({
     date: p.date,
     close: p.close,
-    ema50: ema50Arr[i],
+    ema50: i >= 49 ? ema50Arr[i] : null,
     rsi14: rsiArr[i],
     macd: macdObj.line[i],
     macdSignal: macdObj.signal[i],

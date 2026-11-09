@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T01:36:00.193Z",
+  "generatedAt": "2026-11-09T15:34:48.675Z",
   "staleAfterMinutes": 1440,
   "source": "Massive.com OHLC aggregates + SEC companyfacts/submissions via scheduled Node refresh",
   "tickers": [
@@ -30,7 +30,7 @@
     "LLY",
     "NVAX",
     "AMD",
-    "CCXI",
+    "AGLT",
     "FN",
     "GOOGL",
     "NBIS",
@@ -40,12 +40,12 @@
     "MU",
     "LAC"
   ],
-  "dataStatus": "partial",
+  "dataStatus": "fresh",
   "marketStatus": "closed_or_weekend",
   "summary": {
     "totalMarketCap": null,
     "avgPeRatio": null,
-    "avgRsi14": 39.1,
+    "avgRsi14": 38.8,
     "sentimentScore": 68,
     "bullPct": 53,
     "neutralPct": 47,
@@ -98969,3330 +98969,379 @@
       }
     },
     {
-      "symbol": "CCXI",
-      "name": "CCXI",
-      "exchange": "",
+      "symbol": "AGLT",
+      "name": "Agility Robotics, Inc. Common Stock",
+      "exchange": "XNAS",
       "currency": "USD",
-      "price": 11.26,
-      "previousClose": 10.69,
-      "ytdPct": 9.75,
-      "marketCap": null,
+      "price": 9.9,
+      "previousClose": 11.51,
+      "ytdPct": -13.99,
+      "marketCap": 2249193830.4,
       "peRatio": null,
-      "rsi14": 49.3,
-      "week52Low": 8,
-      "week52High": 19.69,
-      "avgVolume": 3622558,
+      "rsi14": null,
+      "week52Low": 8.4,
+      "week52High": 12.15,
+      "avgVolume": 5536868,
       "recommendation": "HOLD",
       "opportunityScore": 55,
       "company": {
-        "description": "",
-        "homepage": "",
+        "description": "Agility Robotics Inc develops bipedal humanoid robots for use in commercial and industrial environments. Its flagship humanoid robot, Digit, is a multi-purpose, human-centric robot designed to deliver useful physical labor in facilities built around human workers. The company's commercially deployed humanoids operate alongside teams in warehouses, manufacturing facilities and distribution centers - tackling physically demanding and repetitive tasks while enabling workers to focus on higher-value work.",
+        "homepage": "https://www.agilityrobotics.com",
         "employees": null,
-        "sic": "",
-        "industry": "",
+        "sic": "3569",
+        "industry": "GENERAL INDUSTRIAL MACHINERY & EQUIPMENT, NEC",
         "icon": "",
         "logo": ""
       },
       "series": [
         {
-          "date": "2026-02-09",
+          "date": "2026-11-05",
           "value": 100
         },
         {
-          "date": "2026-02-10",
-          "value": 99.81
-        },
-        {
-          "date": "2026-02-11",
-          "value": 99.76
-        },
-        {
-          "date": "2026-02-12",
-          "value": 99.81
-        },
-        {
-          "date": "2026-02-13",
-          "value": 99.32
-        },
-        {
-          "date": "2026-02-17",
-          "value": 100
-        },
-        {
-          "date": "2026-02-18",
-          "value": 99.42
-        },
-        {
-          "date": "2026-02-19",
-          "value": 99.42
-        },
-        {
-          "date": "2026-02-20",
-          "value": 99.32
-        },
-        {
-          "date": "2026-02-23",
-          "value": 99.22
-        },
-        {
-          "date": "2026-02-24",
-          "value": 98.83
-        },
-        {
-          "date": "2026-02-25",
-          "value": 98.93
-        },
-        {
-          "date": "2026-02-26",
-          "value": 99.3
-        },
-        {
-          "date": "2026-02-27",
-          "value": 99.03
-        },
-        {
-          "date": "2026-03-02",
-          "value": 99.12
-        },
-        {
-          "date": "2026-03-04",
-          "value": 98.54
-        },
-        {
-          "date": "2026-03-05",
-          "value": 99.03
-        },
-        {
-          "date": "2026-03-06",
-          "value": 99.03
-        },
-        {
-          "date": "2026-03-11",
-          "value": 98.93
-        },
-        {
-          "date": "2026-03-12",
-          "value": 98.83
-        },
-        {
-          "date": "2026-03-13",
-          "value": 98.88
-        },
-        {
-          "date": "2026-03-16",
-          "value": 99.12
-        },
-        {
-          "date": "2026-03-17",
-          "value": 98.39
-        },
-        {
-          "date": "2026-03-18",
-          "value": 98.59
-        },
-        {
-          "date": "2026-03-19",
-          "value": 99.12
-        },
-        {
-          "date": "2026-03-20",
-          "value": 99
-        },
-        {
-          "date": "2026-03-24",
-          "value": 99.12
-        },
-        {
-          "date": "2026-03-25",
-          "value": 99.12
-        },
-        {
-          "date": "2026-03-27",
-          "value": 98.83
-        },
-        {
-          "date": "2026-03-30",
-          "value": 98.54
-        },
-        {
-          "date": "2026-03-31",
-          "value": 99.03
-        },
-        {
-          "date": "2026-04-01",
-          "value": 98.93
-        },
-        {
-          "date": "2026-04-02",
-          "value": 99.42
-        },
-        {
-          "date": "2026-04-06",
-          "value": 99.42
-        },
-        {
-          "date": "2026-04-07",
-          "value": 99.42
-        },
-        {
-          "date": "2026-04-08",
-          "value": 99.22
-        },
-        {
-          "date": "2026-04-09",
-          "value": 99.41
-        },
-        {
-          "date": "2026-04-10",
-          "value": 99.42
-        },
-        {
-          "date": "2026-04-13",
-          "value": 99.22
-        },
-        {
-          "date": "2026-04-14",
-          "value": 99.32
-        },
-        {
-          "date": "2026-04-15",
-          "value": 99.32
-        },
-        {
-          "date": "2026-04-16",
-          "value": 99.27
-        },
-        {
-          "date": "2026-04-17",
-          "value": 99.32
-        },
-        {
-          "date": "2026-04-20",
-          "value": 99.27
-        },
-        {
-          "date": "2026-04-21",
-          "value": 100.29
-        },
-        {
-          "date": "2026-04-22",
-          "value": 99.42
-        },
-        {
-          "date": "2026-04-23",
-          "value": 99.9
-        },
-        {
-          "date": "2026-04-24",
-          "value": 99.9
-        },
-        {
-          "date": "2026-04-27",
-          "value": 99.81
-        },
-        {
-          "date": "2026-04-28",
-          "value": 99.81
-        },
-        {
-          "date": "2026-04-29",
-          "value": 99.61
-        },
-        {
-          "date": "2026-05-06",
-          "value": 99.61
-        },
-        {
-          "date": "2026-05-07",
-          "value": 99.51
-        },
-        {
-          "date": "2026-05-08",
-          "value": 99.42
-        },
-        {
-          "date": "2026-05-11",
-          "value": 99.81
-        },
-        {
-          "date": "2026-05-13",
-          "value": 99.81
-        },
-        {
-          "date": "2026-05-14",
-          "value": 99.81
-        },
-        {
-          "date": "2026-05-15",
-          "value": 100.19
-        },
-        {
-          "date": "2026-05-19",
-          "value": 99.9
-        },
-        {
-          "date": "2026-05-20",
-          "value": 100.1
-        },
-        {
-          "date": "2026-05-21",
-          "value": 100.16
-        },
-        {
-          "date": "2026-05-22",
-          "value": 99.9
-        },
-        {
-          "date": "2026-05-26",
-          "value": 99.9
-        },
-        {
-          "date": "2026-05-27",
-          "value": 99.42
-        },
-        {
-          "date": "2026-05-28",
-          "value": 99.61
-        },
-        {
-          "date": "2026-05-29",
-          "value": 99.61
-        },
-        {
-          "date": "2026-06-01",
-          "value": 99.71
-        },
-        {
-          "date": "2026-06-02",
-          "value": 99.61
-        },
-        {
-          "date": "2026-06-05",
-          "value": 100.29
-        },
-        {
-          "date": "2026-06-08",
-          "value": 100.29
-        },
-        {
-          "date": "2026-06-12",
-          "value": 99.61
-        },
-        {
-          "date": "2026-06-15",
-          "value": 99.81
-        },
-        {
-          "date": "2026-06-16",
-          "value": 99.88
-        },
-        {
-          "date": "2026-06-17",
-          "value": 100.63
-        },
-        {
-          "date": "2026-06-18",
-          "value": 100.44
-        },
-        {
-          "date": "2026-06-22",
-          "value": 101.07
-        },
-        {
-          "date": "2026-06-23",
-          "value": 101.56
-        },
-        {
-          "date": "2026-06-24",
-          "value": 116.86
-        },
-        {
-          "date": "2026-06-25",
-          "value": 121.25
-        },
-        {
-          "date": "2026-06-26",
-          "value": 135.09
-        },
-        {
-          "date": "2026-06-29",
-          "value": 159.84
-        },
-        {
-          "date": "2026-06-30",
-          "value": 170.08
-        },
-        {
-          "date": "2026-07-01",
-          "value": 166.28
-        },
-        {
-          "date": "2026-07-02",
-          "value": 186.16
-        },
-        {
-          "date": "2026-07-06",
-          "value": 167.84
-        },
-        {
-          "date": "2026-07-07",
-          "value": 154.58
-        },
-        {
-          "date": "2026-07-08",
-          "value": 148.73
-        },
-        {
-          "date": "2026-07-09",
-          "value": 158.19
-        },
-        {
-          "date": "2026-07-10",
-          "value": 151.56
-        },
-        {
-          "date": "2026-07-13",
-          "value": 139.77
-        },
-        {
-          "date": "2026-07-14",
-          "value": 155.65
-        },
-        {
-          "date": "2026-07-15",
-          "value": 153.41
-        },
-        {
-          "date": "2026-07-16",
-          "value": 142.4
-        },
-        {
-          "date": "2026-07-17",
-          "value": 141.03
-        },
-        {
-          "date": "2026-07-20",
-          "value": 140.25
-        },
-        {
-          "date": "2026-07-21",
-          "value": 144.54
-        },
-        {
-          "date": "2026-07-22",
-          "value": 142.79
-        },
-        {
-          "date": "2026-07-23",
-          "value": 140.35
-        },
-        {
-          "date": "2026-07-24",
-          "value": 133.33
-        },
-        {
-          "date": "2026-07-27",
-          "value": 133.72
-        },
-        {
-          "date": "2026-07-28",
-          "value": 141.52
-        },
-        {
-          "date": "2026-07-29",
-          "value": 131.77
-        },
-        {
-          "date": "2026-07-30",
-          "value": 136.45
-        },
-        {
-          "date": "2026-07-31",
-          "value": 135.09
-        },
-        {
-          "date": "2026-08-03",
-          "value": 150.78
-        },
-        {
-          "date": "2026-08-04",
-          "value": 150.1
-        },
-        {
-          "date": "2026-08-05",
-          "value": 155.26
-        },
-        {
-          "date": "2026-08-06",
-          "value": 159.84
-        },
-        {
-          "date": "2026-08-07",
-          "value": 161.94
-        },
-        {
-          "date": "2026-08-10",
-          "value": 156.92
-        },
-        {
-          "date": "2026-08-11",
-          "value": 159.55
-        },
-        {
-          "date": "2026-08-12",
-          "value": 157.8
-        },
-        {
-          "date": "2026-08-13",
-          "value": 157.8
-        },
-        {
-          "date": "2026-08-14",
-          "value": 166.37
-        },
-        {
-          "date": "2026-08-17",
-          "value": 167.64
-        },
-        {
-          "date": "2026-08-18",
-          "value": 152.53
-        },
-        {
-          "date": "2026-08-19",
-          "value": 142.3
-        },
-        {
-          "date": "2026-08-20",
-          "value": 137.13
-        },
-        {
-          "date": "2026-08-21",
-          "value": 142.01
-        },
-        {
-          "date": "2026-08-24",
-          "value": 137.33
-        },
-        {
-          "date": "2026-08-25",
-          "value": 140.84
-        },
-        {
-          "date": "2026-08-26",
-          "value": 144.44
-        },
-        {
-          "date": "2026-08-27",
-          "value": 140.45
-        },
-        {
-          "date": "2026-08-28",
-          "value": 136.16
-        },
-        {
-          "date": "2026-08-31",
-          "value": 130.36
-        },
-        {
-          "date": "2026-09-01",
-          "value": 127.19
-        },
-        {
-          "date": "2026-09-02",
-          "value": 129.24
-        },
-        {
-          "date": "2026-09-03",
-          "value": 134.7
-        },
-        {
-          "date": "2026-09-04",
-          "value": 130.6
-        },
-        {
-          "date": "2026-09-08",
-          "value": 132.55
-        },
-        {
-          "date": "2026-09-09",
-          "value": 128.65
-        },
-        {
-          "date": "2026-09-10",
-          "value": 124.85
-        },
-        {
-          "date": "2026-09-11",
-          "value": 120.08
-        },
-        {
-          "date": "2026-09-14",
-          "value": 116.96
-        },
-        {
-          "date": "2026-09-15",
-          "value": 117.45
-        },
-        {
-          "date": "2026-09-16",
-          "value": 117.84
-        },
-        {
-          "date": "2026-09-17",
-          "value": 117.69
-        },
-        {
-          "date": "2026-09-18",
-          "value": 125.73
-        },
-        {
-          "date": "2026-09-21",
-          "value": 132.36
-        },
-        {
-          "date": "2026-09-22",
-          "value": 128.07
-        },
-        {
-          "date": "2026-09-23",
-          "value": 123.98
-        },
-        {
-          "date": "2026-09-24",
-          "value": 119.2
-        },
-        {
-          "date": "2026-09-25",
-          "value": 121.15
-        },
-        {
-          "date": "2026-09-28",
-          "value": 117.45
-        },
-        {
-          "date": "2026-09-29",
-          "value": 120.18
-        },
-        {
-          "date": "2026-09-30",
-          "value": 113.26
-        },
-        {
-          "date": "2026-10-01",
-          "value": 113.26
-        },
-        {
-          "date": "2026-10-02",
-          "value": 116.86
-        },
-        {
-          "date": "2026-10-05",
-          "value": 117.64
-        },
-        {
-          "date": "2026-10-06",
-          "value": 116.23
-        },
-        {
-          "date": "2026-10-07",
-          "value": 109.55
-        },
-        {
-          "date": "2026-10-08",
-          "value": 107.6
-        },
-        {
-          "date": "2026-10-09",
-          "value": 106.53
-        },
-        {
-          "date": "2026-10-12",
-          "value": 105.07
-        },
-        {
-          "date": "2026-10-13",
-          "value": 108.77
-        },
-        {
-          "date": "2026-10-14",
-          "value": 105.56
-        },
-        {
-          "date": "2026-10-15",
-          "value": 110.62
-        },
-        {
-          "date": "2026-10-16",
-          "value": 103.9
-        },
-        {
-          "date": "2026-10-19",
-          "value": 102.14
-        },
-        {
-          "date": "2026-10-20",
-          "value": 100.93
-        },
-        {
-          "date": "2026-10-21",
-          "value": 100.88
-        },
-        {
-          "date": "2026-10-22",
-          "value": 100.05
-        },
-        {
-          "date": "2026-10-23",
-          "value": 100
-        },
-        {
-          "date": "2026-10-26",
-          "value": 99.9
-        },
-        {
-          "date": "2026-10-27",
-          "value": 99.81
-        },
-        {
-          "date": "2026-10-28",
-          "value": 99.9
-        },
-        {
-          "date": "2026-10-29",
-          "value": 96.88
-        },
-        {
-          "date": "2026-10-30",
-          "value": 79.43
-        },
-        {
-          "date": "2026-11-02",
-          "value": 90.55
-        },
-        {
-          "date": "2026-11-03",
-          "value": 104.19
-        },
-        {
-          "date": "2026-11-04",
-          "value": 109.75
+          "date": "2026-11-06",
+          "value": 86.01
         }
       ],
       "technical": [
         {
-          "date": "2026-02-25",
-          "close": 10.15,
-          "ema50": 10.238,
+          "date": "2026-11-05",
+          "close": 11.51,
+          "ema50": null,
           "rsi14": null,
-          "macd": -0.0249,
-          "macdSignal": -0.0147,
-          "macdHist": -0.0102
+          "macd": null,
+          "macdSignal": null,
+          "macdHist": null
         },
         {
-          "date": "2026-02-26",
-          "close": 10.1885,
-          "ema50": 10.2361,
+          "date": "2026-11-06",
+          "close": 9.9,
+          "ema50": null,
           "rsi14": null,
-          "macd": -0.0238,
-          "macdSignal": -0.0165,
-          "macdHist": -0.0073
-        },
-        {
-          "date": "2026-02-27",
-          "close": 10.16,
-          "ema50": 10.2331,
-          "rsi14": null,
-          "macd": -0.0249,
-          "macdSignal": -0.0182,
-          "macdHist": -0.0067
-        },
-        {
-          "date": "2026-03-02",
-          "close": 10.17,
-          "ema50": 10.2306,
-          "rsi14": 37.39,
-          "macd": -0.0247,
-          "macdSignal": -0.0195,
-          "macdHist": -0.0052
-        },
-        {
-          "date": "2026-03-04",
-          "close": 10.11,
-          "ema50": 10.2259,
-          "rsi14": 33.63,
-          "macd": -0.0291,
-          "macdSignal": -0.0214,
-          "macdHist": -0.0077
-        },
-        {
-          "date": "2026-03-05",
-          "close": 10.16,
-          "ema50": 10.2233,
-          "rsi14": 41.52,
-          "macd": -0.0282,
-          "macdSignal": -0.0228,
-          "macdHist": -0.0054
-        },
-        {
-          "date": "2026-03-06",
-          "close": 10.16,
-          "ema50": 10.2208,
-          "rsi14": 40.85,
-          "macd": -0.0272,
-          "macdSignal": -0.0237,
-          "macdHist": -0.0035
-        },
-        {
-          "date": "2026-03-11",
-          "close": 10.15,
-          "ema50": 10.2181,
-          "rsi14": 44.96,
-          "macd": -0.0269,
-          "macdSignal": -0.0243,
-          "macdHist": -0.0026
-        },
-        {
-          "date": "2026-03-12",
-          "close": 10.14,
-          "ema50": 10.215,
-          "rsi14": 32.2,
-          "macd": -0.0271,
-          "macdSignal": -0.0249,
-          "macdHist": -0.0022
-        },
-        {
-          "date": "2026-03-13",
-          "close": 10.145,
-          "ema50": 10.2123,
-          "rsi14": 40.25,
-          "macd": -0.0265,
-          "macdSignal": -0.0252,
-          "macdHist": -0.0013
-        },
-        {
-          "date": "2026-03-16",
-          "close": 10.17,
-          "ema50": 10.2106,
-          "rsi14": 45.11,
-          "macd": -0.0238,
-          "macdSignal": -0.0249,
-          "macdHist": 0.0011
-        },
-        {
-          "date": "2026-03-17",
-          "close": 10.0946,
-          "ema50": 10.2061,
-          "rsi14": 37.19,
-          "macd": -0.0275,
-          "macdSignal": -0.0254,
-          "macdHist": -0.0021
-        },
-        {
-          "date": "2026-03-18",
-          "close": 10.115,
-          "ema50": 10.2025,
-          "rsi14": 41.51,
-          "macd": -0.0284,
-          "macdSignal": -0.026,
-          "macdHist": -0.0024
-        },
-        {
-          "date": "2026-03-19",
-          "close": 10.17,
-          "ema50": 10.2012,
-          "rsi14": 53.77,
-          "macd": -0.0244,
-          "macdSignal": -0.0257,
-          "macdHist": 0.0013
-        },
-        {
-          "date": "2026-03-20",
-          "close": 10.1574,
-          "ema50": 10.1995,
-          "rsi14": 50.92,
-          "macd": -0.0219,
-          "macdSignal": -0.0249,
-          "macdHist": 0.003
-        },
-        {
-          "date": "2026-03-24",
-          "close": 10.17,
-          "ema50": 10.1983,
-          "rsi14": 47.53,
-          "macd": -0.0188,
-          "macdSignal": -0.0237,
-          "macdHist": 0.0049
-        },
-        {
-          "date": "2026-03-25",
-          "close": 10.17,
-          "ema50": 10.1972,
-          "rsi14": 51.45,
-          "macd": -0.0161,
-          "macdSignal": -0.0222,
-          "macdHist": 0.0061
-        },
-        {
-          "date": "2026-03-27",
-          "close": 10.14,
-          "ema50": 10.195,
-          "rsi14": 45.9,
-          "macd": -0.0162,
-          "macdSignal": -0.021,
-          "macdHist": 0.0048
-        },
-        {
-          "date": "2026-03-30",
-          "close": 10.11,
-          "ema50": 10.1916,
-          "rsi14": 50,
-          "macd": -0.0186,
-          "macdSignal": -0.0205,
-          "macdHist": 0.0019
-        },
-        {
-          "date": "2026-03-31",
-          "close": 10.16,
-          "ema50": 10.1904,
-          "rsi14": 50,
-          "macd": -0.0161,
-          "macdSignal": -0.0196,
-          "macdHist": 0.0035
-        },
-        {
-          "date": "2026-04-01",
-          "close": 10.15,
-          "ema50": 10.1888,
-          "rsi14": 48.55,
-          "macd": -0.0149,
-          "macdSignal": -0.0187,
-          "macdHist": 0.0038
-        },
-        {
-          "date": "2026-04-02",
-          "close": 10.2,
-          "ema50": 10.1893,
-          "rsi14": 56.48,
-          "macd": -0.0098,
-          "macdSignal": -0.0169,
-          "macdHist": 0.0071
-        },
-        {
-          "date": "2026-04-06",
-          "close": 10.2,
-          "ema50": 10.1897,
-          "rsi14": 57.98,
-          "macd": -0.0055,
-          "macdSignal": -0.0146,
-          "macdHist": 0.0091
-        },
-        {
-          "date": "2026-04-07",
-          "close": 10.2,
-          "ema50": 10.1901,
-          "rsi14": 57.41,
-          "macd": -0.0023,
-          "macdSignal": -0.0122,
-          "macdHist": 0.0099
-        },
-        {
-          "date": "2026-04-08",
-          "close": 10.18,
-          "ema50": 10.1897,
-          "rsi14": 51.37,
-          "macd": -0.0012,
-          "macdSignal": -0.01,
-          "macdHist": 0.0088
-        },
-        {
-          "date": "2026-04-09",
-          "close": 10.1999,
-          "ema50": 10.1901,
-          "rsi14": 66.96,
-          "macd": 0.0012,
-          "macdSignal": -0.0077,
-          "macdHist": 0.0089
-        },
-        {
-          "date": "2026-04-10",
-          "close": 10.2,
-          "ema50": 10.1905,
-          "rsi14": 64.65,
-          "macd": 0.0031,
-          "macdSignal": -0.0056,
-          "macdHist": 0.0087
-        },
-        {
-          "date": "2026-04-13",
-          "close": 10.18,
-          "ema50": 10.1901,
-          "rsi14": 51.96,
-          "macd": 0.0029,
-          "macdSignal": -0.0039,
-          "macdHist": 0.0068
-        },
-        {
-          "date": "2026-04-14",
-          "close": 10.19,
-          "ema50": 10.1901,
-          "rsi14": 56.45,
-          "macd": 0.0035,
-          "macdSignal": -0.0024,
-          "macdHist": 0.0059
-        },
-        {
-          "date": "2026-04-15",
-          "close": 10.19,
-          "ema50": 10.1901,
-          "rsi14": 54.17,
-          "macd": 0.004,
-          "macdSignal": -0.0011,
-          "macdHist": 0.0051
-        },
-        {
-          "date": "2026-04-16",
-          "close": 10.185,
-          "ema50": 10.1899,
-          "rsi14": 53.06,
-          "macd": 0.0039,
-          "macdSignal": -0.0001,
-          "macdHist": 0.004
-        },
-        {
-          "date": "2026-04-17",
-          "close": 10.19,
-          "ema50": 10.1899,
-          "rsi14": 61.36,
-          "macd": 0.0042,
-          "macdSignal": 0.0007,
-          "macdHist": 0.0035
-        },
-        {
-          "date": "2026-04-20",
-          "close": 10.1853,
-          "ema50": 10.1897,
-          "rsi14": 69.34,
-          "macd": 0.004,
-          "macdSignal": 0.0014,
-          "macdHist": 0.0026
-        },
-        {
-          "date": "2026-04-21",
-          "close": 10.29,
-          "ema50": 10.1936,
-          "rsi14": 76.06,
-          "macd": 0.0122,
-          "macdSignal": 0.0036,
-          "macdHist": 0.0086
-        },
-        {
-          "date": "2026-04-22",
-          "close": 10.2,
-          "ema50": 10.1939,
-          "rsi14": 57.59,
-          "macd": 0.0112,
-          "macdSignal": 0.0051,
-          "macdHist": 0.0061
-        },
-        {
-          "date": "2026-04-23",
-          "close": 10.25,
-          "ema50": 10.1961,
-          "rsi14": 57.59,
-          "macd": 0.0144,
-          "macdSignal": 0.0069,
-          "macdHist": 0.0075
-        },
-        {
-          "date": "2026-04-24",
-          "close": 10.25,
-          "ema50": 10.1982,
-          "rsi14": 57.59,
-          "macd": 0.0166,
-          "macdSignal": 0.0089,
-          "macdHist": 0.0077
-        },
-        {
-          "date": "2026-04-27",
-          "close": 10.24,
-          "ema50": 10.1998,
-          "rsi14": 55.89,
-          "macd": 0.0175,
-          "macdSignal": 0.0106,
-          "macdHist": 0.0069
-        },
-        {
-          "date": "2026-04-28",
-          "close": 10.24,
-          "ema50": 10.2014,
-          "rsi14": 59.39,
-          "macd": 0.0179,
-          "macdSignal": 0.0121,
-          "macdHist": 0.0058
-        },
-        {
-          "date": "2026-04-29",
-          "close": 10.22,
-          "ema50": 10.2021,
-          "rsi14": 53.15,
-          "macd": 0.0164,
-          "macdSignal": 0.0129,
-          "macdHist": 0.0035
-        },
-        {
-          "date": "2026-05-06",
-          "close": 10.22,
-          "ema50": 10.2028,
-          "rsi14": 53.13,
-          "macd": 0.0151,
-          "macdSignal": 0.0134,
-          "macdHist": 0.0017
-        },
-        {
-          "date": "2026-05-07",
-          "close": 10.21,
-          "ema50": 10.2031,
-          "rsi14": 54.85,
-          "macd": 0.0131,
-          "macdSignal": 0.0133,
-          "macdHist": -0.0002
-        },
-        {
-          "date": "2026-05-08",
-          "close": 10.2,
-          "ema50": 10.203,
-          "rsi14": 51.62,
-          "macd": 0.0106,
-          "macdSignal": 0.0128,
-          "macdHist": -0.0022
-        },
-        {
-          "date": "2026-05-11",
-          "close": 10.24,
-          "ema50": 10.2044,
-          "rsi14": 57.16,
-          "macd": 0.0116,
-          "macdSignal": 0.0125,
-          "macdHist": -0.0009
-        },
-        {
-          "date": "2026-05-13",
-          "close": 10.24,
-          "ema50": 10.2058,
-          "rsi14": 57.98,
-          "macd": 0.0124,
-          "macdSignal": 0.0125,
-          "macdHist": -0.0001
-        },
-        {
-          "date": "2026-05-14",
-          "close": 10.24,
-          "ema50": 10.2072,
-          "rsi14": 57.37,
-          "macd": 0.0128,
-          "macdSignal": 0.0126,
-          "macdHist": 0.0002
-        },
-        {
-          "date": "2026-05-15",
-          "close": 10.28,
-          "ema50": 10.21,
-          "rsi14": 62.64,
-          "macd": 0.0162,
-          "macdSignal": 0.0133,
-          "macdHist": 0.0029
-        },
-        {
-          "date": "2026-05-19",
-          "close": 10.25,
-          "ema50": 10.2116,
-          "rsi14": 43.33,
-          "macd": 0.0162,
-          "macdSignal": 0.0139,
-          "macdHist": 0.0023
-        },
-        {
-          "date": "2026-05-20",
-          "close": 10.27,
-          "ema50": 10.2139,
-          "rsi14": 65.22,
-          "macd": 0.0177,
-          "macdSignal": 0.0146,
-          "macdHist": 0.0031
-        },
-        {
-          "date": "2026-05-21",
-          "close": 10.2766,
-          "ema50": 10.2164,
-          "rsi14": 57.13,
-          "macd": 0.0192,
-          "macdSignal": 0.0156,
-          "macdHist": 0.0036
-        },
-        {
-          "date": "2026-05-22",
-          "close": 10.25,
-          "ema50": 10.2177,
-          "rsi14": 50,
-          "macd": 0.018,
-          "macdSignal": 0.016,
-          "macdHist": 0.002
-        },
-        {
-          "date": "2026-05-26",
-          "close": 10.25,
-          "ema50": 10.2189,
-          "rsi14": 52.46,
-          "macd": 0.0169,
-          "macdSignal": 0.0162,
-          "macdHist": 0.0007
-        },
-        {
-          "date": "2026-05-27",
-          "close": 10.2,
-          "ema50": 10.2182,
-          "rsi14": 42.1,
-          "macd": 0.0118,
-          "macdSignal": 0.0153,
-          "macdHist": -0.0035
-        },
-        {
-          "date": "2026-05-28",
-          "close": 10.22,
-          "ema50": 10.2183,
-          "rsi14": 50,
-          "macd": 0.0093,
-          "macdSignal": 0.0141,
-          "macdHist": -0.0048
-        },
-        {
-          "date": "2026-05-29",
-          "close": 10.22,
-          "ema50": 10.2183,
-          "rsi14": 50,
-          "macd": 0.0072,
-          "macdSignal": 0.0127,
-          "macdHist": -0.0055
-        },
-        {
-          "date": "2026-06-01",
-          "close": 10.23,
-          "ema50": 10.2188,
-          "rsi14": 53.95,
-          "macd": 0.0063,
-          "macdSignal": 0.0115,
-          "macdHist": -0.0052
-        },
-        {
-          "date": "2026-06-02",
-          "close": 10.22,
-          "ema50": 10.2188,
-          "rsi14": 53.95,
-          "macd": 0.0047,
-          "macdSignal": 0.0101,
-          "macdHist": -0.0054
-        },
-        {
-          "date": "2026-06-05",
-          "close": 10.29,
-          "ema50": 10.2216,
-          "rsi14": 58.83,
-          "macd": 0.009,
-          "macdSignal": 0.0099,
-          "macdHist": -0.0009
-        },
-        {
-          "date": "2026-06-08",
-          "close": 10.2899,
-          "ema50": 10.2243,
-          "rsi14": 58.81,
-          "macd": 0.0122,
-          "macdSignal": 0.0103,
-          "macdHist": 0.0019
-        },
-        {
-          "date": "2026-06-12",
-          "close": 10.22,
-          "ema50": 10.2241,
-          "rsi14": 47.17,
-          "macd": 0.0091,
-          "macdSignal": 0.0101,
-          "macdHist": -0.001
-        },
-        {
-          "date": "2026-06-15",
-          "close": 10.24,
-          "ema50": 10.2248,
-          "rsi14": 44,
-          "macd": 0.0081,
-          "macdSignal": 0.0097,
-          "macdHist": -0.0016
-        },
-        {
-          "date": "2026-06-16",
-          "close": 10.2482,
-          "ema50": 10.2257,
-          "rsi14": 49.71,
-          "macd": 0.0079,
-          "macdSignal": 0.0093,
-          "macdHist": -0.0014
-        },
-        {
-          "date": "2026-06-17",
-          "close": 10.325,
-          "ema50": 10.2296,
-          "rsi14": 57.47,
-          "macd": 0.0138,
-          "macdSignal": 0.0102,
-          "macdHist": 0.0036
-        },
-        {
-          "date": "2026-06-18",
-          "close": 10.305,
-          "ema50": 10.2325,
-          "rsi14": 53.72,
-          "macd": 0.0166,
-          "macdSignal": 0.0115,
-          "macdHist": 0.0051
-        },
-        {
-          "date": "2026-06-22",
-          "close": 10.37,
-          "ema50": 10.2379,
-          "rsi14": 64.29,
-          "macd": 0.0238,
-          "macdSignal": 0.014,
-          "macdHist": 0.0098
-        },
-        {
-          "date": "2026-06-23",
-          "close": 10.4199,
-          "ema50": 10.2451,
-          "rsi14": 68.08,
-          "macd": 0.0332,
-          "macdSignal": 0.0178,
-          "macdHist": 0.0154
-        },
-        {
-          "date": "2026-06-24",
-          "close": 11.99,
-          "ema50": 10.3135,
-          "rsi14": 94.97,
-          "macd": 0.1654,
-          "macdSignal": 0.0473,
-          "macdHist": 0.1181
-        },
-        {
-          "date": "2026-06-25",
-          "close": 12.44,
-          "ema50": 10.3969,
-          "rsi14": 95.87,
-          "macd": 0.303,
-          "macdSignal": 0.0985,
-          "macdHist": 0.2045
-        },
-        {
-          "date": "2026-06-26",
-          "close": 13.86,
-          "ema50": 10.5327,
-          "rsi14": 97.4,
-          "macd": 0.5206,
-          "macdSignal": 0.1829,
-          "macdHist": 0.3377
-        },
-        {
-          "date": "2026-06-29",
-          "close": 16.4,
-          "ema50": 10.7628,
-          "rsi14": 98.43,
-          "macd": 0.8878,
-          "macdSignal": 0.3239,
-          "macdHist": 0.5639
-        },
-        {
-          "date": "2026-06-30",
-          "close": 17.45,
-          "ema50": 11.025,
-          "rsi14": 98.79,
-          "macd": 1.2491,
-          "macdSignal": 0.5089,
-          "macdHist": 0.7402
-        },
-        {
-          "date": "2026-07-01",
-          "close": 17.06,
-          "ema50": 11.2617,
-          "rsi14": 93.79,
-          "macd": 1.4869,
-          "macdSignal": 0.7045,
-          "macdHist": 0.7824
-        },
-        {
-          "date": "2026-07-02",
-          "close": 19.1,
-          "ema50": 11.5691,
-          "rsi14": 95.09,
-          "macd": 1.819,
-          "macdSignal": 0.9274,
-          "macdHist": 0.8916
-        },
-        {
-          "date": "2026-07-06",
-          "close": 17.22,
-          "ema50": 11.7907,
-          "rsi14": 80.22,
-          "macd": 1.9084,
-          "macdSignal": 1.1236,
-          "macdHist": 0.7848
-        },
-        {
-          "date": "2026-07-07",
-          "close": 15.86,
-          "ema50": 11.9503,
-          "rsi14": 71.75,
-          "macd": 1.8483,
-          "macdSignal": 1.2685,
-          "macdHist": 0.5798
-        },
-        {
-          "date": "2026-07-08",
-          "close": 15.26,
-          "ema50": 12.0801,
-          "rsi14": 68.55,
-          "macd": 1.7323,
-          "macdSignal": 1.3613,
-          "macdHist": 0.371
-        },
-        {
-          "date": "2026-07-09",
-          "close": 16.23,
-          "ema50": 12.2428,
-          "rsi14": 70.5,
-          "macd": 1.6989,
-          "macdSignal": 1.4288,
-          "macdHist": 0.2701
-        },
-        {
-          "date": "2026-07-10",
-          "close": 15.55,
-          "ema50": 12.3725,
-          "rsi14": 67.41,
-          "macd": 1.5993,
-          "macdSignal": 1.4629,
-          "macdHist": 0.1364
-        },
-        {
-          "date": "2026-07-13",
-          "close": 14.34,
-          "ema50": 12.4496,
-          "rsi14": 62.25,
-          "macd": 1.4064,
-          "macdSignal": 1.4516,
-          "macdHist": -0.0452
-        },
-        {
-          "date": "2026-07-14",
-          "close": 15.97,
-          "ema50": 12.5877,
-          "rsi14": 65.6,
-          "macd": 1.3693,
-          "macdSignal": 1.4351,
-          "macdHist": -0.0658
-        },
-        {
-          "date": "2026-07-15",
-          "close": 15.74,
-          "ema50": 12.7113,
-          "rsi14": 61.4,
-          "macd": 1.3063,
-          "macdSignal": 1.4094,
-          "macdHist": -0.1031
-        },
-        {
-          "date": "2026-07-16",
-          "close": 14.61,
-          "ema50": 12.7858,
-          "rsi14": 56.33,
-          "macd": 1.1519,
-          "macdSignal": 1.3579,
-          "macdHist": -0.206
-        },
-        {
-          "date": "2026-07-17",
-          "close": 14.47,
-          "ema50": 12.8518,
-          "rsi14": 51.92,
-          "macd": 1.0067,
-          "macdSignal": 1.2876,
-          "macdHist": -0.2809
-        },
-        {
-          "date": "2026-07-20",
-          "close": 14.39,
-          "ema50": 12.9121,
-          "rsi14": 42.49,
-          "macd": 0.8749,
-          "macdSignal": 1.2051,
-          "macdHist": -0.3302
-        },
-        {
-          "date": "2026-07-21",
-          "close": 14.83,
-          "ema50": 12.9874,
-          "rsi14": 39.75,
-          "macd": 0.797,
-          "macdSignal": 1.1235,
-          "macdHist": -0.3265
-        },
-        {
-          "date": "2026-07-22",
-          "close": 14.65,
-          "ema50": 13.0526,
-          "rsi14": 40.41,
-          "macd": 0.7124,
-          "macdSignal": 1.0413,
-          "macdHist": -0.3289
-        },
-        {
-          "date": "2026-07-23",
-          "close": 14.4,
-          "ema50": 13.1054,
-          "rsi14": 28.2,
-          "macd": 0.6181,
-          "macdSignal": 0.9566,
-          "macdHist": -0.3385
-        },
-        {
-          "date": "2026-07-24",
-          "close": 13.68,
-          "ema50": 13.1279,
-          "rsi14": 31.6,
-          "macd": 0.4797,
-          "macdSignal": 0.8612,
-          "macdHist": -0.3815
-        },
-        {
-          "date": "2026-07-27",
-          "close": 13.72,
-          "ema50": 13.1512,
-          "rsi14": 37.11,
-          "macd": 0.369,
-          "macdSignal": 0.7628,
-          "macdHist": -0.3938
-        },
-        {
-          "date": "2026-07-28",
-          "close": 14.52,
-          "ema50": 13.2048,
-          "rsi14": 45.65,
-          "macd": 0.3419,
-          "macdSignal": 0.6786,
-          "macdHist": -0.3367
-        },
-        {
-          "date": "2026-07-29",
-          "close": 13.52,
-          "ema50": 13.2172,
-          "rsi14": 34.11,
-          "macd": 0.237,
-          "macdSignal": 0.5903,
-          "macdHist": -0.3533
-        },
-        {
-          "date": "2026-07-30",
-          "close": 14,
-          "ema50": 13.2479,
-          "rsi14": 40.7,
-          "macd": 0.1903,
-          "macdSignal": 0.5103,
-          "macdHist": -0.32
-        },
-        {
-          "date": "2026-07-31",
-          "close": 13.86,
-          "ema50": 13.2719,
-          "rsi14": 46.69,
-          "macd": 0.1405,
-          "macdSignal": 0.4363,
-          "macdHist": -0.2958
-        },
-        {
-          "date": "2026-08-03",
-          "close": 15.47,
-          "ema50": 13.3581,
-          "rsi14": 46.55,
-          "macd": 0.2283,
-          "macdSignal": 0.3947,
-          "macdHist": -0.1664
-        },
-        {
-          "date": "2026-08-04",
-          "close": 15.4,
-          "ema50": 13.4382,
-          "rsi14": 47.6,
-          "macd": 0.2889,
-          "macdSignal": 0.3736,
-          "macdHist": -0.0847
-        },
-        {
-          "date": "2026-08-05",
-          "close": 15.93,
-          "ema50": 13.5359,
-          "rsi14": 60.19,
-          "macd": 0.3753,
-          "macdSignal": 0.3739,
-          "macdHist": 0.0014
-        },
-        {
-          "date": "2026-08-06",
-          "close": 16.4,
-          "ema50": 13.6482,
-          "rsi14": 64.17,
-          "macd": 0.4763,
-          "macdSignal": 0.3944,
-          "macdHist": 0.0819
-        },
-        {
-          "date": "2026-08-07",
-          "close": 16.615,
-          "ema50": 13.7646,
-          "rsi14": 66.02,
-          "macd": 0.5671,
-          "macdSignal": 0.4289,
-          "macdHist": 0.1382
-        },
-        {
-          "date": "2026-08-10",
-          "close": 16.1,
-          "ema50": 13.8561,
-          "rsi14": 59.05,
-          "macd": 0.5907,
-          "macdSignal": 0.4613,
-          "macdHist": 0.1294
-        },
-        {
-          "date": "2026-08-11",
-          "close": 16.37,
-          "ema50": 13.9547,
-          "rsi14": 62.1,
-          "macd": 0.624,
-          "macdSignal": 0.4938,
-          "macdHist": 0.1302
-        },
-        {
-          "date": "2026-08-12",
-          "close": 16.19,
-          "ema50": 14.0424,
-          "rsi14": 62.71,
-          "macd": 0.6286,
-          "macdSignal": 0.5208,
-          "macdHist": 0.1078
-        },
-        {
-          "date": "2026-08-13",
-          "close": 16.19,
-          "ema50": 14.1266,
-          "rsi14": 69.86,
-          "macd": 0.6251,
-          "macdSignal": 0.5416,
-          "macdHist": 0.0835
-        },
-        {
-          "date": "2026-08-14",
-          "close": 17.07,
-          "ema50": 14.242,
-          "rsi14": 73.39,
-          "macd": 0.6854,
-          "macdSignal": 0.5704,
-          "macdHist": 0.115
-        },
-        {
-          "date": "2026-08-17",
-          "close": 17.2,
-          "ema50": 14.358,
-          "rsi14": 70.65,
-          "macd": 0.7352,
-          "macdSignal": 0.6034,
-          "macdHist": 0.1318
-        },
-        {
-          "date": "2026-08-18",
-          "close": 15.65,
-          "ema50": 14.4087,
-          "rsi14": 65.13,
-          "macd": 0.6422,
-          "macdSignal": 0.6111,
-          "macdHist": 0.0311
-        },
-        {
-          "date": "2026-08-19",
-          "close": 14.6,
-          "ema50": 14.4162,
-          "rsi14": 53.94,
-          "macd": 0.4782,
-          "macdSignal": 0.5845,
-          "macdHist": -0.1063
-        },
-        {
-          "date": "2026-08-20",
-          "close": 14.07,
-          "ema50": 14.4026,
-          "rsi14": 51.31,
-          "macd": 0.3021,
-          "macdSignal": 0.5281,
-          "macdHist": -0.226
-        },
-        {
-          "date": "2026-08-21",
-          "close": 14.57,
-          "ema50": 14.4092,
-          "rsi14": 43.47,
-          "macd": 0.2004,
-          "macdSignal": 0.4625,
-          "macdHist": -0.2621
-        },
-        {
-          "date": "2026-08-24",
-          "close": 14.09,
-          "ema50": 14.3967,
-          "rsi14": 41.03,
-          "macd": 0.0803,
-          "macdSignal": 0.3861,
-          "macdHist": -0.3058
-        },
-        {
-          "date": "2026-08-25",
-          "close": 14.45,
-          "ema50": 14.3988,
-          "rsi14": 39.62,
-          "macd": 0.0139,
-          "macdSignal": 0.3116,
-          "macdHist": -0.2977
-        },
-        {
-          "date": "2026-08-26",
-          "close": 14.82,
-          "ema50": 14.4153,
-          "rsi14": 38.76,
-          "macd": -0.0087,
-          "macdSignal": 0.2476,
-          "macdHist": -0.2563
-        },
-        {
-          "date": "2026-08-27",
-          "close": 14.41,
-          "ema50": 14.4151,
-          "rsi14": 34.74,
-          "macd": -0.059,
-          "macdSignal": 0.1863,
-          "macdHist": -0.2453
-        },
-        {
-          "date": "2026-08-28",
-          "close": 13.97,
-          "ema50": 14.3976,
-          "rsi14": 35.1,
-          "macd": -0.1329,
-          "macdSignal": 0.1224,
-          "macdHist": -0.2553
-        },
-        {
-          "date": "2026-08-31",
-          "close": 13.375,
-          "ema50": 14.3575,
-          "rsi14": 29.97,
-          "macd": -0.2367,
-          "macdSignal": 0.0506,
-          "macdHist": -0.2873
-        },
-        {
-          "date": "2026-09-01",
-          "close": 13.05,
-          "ema50": 14.3062,
-          "rsi14": 29.4,
-          "macd": -0.3413,
-          "macdSignal": -0.0278,
-          "macdHist": -0.3135
-        },
-        {
-          "date": "2026-09-02",
-          "close": 13.26,
-          "ema50": 14.2652,
-          "rsi14": 31.29,
-          "macd": -0.4025,
-          "macdSignal": -0.1027,
-          "macdHist": -0.2998
-        },
-        {
-          "date": "2026-09-03",
-          "close": 13.82,
-          "ema50": 14.2477,
-          "rsi14": 28.36,
-          "macd": -0.4013,
-          "macdSignal": -0.1624,
-          "macdHist": -0.2389
-        },
-        {
-          "date": "2026-09-04",
-          "close": 13.4,
-          "ema50": 14.2145,
-          "rsi14": 25.64,
-          "macd": -0.4293,
-          "macdSignal": -0.2158,
-          "macdHist": -0.2135
-        },
-        {
-          "date": "2026-09-08",
-          "close": 13.6,
-          "ema50": 14.1904,
-          "rsi14": 34.11,
-          "macd": -0.4303,
-          "macdSignal": -0.2587,
-          "macdHist": -0.1716
-        },
-        {
-          "date": "2026-09-09",
-          "close": 13.2,
-          "ema50": 14.1516,
-          "rsi14": 37.93,
-          "macd": -0.4582,
-          "macdSignal": -0.2986,
-          "macdHist": -0.1596
-        },
-        {
-          "date": "2026-09-10",
-          "close": 12.81,
-          "ema50": 14.099,
-          "rsi14": 38.87,
-          "macd": -0.5058,
-          "macdSignal": -0.34,
-          "macdHist": -0.1658
-        },
-        {
-          "date": "2026-09-11",
-          "close": 12.32,
-          "ema50": 14.0292,
-          "rsi14": 30.09,
-          "macd": -0.5765,
-          "macdSignal": -0.3873,
-          "macdHist": -0.1892
-        },
-        {
-          "date": "2026-09-14",
-          "close": 12,
-          "ema50": 13.9496,
-          "rsi14": 30.97,
-          "macd": -0.6508,
-          "macdSignal": -0.44,
-          "macdHist": -0.2108
-        },
-        {
-          "date": "2026-09-15",
-          "close": 12.05,
-          "ema50": 13.8751,
-          "rsi14": 26.83,
-          "macd": -0.6978,
-          "macdSignal": -0.4916,
-          "macdHist": -0.2062
-        },
-        {
-          "date": "2026-09-16",
-          "close": 12.09,
-          "ema50": 13.8051,
-          "rsi14": 21.86,
-          "macd": -0.7232,
-          "macdSignal": -0.5379,
-          "macdHist": -0.1853
-        },
-        {
-          "date": "2026-09-17",
-          "close": 12.075,
-          "ema50": 13.7373,
-          "rsi14": 23.79,
-          "macd": -0.7363,
-          "macdSignal": -0.5776,
-          "macdHist": -0.1587
-        },
-        {
-          "date": "2026-09-18",
-          "close": 12.9,
-          "ema50": 13.7044,
-          "rsi14": 38.95,
-          "macd": -0.6723,
-          "macdSignal": -0.5965,
-          "macdHist": -0.0758
-        },
-        {
-          "date": "2026-09-21",
-          "close": 13.58,
-          "ema50": 13.6996,
-          "rsi14": 52.08,
-          "macd": -0.5601,
-          "macdSignal": -0.5892,
-          "macdHist": 0.0291
-        },
-        {
-          "date": "2026-09-22",
-          "close": 13.14,
-          "ema50": 13.6776,
-          "rsi14": 50.89,
-          "macd": -0.501,
-          "macdSignal": -0.5716,
-          "macdHist": 0.0706
-        },
-        {
-          "date": "2026-09-23",
-          "close": 12.72,
-          "ema50": 13.6401,
-          "rsi14": 44.86,
-          "macd": -0.4826,
-          "macdSignal": -0.5538,
-          "macdHist": 0.0712
-        },
-        {
-          "date": "2026-09-24",
-          "close": 12.23,
-          "ema50": 13.5848,
-          "rsi14": 34.65,
-          "macd": -0.5016,
-          "macdSignal": -0.5434,
-          "macdHist": 0.0418
-        },
-        {
-          "date": "2026-09-25",
-          "close": 12.43,
-          "ema50": 13.5395,
-          "rsi14": 40.22,
-          "macd": -0.495,
-          "macdSignal": -0.5337,
-          "macdHist": 0.0387
-        },
-        {
-          "date": "2026-09-28",
-          "close": 12.05,
-          "ema50": 13.4811,
-          "rsi14": 34.92,
-          "macd": -0.5143,
-          "macdSignal": -0.5298,
-          "macdHist": 0.0155
-        },
-        {
-          "date": "2026-09-29",
-          "close": 12.33,
-          "ema50": 13.4359,
-          "rsi14": 41.33,
-          "macd": -0.5013,
-          "macdSignal": -0.5241,
-          "macdHist": 0.0228
-        },
-        {
-          "date": "2026-09-30",
-          "close": 11.62,
-          "ema50": 13.3647,
-          "rsi14": 38.86,
-          "macd": -0.5421,
-          "macdSignal": -0.5277,
-          "macdHist": -0.0144
-        },
-        {
-          "date": "2026-10-01",
-          "close": 11.62,
-          "ema50": 13.2963,
-          "rsi14": 42.78,
-          "macd": -0.5678,
-          "macdSignal": -0.5357,
-          "macdHist": -0.0321
-        },
-        {
-          "date": "2026-10-02",
-          "close": 11.99,
-          "ema50": 13.2451,
-          "rsi14": 49.9,
-          "macd": -0.5521,
-          "macdSignal": -0.539,
-          "macdHist": -0.0131
-        },
-        {
-          "date": "2026-10-05",
-          "close": 12.07,
-          "ema50": 13.199,
-          "rsi14": 50.2,
-          "macd": -0.527,
-          "macdSignal": -0.5366,
-          "macdHist": 0.0096
-        },
-        {
-          "date": "2026-10-06",
-          "close": 11.925,
-          "ema50": 13.149,
-          "rsi14": 48.36,
-          "macd": -0.5129,
-          "macdSignal": -0.5319,
-          "macdHist": 0.019
-        },
-        {
-          "date": "2026-10-07",
-          "close": 11.24,
-          "ema50": 13.0742,
-          "rsi14": 42.68,
-          "macd": -0.5507,
-          "macdSignal": -0.5356,
-          "macdHist": -0.0151
-        },
-        {
-          "date": "2026-10-08",
-          "close": 11.04,
-          "ema50": 12.9944,
-          "rsi14": 31.69,
-          "macd": -0.59,
-          "macdSignal": -0.5465,
-          "macdHist": -0.0435
-        },
-        {
-          "date": "2026-10-09",
-          "close": 10.93,
-          "ema50": 12.9134,
-          "rsi14": 20.62,
-          "macd": -0.6227,
-          "macdSignal": -0.5617,
-          "macdHist": -0.061
-        },
-        {
-          "date": "2026-10-12",
-          "close": 10.78,
-          "ema50": 12.8298,
-          "rsi14": 22.04,
-          "macd": -0.6534,
-          "macdSignal": -0.5801,
-          "macdHist": -0.0733
-        },
-        {
-          "date": "2026-10-13",
-          "close": 11.16,
-          "ema50": 12.7643,
-          "rsi14": 31.34,
-          "macd": -0.6395,
-          "macdSignal": -0.592,
-          "macdHist": -0.0475
-        },
-        {
-          "date": "2026-10-14",
-          "close": 10.83,
-          "ema50": 12.6884,
-          "rsi14": 32.59,
-          "macd": -0.6477,
-          "macdSignal": -0.6031,
-          "macdHist": -0.0446
-        },
-        {
-          "date": "2026-10-15",
-          "close": 11.35,
-          "ema50": 12.6359,
-          "rsi14": 37.56,
-          "macd": -0.6054,
-          "macdSignal": -0.6036,
-          "macdHist": -0.0018
-        },
-        {
-          "date": "2026-10-16",
-          "close": 10.66,
-          "ema50": 12.5585,
-          "rsi14": 35.05,
-          "macd": -0.6203,
-          "macdSignal": -0.6069,
-          "macdHist": -0.0134
-        },
-        {
-          "date": "2026-10-19",
-          "close": 10.48,
-          "ema50": 12.477,
-          "rsi14": 29.67,
-          "macd": -0.6392,
-          "macdSignal": -0.6134,
-          "macdHist": -0.0258
-        },
-        {
-          "date": "2026-10-20",
-          "close": 10.355,
-          "ema50": 12.3937,
-          "rsi14": 34.05,
-          "macd": -0.6568,
-          "macdSignal": -0.6221,
-          "macdHist": -0.0347
-        },
-        {
-          "date": "2026-10-21",
-          "close": 10.35,
-          "ema50": 12.3136,
-          "rsi14": 34.01,
-          "macd": -0.6635,
-          "macdSignal": -0.6303,
-          "macdHist": -0.0332
-        },
-        {
-          "date": "2026-10-22",
-          "close": 10.265,
-          "ema50": 12.2333,
-          "rsi14": 26.59,
-          "macd": -0.6679,
-          "macdSignal": -0.6379,
-          "macdHist": -0.03
-        },
-        {
-          "date": "2026-10-23",
-          "close": 10.26,
-          "ema50": 12.1559,
-          "rsi14": 24.93,
-          "macd": -0.6641,
-          "macdSignal": -0.6431,
-          "macdHist": -0.021
-        },
-        {
-          "date": "2026-10-26",
-          "close": 10.25,
-          "ema50": 12.0811,
-          "rsi14": 25.9,
-          "macd": -0.6545,
-          "macdSignal": -0.6454,
-          "macdHist": -0.0091
-        },
-        {
-          "date": "2026-10-27",
-          "close": 10.24,
-          "ema50": 12.0089,
-          "rsi14": 32.14,
-          "macd": -0.6402,
-          "macdSignal": -0.6443,
-          "macdHist": 0.0041
-        },
-        {
-          "date": "2026-10-28",
-          "close": 10.25,
-          "ema50": 11.94,
-          "rsi14": 34.87,
-          "macd": -0.6209,
-          "macdSignal": -0.6397,
-          "macdHist": 0.0188
-        },
-        {
-          "date": "2026-10-29",
-          "close": 9.94,
-          "ema50": 11.8615,
-          "rsi14": 32.38,
-          "macd": -0.6236,
-          "macdSignal": -0.6364,
-          "macdHist": 0.0128
-        },
-        {
-          "date": "2026-10-30",
-          "close": 8.15,
-          "ema50": 11.716,
-          "rsi14": 20.45,
-          "macd": -0.7612,
-          "macdSignal": -0.6614,
-          "macdHist": -0.0998
-        },
-        {
-          "date": "2026-11-02",
-          "close": 9.29,
-          "ema50": 11.6208,
-          "rsi14": 32.05,
-          "macd": -0.7695,
-          "macdSignal": -0.683,
-          "macdHist": -0.0865
-        },
-        {
-          "date": "2026-11-03",
-          "close": 10.69,
-          "ema50": 11.5843,
-          "rsi14": 48.89,
-          "macd": -0.6555,
-          "macdSignal": -0.6775,
-          "macdHist": 0.022
-        },
-        {
-          "date": "2026-11-04",
-          "close": 11.26,
-          "ema50": 11.5716,
-          "rsi14": 49.29,
-          "macd": -0.5133,
-          "macdSignal": -0.6447,
-          "macdHist": 0.1314
+          "macd": null,
+          "macdSignal": null,
+          "macdHist": null
         }
       ],
       "rawPoints": [
         {
-          "date": "2026-09-10",
-          "open": 13,
-          "close": 12.81,
-          "high": 13.12,
-          "low": 12.8,
-          "volume": 1359229.707905,
-          "vwap": 12.9442
-        },
-        {
-          "date": "2026-09-11",
-          "open": 12.95,
-          "close": 12.32,
-          "high": 12.997,
-          "low": 12.24,
-          "volume": 2475425.303146,
-          "vwap": 12.5409
-        },
-        {
-          "date": "2026-09-14",
-          "open": 12.13,
-          "close": 12,
-          "high": 12.28,
-          "low": 11.8,
-          "volume": 3531048.155682,
-          "vwap": 12.1344
-        },
-        {
-          "date": "2026-09-15",
-          "open": 12.03,
-          "close": 12.05,
-          "high": 12.5,
-          "low": 11.77,
-          "volume": 4568456.834699,
-          "vwap": 12.1426
-        },
-        {
-          "date": "2026-09-16",
-          "open": 12.25,
-          "close": 12.09,
-          "high": 12.59,
-          "low": 11.76,
-          "volume": 2459864.642984,
-          "vwap": 12.1844
-        },
-        {
-          "date": "2026-09-17",
-          "open": 12.59,
-          "close": 12.075,
-          "high": 12.69,
-          "low": 11.97,
-          "volume": 2407934.4757,
-          "vwap": 12.2614
-        },
-        {
-          "date": "2026-09-18",
-          "open": 12.13,
-          "close": 12.9,
-          "high": 13.03,
-          "low": 12.13,
-          "volume": 2994582.116815,
-          "vwap": 12.7253
-        },
-        {
-          "date": "2026-09-21",
-          "open": 13.03,
-          "close": 13.58,
-          "high": 13.64,
-          "low": 12.81,
-          "volume": 2363445.376532,
-          "vwap": 13.3272
-        },
-        {
-          "date": "2026-09-22",
-          "open": 13.5,
-          "close": 13.14,
-          "high": 13.63,
-          "low": 12.91,
-          "volume": 1766267.967616,
-          "vwap": 13.2014
-        },
-        {
-          "date": "2026-09-23",
-          "open": 13.08,
-          "close": 12.72,
-          "high": 13.08,
-          "low": 12.37,
-          "volume": 1091597.019413,
-          "vwap": 12.6622
-        },
-        {
-          "date": "2026-09-24",
-          "open": 12.38,
-          "close": 12.23,
-          "high": 12.49,
-          "low": 12.05,
-          "volume": 2176348.92474,
-          "vwap": 12.2207
-        },
-        {
-          "date": "2026-09-25",
-          "open": 12.28,
-          "close": 12.43,
-          "high": 12.45,
-          "low": 12.08,
-          "volume": 1478222.591713,
-          "vwap": 12.2604
-        },
-        {
-          "date": "2026-09-28",
-          "open": 12.2,
-          "close": 12.05,
-          "high": 12.31,
-          "low": 12.04,
-          "volume": 990472.618087,
-          "vwap": 12.1537
-        },
-        {
-          "date": "2026-09-29",
-          "open": 12.15,
-          "close": 12.33,
-          "high": 12.75,
-          "low": 11.81,
-          "volume": 3721715.349912,
-          "vwap": 12.2931
-        },
-        {
-          "date": "2026-09-30",
-          "open": 12.33,
-          "close": 11.62,
-          "high": 12.33,
-          "low": 11.51,
-          "volume": 3213934.385918,
-          "vwap": 11.773
-        },
-        {
-          "date": "2026-10-01",
-          "open": 11.72,
-          "close": 11.62,
-          "high": 11.78,
-          "low": 11.46,
-          "volume": 1784645.932543,
-          "vwap": 11.6016
-        },
-        {
-          "date": "2026-10-02",
-          "open": 11.8,
-          "close": 11.99,
+          "date": "2026-11-05",
+          "open": 11.38,
+          "close": 11.51,
           "high": 12.15,
-          "low": 11.71,
-          "volume": 2131483.949006,
-          "vwap": 11.9632
+          "low": 8.4,
+          "volume": 5647904.788244,
+          "vwap": 10.3094
         },
         {
-          "date": "2026-10-05",
-          "open": 12.08,
-          "close": 12.07,
-          "high": 12.09,
-          "low": 11.71,
-          "volume": 1572352.588774,
-          "vwap": 11.9188
-        },
-        {
-          "date": "2026-10-06",
-          "open": 12.28,
-          "close": 11.925,
-          "high": 12.4,
-          "low": 11.09,
-          "volume": 7114775.685783,
-          "vwap": 11.8018
-        },
-        {
-          "date": "2026-10-07",
-          "open": 11.6,
-          "close": 11.24,
-          "high": 11.7,
-          "low": 11.18,
-          "volume": 2166873.002046,
-          "vwap": 11.3779
-        },
-        {
-          "date": "2026-10-08",
-          "open": 11.53,
-          "close": 11.04,
-          "high": 11.6,
-          "low": 10.96,
-          "volume": 2922771.526237,
-          "vwap": 11.2491
-        },
-        {
-          "date": "2026-10-09",
-          "open": 11.12,
-          "close": 10.93,
-          "high": 11.14,
-          "low": 10.9,
-          "volume": 1347102.429251,
-          "vwap": 10.9742
-        },
-        {
-          "date": "2026-10-12",
-          "open": 10.82,
-          "close": 10.78,
-          "high": 10.8399,
-          "low": 10.65,
-          "volume": 2113857.277476,
-          "vwap": 10.7294
-        },
-        {
-          "date": "2026-10-13",
-          "open": 10.71,
-          "close": 11.16,
-          "high": 11.35,
-          "low": 10.71,
-          "volume": 2581067.975544,
-          "vwap": 11.0767
-        },
-        {
-          "date": "2026-10-14",
-          "open": 10.95,
-          "close": 10.83,
-          "high": 11.21,
-          "low": 10.64,
-          "volume": 3619394.42418,
-          "vwap": 10.8391
-        },
-        {
-          "date": "2026-10-15",
-          "open": 10.645,
-          "close": 11.35,
-          "high": 11.4,
-          "low": 10.53,
-          "volume": 2839889.218282,
-          "vwap": 10.9144
-        },
-        {
-          "date": "2026-10-16",
-          "open": 11.19,
-          "close": 10.66,
-          "high": 11.2799,
-          "low": 10.5,
-          "volume": 3558629.150333,
-          "vwap": 10.7096
-        },
-        {
-          "date": "2026-10-19",
-          "open": 10.76,
-          "close": 10.48,
-          "high": 10.78,
-          "low": 10.46,
-          "volume": 1547826.880348,
-          "vwap": 10.5721
-        },
-        {
-          "date": "2026-10-20",
-          "open": 10.52,
-          "close": 10.355,
-          "high": 10.605,
-          "low": 10.34,
-          "volume": 4008345.948964,
-          "vwap": 10.4188
-        },
-        {
-          "date": "2026-10-21",
-          "open": 10.38,
-          "close": 10.35,
-          "high": 10.5,
-          "low": 10.31,
-          "volume": 2435975.172455,
-          "vwap": 10.3738
-        },
-        {
-          "date": "2026-10-22",
-          "open": 10.3,
-          "close": 10.265,
-          "high": 10.315,
-          "low": 10.25,
-          "volume": 8688440.20953,
-          "vwap": 10.264
-        },
-        {
-          "date": "2026-10-23",
-          "open": 10.26,
-          "close": 10.26,
-          "high": 10.29,
-          "low": 10.255,
-          "volume": 2634122.386752,
-          "vwap": 10.2637
-        },
-        {
-          "date": "2026-10-26",
-          "open": 10.25,
-          "close": 10.25,
-          "high": 10.27,
-          "low": 10.235,
-          "volume": 7306415.066911,
-          "vwap": 10.2468
-        },
-        {
-          "date": "2026-10-27",
-          "open": 10.24,
-          "close": 10.24,
-          "high": 10.25,
-          "low": 10.21,
-          "volume": 11723288.265462,
-          "vwap": 10.2293
-        },
-        {
-          "date": "2026-10-28",
-          "open": 10.235,
-          "close": 10.25,
-          "high": 10.26,
-          "low": 10.215,
-          "volume": 4882151.666381,
-          "vwap": 10.2351
-        },
-        {
-          "date": "2026-10-29",
-          "open": 10,
-          "close": 9.94,
-          "high": 10.4279,
-          "low": 9.58,
-          "volume": 4123282.189762,
-          "vwap": 10.0409
-        },
-        {
-          "date": "2026-10-30",
-          "open": 9.39,
-          "close": 8.15,
-          "high": 9.43,
-          "low": 8.05,
-          "volume": 4226113.059414,
-          "vwap": 8.5928
-        },
-        {
-          "date": "2026-11-02",
-          "open": 8.36,
-          "close": 9.29,
-          "high": 9.68,
-          "low": 8.004,
-          "volume": 2276355.461867,
-          "vwap": 9.036
-        },
-        {
-          "date": "2026-11-03",
-          "open": 9.5,
-          "close": 10.69,
-          "high": 10.98,
-          "low": 9.4001,
-          "volume": 4654291.244364,
-          "vwap": 10.4561
-        },
-        {
-          "date": "2026-11-04",
-          "open": 11.03,
-          "close": 11.26,
-          "high": 12.17,
-          "low": 10.8101,
-          "volume": 4836587.618357,
-          "vwap": 11.3905
+          "date": "2026-11-06",
+          "open": 11.235,
+          "close": 9.9,
+          "high": 11.58,
+          "low": 8.8,
+          "volume": 5425830.213474,
+          "vwap": 10.1499
         }
       ],
-      "changePct": 5.33,
-      "sma50": 11.81,
+      "changePct": -13.99,
+      "sma50": null,
       "sma200": null,
-      "ema50": 11.57,
-      "rsi": 49.29,
-      "macdDiff": 0.1314,
-      "macdStatus": "bullish",
-      "high52": 19.69,
-      "low52": 8.004,
-      "pos52w": 27.9,
-      "support": 8,
-      "resistance": 12.17,
+      "ema50": null,
+      "rsi": null,
+      "macdDiff": null,
+      "macdStatus": "n/a",
+      "high52": 12.15,
+      "low52": 8.4,
+      "pos52w": 40,
+      "support": 8.4,
+      "resistance": 12.15,
       "bias": "NEUTRAL",
-      "score": 2,
+      "score": 0,
       "signal": "🟡 n/a",
-      "volRatio": 1.2,
-      "avgVol20": 3982809.62777795,
-      "dataRows": 171,
+      "volRatio": 1,
+      "avgVol20": 5647904.788244,
+      "dataRows": 2,
       "shortVolume": {
         "latest": {
-          "date": "2026-11-04",
-          "totalVolume": 1963103,
-          "shortVolume": 975928,
-          "exemptVolume": 13879,
-          "nonExemptVolume": 962049,
-          "shortVolumeRatio": 49.71,
+          "date": "2026-11-06",
+          "totalVolume": 3247236,
+          "shortVolume": 1483969,
+          "exemptVolume": 327422,
+          "nonExemptVolume": 1156547,
+          "shortVolumeRatio": 45.7,
           "source": "Massive"
         },
         "history": [
           {
-            "date": "2026-11-04",
-            "totalVolume": 1963103,
-            "shortVolume": 975928,
-            "exemptVolume": 13879,
-            "nonExemptVolume": 962049,
-            "shortVolumeRatio": 49.71,
+            "date": "2026-11-06",
+            "totalVolume": 3247236,
+            "shortVolume": 1483969,
+            "exemptVolume": 327422,
+            "nonExemptVolume": 1156547,
+            "shortVolumeRatio": 45.7,
             "source": "Massive"
           },
           {
-            "date": "2026-11-03",
-            "totalVolume": 1879368,
-            "shortVolume": 1144802,
-            "exemptVolume": 1116,
-            "nonExemptVolume": 1143686,
-            "shortVolumeRatio": 60.91,
-            "source": "Massive"
-          },
-          {
-            "date": "2026-11-02",
-            "totalVolume": 1117666,
-            "shortVolume": 622545,
-            "exemptVolume": 96887,
-            "nonExemptVolume": 525658,
-            "shortVolumeRatio": 55.7,
-            "source": "Massive"
-          },
-          {
-            "date": "2026-10-30",
-            "totalVolume": 1549408,
-            "shortVolume": 709545,
-            "exemptVolume": 159940,
-            "nonExemptVolume": 549604,
-            "shortVolumeRatio": 45.79,
-            "source": "Massive"
-          },
-          {
-            "date": "2026-10-29",
-            "totalVolume": 1311276,
-            "shortVolume": 521466,
-            "exemptVolume": 201,
-            "nonExemptVolume": 521265,
-            "shortVolumeRatio": 39.77,
-            "source": "Massive"
-          },
-          {
-            "date": "2026-10-28",
-            "totalVolume": 1694432,
-            "shortVolume": 364847,
-            "exemptVolume": 21678,
-            "nonExemptVolume": 343169,
-            "shortVolumeRatio": 21.53,
-            "source": "Massive"
-          },
-          {
-            "date": "2026-10-27",
-            "totalVolume": 7270870,
-            "shortVolume": 1118384,
-            "exemptVolume": 36108,
-            "nonExemptVolume": 1082276,
-            "shortVolumeRatio": 15.38,
-            "source": "Massive"
-          },
-          {
-            "date": "2026-10-26",
-            "totalVolume": 4207877,
-            "shortVolume": 620259,
-            "exemptVolume": 600,
-            "nonExemptVolume": 619659,
-            "shortVolumeRatio": 14.74,
-            "source": "Massive"
-          },
-          {
-            "date": "2026-10-23",
-            "totalVolume": 1222168,
-            "shortVolume": 274787,
-            "exemptVolume": 20563,
-            "nonExemptVolume": 254224,
-            "shortVolumeRatio": 22.48,
-            "source": "Massive"
-          },
-          {
-            "date": "2026-10-22",
-            "totalVolume": 4535223,
-            "shortVolume": 779598,
-            "exemptVolume": 24400,
-            "nonExemptVolume": 755198,
-            "shortVolumeRatio": 17.19,
-            "source": "Massive"
-          },
-          {
-            "date": "2026-10-21",
-            "totalVolume": 1146328,
-            "shortVolume": 396370,
-            "exemptVolume": 7900,
-            "nonExemptVolume": 388470,
-            "shortVolumeRatio": 34.58,
-            "source": "Massive"
-          },
-          {
-            "date": "2026-10-20",
-            "totalVolume": 2034357,
-            "shortVolume": 590744,
-            "exemptVolume": 9464,
-            "nonExemptVolume": 581280,
-            "shortVolumeRatio": 29.04,
-            "source": "Massive"
-          },
-          {
-            "date": "2026-10-19",
-            "totalVolume": 761204,
-            "shortVolume": 179973,
-            "exemptVolume": 0,
-            "nonExemptVolume": 179973,
-            "shortVolumeRatio": 23.64,
-            "source": "Massive"
-          },
-          {
-            "date": "2026-10-16",
-            "totalVolume": 1156089,
-            "shortVolume": 372012,
-            "exemptVolume": 6500,
-            "nonExemptVolume": 365512,
-            "shortVolumeRatio": 32.18,
-            "source": "Massive"
-          },
-          {
-            "date": "2026-10-15",
-            "totalVolume": 1329803,
-            "shortVolume": 575809,
-            "exemptVolume": 300,
-            "nonExemptVolume": 575509,
-            "shortVolumeRatio": 43.3,
-            "source": "Massive"
-          },
-          {
-            "date": "2026-10-14",
-            "totalVolume": 1691744,
-            "shortVolume": 411490,
-            "exemptVolume": 800,
-            "nonExemptVolume": 410690,
-            "shortVolumeRatio": 24.32,
-            "source": "Massive"
-          },
-          {
-            "date": "2026-10-13",
-            "totalVolume": 1053194,
-            "shortVolume": 400742,
-            "exemptVolume": 800,
-            "nonExemptVolume": 399942,
-            "shortVolumeRatio": 38.05,
-            "source": "Massive"
-          },
-          {
-            "date": "2026-10-12",
-            "totalVolume": 1110717,
-            "shortVolume": 337778,
-            "exemptVolume": 8963,
-            "nonExemptVolume": 328815,
-            "shortVolumeRatio": 30.41,
-            "source": "Massive"
-          },
-          {
-            "date": "2026-10-09",
-            "totalVolume": 778673,
-            "shortVolume": 256814,
-            "exemptVolume": 2026,
-            "nonExemptVolume": 254788,
-            "shortVolumeRatio": 32.98,
-            "source": "Massive"
-          },
-          {
-            "date": "2026-10-08",
-            "totalVolume": 1521201,
-            "shortVolume": 578509,
-            "exemptVolume": 1223,
-            "nonExemptVolume": 577286,
-            "shortVolumeRatio": 38.03,
+            "date": "2026-11-05",
+            "totalVolume": 2877865,
+            "shortVolume": 1256724,
+            "exemptVolume": 345401,
+            "nonExemptVolume": 911323,
+            "shortVolumeRatio": 43.67,
             "source": "Massive"
           }
         ],
-        "avgShortVolumeRatio20": 33.49,
+        "avgShortVolumeRatio20": 44.69,
         "source": "Massive"
       },
       "unusualActivity": {
-        "asOf": "2026-11-04",
+        "asOf": "2026-11-06",
         "source": "Massive aggregates + Massive short volume",
         "tickTradesAvailable": false,
-        "volume": 4836588,
-        "avgVolume20": 3982810,
-        "volumeMultiple": 1.21,
-        "dayRangePct": 12.08,
-        "gapPct": 3.18,
-        "shortVolume": 975928,
-        "shortVolumeRatio": 49.71,
+        "volume": 5425830,
+        "avgVolume20": 5647905,
+        "volumeMultiple": 0.96,
+        "dayRangePct": 28.08,
+        "gapPct": -2.39,
+        "shortVolume": 1483969,
+        "shortVolumeRatio": 45.7,
         "signals": [
           {
             "type": "wide_range",
-            "severity": "warning",
-            "label": "12.1% intraday range"
+            "severity": "danger",
+            "label": "28.1% intraday range"
           }
         ],
-        "summary": "12.1% intraday range"
+        "summary": "28.1% intraday range"
       },
       "cik": "0002074973",
       "dataSources": {
         "price": "Massive",
-        "financials": "Yahoo",
-        "insider": "Massive",
+        "financials": "SEC",
+        "insider": "SEC",
         "ratios": "none",
-        "profile": "none",
+        "profile": "Massive",
         "shortVolume": "Massive",
         "unusualActivity": "Massive aggregates + Massive short volume"
       },
       "financials": {
         "quarters": [
           {
-            "period": "2025 Q3",
-            "end": "2025-09-30",
-            "form": "Yahoo",
-            "source": "Yahoo",
-            "value": 0,
-            "revenue": 0,
-            "netIncome": -50929,
-            "operatingCashFlow": 0,
-            "capex": null,
-            "freeCashFlow": 0,
-            "assets": 209830,
-            "equity": -25929
-          },
-          {
             "period": "2026 Q1",
             "end": "2026-03-31",
-            "form": "Yahoo",
-            "source": "Yahoo",
-            "value": 0,
-            "revenue": 0,
+            "form": "10-Q",
+            "filed": null,
+            "source": "SEC",
+            "value": null,
+            "revenue": null,
             "netIncome": 3171373,
             "operatingCashFlow": -326107,
             "capex": null,
-            "freeCashFlow": -326107,
+            "freeCashFlow": null,
             "assets": 419105843,
-            "equity": 402960238
+            "liabilities": 16145605,
+            "equity": -14134591
           },
           {
             "period": "2026 Q2",
             "end": "2026-06-30",
-            "form": "Yahoo",
-            "source": "Yahoo",
-            "value": 0,
-            "revenue": 0,
+            "form": "10-Q",
+            "filed": null,
+            "source": "SEC",
+            "value": null,
+            "revenue": null,
             "netIncome": -134680744,
-            "operatingCashFlow": -157581,
+            "operatingCashFlow": null,
             "capex": null,
-            "freeCashFlow": -157581,
+            "freeCashFlow": null,
             "assets": 422637049,
-            "equity": 268279494
+            "liabilities": 154357555,
+            "equity": -152600337
           }
         ],
-        "forecast": [
-          {
-            "period": "Forecast Q+1",
-            "value": 0,
-            "basis": "simple trend forecast"
-          },
-          {
-            "period": "Forecast Q+2",
-            "value": 0,
-            "basis": "simple trend forecast"
-          }
-        ],
-        "source": "Yahoo",
+        "forecast": [],
+        "source": "SEC",
         "basis": "quarterly"
       },
       "insider": [
         {
           "form": "4",
-          "reportDate": "2026-11-02",
-          "filingDate": "2026-11-04",
-          "owner": "Klein Michael Stuart",
+          "reportDate": "2026-11-04",
+          "filingDate": "2026-11-06",
+          "owner": "Hunter Jennifer",
+          "title": "Chief Operating Officer",
+          "accessionNumber": "0001213900-26-117134",
+          "description": "",
+          "url": "https://www.sec.gov/Archives/edgar/data/2074973/000121390026117134/ownership.xml",
+          "transactions": [],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER",
+          "source": "SEC"
+        },
+        {
+          "form": "4",
+          "reportDate": "2026-11-04",
+          "filingDate": "2026-11-06",
+          "owner": "Lang Anastasia",
           "title": "See Remarks",
-          "accessionNumber": "0001213900-26-116087",
-          "description": "Class B ordinary shares",
-          "source": "Massive",
-          "transactions": [
-            {
-              "date": "2026-11-02",
-              "code": "C",
-              "type": "OTHER",
-              "label": "Code C",
-              "shares": 13800000,
-              "price": null,
-              "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Class B ordinary shares"
-            },
-            {
-              "date": "2026-11-02",
-              "code": "J",
-              "type": "OTHER",
-              "label": "Code J",
-              "shares": 72500,
-              "price": null,
-              "value": null,
-              "sign": 1,
-              "tenB5One": false,
-              "securityTitle": "Warrant (Right to Buy)"
-            },
-            {
-              "date": "2026-11-02",
-              "code": "C",
-              "type": "OTHER",
-              "label": "Code C",
-              "shares": 14525000,
-              "price": null,
-              "value": null,
-              "sign": 1,
-              "tenB5One": false,
-              "securityTitle": "Common Stock"
-            }
-          ],
+          "accessionNumber": "0001213900-26-117132",
+          "description": "",
+          "url": "https://www.sec.gov/Archives/edgar/data/2074973/000121390026117132/ownership.xml",
+          "transactions": [],
           "netShares": 0,
           "boughtValue": 0,
           "soldValue": 0,
-          "dominantType": "OTHER"
+          "dominantType": "OTHER",
+          "source": "SEC"
         },
         {
           "form": "4",
-          "reportDate": "2026-11-02",
-          "filingDate": "2026-11-04",
-          "owner": "M. Klein Associates, Inc.",
-          "title": "10% Owner",
-          "accessionNumber": "0001213900-26-116087",
-          "description": "Warrant (Right to Buy)",
-          "source": "Massive",
-          "transactions": [
-            {
-              "date": "2026-11-02",
-              "code": "J",
-              "type": "OTHER",
-              "label": "Code J",
-              "shares": 72500,
-              "price": null,
-              "value": null,
-              "sign": 1,
-              "tenB5One": false,
-              "securityTitle": "Warrant (Right to Buy)"
-            },
-            {
-              "date": "2026-11-02",
-              "code": "C",
-              "type": "OTHER",
-              "label": "Code C",
-              "shares": 13800000,
-              "price": null,
-              "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Class B ordinary shares"
-            },
-            {
-              "date": "2026-11-02",
-              "code": "C",
-              "type": "OTHER",
-              "label": "Code C",
-              "shares": 14525000,
-              "price": null,
-              "value": null,
-              "sign": 1,
-              "tenB5One": false,
-              "securityTitle": "Common Stock"
-            }
-          ],
-          "netShares": 0,
-          "boughtValue": 0,
-          "soldValue": 0,
-          "dominantType": "OTHER"
-        },
-        {
-          "form": "4",
-          "reportDate": "2026-11-02",
-          "filingDate": "2026-11-04",
-          "owner": "CHURCHILL SPONSOR XI LLC",
-          "title": "10% Owner",
-          "accessionNumber": "0001213900-26-116087",
-          "description": "Class B ordinary shares",
-          "source": "Massive",
-          "transactions": [
-            {
-              "date": "2026-11-02",
-              "code": "C",
-              "type": "OTHER",
-              "label": "Code C",
-              "shares": 13800000,
-              "price": null,
-              "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Class B ordinary shares"
-            },
-            {
-              "date": "2026-11-02",
-              "code": "C",
-              "type": "OTHER",
-              "label": "Code C",
-              "shares": 14525000,
-              "price": null,
-              "value": null,
-              "sign": 1,
-              "tenB5One": false,
-              "securityTitle": "Common Stock"
-            },
-            {
-              "date": "2026-11-02",
-              "code": "J",
-              "type": "OTHER",
-              "label": "Code J",
-              "shares": 72500,
-              "price": null,
-              "value": null,
-              "sign": 1,
-              "tenB5One": false,
-              "securityTitle": "Warrant (Right to Buy)"
-            }
-          ],
-          "netShares": 0,
-          "boughtValue": 0,
-          "soldValue": 0,
-          "dominantType": "OTHER"
-        },
-        {
-          "form": "4",
-          "reportDate": "2022-10-20",
-          "filingDate": "2022-10-24",
-          "owner": "FECZKO JOSEPH M",
+          "reportDate": "2026-11-04",
+          "filingDate": "2026-11-06",
+          "owner": "Shelton Damion",
           "title": "Director",
-          "accessionNumber": "0000899243-22-034076",
-          "description": "Stock Option",
-          "source": "Massive",
+          "accessionNumber": "0001213900-26-117130",
+          "description": "",
+          "url": "https://www.sec.gov/Archives/edgar/data/2074973/000121390026117130/ownership.xml",
           "transactions": [
             {
-              "date": "2022-10-20",
-              "code": "D",
-              "type": "OTHER",
-              "label": "Code D",
-              "shares": 12500,
+              "date": "2026-11-04",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 9938151,
               "price": null,
               "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Stock Option"
+              "sign": 0
             }
           ],
           "netShares": 0,
           "boughtValue": 0,
           "soldValue": 0,
-          "dominantType": "OTHER"
+          "dominantType": "AWARD",
+          "source": "SEC"
         },
         {
           "form": "4",
-          "reportDate": "2022-10-20",
-          "filingDate": "2022-10-24",
-          "owner": "Schall Thomas J.",
-          "title": "President and CEO",
-          "accessionNumber": "0000899243-22-034075",
-          "description": "Stock Option",
-          "source": "Massive",
-          "transactions": [
-            {
-              "date": "2022-10-20",
-              "code": "D",
-              "type": "OTHER",
-              "label": "Code D",
-              "shares": 68998,
-              "price": null,
-              "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Stock Option"
-            },
-            {
-              "date": "2022-10-20",
-              "code": "D",
-              "type": "OTHER",
-              "label": "Code D",
-              "shares": 406175,
-              "price": null,
-              "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Stock Option"
-            },
-            {
-              "date": "2022-10-20",
-              "code": "D",
-              "type": "OTHER",
-              "label": "Code D",
-              "shares": 13825,
-              "price": null,
-              "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Stock Option"
-            },
-            {
-              "date": "2022-10-20",
-              "code": "D",
-              "type": "OTHER",
-              "label": "Code D",
-              "shares": 27998,
-              "price": null,
-              "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Stock Option"
-            },
-            {
-              "date": "2022-10-20",
-              "code": "D",
-              "type": "OTHER",
-              "label": "Code D",
-              "shares": 222088,
-              "price": null,
-              "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Stock Option"
-            },
-            {
-              "date": "2022-10-20",
-              "code": "D",
-              "type": "OTHER",
-              "label": "Code D",
-              "shares": 8231,
-              "price": null,
-              "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Stock Option"
-            },
-            {
-              "date": "2022-10-20",
-              "code": "D",
-              "type": "OTHER",
-              "label": "Code D",
-              "shares": 278307,
-              "price": null,
-              "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Stock Option"
-            },
-            {
-              "date": "2022-10-20",
-              "code": "D",
-              "type": "OTHER",
-              "label": "Code D",
-              "shares": 2393352,
-              "price": null,
-              "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Common Stock"
-            }
-          ],
+          "reportDate": "2026-11-04",
+          "filingDate": "2026-11-06",
+          "owner": "Velagapudi Prasanna",
+          "title": "Chief Technology Officer",
+          "accessionNumber": "0001213900-26-117129",
+          "description": "",
+          "url": "https://www.sec.gov/Archives/edgar/data/2074973/000121390026117129/ownership.xml",
+          "transactions": [],
           "netShares": 0,
           "boughtValue": 0,
           "soldValue": 0,
-          "dominantType": "OTHER"
+          "dominantType": "OTHER",
+          "source": "SEC"
         },
         {
           "form": "4",
-          "reportDate": "2022-10-20",
-          "filingDate": "2022-10-24",
-          "owner": "KANAYA SUSAN M",
-          "title": "See Remarks",
-          "accessionNumber": "0000899243-22-034081",
-          "description": "Stock Option",
-          "source": "Massive",
+          "reportDate": "2026-11-04",
+          "filingDate": "2026-11-06",
+          "owner": "Beer Michael Thomas",
+          "title": "Chief Financial Officer",
+          "accessionNumber": "0001213900-26-117127",
+          "description": "",
+          "url": "https://www.sec.gov/Archives/edgar/data/2074973/000121390026117127/ownership.xml",
           "transactions": [
             {
-              "date": "2022-10-20",
-              "code": "D",
-              "type": "OTHER",
-              "label": "Code D",
-              "shares": 71280,
+              "date": "2026-11-04",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 2576560,
               "price": null,
               "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Stock Option"
-            },
-            {
-              "date": "2022-10-20",
-              "code": "D",
-              "type": "OTHER",
-              "label": "Code D",
-              "shares": 25000,
-              "price": null,
-              "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Stock Option"
-            },
-            {
-              "date": "2022-10-20",
-              "code": "D",
-              "type": "OTHER",
-              "label": "Code D",
-              "shares": 132717,
-              "price": null,
-              "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Common Stock"
-            },
-            {
-              "date": "2022-10-20",
-              "code": "D",
-              "type": "OTHER",
-              "label": "Code D",
-              "shares": 10102,
-              "price": null,
-              "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Stock Option"
-            },
-            {
-              "date": "2022-10-20",
-              "code": "D",
-              "type": "OTHER",
-              "label": "Code D",
-              "shares": 91317,
-              "price": null,
-              "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Common Stock"
-            },
-            {
-              "date": "2022-10-20",
-              "code": "D",
-              "type": "OTHER",
-              "label": "Code D",
-              "shares": 5209,
-              "price": null,
-              "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Stock Option"
-            },
-            {
-              "date": "2022-10-20",
-              "code": "D",
-              "type": "OTHER",
-              "label": "Code D",
-              "shares": 72826,
-              "price": null,
-              "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Stock Option"
+              "sign": 0
             }
           ],
           "netShares": 0,
           "boughtValue": 0,
           "soldValue": 0,
-          "dominantType": "OTHER"
+          "dominantType": "AWARD",
+          "source": "SEC"
         },
         {
           "form": "4",
-          "reportDate": "2022-10-20",
-          "filingDate": "2022-10-24",
-          "owner": "Parker Geoffrey M.",
-          "title": "Director",
-          "accessionNumber": "0000899243-22-034084",
-          "description": "Common Stock",
-          "source": "Massive",
+          "reportDate": "2026-11-04",
+          "filingDate": "2026-11-06",
+          "owner": "Johnson Margaret L",
+          "title": "Chief Executive Officer",
+          "accessionNumber": "0001213900-26-117125",
+          "description": "",
+          "url": "https://www.sec.gov/Archives/edgar/data/2074973/000121390026117125/ownership.xml",
           "transactions": [
             {
-              "date": "2022-10-20",
-              "code": "D",
-              "type": "OTHER",
-              "label": "Code D",
-              "shares": 107997,
+              "date": "2026-11-04",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 347790,
               "price": null,
               "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Common Stock"
-            },
-            {
-              "date": "2022-10-20",
-              "code": "D",
-              "type": "OTHER",
-              "label": "Code D",
-              "shares": 12287,
-              "price": null,
-              "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Stock Option"
-            },
-            {
-              "date": "2022-10-20",
-              "code": "D",
-              "type": "OTHER",
-              "label": "Code D",
-              "shares": 13352,
-              "price": null,
-              "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Stock Option"
+              "sign": 0
             }
           ],
           "netShares": 0,
           "boughtValue": 0,
           "soldValue": 0,
-          "dominantType": "OTHER"
+          "dominantType": "AWARD",
+          "source": "SEC"
         },
         {
           "form": "4",
-          "reportDate": "2022-10-20",
-          "filingDate": "2022-10-24",
-          "owner": "Tyree James L",
-          "title": "Director",
-          "accessionNumber": "0000899243-22-034077",
-          "description": "Stock Option",
-          "source": "Massive",
+          "reportDate": "2026-11-04",
+          "filingDate": "2026-11-06",
+          "owner": "Hurst Jonathan",
+          "title": "Chief Robot Officer",
+          "accessionNumber": "0001213900-26-117123",
+          "description": "",
+          "url": "https://www.sec.gov/Archives/edgar/data/2074973/000121390026117123/ownership.xml",
           "transactions": [
             {
-              "date": "2022-10-20",
-              "code": "D",
-              "type": "OTHER",
-              "label": "Code D",
-              "shares": 12500,
+              "date": "2026-11-04",
+              "code": "A",
+              "type": "AWARD",
+              "label": "Grant / award",
+              "shares": 12422709,
               "price": null,
               "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Stock Option"
-            },
-            {
-              "date": "2022-10-20",
-              "code": "D",
-              "type": "OTHER",
-              "label": "Code D",
-              "shares": 8342,
-              "price": null,
-              "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Stock Option"
-            },
-            {
-              "date": "2022-10-20",
-              "code": "D",
-              "type": "OTHER",
-              "label": "Code D",
-              "shares": 13352,
-              "price": null,
-              "value": null,
-              "sign": -1,
-              "tenB5One": false,
-              "securityTitle": "Stock Option"
+              "sign": 0
             }
           ],
           "netShares": 0,
           "boughtValue": 0,
           "soldValue": 0,
-          "dominantType": "OTHER"
+          "dominantType": "AWARD",
+          "source": "SEC"
+        },
+        {
+          "form": "4",
+          "reportDate": "2026-11-04",
+          "filingDate": "2026-11-06",
+          "owner": "Marroquin Marco",
+          "title": "Chief Hardware Officer",
+          "accessionNumber": "0001213900-26-117121",
+          "description": "",
+          "url": "https://www.sec.gov/Archives/edgar/data/2074973/000121390026117121/ownership.xml",
+          "transactions": [],
+          "netShares": 0,
+          "boughtValue": 0,
+          "soldValue": 0,
+          "dominantType": "OTHER",
+          "source": "SEC"
         }
       ],
       "insiderSummary": {
-        "source": "Massive",
+        "source": "SEC",
         "sentiment": "NEUTRAL",
         "score": 50,
-        "totalTransactions": 31,
+        "totalTransactions": 4,
         "openMarketTransactions": 0,
         "buyCount": 0,
         "sellCount": 0,
@@ -102307,30 +99356,12 @@
         ],
         "alerts": []
       },
-      "sector": "SPAC",
-      "lynch": {
-        "category": "SPAC",
-        "peTtm": null,
-        "peFwd": null,
-        "pegy": null,
-        "verdict": "n/a",
-        "note": "Event-driven (Agility merger)",
-        "screenedAt": "2026-10-18T14:55:55+00:00"
-      },
+      "sector": "Robotics",
+      "lynch": null,
       "mm": {
-        "jane": {
-          "calls": 0,
-          "puts": 0,
-          "shares": 2925161
-        },
-        "notes": "No material MM options book — cleaner, unpinned flow. Options notional JS $0M (C $0M/P $0M) · SIG $0M (C $0M/P $0M) (13F).",
+        "notes": "No 13F coverage yet (post-quarter listing/foreign) — human baseline. No MM book assumed.",
         "pillars": [],
-        "sig": {
-          "calls": 0,
-          "puts": 0,
-          "shares": 0
-        },
-        "source": "13F",
+        "source": "baseline",
         "status": "none"
       }
     },
@@ -131987,18 +129018,6 @@
       "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/balance-sheets?tickers=AMD&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     },
     {
-      "symbol": "CCXI",
-      "warning": "Massive ticker overview unavailable: https://api.massive.com/v3/reference/tickers/CCXI HTTP 404"
-    },
-    {
-      "symbol": "CCXI",
-      "warning": "Massive ratios unavailable: https://api.massive.com/stocks/financials/v1/ratios?ticker=CCXI&limit=1&sort=date.desc HTTP 400"
-    },
-    {
-      "symbol": "CCXI",
-      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=CCXI&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
-    },
-    {
       "symbol": "FN",
       "warning": "Massive ratios unavailable: https://api.massive.com/stocks/financials/v1/ratios?ticker=FN&limit=1&sort=date.desc HTTP 400"
     },
@@ -132061,6 +129080,14 @@
     {
       "symbol": "LAC",
       "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=LAC&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
+    },
+    {
+      "symbol": "AGLT",
+      "warning": "Massive ratios unavailable: https://api.massive.com/stocks/financials/v1/ratios?ticker=AGLT&limit=1&sort=date.desc HTTP 400"
+    },
+    {
+      "symbol": "AGLT",
+      "warning": "Massive financial statements fallback to SEC: https://api.massive.com/stocks/financials/v1/income-statements?tickers=AGLT&timeframe=quarterly&limit=8&sort=period_end.desc HTTP 403"
     }
   ],
   "overlayRefreshedAt": "2026-10-18T16:20:05+00:00",

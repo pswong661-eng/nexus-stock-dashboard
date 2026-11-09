@@ -32,8 +32,19 @@ for (const s of data.symbols) {
   if (!Number.isInteger(s.score) || s.score < 0 || s.score > 4) throw new Error(`${s.symbol}.score invalid (schema v2, 0-4)`);
   // Privacy invariant (Eric 2026-10-18): trade-plan levels never ship publicly (any casing).
   assertNoTradeLevels(s, s.symbol);
-  if (!Array.isArray(s.series) || s.series.length < 30) throw new Error(`${s.symbol}.series too short`);
-  if (!Array.isArray(s.technical) || s.technical.length < 30) throw new Error(`${s.symbol}.technical too short`);
+  for (const field of ['series', 'technical']) {
+    const rows = s[field];
+    if (!Array.isArray(rows) || rows.length === 0) throw new Error(`${s.symbol}.${field} missing`);
+    if (rows.length < 30) {
+      // New listings cannot have 30 bars yet. Permit a short history only while
+      // the first bar is genuinely recent; never backfill a predecessor/SPAC.
+      const firstTime = Date.parse(rows[0]?.date);
+      const ageDays = (Date.parse(data.generatedAt) - firstTime) / 86400_000;
+      if (!Number.isFinite(firstTime) || ageDays < 0 || ageDays > 45) {
+        throw new Error(`${s.symbol}.${field} too short for a recent listing`);
+      }
+    }
+  }
   const last = s.technical.at(-1);
   for (const field of ['ema50','rsi14','macd','macdSignal']) if (last[field] !== null && !Number.isFinite(last[field])) throw new Error(`${s.symbol}.technical.${field} invalid`);
   if (!s.financials || !Array.isArray(s.financials.quarters) || !Array.isArray(s.financials.forecast)) throw new Error(`${s.symbol}.financials missing`);

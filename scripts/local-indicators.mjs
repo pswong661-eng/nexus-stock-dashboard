@@ -54,6 +54,7 @@ function rsiLast(values, period = 14) {
 }
 
 function macdCross(values) {
+  if (values.filter(Number.isFinite).length < 35) return { macdDiff: null, macdStatus: 'n/a' };
   const e12 = emaSeries(values, 12), e26 = emaSeries(values, 26);
   const line = values.map((_, i) => Number.isFinite(e12[i]) && Number.isFinite(e26[i]) ? e12[i] - e26[i] : null);
   const signal = emaSeries(line, 9);
