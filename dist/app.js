@@ -9,7 +9,7 @@ const INK = {
   blue: '#6db2ff', green: '#34d399', gold: '#e8c468', red: '#f87171', purple: '#b48cff'
 };
 
-const state = { data: null, bubble: null, sort: { key: 'score', dir: -1 }, filter: '', mm: 'all', drawer: null, tab: 'quote', charts: {} };
+const state = { data: null, bubble: null, sort: { key: 'changePct', dir: -1 }, filter: '', mm: 'all', drawer: null, tab: 'quote', charts: {} };
 
 /* ── formatting ─────────────────────────────────────── */
 const $ = s => document.querySelector(s);
@@ -17,7 +17,7 @@ const el = (tag, cls, html) => { const n = document.createElement(tag); if (cls)
 const pctCls = v => v > 0 ? 'pos' : v < 0 ? 'neg' : 'flat';
 const sign = (v, d = 2) => v == null || !Number.isFinite(v) ? '—' : `${v > 0 ? '+' : ''}${v.toFixed(d)}%`;
 const money = v => v == null || !Number.isFinite(v) ? '—' : v >= 1e12 ? `$${(v / 1e12).toFixed(2)}T` : v >= 1e9 ? `$${(v / 1e9).toFixed(2)}B` : v >= 1e6 ? `$${(v / 1e6).toFixed(1)}M` : `$${v.toFixed(2)}`;
-const price = v => v == null || !Number.isFinite(v) ? '—' : v >= 1000 ? v.toLocaleString('en-US', { maximumFractionDigits: 0 }) : v.toFixed(2);
+const price = v => v == null || !Number.isFinite(v) ? '—' : v.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const num = (v, d = 2) => v == null || !Number.isFinite(v) ? '—' : v.toFixed(d);
 const dash = v => v == null || v === '' ? '—' : v;
 const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -28,7 +28,7 @@ const TREND = {
 };
 const LYNCH_CLS = { PASS: 'bull', BORDERLINE: 'warn', MIXED: 'warn', FAIL: 'bear' };
 const LYNCH_ORDER = ['PASS', 'BORDERLINE', 'MIXED', 'SPECIAL SITUATION', 'SPECIAL', 'ASSET PLAY', 'CYCLICAL', 'N/M', 'FAIL'];
-const BIAS_CLS = { BULLISH: 'bull', BEARISH: 'bear', OVERBOUGHT: 'bear', OVERSOLD: 'bull' };
+const BIAS_CLS = { BULLISH: 'bull', BEARISH: 'bear', OVERBOUGHT: 'bear', OVERSOLD: 'info' };
 
 function fmtSources(s) {
   const d = s?.dataSources;
@@ -74,7 +74,10 @@ async function load({ manual = false } = {}) {
     b.textContent = `Data load failed: ${e.message}. ${state.data ? '(Previous snapshot remains rendered.)' : 'Retry with Refresh.'}`; }
   } finally {
     if (manual && btn) { btn.disabled = false; btn.classList.remove('loading'); btn.textContent = '↻ Refresh'; }
-    const ra = $('#refreshed-at'); if (ra) ra.textContent = `checked ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+    const ra = $('#refreshed-at'); if (ra) {
+      const now = new Date(), pad = n => String(n).padStart(2, '0');
+      ra.textContent = `checked ${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())} ICT`;
+    }
   }
 }
 
@@ -98,13 +101,22 @@ function renderHeader() {
   $('#refreshed-at').textContent = `updated ${new Date(d.generatedAt).toLocaleString([], { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}`;
   const st = $('#data-status');
   if (d.dataStatus === 'partial') {
-    st.hidden = false;
     const detail = (d.errors || []).map(e => typeof e === 'string' ? e : `${e.symbol}: ${e.error}`).join(' · ')
       || 'some symbols lag the latest session';
+    st.hidden = true;
     st.textContent = 'PARTIAL DATA';
     st.title = detail;
-  } else if (d.dataStatus === 'fallback') { st.hidden = false; st.textContent = 'FALLBACK DATA'; st.title = 'serving last known good snapshot'; }
+  } else if (d.dataStatus === 'fallback') { st.hidden = true; st.textContent = 'FALLBACK DATA'; st.title = 'serving last known good snapshot'; }
   else st.hidden = true;
+  const pn = $('#partial-note');
+  if (pn) {
+    const current = sessionDate(d);
+    const lag = d.symbols.filter(s => { const t = s.technical || []; return !t.length || t[t.length - 1].date !== current; }).map(s => s.symbol);
+    pn.hidden = !['partial', 'fallback'].includes(d.dataStatus);
+    pn.innerHTML = d.dataStatus === 'fallback'
+      ? '<b>Fallback data:</b> live refresh failed — showing the last known good snapshot.'
+      : `<b>Partial data:</b> ${lag.length === 1 ? `${esc(lag[0])} lags the ${esc(current)} session; its row may show the prior close` : lag.length > 1 ? `${lag.length} tickers (${esc(lag.slice(0, 6).join(', '))}${lag.length > 6 ? '…' : ''}) lag the ${esc(current)} session; their rows may show the prior close` : `some symbols lag the ${esc(current)} session`}.${(d.errors || []).length ? ` Errors: ${esc(st.title)}` : ''}`;
+  }
   $('#foot-meta').textContent = `${d.symbols.length} tickers · src ${d.source} · overlays ${d.overlayRefreshedAt ? new Date(d.overlayRefreshedAt).toLocaleDateString() : '—'}`;
 }
 
@@ -123,16 +135,26 @@ function renderStats() {
   const hiShort = withShort.sort((a, b) => b.r - a.r)[0] || null;
   const cards = [
     { k: 'Universe', v: `${syms.length}`, s: 'EOD coverage', cls: '' },
-    { k: 'Avg RSI-14', v: avgRsi.toFixed(1), s: 'watchlist mean', cls: avgRsi > 60 ? 'up' : avgRsi < 40 ? 'down' : '' },
-    { k: 'Bias Split', v: `${pctOf(bullN)}%`, s: `bull ${bullN} · bear ${bearN} · neutral ${neutralN}`, cls: bullN >= bearN ? 'up' : 'down' },
-    { k: 'Best Δ Day', v: best ? `${best.symbol} ${sign(best.changePct, 1)}` : '—', s: best?.name ?? '', cls: 'up' },
-    { k: 'Worst Δ Day', v: worst ? `${worst.symbol} ${sign(worst.changePct, 1)}` : '—', s: worst?.name ?? '', cls: 'down' },
-    { k: 'Heaviest Short', v: hiShort ? `${(hiShort.r * 100).toFixed(0)}%` : '—', s: hiShort ? `${hiShort.s.symbol} FINRA ratio` : 'no short-vol data', cls: '' }
+    { k: 'Avg RSI-14', v: avgRsi.toFixed(1), s: avgRsi > 70 ? 'average · overbought (>70)' : avgRsi < 30 ? 'average · oversold (<30)' : 'average · neutral (30–70)', cls: avgRsi > 70 ? 'down' : avgRsi < 30 ? 'up' : '' },
+    { k: 'Technical Bias', v: bearN > bullN && bearN >= neutralN ? `${pctOf(bearN)}% Bearish` : bullN >= bearN && bullN >= neutralN ? `${pctOf(bullN)}% Bullish` : `${pctOf(neutralN)}% Neutral`, s: `${bearN} bear · ${neutralN} neutral · ${bullN} bull`, title: 'Technical bias uses MACD, price versus SMA50, and RSI extremes', cls: bearN > bullN && bearN >= neutralN ? 'down' : bullN >= bearN && bullN >= neutralN ? 'up' : '',
+      bar: [[bullN, 'b-up'], [neutralN, 'b-flat'], [bearN, 'b-down']] },
+    { k: 'Best Day', v: best ? `${best.symbol} ${sign(best.changePct, 1)}` : '—', s: best?.name ?? '', cls: 'up', sym: best?.symbol },
+    { k: 'Worst Day', v: worst ? `${worst.symbol} ${sign(worst.changePct, 1)}` : '—', s: worst?.name ?? '', cls: 'down', sym: worst?.symbol },
+    { k: 'Heaviest Short', v: hiShort ? `${hiShort.s.symbol} · ${(hiShort.r * 100).toFixed(0)}%` : '—', s: hiShort ? `${hiShort.s.name || hiShort.s.symbol} · short volume / total` : 'no short-vol data', cls: hiShort && hiShort.r > .65 ? 'down' : hiShort && hiShort.r > .55 ? 'warn' : '', sym: hiShort?.s.symbol }
   ];
   const host = $('#stats'); host.innerHTML = '';
   for (const c of cards) {
     const n = el('div', 'stat');
+    if (['Universe', 'Avg RSI-14'].includes(c.k)) n.dataset.secondary = 'true';
+    if (c.title) n.title = c.title;
     n.append(el('span', 'k', c.k), el('span', `v ${c.cls}`, c.v), el('span', 's', c.s));
+    if (c.bar) n.append(el('span', 'stackbar', c.bar.map(([v, k]) => `<i class="${k}" style="flex:${v}"></i>`).join('')));
+    if (c.sym) {
+      n.classList.add('actionable'); n.tabIndex = 0; n.setAttribute('role', 'button'); n.setAttribute('aria-label', `Open ${c.sym} details`);
+      n.append(el('span', 'card-link', 'Details →'));
+      n.addEventListener('click', () => openDrawer(c.sym));
+      n.addEventListener('keydown', e => { if (e.key === 'Enter') openDrawer(c.sym); });
+    }
     host.append(n);
   }
 }
@@ -204,7 +226,7 @@ function visible() {
 
 function rsiCell(v) {
   if (v == null || !Number.isFinite(v)) return '<span class="muted">—</span>';
-  const cls = v > 70 ? 'chip bear' : v < 30 ? 'chip bull' : 'chip flat';
+  const cls = v > 70 ? 'chip bear' : v < 30 ? 'chip bull' : 'rsi-neutral';
   return `<span class="rsi-cell ${cls}">${v.toFixed(0)}</span>`;
 }
 function bar52(v) {
@@ -232,41 +254,46 @@ function mmFoot() {
 }
 
 function renderTable() {
-  const rows = visible(), body = $('#watch-body');
+  const rows = visible(), body = $('#watch-body'), current = sessionDate(state.data);
   body.innerHTML = '';
   for (const s of rows) {
     const tr = el('tr'); tr.dataset.sym = s.symbol; tr.tabIndex = 0;
-    tr.title = `${s.name || s.symbol}${s.sector ? ' · ' + s.sector : ''}${s.macdStatus ? ' · MACD ' + s.macdStatus : ''}${s.support != null ? ` · S/R ${num(s.support, 1)}/${num(s.resistance, 1)}` : ''}${s.mm ? ` · MM ${MM_BADGE[s.mm.status]}` : ''}`;
+    const technical = s.technical || [];
+    const lagging = !technical.length || technical[technical.length - 1].date !== current;
+    if (lagging) tr.classList.add('row-lag');
+    tr.title = `${lagging ? 'LAGGING SESSION · ' : ''}${s.name || s.symbol}${s.sector ? ' · ' + s.sector : ''}${s.macdStatus ? ' · MACD ' + s.macdStatus : ''}${s.support != null ? ` · S/R ${num(s.support, 1)}/${num(s.resistance, 1)}` : ''}${s.mm ? ` · MM ${MM_BADGE[s.mm.status]}` : ''}`;
     const t = TREND[s.signal] || { t: '·', c: '' };
     const sv = shortVolRatio(s);
     const macdCls = /bull/.test(s.macdStatus) ? 'pos' : /bear/.test(s.macdStatus) ? 'neg' : 'flat';
     tr.innerHTML = `
-      <td class="col-sym"><span class="sym">${s.symbol}</span></td>
+      <td class="col-sym"><span class="sym">${s.symbol}</span>${lagging ? '<span class="lag-tag" title="Latest price bar predates the current session">LAG</span>' : ''}</td>
       <td class="col-name tname" title="${(s.name || '').replace(/"/g, '&quot;')}">${dash(s.name)}</td>
       <td class="col-sector sector-cell">${dash(s.sector)}</td>
-      <td>${mmCell(s)}</td>
-      <td class="num mono">${mmPCcell(s)}</td>
+      <td class="col-mm">${mmCell(s)}</td>
+      <td class="num mono col-mmpc">${mmPCcell(s)}</td>
       <td class="num mono">${price(s.price)}</td>
-      <td class="num mono ${pctCls(s.changePct)}">${sign(s.changePct)}</td>
-      <td class="num mono ${pctCls(s.ytdPct)}">${sign(s.ytdPct, 1)}</td>
-      <td><span class="trend ${t.c}">${t.t}</span></td>
-      <td class="num">${scoreDots(s.score)}</td>
+      <td class="num mono ${pctCls(s.changePct)}">${sign(s.changePct, 1)}</td>
+      <td class="num mono col-ytd ${pctCls(s.ytdPct)}">${sign(s.ytdPct, 1)}</td>
+      <td class="col-trend"><span class="trend ${t.c}">${t.t}</span></td>
+      <td class="num col-score">${scoreDots(s.score)}</td>
       <td><span class="chip ${BIAS_CLS[s.bias] || 'flat'}">${dash(s.bias)}</span></td>
-      <td class="num">${rsiCell(s.rsi ?? s.rsi14)}</td>
+      <td class="num col-rsi">${rsiCell(s.rsi ?? s.rsi14)}</td>
       <td class="col-macd"><span class="${macdCls} small">${dash(s.macdStatus)}</span></td>
-      <td class="num">${bar52(s.pos52w)}</td>
+      <td class="num col-pos">${bar52(s.pos52w)}</td>
       <td class="num mono muted col-sr">${num(s.support, 1)} / ${num(s.resistance, 1)}</td>
-      <td class="num mono ${s.volRatio > 1.5 ? 'pos' : ''}">${num(s.volRatio, 1)}×</td>
-      <td class="num mono">${sv != null ? (sv * 100).toFixed(0) + '%' : '—'}</td>
-      <td class="num mono">${s.peRatio != null ? s.peRatio.toFixed(1) : s.lynch?.peTtm != null ? Number(s.lynch.peTtm).toFixed(1) : '—'}</td>
-      <td>${lynchCell(s)}</td>`;
+      <td class="num mono col-vol ${s.volRatio > 1.5 ? 'pos' : ''}">${num(s.volRatio, 1)}×</td>
+      <td class="num mono col-sv">${sv != null ? (sv * 100).toFixed(0) + '%' : '—'}</td>
+      <td class="num mono col-pe">${s.peRatio != null ? s.peRatio.toFixed(1) : s.lynch?.peTtm != null ? Number(s.lynch.peTtm).toFixed(1) : '—'}</td>
+      <td class="col-lynch">${lynchCell(s)}</td>`;
     tr.addEventListener('click', () => openDrawer(s.symbol));
     tr.addEventListener('keydown', e => { if (e.key === 'Enter') openDrawer(s.symbol); });
     body.append(tr);
   }
-  $('#wl-count').textContent = `· ${rows.length}`;
+  $('#wl-count').textContent = `${rows.length} names`;
+  const sth = document.querySelector(`#watch-table th[data-key="${state.sort.key}"]`);
+  const ws = $('#wl-sort'); if (ws) ws.textContent = `sorted by ${sth ? sth.textContent.trim() : state.sort.key} ${state.sort.dir === 1 ? '↑' : '↓'}`;
   const sr = rows.filter(r => r.support != null).length;
-  $('#wl-foot').textContent = `EOD snapshot · ${rows.length} names · ${sr} with S/R bands · score = SMA50+SMA200+MACD+RSI filters (0–4) · PEGY from internal screen overlay${mmFoot()}`;
+  $('#wl-foot').textContent = `EOD snapshot · ${rows.length} names · ${sr} with S/R bands · SMA trend: ▲▲ above 50/200, ▲ above 50 only, ▼ below 50 only, ▼▼ below both, · no SMA200 · score = SMA50+SMA200+MACD+RSI filters (0–4) · PEGY from internal screen overlay${mmFoot()}`;
   document.querySelectorAll('#watch-table th.sortable').forEach(th => {
     th.classList.toggle('sorted-asc', th.dataset.key === state.sort.key && state.sort.dir === 1);
     th.classList.toggle('sorted-desc', th.dataset.key === state.sort.key && state.sort.dir === -1);
@@ -289,13 +316,15 @@ function renderSector() {
     .map(([k, vs]) => ({ k, n: vs.length, avg: vs.reduce((a, b) => a + b, 0) / vs.length }))
     .sort((a, b) => b.avg - a.avg);
   const max = Math.max(1e-9, ...rows.map(r => Math.abs(r.avg)));
+  const hasNegative = rows.some(r => r.avg < 0);
   const host = $('#sector-list'); host.innerHTML = '';
   for (const r of rows) {
-    const w = Math.abs(r.avg) / max * 50;
+    const w = Math.abs(r.avg) / max * (hasNegative ? 50 : 100);
     const n = el('div', 'vrow');
-    n.innerHTML = `<span class="lab">${r.k}<span class="sub">${r.n}</span></span>
-      <span class="hbar">${r.avg < 0 ? `<span class="l" style="width:${w}%"></span>` : `<span class="r" style="width:${w}%"></span>`}</span>
-      <span class="val ${pctCls(r.avg)}">${sign(r.avg, 2)}</span>`;
+    const bar = r.avg < 0 ? `<span class="l" style="width:${w}%"></span>` : hasNegative ? `<span class="r" style="width:${w}%"></span>` : `<span style="left:0; width:${w}%; background:var(--up)"></span>`;
+    n.innerHTML = `<span class="lab">${r.k}<span class="sub">${r.n} ${r.n === 1 ? 'name' : 'names'}</span></span>
+      <span class="hbar ${hasNegative ? 'has-zero' : ''}">${bar}</span>
+      <span class="val ${pctCls(r.avg)}">${sign(r.avg, 1)}</span>`;
     host.append(n);
   }
 }
@@ -304,14 +333,20 @@ function renderShortVol() {
     .map(s => ({ s, r: shortVolRatio(s) }))
     .filter(x => x.r != null)
     .sort((a, b) => b.r - a.r).slice(0, 10);
-  const host = $('#shortvol-list'); host.innerHTML = '';
+  const host = $('#shortvol-list'); host.innerHTML = '<div class="sv-head"><span>Symbol</span><span>Latest · 20d marker</span><span>Latest / Δ20d</span><span>20d avg</span></div>';
   for (const { s, r } of rows) {
-    const tag = r > 0.65 ? 'chip bear' : r > 0.55 ? 'chip warn' : 'chip flat';
+    const tag = r > 0.65 ? 'chip bear' : r > 0.55 ? 'chip warn' : 'chip info';
     const avg = svNorm(s.shortVolume?.avgShortVolumeRatio20);
-    const n = el('div', 'vrow');
-    n.innerHTML = `<span class="lab">${s.symbol}<span class="sub">${s.name || ''}</span></span>
-      <span class="hbar"><span class="r" style="width:${Math.min(100, r * 100)}%; background:${r > 0.65 ? 'var(--down)' : r > 0.55 ? 'var(--warn)' : 'var(--accent)'}"></span></span>
-      <span class="val"><span class="${tag}" style="margin-left:6px">${(r * 100).toFixed(0)}%</span>${avg != null ? `<span class="muted small"> a20 ${(avg * 100).toFixed(0)}%</span>` : ''}</span>`;
+    const latestPct = Math.round(r * 100), avgPct = avg != null ? Math.round(avg * 100) : null;
+    const delta = avgPct != null ? latestPct - avgPct : null;
+    const n = el('div', 'vrow sv-row');
+    n.tabIndex = 0; n.setAttribute('role', 'button'); n.setAttribute('aria-label', `Open ${s.symbol} details`);
+    n.innerHTML = `<span class="lab"><b>${s.symbol}</b><span class="sub">${s.name || ''}</span></span>
+      <span class="hbar" aria-label="Latest short volume ${(r * 100).toFixed(0)} percent; 20-day average ${avg != null ? (avg * 100).toFixed(0) : 'unavailable'} percent"><span style="left:0; width:${Math.min(100, r * 100)}%; background:${r > 0.65 ? 'var(--down)' : r > 0.55 ? 'var(--warn)' : 'var(--info)'}"></span>${avg != null ? `<b class="sv-marker" style="left:${Math.min(100, avg * 100)}%" title="20-day average"></b>` : ''}</span>
+      <span class="val sv-latest"><span class="${tag}">${latestPct}%</span><small class="sv-delta ${delta > 0 ? 'neg' : delta < 0 ? 'pos' : 'muted'}">${delta != null ? `${delta > 0 ? '+' : ''}${delta.toFixed(0)}pp` : '—'}</small></span>
+      <span class="val sv-avg" title="20-day average short-volume ratio">${avgPct != null ? avgPct + '%' : '—'}</span>`;
+    n.addEventListener('click', () => openDrawer(s.symbol));
+    n.addEventListener('keydown', e => { if (e.key === 'Enter') openDrawer(s.symbol); });
     host.append(n);
   }
 }
@@ -326,16 +361,18 @@ function renderLynch() {
   }
   const order = [...LYNCH_ORDER.filter(k => groups[k]), ...Object.keys(groups).filter(k => !LYNCH_ORDER.includes(k))];
   for (const v of order) {
-    const g = el('div', 'lg');
+    const g = el('div', `lg ${LYNCH_CLS[v] || 'flat'}`);
     const head = el('div', 'lg-head');
     head.innerHTML = `<h3>${v}</h3><span class="chip ${LYNCH_CLS[v] || 'flat'}">${groups[v].length}</span>`;
     const row = el('div', 'lg-row');
     for (const s of groups[v].sort((a, b) => (b.lynch?.pegy ?? -1) - (a.lynch?.pegy ?? -1))) {
       const l = s.lynch || {};
       const it = el('span', 'lg-item');
+      it.tabIndex = 0; it.setAttribute('role', 'button'); it.setAttribute('aria-label', `Open ${s.symbol} Lynch note`);
       it.title = `${s.symbol} — ${l.note || 'no note'}${l.screenedAt ? ` (screened ${String(l.screenedAt).slice(0, 10)})` : ''}`;
-      it.innerHTML = `<span class="s">${s.symbol}</span><span class="c">${dash(l.category)}</span>${Number.isFinite(l.pegy) ? `<span class="chip flat mono">PEGY ${Number(l.pegy).toFixed(1)}</span>` : ''}`;
+      it.innerHTML = `<span class="s">${s.symbol}</span><span class="c">${dash(l.category)}</span>${Number.isFinite(l.pegy) ? `<span class="chip flat mono peg-chip"><span class="peg-prefix">PEGY </span>${Number(l.pegy).toFixed(1)}</span>` : '<span class="chip flat mono peg-chip" title="PEGY unavailable">—</span>'}`;
       it.addEventListener('click', () => openDrawer(s.symbol));
+      it.addEventListener('keydown', e => { if (e.key === 'Enter') openDrawer(s.symbol); });
       row.append(it);
     }
     g.append(head, row); host.append(g);
@@ -343,30 +380,40 @@ function renderLynch() {
 }
 
 /* ── bubble panel ───────────────────────────────────── */
+let bubbleOpen = false;
 function renderBubble() {
   const b = state.bubble, host = $('#bubble-body');
   if (!b?.latest) {
     $('#bubble-card').style.display = 'none'; return;
   }
   $('#bubble-card').style.display = '';
-  $('#bubble-date').textContent = b.latest.date ? `week of ${b.latest.date}` : '';
-  const cls = b.latest.score >= 60 ? 'down' : b.latest.score >= 35 ? '' : 'up';
+  $('#bubble-date').textContent = b.latest.date ? `week ending ${b.latest.date}` : '';
+  const cls = b.latest.score >= 70 ? 'down' : b.latest.score >= 50 ? 'warn' : '';
+  const fragilityLabel = b.latest.score >= 85 ? 'CRITICAL' : b.latest.score >= 70 ? 'ELEVATED' : b.latest.score >= 50 ? 'MODERATE' : 'LOW';
   const top = el('div', 'bub-top');
-  const wow = Number.isFinite(b.wow_delta) ? `${b.wow_delta > 0 ? '+' : ''}${b.wow_delta} WoW pts` : '';
+  const wow = Number.isFinite(b.wow_delta) ? `<span class="${b.wow_delta > 0 ? 'neg' : b.wow_delta < 0 ? 'pos' : 'muted'}">${b.wow_delta > 0 ? '+' : ''}${b.wow_delta} pts WoW${b.wow_delta > 0 ? ' · worse' : b.wow_delta < 0 ? ' · better' : ''}</span>` : '';
   top.innerHTML = `<span class="bub-score ${cls}">${b.latest.score}</span>
-    <div class="bub-meta"><div><span class="chip ${b.latest.score >= 60 ? 'bear' : b.latest.score >= 35 ? 'warn' : 'bull'}">${b.latest.label}</span>
-    <span class="muted small" style="margin-left:8px">${wow}</span></div>
-    <div class="muted small" style="margin-top:4px">0–100 composite · higher = more fragile</div></div>`;
-  const comp = el('div', 'bub-comp');
-  for (const c of b.latest.components || []) {
-    const p = Math.round((c.pts / (c.max || 1)) * 100);
-    const col = p >= 66 ? 'var(--down)' : p >= 33 ? 'var(--warn)' : 'var(--up)';
-    comp.insertAdjacentHTML('beforeend',
-      `<div class="bub-row"><span class="nm">${c.name}<span class="blk">${c.block}</span></span>
-       <span class="hbar"><span style="width:${p}%; left:0; background:${col}; border-radius:4px; position:absolute; top:0; bottom:0;"></span></span>
-       <span class="val mono muted" style="text-align:right">${c.pts}/${c.max}</span></div>`);
+    <div class="bub-meta"><div><span class="chip ${b.latest.score >= 70 ? 'bear' : b.latest.score >= 50 ? 'warn' : 'flat'}">${fragilityLabel}</span>
+    <span class="small" style="margin-left:8px">${wow}</span></div>
+    <div class="muted small" style="margin-top:4px">0–100 · Low &lt;50 · Moderate 50–69 · Elevated 70–84 · Critical 85+</div></div>`;
+  const blocks = {};
+  for (const c of b.latest.components || []) { const k = (blocks[c.block] ??= { pts: 0, max: 0 }); k.pts += c.pts; k.max += c.max || 0; }
+  const bar = (pts, max) => { const p = Math.round((pts / (max || 1)) * 100); return { p, col: p >= 66 ? 'var(--down)' : p >= 33 ? 'var(--warn)' : 'var(--up)' }; };
+  const blk = el('div', 'bub-blocks');
+  blk.insertAdjacentHTML('beforeend', '<div class="bub-block-note">Block intensity = earned points ÷ available points · not score contributions</div>');
+  for (const [k, v] of Object.entries(blocks)) {
+    const { p, col } = bar(v.pts, v.max);
+    blk.insertAdjacentHTML('beforeend', `<div class="bub-blk"><span class="nm">${esc(k)}</span><span class="hbar" role="img" aria-label="${p}% of maximum"><span style="width:${p}%; left:0; background:${col};"></span></span><span class="val mono muted" title="${v.pts} of ${v.max} points">${p}%</span></div>`);
   }
-  host.innerHTML = ''; host.append(top, comp);
+  const comp = el('details', 'bub-comp');
+  comp.innerHTML = '<summary>Components</summary>' + (b.latest.components || []).map(c => { const { p, col } = bar(c.pts, c.max);
+    return `<div class="bub-row"><span class="nm">${esc(c.name)}<span class="blk">${esc(c.block)}</span></span>
+       <span class="hbar"><span style="width:${p}%; left:0; background:${col};"></span></span>
+       <span class="val mono muted" style="text-align:right">${c.pts}/${c.max}</span></div>`; }).join('');
+  if (bubbleOpen) comp.open = true;
+  comp.addEventListener('toggle', () => { bubbleOpen = comp.open; });
+  const main = el('div', 'bub-main'); main.append(top, blk);
+  host.innerHTML = ''; host.append(main, comp);
 }
 
 /* ── alerts ─────────────────────────────────────────── */
@@ -374,16 +421,26 @@ function renderAlerts() {
   const host = $('#alerts-list'); host.innerHTML = '';
   const alerts = state.data.alerts || [];
   if (!alerts.length) { host.append(el('li', '', '<span class="muted">No unusual activity flagged this session.</span>')); return; }
-  for (const a of alerts.slice(0, 24)) {
-    const li = el('li');
-    if (typeof a === 'string') { li.textContent = a; }
-    else {
-      const sym = a.symbol ? `<b class="mono">${a.symbol}</b> · ` : '';
-      const msg = a.message || a.reason || a.note || a.title || a.kind || JSON.stringify(a).slice(0, 140);
-      li.innerHTML = `${sym}${String(msg).replace(/</g, '&lt;')}`;
-    }
+  const groups = new Map(), loose = [];
+  for (const a of alerts) {
+    if (typeof a === 'string' || !a.symbol) { loose.push(typeof a === 'string' ? a : (a.message || a.reason || a.note || a.title || a.kind || JSON.stringify(a).slice(0, 140))); continue; }
+    if (!groups.has(a.symbol)) groups.set(a.symbol, []);
+    groups.get(a.symbol).push(a);
+  }
+  const SEV = { warning: 'warn', success: 'bull', info: 'flat', error: 'bear', danger: 'bear' };
+  const fmtAlert = a => String(a.message || a.reason || a.note || a.title || a.kind || '').replace(/([+-]?\d+\.\d+)%/g, (_, v) => `${Number(v).toFixed(1)}%`);
+  const alertCls = (a, msg) => /RSI/i.test(msg) ? 'info' : /YTD/i.test(msg) ? 'bull' : /gap/i.test(msg) ? 'warn' : /range/i.test(msg) ? 'flat' : SEV[a.severity] || 'flat';
+  for (const [sym, list] of [...groups].slice(0, 24)) {
+    const li = el('li', list.some(a => a.severity === 'warning') ? 'warn' : '');
+    const messages = list.map(fmtAlert);
+    const msgs = messages.map((msg, i) => `<span class="chip ${alertCls(list[i], msg)}">${esc(msg)}</span>`).join('');
+    li.title = messages.join(' · ');
+    li.innerHTML = `<button type="button" class="mono al-sym" aria-label="Open ${esc(sym)} details">${esc(sym)}</button><span class="al-msgs">${msgs}</span>`;
+    li.querySelector('button').addEventListener('click', () => openDrawer(sym));
     host.append(li);
   }
+  for (const m of loose.slice(0, 12)) host.append(el('li', '', esc(m)));
+  const ac = $('#alerts-count'); if (ac) ac.textContent = `${alerts.length} alerts · ${groups.size} tickers`;
 }
 
 /* ── drawer ─────────────────────────────────────────── */
@@ -429,7 +486,7 @@ function renderQuote(s) {
   const l = s.lynch, sv = shortVolRatio(s);
   $('#dw-quote').innerHTML = `<div class="kv">
     ${row('Last', `$${price(s.price)}`)}
-    ${row('Δ Day', sign(s.changePct), pctCls(s.changePct))}
+    ${row('Δ Day', sign(s.changePct, 1), pctCls(s.changePct))}
     ${row('YTD', sign(s.ytdPct, 1), pctCls(s.ytdPct))}
     ${row('52w Range', `${price(s.week52Low ?? s.low52)} – ${price(s.week52High ?? s.high52)}`)}
     ${row('52w Position', s.pos52w != null ? `${s.pos52w.toFixed(0)}%` : '—')}
@@ -569,6 +626,11 @@ document.querySelectorAll('#view-toggle button').forEach(b => b.addEventListener
 setView(initView);
 
 on('#btn-refresh', 'click', () => load({ manual: true }));
+on('#stats-toggle', 'click', e => {
+  const expanded = document.body.classList.toggle('show-all-stats');
+  e.currentTarget.setAttribute('aria-expanded', String(expanded));
+  e.currentTarget.textContent = expanded ? 'Show key regime metrics' : 'Show all regime metrics';
+});
 on('#mm-filter', 'click', e => {
   const b = e.target.closest('button[data-mm]'); if (!b) return;
   state.mm = b.dataset.mm;

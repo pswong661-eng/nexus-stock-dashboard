@@ -14,9 +14,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./style.css?v=bd685c3" />
-  <script src="./chart.umd.min.js?v=bd685c3" defer></script>
-  <script src="./app.js?v=bd685c3" defer></script>
+  <link rel="stylesheet" href="./style.css?v=c06ada2" />
+  <script src="./chart.umd.min.js?v=c06ada2" defer></script>
+  <script src="./app.js?v=c06ada2" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -40,25 +40,39 @@
   <main class="wrap">
     <section id="error-banner" class="banner" hidden></section>
 
+    <p id="partial-note" class="inline-note" hidden></p>
+
+    <h2 class="section-title" id="regime">Market Regime</h2>
     <section class="stats" id="stats" aria-label="Summary statistics"></section>
+    <button id="stats-toggle" class="btn stats-toggle" type="button" aria-expanded="false">Show all regime metrics</button>
+
+    <section class="card regime-card" id="bubble-card">
+      <div class="card-head"><h2>Bubble Fragility</h2><span class="muted small" id="bubble-date"></span></div>
+      <div id="bubble-body"></div>
+    </section>
+
+    <h2 class="section-title" id="watchlist">Watchlist</h2>
 
     <section class="card panel-table">
       <div class="card-head">
-        <h2>Watchlist <span id="wl-count" class="count"></span></h2>
+        <h2><span id="wl-count" class="count"></span> <span id="wl-sort" class="sort-note"></span></h2>
         <div class="head-tools">
-          <div class="seg" id="view-toggle" role="group" aria-label="Table density">
-            <button data-view="fit" class="on" type="button" title="Compact — no horizontal scroll">Fit</button>
-            <button data-view="full" type="button" title="All columns — may scroll horizontally">Full</button>
+          <span class="control-label">Columns</span>
+          <div class="seg" id="view-toggle" role="group" aria-label="Table columns">
+            <button data-view="fit" class="on" type="button" title="Essential decision columns — no horizontal scroll">Essentials</button>
+            <button data-view="full" type="button" title="All columns — may scroll horizontally">All data</button>
           </div>
-          <div class="seg" id="mm-filter" role="group" aria-label="Market-maker tier">
+          <span class="control-label">Options books</span>
+          <div class="seg" id="mm-filter" role="group" aria-label="Market-maker options books">
             <button data-mm="all" class="on" type="button" title="All names">All</button>
-            <button data-mm="dual" type="button" title="Dual MM monitored — Jane Street + SIG both hold material options books (pinning-prone)">Dual MM</button>
-            <button data-mm="single" type="button" title="Only one of the two pillars">Single</button>
-            <button data-mm="none" type="button" title="Unpinned / clean flow — no material MM options book">Clean flow</button>
+            <button data-mm="dual" type="button" title="Jane Street + SIG both hold material options books">JS + SIG</button>
+            <button data-mm="single" type="button" title="Only one of the two options books">One MM</button>
+            <button data-mm="none" type="button" title="No material Jane Street or SIG options book">No MM</button>
           </div>
           <input id="wl-filter" class="input" type="search" placeholder="Filter symbol / name / sector…" autocomplete="off" />
         </div>
       </div>
+      <div class="table-subnote"><b>SMA Trend</b> = price versus 50/200-day averages, not today’s move · ▲▲ above both · ▲ above 50 only · ▼ below 50 only · ▼▼ below both · dot = no SMA200</div>
       <div class="table-scroll">
         <table id="watch-table" class="grid" aria-label="Watchlist">
           <thead>
@@ -66,60 +80,67 @@
               <th data-key="symbol" class="sortable col-sym">SYM</th>
               <th data-key="name" class="sortable col-name">Name</th>
               <th data-key="sector" class="sortable col-sector">Sector</th>
-              <th data-key="mm" class="sortable" title="Jane Street + Susquehanna market-maker presence (13F options books)">Pillars</th>
-            <th data-key="mmpc" class="sortable num" title="Put/Call notional ratio of Jane Street + SIG 13F options books. Red = put-heavy (>1.25), green = call-heavy (<0.8)">MM P/C</th>
+              <th data-key="mm" class="sortable col-mm" title="Jane Street + Susquehanna market-maker presence (13F options books)">Pillars</th>
+            <th data-key="mmpc" class="sortable col-mmpc num" title="Put/Call notional ratio of Jane Street + SIG 13F options books. Red = put-heavy (>1.25), green = call-heavy (<0.8)">MM P/C</th>
               <th data-key="price" class="sortable num">Last</th>
               <th data-key="changePct" class="sortable num">Δ Day</th>
-              <th data-key="ytdPct" class="sortable num">YTD</th>
-              <th data-key="signal" class="sortable">Trend</th>
-              <th data-key="score" class="sortable num">Score</th>
+              <th data-key="ytdPct" class="sortable col-ytd num">YTD</th>
+              <th data-key="signal" class="sortable col-trend" title="Trend versus SMA50 and SMA200 — not the daily price move">SMA Trend</th>
+              <th data-key="score" class="sortable col-score num">Score</th>
               <th data-key="bias" class="sortable">Bias</th>
-              <th data-key="rsi" class="sortable num">RSI</th>
+              <th data-key="rsi" class="sortable col-rsi num">RSI</th>
               <th data-key="macdStatus" class="sortable col-macd">MACD</th>
-              <th data-key="pos52w" class="sortable num">52w Pos</th>
+              <th data-key="pos52w" class="sortable col-pos num">52w Pos</th>
               <th class="num col-sr">S / R</th>
-              <th data-key="volRatio" class="sortable num">Vol×</th>
-              <th data-key="shortVol" class="sortable num">Shrt Vol</th>
-              <th data-key="peRatio" class="sortable num">P/E</th>
-              <th data-key="lynch" class="sortable">Lynch</th>
+              <th data-key="volRatio" class="sortable col-vol num">Vol×</th>
+              <th data-key="shortVol" class="sortable col-sv num">Shrt Vol</th>
+              <th data-key="peRatio" class="sortable col-pe num">P/E</th>
+              <th data-key="lynch" class="sortable col-lynch">Lynch</th>
             </tr>
           </thead>
           <tbody id="watch-body"></tbody>
         </table>
       </div>
+      <details class="legend">
+        <summary>Signal key</summary>
+        <dl>
+          <dt>Trend</dt><dd><span class="trend up">▲▲</span> above SMA50 &amp; SMA200 · <span class="trend mid-up">▲</span> &gt;50 &lt;200 · <span class="trend mid-dn">▼</span> &lt;50 &gt;200 · <span class="trend dn">▼▼</span> below both</dd>
+          <dt>Score</dt><dd>0–4 dots: SMA50 + SMA200 + MACD + RSI filters passed</dd>
+          <dt>RSI</dt><dd>14-day; <span class="chip bear">&gt;70</span> overbought · <span class="chip bull">&lt;30</span> oversold · grey neutral</dd>
+          <dt>Pillars</dt><dd>Jane Street (JS) / SIG options books ≥ $50M on latest 13F; ⚠ = OpEx-week pin risk</dd>
+          <dt>MM P/C</dt><dd>Combined 13F put/call notional; <span class="mm-pc put">&gt;1.25</span> put-heavy · <span class="mm-pc call">&lt;0.8</span> call-heavy. Descriptive only, not directional.</dd>
+        </dl>
+      </details>
       <p class="card-foot muted" id="wl-foot"></p>
     </section>
 
+    <h2 class="section-title" id="signals">Signals</h2>
     <section class="grid-2">
       <div class="card">
-        <div class="card-head"><h2>Sector Performance</h2><span class="muted small">Δ day, equal-weight</span></div>
-        <div id="sector-list" class="vlist"></div>
+        <div class="card-head"><h2>Alerts · Unusual Activity</h2><span class="muted small" id="alerts-count"></span></div>
+        <ul id="alerts-list" class="alerts"></ul>
       </div>
       <div class="card">
-        <div class="card-head"><h2>Short Volume — Top 10</h2><span class="muted small">FINRA ratio · amber &gt;55% · red &gt;65%</span></div>
+        <div class="card-head"><h2>Short Volume — Top 10</h2><span class="muted small">Short volume ÷ total volume · blue&nbsp;≤55% · amber&nbsp;&gt;55% · red&nbsp;&gt;65%</span></div>
         <div id="shortvol-list" class="vlist"></div>
       </div>
+    </section>
+
+    <h2 class="section-title" id="research">Research</h2>
+    <section class="card">
+        <div class="card-head"><h2>Sector Performance</h2><span class="muted small">Δ day, equal-weight</span></div>
+        <div id="sector-list" class="vlist"></div>
     </section>
 
     <section class="card">
       <div class="card-head">
         <h2>Lynch Screen</h2>
-        <span class="muted small">PEGY = (growth + yield) ÷ P/E · pass ≥ 2 · hover a chip for the note</span>
+        <span class="muted small lynch-help"><span class="desktop-copy">PEGY = (growth + yield) ÷ P/E · pass ≥ 2 · hover a chip for the note</span><span class="mobile-copy">PEGY = (growth + yield) ÷ P/E<br>Pass ≥ 2 · tap a company for its note.</span></span>
       </div>
       <div id="lynch-groups" class="lynch-groups"></div>
       <p class="card-foot muted">Fundamentals are web-referenced snapshots from the internal screen — not live API fields.</p>
     </section>
 
-    <section class="grid-2">
-      <div class="card" id="bubble-card">
-        <div class="card-head"><h2>Bubble Fragility</h2><span class="muted small" id="bubble-date"></span></div>
-        <div id="bubble-body"></div>
-      </div>
-      <div class="card">
-        <div class="card-head"><h2>Alerts · Unusual Activity</h2></div>
-        <ul id="alerts-list" class="alerts"></ul>
-      </div>
-    </section>
 
     <footer class="foot">
       <span>Sources: Massive.com · SEC EDGAR · Yahoo Finance (fallback) — EOD data, previous session close.</span>
